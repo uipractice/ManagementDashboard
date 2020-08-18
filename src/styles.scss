@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
+@import "../node_modules/ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin.scss";
+
+.ag-theme-alpine {
+  @include ag-theme-alpine();
+}
+.indigo {
+  background-color: #023047 !important;
+}
+* {
+  font-family: "Poppins", sans-serif !important;
+}
+.headerCol {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.container {
+  width: 100%;
+  max-width: 100%;
+}
+.btn-primary {
+  background-color: #fc8500 !important;
+  color: white !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  border: none !important;
+  font-size: 14px !important;
+}
+.heading {
+  color: #0088d1;
+  font-size: 16px !important;
+  font-weight: 600;
+}
+.modal-dialog {
+  max-width: 94% !important;
+  height: auto;
+}
+.modal-header {
+  border-bottom: 0 !important;
+}

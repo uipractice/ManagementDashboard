@@ -64,3 +64,51 @@ span{
     right: 15px;
 }
 //header ends here//
+@media only screen and (min-width: 320px) and (max-width:425px){
+    .nav-header{
+        display: none;
+    }
+    .pdt-0{
+        padding-top: 0px !important;
+    }
+    .nav-mobile-header{
+        background-color: #023047;
+        padding: 15px 0 15px 15px;
+        width: auto;
+        border-bottom: 1px solid #074E72;
+        ul{
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            li{
+                padding-top: 5px;
+                padding-right: 5px;
+            }
+        }
+        a{
+            padding-right: 15px;
+        }
+        .mobile-search{
+            width: 100%;
+            border: 0;
+            background: transparent;
+            color: #fff;
+        }
+        .mobile-search:hover, .mobile-search:active, .mobile-search:visited {
+            border: 0px;
+            outline: none;
+        }
+        .img{
+            position: absolute;
+            right: 115px;
+            top: 24px;
+        }
+    }
+}
+
+@media only screen and (min-width:426px) and (max-width:1440px){
+    .nav-mobile-header{
+        display: none !important;
+    }
+}

@@ -2,6 +2,9 @@
     background: #f7f7f7;
     box-shadow: 0px 1.5px 0px rgba(0, 0, 0, 0.15);
     padding: 10px 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 .ds-con{
     display: contents;
@@ -76,6 +79,10 @@ span{
         padding: 15px 0 15px 15px;
         width: auto;
         border-bottom: 1px solid #074E72;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        width: 100%;
         ul{
             list-style: none;
             display: flex;

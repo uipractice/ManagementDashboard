@@ -1,0 +1,21 @@
+// div{ border:1px solid ;width:100%; height:calc(100vh - 66px); overflow-y: scroll;}
+// div{border:1px solid blue; width:100%; height:calc(100vh - 76px); overflow-y: scroll;}
+.dashboard-header{
+  padding: 15px;
+  margin-left: 76px;
+  h3{
+      font-size: 24px;
+      font-weight: bold;
+  }
+  
+}
+
+@media only screen and (min-width:320px) and (max-width:425px){
+  .dashboard-header{
+      margin: 0px;
+  }
+  .mobile-none{
+      display: none;
+  }
+
+}

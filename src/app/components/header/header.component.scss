@@ -1,0 +1,124 @@
+.nav-header{
+  background: #f7f7f7;
+  box-shadow: 0px 1.5px 0px rgba(0, 0, 0, 0.15);
+  padding: 10px 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+.ds-con{
+  display: contents;
+}
+.col-align{
+  display: flex;
+  place-items: baseline;
+  p{
+      padding-left: 20px;
+      padding-right: 30px;
+  }
+}
+.align{
+  text-align: center;
+}
+.pd-l{
+  padding-left: 20px;
+}
+p{
+  margin: 0;
+  color: #023047;
+  font-size: 16px;
+  font-weight: bold;
+}
+.ver-line{
+  border-right: 1.25px solid #dddddd;
+}
+.last{
+  border-right: none;
+}
+.ver-line2{
+  border-left: 1.25px solid #dddddd;
+  height: 40px;
+  justify-content: center;
+  display: flex;
+}
+
+span{
+  color: #696967;
+  font-size: 13px;
+}
+.search{
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  width: 356px;
+  height: 40px;
+  padding: 0 10px;
+}
+.search:focus{
+  outline: none;
+}
+.search-img{
+  position: absolute;
+  top: 10px;
+  right: 55px;
+  }
+.search-img:focus, .search-img:visited, .search-img:active{
+  outline: none;
+  display: none;
+}
+.icon-hamburger{
+  position: absolute;
+  right: 15px;
+}
+//header ends here//
+@media only screen and (min-width: 320px) and (max-width:425px){
+  .nav-header{
+      display: none;
+  }
+  .pdt-0{
+      padding-top: 0px !important;
+  }
+  .nav-mobile-header{
+      background-color: #023047;
+      padding: 15px 0 15px 15px;
+      width: auto;
+      border-bottom: 1px solid #074E72;
+      position: fixed;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+      ul{
+          list-style: none;
+          display: flex;
+          padding: 0;
+          margin: 0;
+          li{
+              padding-top: 5px;
+              padding-right: 5px;
+          }
+      }
+      a{
+          padding-right: 15px;
+      }
+      .mobile-search{
+          width: 100%;
+          border: 0;
+          background: transparent;
+          color: #fff;
+      }
+      .mobile-search:hover, .mobile-search:active, .mobile-search:visited {
+          border: 0px;
+          outline: none;
+      }
+      .img{
+          position: absolute;
+          right: 115px;
+          top: 24px;
+      }
+  }
+}
+
+@media only screen and (min-width:426px) and (max-width:1440px){
+  .nav-mobile-header{
+      display: none !important;
+  }
+}

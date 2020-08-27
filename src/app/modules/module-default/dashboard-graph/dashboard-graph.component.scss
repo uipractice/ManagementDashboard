@@ -7,7 +7,6 @@
     border: 0;
     box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
     margin-right: 13px;
-    height: 400px;
     background-color: #fff;
 }
 .graph-last{
@@ -38,7 +37,9 @@
     color: #7b7b7b;
     justify-self: auto;
     margin-left: auto;
+    background: #fff;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    border: 0;
 }
 .wd-select{
     width: 85px !important;
@@ -48,8 +49,25 @@
     background-color: white;
     font-size: 14px;
     color: #57565c;
+    height: 330px;
+    overflow: overlay;
 }
 .graph-accounts{
     width: 68%;
     margin-right: 0 !important;
+}
+
+@media only screen and (max-width:425px) and (min-width:320px){
+    .dashboard-graph{
+        display: block;
+      }
+      .graph{
+        width: 395px !important;
+        margin-bottom: 40px;
+        height: 370px;
+      }
+      .graph-last{
+        width: 22%;
+        margin-right: 0 !important;
+    }
 }

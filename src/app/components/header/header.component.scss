@@ -257,13 +257,19 @@ input:checked + .slider:before {
           li{
               padding-top: 5px;
               padding-right: 5px;
+              width: 50px;
           }
       }
-      a{
-          padding-right: 15px;
+      // a{
+      //     // padding-right: 15px;
+      // }
+      .text-align{
+        text-align: center;
+      }
+      .mb-search-width{
+        width: 70% !important;
       }
       .mobile-search{
-          width: 100%;
           border: 0;
           background: transparent;
           color: #fff;
@@ -274,8 +280,12 @@ input:checked + .slider:before {
       }
       .img{
           position: absolute;
-          right: 115px;
+          right: 105px;
           top: 24px;
+      }
+      .news-img{
+        filter: brightness(1.5) sepia(10) hue-rotate(-70deg) saturate(25);
+        width: 20px;
       }
   }
 }

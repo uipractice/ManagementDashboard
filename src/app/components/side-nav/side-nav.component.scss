@@ -4,7 +4,7 @@
   border-radius:0px 0px 25px 0;
   background-color: #023047;
   width: 76px;
-  height: 973px;
+  height: 555px;
 }
 /* Style the buttons inside the tab */
 .tab button {
@@ -59,7 +59,7 @@
 }
 /* Style the buttons inside the tab */
 .tab button {
-  display: inline;
+  display: inline-block;
   border-bottom: 2px solid #023047;
   border-right: 0px;
   border-top: 0px;
@@ -80,11 +80,11 @@
 }
 /* Create an active/current "tab button" class */
 .tab button.active {
-  border-bottom: 2px solid #239EC5;
+  border-bottom: 0px;
 }
-.tablinks{
-  // width: 30px;
-}
+// .tablinks{
+//   // width: 30px;
+// }
 /* Style the tab content */
 .tabcontent {
   float: left;

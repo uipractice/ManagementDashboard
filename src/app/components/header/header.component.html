@@ -1,24 +1,43 @@
 <nav class="navbar navbar-expand-lg nav-header">
-  <div class="row col-md-12 ds-con">
-      <div class="col-md-6 col-align">
-        <a class="navbar-brand" href="#">
+  <div class="ds-con">
+      <div class="col-align">
+        <a class="navbar-brand logo" href="#">
           <img src="../../../../assets/images/main/logo.svg" alt="">
-        </a><p [ngClass]="hours[i]==arrHours.length-1 ?'last':'ver-line'" *ngFor="let hours of arrHours; index as i;">{{hours.desc}}:{{hours.count}}
-        <span *ngIf="hours.arrowFlag===true; else elseBlock"> ({{hours.value}}% )<img src="..\..\..\assets\images\main\arrow_up.svg">
-        </span><ng-template #elseBlock><span>({{hours.value}}% )<img src="..\..\..\assets\images\main\arrow_down.svg"></span></ng-template></p>
-
+        </a>
+        <div [ngClass]="hours[i]==arrHours.length-1 ?'last':'ver-line'" *ngFor="let hours of arrHours; index as i;">{{hours.desc}}:{{hours.count}}
+          <span *ngIf="hours.arrowFlag===true; else elseBlock"> ({{hours.value}}% )<img src="..\..\..\assets\images\main\arrow_up.svg">
+          </span>
+          <ng-template #elseBlock>
+            <span>({{hours.value}}% )<img src="..\..\..\assets\images\main\arrow_down.svg"></span>
+          </ng-template>
         </div>
-        <div class="ver-line2 col-md-4">
+      </div>
+        <div class="ver-line2">
           <ev-dashboard-search></ev-dashboard-search>
         </div>
-      <div class="ver-line2 col-md-1">
+      <div class="ver-line2">
         <img src="..\..\..\assets\images\main\Notification.svg"></div>
-      <div class="col-md-1 ver-line2">
-        <img src="..\..\..\assets\images\main\user.svg">
-        <img src="..\..\..\assets\images\main\kebab-menu_icon.svg" class="pd-l">
-      </div>
+      <div class="dropdown ver-line2 pdr-0">
+        <button class="dropbtn"><img src="..\..\..\assets\images\main\user.svg"><img class="downarrow" src="..\..\..\assets\images\main\down-arrow-user.svg"></button>
+         <div class="dropdown-content">
+          <a href="#" class="user-dropdown">
+            <img src="..\..\..\assets\images\main\user.svg">
+            <div class="user">User Name<br><span>Designation</span></div>
+          </a>
+          <a href="#">My Profile</a>
+          <a href="#">Update Password</a>
+          <div class="dark-theme"><a href="#">Dark Theme</a><label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label></div>
+          </div>
+        </div>
   </div>
 </nav>
+
+
+
+
 
 <nav class="navbar nav-mobile-header">
   <div class="">

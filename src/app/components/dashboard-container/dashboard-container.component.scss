@@ -2,10 +2,13 @@
 // div{border:1px solid blue; width:100%; height:calc(100vh - 76px); overflow-y: scroll;}
 .dashboard-header{
   padding: 15px;
-  margin-left: 76px;
+  margin-left: 65px;
+  position: absolute;
+  top: 65px;
   h3{
       font-size: 24px;
       font-weight: bold;
+      color: #57565c;
   }
   
 }
@@ -13,6 +16,8 @@
 @media only screen and (min-width:320px) and (max-width:425px){
   .dashboard-header{
       margin: 0px;
+      padding: 0px;
+      top: 170px;
   }
   .mobile-none{
       display: none;

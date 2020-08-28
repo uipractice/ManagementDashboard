@@ -4,7 +4,7 @@
         <a class="navbar-brand logo" href="#">
           <img src="../../../../assets/images/main/logo.svg" alt="">
         </a>
-        <div [ngClass]="hours[i]==arrHours.length-1 ?'last':'ver-line'" *ngFor="let hours of arrHours; index as i;">{{hours.desc}}:{{hours.count}}
+        <div class="ver-line" *ngFor="let hours of arrHours; index as i;">{{hours.desc}}:{{hours.count}}
           <span *ngIf="hours.arrowFlag===true; else elseBlock"> ({{hours.value}}% )<img src="..\..\..\assets\images\main\arrow_up.svg">
           </span>
           <ng-template #elseBlock>
@@ -18,8 +18,8 @@
       <div class="ver-line2">
         <img src="..\..\..\assets\images\main\Notification.svg"></div>
       <div class="dropdown ver-line2 pdr-0">
-        <button class="dropbtn"><img src="..\..\..\assets\images\main\user.svg"><img class="downarrow" src="..\..\..\assets\images\main\down-arrow-user.svg"></button>
-         <div class="dropdown-content">
+        <button class="dropbtn" on-click="toggleDropdown()"><img src="..\..\..\assets\images\main\user.svg"><img class="downarrow" src="..\..\..\assets\images\main\down-arrow-user.svg"></button>
+         <div class="dropdown-content" *ngIf="!isShow">
           <a href="#" class="user-dropdown">
             <img src="..\..\..\assets\images\main\user.svg">
             <div class="user">User Name<br><span>Designation</span></div>

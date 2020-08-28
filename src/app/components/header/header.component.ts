@@ -16,9 +16,13 @@ interface Hours {
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private httpService: HttpClient) { }
+  isShow = true;
   arrHours: Hours[] = [];
+  toggleDropdown(){
+    this.isShow = !this.isShow;
+  }
+  constructor(private httpService: HttpClient) { }
+
   ngOnInit(): void {
 
     this.httpService.get('assets/header_count.json').subscribe(
@@ -30,6 +34,8 @@ export class HeaderComponent implements OnInit {
         console.log (err.message);
       }
     );
+
+
   //   getcustomcss(){
   //     if(this.arrHours[i]== this.arrHours[this.arrHours.length-1]){
   //     return 'class1';

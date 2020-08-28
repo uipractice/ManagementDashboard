@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardGraphComponent } from './dashboard-graph.component';
+import { HeaderDefaultComponent } from './header-default.component';
 
-describe('DashboardGraphComponent', () => {
-  let component: DashboardGraphComponent;
-  let fixture: ComponentFixture<DashboardGraphComponent>;
+describe('HeaderDefaultComponent', () => {
+  let component: HeaderDefaultComponent;
+  let fixture: ComponentFixture<HeaderDefaultComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardGraphComponent ]
+      declarations: [ HeaderDefaultComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardGraphComponent);
+    fixture = TestBed.createComponent(HeaderDefaultComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

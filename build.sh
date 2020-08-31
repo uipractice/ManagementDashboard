@@ -10,6 +10,6 @@ echo 'Remove old dist files in Nginx'
 rm -rf /usr/share/nginx/html/management_dashboard/*
 
 echo 'Copying dist files to Nginx'
-cp -R dist/ngMat/* /usr/share/nginx/html/management_dashboard
+cp -R dist/hrCloud/* /usr/share/nginx/html/management_dashboard
 
 echo 'Files copied to Nginx'

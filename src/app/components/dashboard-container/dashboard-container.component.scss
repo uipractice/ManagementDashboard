@@ -1,7 +1,7 @@
 // div{ border:1px solid ;width:100%; height:calc(100vh - 66px); overflow-y: scroll;}
 // div{border:1px solid blue; width:100%; height:calc(100vh - 76px); overflow-y: scroll;}
 .dashboard-header{
-  padding: 15px;
+  padding: 22px;
   padding-bottom: 90px;
   margin-left: 65px;
   position: absolute;
@@ -13,7 +13,7 @@
       font-weight: bold;
       color: #57565c;
   }
-  
+
 }
 
 @media only screen and (min-width:320px) and (max-width:425px){

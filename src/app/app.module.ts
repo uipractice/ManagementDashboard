@@ -11,12 +11,15 @@ import { DashboardSearchComponent } from './components/header/dashboard-search/d
 import { DashboardContainerComponent } from './components/dashboard-container/dashboard-container.component';
 import { ModuleDefaultRoutingModule } from './modules/module-default/module-default-routing.module';
 import { ModuleDefaultModule } from './modules/module-default/module-default.module';
+import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, SideNavComponent,
-    DashboardContainerComponent, DashboardSearchComponent, DashboardContainerComponent],
+    DashboardContainerComponent, DashboardSearchComponent, DashboardContainerComponent, LoginComponent],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     ModuleDefaultModule,
     ModuleDefaultRoutingModule,

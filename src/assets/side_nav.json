@@ -1,0 +1,17 @@
+[{"id":1,
+  "name":"Default",
+   "icon":"assets/images/main/dashbboard-icon.svg"
+  },
+  {"id":2,
+    "name":"Accounts",
+    "icon":"assets/images/main/accounts_projects.svg"
+  },
+  {"id":3,
+    "name":"HR",
+    "icon":"assets/images/main/HR.svg"
+  },
+  {"id":4,
+    "name":"IT",
+    "icon":"assets/images/main/IT.svg"
+  }
+  ]

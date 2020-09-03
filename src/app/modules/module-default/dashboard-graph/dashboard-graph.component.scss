@@ -51,6 +51,25 @@
     color: #57565c;
     height: 330px;
     overflow: overlay;
+    ul{
+        padding:0px;
+        margin: 0px;
+        li{
+            list-style: none;
+            height: 57px;
+            border-bottom: 1px solid #c4c4c4;
+            padding: 10px 0px;
+            overflow: hidden;
+            a{
+                color: #7b7b7b;
+                font-size: 14px;
+            }
+        }
+        li:last-child{
+            border: 0px;
+            padding-bottom: 0px;
+        }
+    }
 }
 .graph-accounts{
     width: 68%;
@@ -67,7 +86,7 @@
         height: 370px;
       }
       .graph-last{
-        width: 22%;
+        // width: 22% !important;
         margin-right: 0 !important;
     }
 }

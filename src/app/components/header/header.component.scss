@@ -39,9 +39,10 @@ p{
   padding-right: 10px;
   margin-right: 15px;
 }
-.last{
+.ver-line:last-of-type{
   border-right: none;
 }
+
 .pdr-0{
   padding-right: 0px !important;
 }
@@ -174,7 +175,7 @@ span{
   margin-left: 25px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;

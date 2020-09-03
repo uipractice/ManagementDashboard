@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 interface Hours {
   id: number;
@@ -16,9 +17,14 @@ interface Hours {
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private httpService: HttpClient) { }
+  isShow = true;
   arrHours: Hours[] = [];
+  currentUser =  localStorage.getItem("user");
+  toggleDropdown(){
+    this.isShow = !this.isShow;
+  }
+  constructor(private httpService: HttpClient,private router: Router) { }
+
   ngOnInit(): void {
 
     this.httpService.get('assets/header_count.json').subscribe(
@@ -30,6 +36,9 @@ export class HeaderComponent implements OnInit {
         console.log (err.message);
       }
     );
+
+
+
   //   getcustomcss(){
   //     if(this.arrHours[i]== this.arrHours[this.arrHours.length-1]){
   //     return 'class1';
@@ -37,4 +46,8 @@ export class HeaderComponent implements OnInit {
   // }
 
   }
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
+    }
 }

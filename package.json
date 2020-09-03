@@ -1,13 +1,15 @@
 {
-  "name": "hr-cloud",
+  "name": "angular-components",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href=/test",
+    "build-prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-css": "node-sass -w ./src -o ./src/scss/css"
   },
   "private": true,
   "dependencies": {

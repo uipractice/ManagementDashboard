@@ -18,13 +18,14 @@ interface Hours {
 })
 export class HeaderComponent implements OnInit {
   isShow = true;
+  isOpen = true;
   arrHours: Hours[] = [];
   currentUser =  localStorage.getItem("user");
   toggleDropdown(){
     this.isShow = !this.isShow;
   }
   toggleDowncontent(){
-    this.isShow = !this.isShow;
+    this.isOpen = !this.isOpen;
   }
   constructor(private httpService: HttpClient,private router: Router) { }
 

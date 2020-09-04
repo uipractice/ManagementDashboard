@@ -17,7 +17,7 @@
   color: #fff;
   padding: 22px 16px 22px 14px;
   width: 100%;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   transition: 0.3s;
   font-size: 17px;
@@ -72,7 +72,7 @@ button.click-to-top {
     display: block; 
     padding: 8px 15px; 
     width: auto;
-    font-size: 14px;
+    // font-size: 14px;
   }
   .tab:hover .click-to-top{
     visibility: visible;
@@ -117,7 +117,7 @@ button.click-to-top {
 }
 .tab button:hover, .tab button:active,
 .tab button:visited, .tab button:focus{
-  border-bottom: 2px solid #239EC5;
+  border: 0px ;
   outline: none;
 }
 /* Create an active/current "tab button" class */
@@ -133,6 +133,9 @@ button.click-to-top {
 }
 button.click-to-top p{
   display: contents !important;
+} 
+button.click-to-top p::after{
+  display: none ;
 } 
 }
 @media only screen and (min-width:426px) and (max-width:1440px){

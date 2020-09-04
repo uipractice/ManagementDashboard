@@ -12,8 +12,10 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
     loading = false;
     submitted = false;
-    flagsCheck = false;
+    // flagsCheck = false;
     message = '';
+    currentUser =  localStorage.getItem("user");
+    returnUrl: string;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -22,9 +24,9 @@ export class LoginComponent implements OnInit {
         //private authenticationService: AuthenticationService
     ) {
         // redirect to home if already logged in
-        // if (this.authenticationService.currentUserValue) {
-        //     this.router.navigate(['/']);
-        // }
+        if (this.currentUser) {
+            this.router.navigate(['/default']);
+        }
     }
 
     ngOnInit() {
@@ -34,7 +36,7 @@ export class LoginComponent implements OnInit {
         });
 
         // get return url from route parameters or default to '/'
-        // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+         //this.returnUrl = this.route.snapshot.queryParams['/default'] || '/';
     }
 
     // convenience getter for easy access to form fields
@@ -48,8 +50,9 @@ export class LoginComponent implements OnInit {
 
     }
 
+
      checkLogin(){
-      this.flagsCheck = true;
+      this.loading = true;
       if (this.loginForm.controls['username'].value ==="EAdmin"
       && this.loginForm.controls['password'].value ==="E@MDashboard"){
       this.message = 'login success';
@@ -57,6 +60,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/default']);
       }else{
         this.message = 'Username or password is incorrect';
+        this.loading = false;
       }
 
     }

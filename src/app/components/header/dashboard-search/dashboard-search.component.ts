@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-search.component.scss']
 })
 export class DashboardSearchComponent implements OnInit {
-
+  isShow = true;
+  toggleDropdown(){
+    this.isShow = !this.isShow;
+  }
   constructor() { }
 
   ngOnInit(): void {

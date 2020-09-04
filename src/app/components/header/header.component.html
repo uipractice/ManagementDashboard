@@ -17,7 +17,17 @@
           <ev-dashboard-search></ev-dashboard-search>
         </div>
       <div class="ver-line2 notification">
-        <img src="..\..\..\assets\images\main\Notification.svg"><span class="badge">10</span>
+        <button class="dropbtn" on-click="toggleDowncontent()"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge">10</span></button>
+        <div class="dropdown-content notification-content" *ngIf="!isShow">
+          <ul><li><a href="#" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            In in interdum eros.  </a></li>
+          <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            In in interdum eros. </a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+           In in interdum eros. </a></li>
+           <li class="more"><a href="">MORE</a></li>
+        </ul>
+          </div>
       </div>
       <div class="dropdown ver-line2 pdr-0">
         <button class="dropbtn" on-click="toggleDropdown()"><img src="..\..\..\assets\images\main\user.svg"><img class="downarrow" src="..\..\..\assets\images\main\down-arrow-user.svg"></button>

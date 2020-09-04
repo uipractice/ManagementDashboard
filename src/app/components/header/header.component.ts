@@ -23,6 +23,9 @@ export class HeaderComponent implements OnInit {
   toggleDropdown(){
     this.isShow = !this.isShow;
   }
+  toggleDowncontent(){
+    this.isShow = !this.isShow;
+  }
   constructor(private httpService: HttpClient,private router: Router) { }
 
   ngOnInit(): void {

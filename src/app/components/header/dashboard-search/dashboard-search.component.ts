@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardSearchComponent implements OnInit {
 
+  toggleDropdown(){
+    this.isShow = !this.isShow;
+  }
   constructor() { }
 
   ngOnInit(): void {

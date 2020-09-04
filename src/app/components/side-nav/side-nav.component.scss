@@ -77,7 +77,9 @@ button.click-to-top {
   .tab:hover .click-to-top{
     visibility: visible;
   }
-
+.tablinks{
+  margin-left: -3px;
+}
 @media only screen and (min-width: 320px) and (max-width: 425px){
  /* Style the tab */
 .tab {
@@ -122,9 +124,6 @@ button.click-to-top {
 .tab button.active {
   border-bottom: 0px;
 }
-// .tablinks{
-//   // width: 30px;
-// }
 /* Style the tab content */
 .tabcontent {
   float: left;

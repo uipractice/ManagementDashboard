@@ -14,20 +14,30 @@ interface Hours {
 @Component({
   selector: 'ev-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  host: {
+    "(document:click)": "onClick()"
+  }
 })
 export class HeaderComponent implements OnInit {
   isShow = true;
   isOpen = true;
   arrHours: Hours[] = [];
   currentUser =  localStorage.getItem("user");
-  toggleDropdown(){
+  toggleDropdown($event){
+    $event.stopPropagation();
     this.isShow = !this.isShow;
   }
-  toggleDowncontent(){
+  toggleDowncontent($event){
+    $event.stopPropagation();
     this.isOpen = !this.isOpen;
   }
-  constructor(private httpService: HttpClient,private router: Router) { }
+
+  onClick() {
+    this.isShow = true;
+    this.isOpen = true;
+  }
+  constructor(private httpService: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
 

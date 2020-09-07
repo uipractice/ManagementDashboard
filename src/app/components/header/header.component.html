@@ -11,7 +11,6 @@
             <span>({{hours.value}}% )<img src="..\..\..\assets\images\main\arrow_down.svg"></span>
           </ng-template>
         </div>
-        <button class="btn btn-primary"(click)="logout()">Logout</button>
       </div>
         <div class="ver-line2">
           <ev-dashboard-search></ev-dashboard-search>
@@ -38,10 +37,11 @@
           </a>
           <a href="#">My Profile</a>
           <a href="#">Update Password</a>
-          <div class="dark-theme"><a href="#">Dark Theme</a><label class="switch">
+          <!-- <div class="dark-theme"><a href="#">Dark Theme</a><label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
-          </label></div>
+          </label></div> -->
+        <a><button class="btn btn-primary btn-logout"(click)="logout()">Logout</button></a>
           </div>
         </div>
   </div>

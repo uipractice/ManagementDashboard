@@ -16,32 +16,31 @@
           <ev-dashboard-search></ev-dashboard-search>
         </div>
       <div class="ver-line2 notification">
-        <button class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge">10</span></button>
+        <button class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge">05</span></button>
         <div class="dropdown-content notification-content" *ngIf="!isOpen">
           <ul><li><a href="#" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             In in interdum eros.  </a></li>
-          <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            In in interdum eros. </a></li>
-        <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-           In in interdum eros. </a></li>
-           <li class="more"><a href="">MORE</a></li>
+          <li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
+        <li><a href="#">Lorem ipsum  </a></li>
         </ul>
           </div>
       </div>
       <div class="dropdown ver-line2 pdr-0">
         <button class="dropbtn" (click)="toggleDropdown($event)"><img src="..\..\..\assets\images\main\user.svg"><img class="downarrow" src="..\..\..\assets\images\main\down-arrow-user.svg"></button>
          <div class="dropdown-content" *ngIf="!isShow">
-          <a href="#" class="user-dropdown">
-            <img src="..\..\..\assets\images\main\user.svg">
-            <div class="user">User Name<br><span>Designation</span></div>
-          </a>
-          <a href="#">My Profile</a>
-          <a href="#">Update Password</a>
-          <!-- <div class="dark-theme"><a href="#">Dark Theme</a><label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-          </label></div> -->
-        <a><button class="btn btn-primary btn-logout"(click)="logout()">Logout</button></a>
+           <ul>
+             <li> <a href="#" class="user-dropdown">
+                <img src="..\..\..\assets\images\main\user.svg">
+                <div class="user">User Name<br><span>Designation</span></div>
+              </a></li>
+              <li><a href="#">My Profile</a></li>
+            <li><a href="#">Update Password</a></li>
+              <!-- <div class="dark-theme"><a href="#">Dark Theme</a><label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label></div> -->
+            <li><a><button class="btn btn-primary btn-logout"(click)="logout()">Logout</button></a></li>
+        </ul>
           </div>
         </div>
   </div>

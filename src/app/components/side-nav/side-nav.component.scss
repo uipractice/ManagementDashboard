@@ -74,6 +74,12 @@ button.click-to-top {
     width: auto;
     // font-size: 14px;
   }
+  button::after, .click-to-top a:hover::after{
+    border: 0px !important;
+  }
+  a::after{
+    display: none;
+  }
   .tab:hover .click-to-top{
     visibility: visible;
   }

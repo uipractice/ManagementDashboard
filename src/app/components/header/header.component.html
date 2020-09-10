@@ -22,6 +22,9 @@
             In in interdum eros.  </a></li>
           <li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
         <li><a href="#">Lorem ipsum  </a></li>
+        <li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
+        <li><a href="#">Lorem ipsum  </a></li><li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
+        <li><a href="#">Lorem ipsum  </a></li>
         </ul>
           </div>
       </div>
@@ -60,7 +63,16 @@
       <a><img src="..\..\..\assets\images\main\logo.svg"></a>
       </li>
       <li class="mb-search-width"><input type="search" class="mobile-search"><img class="img" src="..\..\..\assets\images\main\search.svg"></li>
-      <li class="text-align"><a><img src="..\..\..\assets\images\main\Notification.svg"></a></li>
+      <li class="text-align">   <div class="ver-line2 notification">
+        <button class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge">05</span></button>
+        <div class="dropdown-content notification-content" *ngIf="!isOpen">
+          <ul><li><a href="#" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            In in interdum eros.  </a></li>
+          <li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
+        <li><a href="#">Lorem ipsum  </a></li>
+        </ul>
+          </div>
+      </div></li>
       <li class="text-align"><a><img class="news-img" src="..\..\..\assets\images\main\news.svg"></a></li>
     </ul>
   </div>

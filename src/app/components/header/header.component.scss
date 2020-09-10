@@ -105,7 +105,6 @@ span{
   position: absolute;
   background-color: #fff;
   min-width: 190px;
-  width: 250px;
   border-radius: 0 0 4px 4px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -115,9 +114,9 @@ span{
 .dropdown-content::after, .notification-content::after{
   content: "";
   position: absolute;
-  top: -14%;
+  top: -13%;
   left: 57%;
-    margin-left: 79px;
+    margin-left: 55px;
     border-width: 10px;
     border-bottom: 16px solid #f8f8f8;
   border-style: solid;
@@ -137,10 +136,16 @@ span{
 .notification-content{
   top: 153% !important;
   left: auto !important;
+  width: 250px !important;
   ul{
     list-style: none;
     padding: 0px 15px !important;
     margin: 0px;
+    overflow-y: scroll;
+    margin: 15px 10px 15px 0 !important;
+    scrollbar-width: thin;
+    scrollbar-color: #7b7b7b #f1f1f1;
+    height: 170px;
     li{
     border-bottom: 1px solid #c4c4c4;
     overflow: hidden;
@@ -149,24 +154,71 @@ span{
       border: none;
     }
     a{
-      padding: 15px 0px !important;
+      padding: 10px 0px !important;
     }
   }
 }
+.notification {
+  position: relative;
+}
 
+.notification .badge {
+  position: absolute;
+  top: 6px;
+  right: 21px;
+  padding-top: 4px;
+  border-radius: 50%;
+  background-color: #F16A21;
+  color: white;
+  font-size: 8px;
+  -moz-margin-end: 5px;
+  width: 15px;
+  height: 15px;
+}
+.notification-content{
+  ul::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+.notification-content{
+  ul::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 15px;
+}
+}
+.notification-content{
+  ul::-webkit-scrollbar-thumb {
+  background: #7b7b7b; 
+  border-radius: 15px;
+  max-height: 10px !important;
+}
+}
+.notification-content {
+  ul::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+}
+@-moz-document url-prefix(){
+  .notification .badge{
+    padding-top:3px !important;
+    top: 5px !important;
+    right: 19px !important;
+  }
+}
 .dropdown-content{
+  width: 150px;
   ul{
     list-style: none;
     margin: 0px;
     padding: 0px;
     li{
-    }
-    a {
-      color:#57565c;
-      text-decoration: none;
-      display: block;
-      font-size: 14px;
-      padding: 10px 15px;
+      a {
+        color:#57565c;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+        padding: 10px 15px;
+      }
     }
   }
 
@@ -181,7 +233,6 @@ span{
   background-color: #f8f8f8;
   padding: 8px 17px;
   color: #fff !important;
-  font-size: 14px !important;
   img{
     padding-right: 15px;
     width: 50px;
@@ -189,7 +240,7 @@ span{
   }
 
  .user{
-   font-size: 14px !important;
+   font-size: 16px !important;
    color: #000;
    display: inline-grid;
  }
@@ -276,30 +327,7 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-.notification {
-  position: relative;
-}
 
-.notification .badge {
-  position: absolute;
-  top: 6px;
-  right: 21px;
-  padding-top: 4px;
-  border-radius: 50%;
-  background-color: #F16A21;
-  color: white;
-  font-size: 8px;
-  -moz-margin-end: 5px;
-  width: 15px;
-  height: 15px;
-}
-@-moz-document url-prefix(){
-  .notification .badge{
-    padding-top:3px !important;
-    top: 5px !important;
-    right: 19px !important;
-  }
-}
 //header ends here//
 @media only screen and (min-width: 320px) and (max-width:425px){
   .nav-header{
@@ -329,15 +357,11 @@ input:checked + .slider:before {
               width: 50%;
           }
       }
-      // a{
-      //     // padding-right: 15px;
-      // }
+    
       .text-align{
         text-align: center;
       }
-      // .mb-search-width{
-      //   width: 70% !important;
-      // }
+    
       .mobile-search{
           border: 0;
           background: transparent;
@@ -357,7 +381,36 @@ input:checked + .slider:before {
         width: 20px;
       }
   }
+  .dropdown-content, .notification-content {
+    position: absolute;
+    background-color: #fff;
+    // min-width: 190px;
+    width: max-content;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0px;
+    top: -20px;
+  }
+  .dropdown-content::after, .notification-content::after{
+    position: absolute;
+    top: -14%;
+    left: 57%;
+      margin-left: 79px;
+      border-width: 10px;
+      border-bottom: 16px solid #f8f8f8;
+    border-style: solid;
+    border-color: transparent transparent #f8f8f8 transparent;
+  }
+  .ver-line2{
+    border: 0px;
+  } 
+.notification .badge{
+  top: 5px;
+  left: 35px;
 }
+}
+
 
 @media only screen and (min-width:426px) and (max-width:1440px){
   .nav-mobile-header{

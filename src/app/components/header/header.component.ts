@@ -3,13 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-interface Hours {
-  id: number;
-  desc: string;
-  count: string;
-  value: number;
-  arrowFlag: boolean;
-}
+// interface Hours {
+//   id: number;
+//   desc: string;
+//   count: string;
+//   value: number;
+//   arrowFlag: boolean;
+// }
 
 @Component({
   selector: 'ev-header',
@@ -22,8 +22,9 @@ interface Hours {
 export class HeaderComponent implements OnInit {
   isShow = true;
   isOpen = true;
-  arrHours: Hours[] = [];
+  notificationCount: any;
   currentUser =  localStorage.getItem("user");
+  hoursCount: any;
   toggleDropdown($event){
     $event.stopPropagation();
     this.isShow = !this.isShow;
@@ -41,10 +42,22 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.httpService.get('assets/header_count.json').subscribe(
-      data => {
-        this.arrHours = data as Hours[];	 // FILL THE ARRAY WITH DATA.
-         console.log(this.arrHours);
+    this.httpService.get('assets/header_count.json').subscribe( res => {
+        // this.arrHours = data; // FILL THE ARRAY WITH DATA.
+        const data: any = res;
+        // this.hoursCount = res[0].hoursCount;
+        data.forEach(e => {
+          if (e.hoursCount) {
+            this.hoursCount = e.hoursCount;
+            // console.log(e.hoursCount);
+          }
+          if (e.notification){
+            this.notificationCount = e.notification;
+          }
+        // this.hoursCount = element.hoursCount;
+        // console.log(this.hoursCount);
+        });
+        // console.log(this.hoursCount);
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);

@@ -4,27 +4,22 @@
         <a class="navbar-brand logo" href="#">
           <img src="../../../../assets/images/main/logo.svg" alt="">
         </a>
-        <div class="ver-line" *ngFor="let hours of arrHours; index as i;">{{hours.desc}}:{{hours.count}}
-          <span *ngIf="hours.arrowFlag===true; else elseBlock"> ({{hours.value}}% )<img src="..\..\..\assets\images\main\arrow_up.svg">
+        <div class="ver-line" *ngFor="let data of hoursCount; index as i;">{{data.desc}}:{{data.count}}
+          <span *ngIf="data.arrowFlag===true; else elseBlock"> ({{data.value}}% )&nbsp;<img src="..\..\..\assets\images\main\arrow_up.svg">
           </span>
           <ng-template #elseBlock>
-            <span>({{hours.value}}% )<img src="..\..\..\assets\images\main\arrow_down.svg"></span>
+            <span>({{data.value}}% )&nbsp;<img src="..\..\..\assets\images\main\arrow_down.svg"></span>
           </ng-template>
         </div>
+
       </div>
         <div class="ver-line2">
           <ev-dashboard-search></ev-dashboard-search>
         </div>
-      <div class="ver-line2 notification">
-        <button class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge">05</span></button>
-        <div class="dropdown-content notification-content" *ngIf="!isOpen">
-          <ul><li><a href="#" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            In in interdum eros.  </a></li>
-          <li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
-        <li><a href="#">Lorem ipsum  </a></li>
-        <li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
-        <li><a href="#">Lorem ipsum  </a></li><li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
-        <li><a href="#">Lorem ipsum  </a></li>
+      <div class="ver-line2 notification" >
+        <button  *ngIf="notificationCount"  class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge" *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></button>
+        <div class="dropdown-content notification-content" *ngIf="!isOpen && notificationCount.length > 0 ">
+          <ul><li *ngFor="let data of notificationCount;" ><a href="#" class="">{{data.desc | charlimitpipe: 40}} </a></li>
         </ul>
           </div>
       </div>
@@ -44,7 +39,7 @@
               </label></div> -->
             <li><a><button class="btn btn-primary btn-logout"(click)="logout()">Logout</button></a></li>
         </ul>
-          </div>
+         </div>
         </div>
   </div>
 </nav>

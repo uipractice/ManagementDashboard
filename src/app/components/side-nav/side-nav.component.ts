@@ -21,7 +21,7 @@ export class SideNavComponent implements OnInit {
     this.httpService.get('assets/side_nav.json').subscribe(
       data => {
         this.arrIcons = data as Icon[];	 // FILL THE ARRAY WITH DATA.
-         console.log(this.arrIcons);
+         // console.log(this.arrIcons);
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);

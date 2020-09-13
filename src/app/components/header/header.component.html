@@ -1,15 +1,23 @@
 <nav class="navbar navbar-expand-lg nav-header">
   <div class="ds-con">
       <div class="col-align">
-        <a class="navbar-brand logo" href="#">
-          <img src="../../../../assets/images/main/logo.svg" alt="">
-        </a>
-        <div class="ver-line" *ngFor="let hours of arrHours; index as i;">{{hours.desc}}:{{hours.count}}
+          <img class="navbar-brand logo" src="../../../../assets/images/main/logo.svg" alt="">
+        <!-- <div class="ver-line" *ngFor="let hours of arrHours; index as i;">{{hours.desc}}:{{hours.count}}
           <span *ngIf="hours.arrowFlag===true; else elseBlock"> ({{hours.value}}% )<img src="..\..\..\assets\images\main\arrow_up.svg">
           </span>
           <ng-template #elseBlock>
             <span>({{hours.value}}% )<img src="..\..\..\assets\images\main\arrow_down.svg"></span>
           </ng-template>
+        </div> -->
+        <div class="ver-line">
+          <span class="hours-detail">Total Working Hours:2400 </span>
+          <span class="hours-perc">(10%) </span>
+          <span class="hours-img"><img src="..\..\..\assets\images\main\arrow_up.svg"></span>
+        </div>
+        <div class="ver-line">
+          <span class="hours-detail">Average Hours:08 </span>
+          <span class="hours-perc">(10%) </span>
+          <span class="hours-img"><img src="..\..\..\assets\images\main\arrow_down.svg"></span>
         </div>
       </div>
         <div class="ver-line2">
@@ -55,25 +63,38 @@
 
 <nav class="navbar nav-mobile-header">
   <div class="nav-width">
-      <ul>
-        <li>
-        <a><img src="..\..\..\assets\images\main\Hamburger.svg"></a>
-        </li>
-        <li class="pdt-0">
+      <a><img src="..\..\..\assets\images\main\Hamburger.svg"></a>
       <a><img src="..\..\..\assets\images\main\logo.svg"></a>
-      </li>
-      <li class="mb-search-width"><input type="search" class="mobile-search"><img class="img" src="..\..\..\assets\images\main\search.svg"></li>
-      <li class="text-align">   <div class="ver-line2 notification">
-        <button class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge">05</span></button>
+  </div>
+  <div class="nav-option">
+      <div class="search-mobile">
+        <button class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\search.svg"></button>
         <div class="dropdown-content notification-content" *ngIf="!isOpen">
-          <ul><li><a href="#" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <ul>
+            <button type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <li><a href="#" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             In in interdum eros.  </a></li>
           <li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
         <li><a href="#">Lorem ipsum  </a></li>
         </ul>
           </div>
-      </div></li>
-      <li class="text-align"><a><img class="news-img" src="..\..\..\assets\images\main\news.svg"></a></li>
-    </ul>
-  </div>
+      </div>
+      <div class="notification">
+        <button class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge">05</span></button>
+        <div class="dropdown-content notification-content" *ngIf="!isOpen">
+          <ul>
+            <button type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <li><a href="#" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            In in interdum eros.  </a></li>
+          <li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
+        <li><a href="#">Lorem ipsum  </a></li>
+        </ul>
+          </div>
+      </div>
+      <a><img class="news-img" src="..\..\..\assets\images\main\news.svg"></a>
+    </div>
 </nav>

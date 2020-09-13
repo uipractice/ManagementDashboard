@@ -13,10 +13,10 @@ import { ModuleDefaultRoutingModule } from './modules/module-default/module-defa
 import { ModuleDefaultModule } from './modules/module-default/module-default.module';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { CharLimitpipe } from './components/pipes/char-limit.pipe';
 @NgModule({
   declarations: [AppComponent, HeaderComponent, SideNavComponent,
-    DashboardContainerComponent, DashboardSearchComponent, DashboardContainerComponent, LoginComponent],
+    DashboardContainerComponent, DashboardSearchComponent, DashboardContainerComponent, LoginComponent, CharLimitpipe],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

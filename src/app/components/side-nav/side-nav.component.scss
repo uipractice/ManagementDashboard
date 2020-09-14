@@ -51,9 +51,9 @@ button.click-to-top {
   button.click-to-top:hover ::after{
     content: "";
     position: absolute;
-    left: -27px;
-    top: 11px;
-    margin-left: 5px;
+    left: -26px;
+    top: 9px;
+    margin-left: 6px;
     border-width: 7px;
     border-style: solid;
     border-color: transparent #F58944 transparent transparent;
@@ -62,15 +62,17 @@ button.click-to-top {
   button.click-to-top p {
     // display: none;
     position: absolute;
-    bottom: 5px;  
-    left: 70px;
+    bottom: 11px;
+    left: 65px;
     background: #F58944;
     color: #fff;
     border-radius: 4px;
+    font-size: 14px;
+    height: 32px;
   }
   button.click-to-top:hover p {
     display: block; 
-    padding: 8px 15px; 
+    padding: 5px 15px; 
     width: auto;
     // font-size: 14px;
   }

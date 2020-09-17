@@ -155,7 +155,7 @@ span{
     overflow-y: scroll;
     margin: 15px 10px 15px 0 !important;
     scrollbar-width: thin;
-    scrollbar-color: #7b7b7b #f1f1f1;
+    scrollbar-color: #afaeae #e3e1e1;
     height: 170px;
     li{
     border-bottom: 1px solid #c4c4c4;
@@ -193,20 +193,20 @@ span{
 }
 .notification-content{
   ul::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #e3e1e1; 
   border-radius: 15px;
 }
 }
 .notification-content{
   ul::-webkit-scrollbar-thumb {
-  background: #7b7b7b; 
+  background: #afaeae; 
   border-radius: 15px;
-  max-height: 10px !important;
+  height: 5px !important;
 }
 }
 .notification-content {
   ul::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #afaeae;
 }
 }
 @-moz-document url-prefix(){
@@ -229,7 +229,7 @@ span{
         display: block;
         font-size: 14px;
         padding: 12px;
-        line-height: 14px;
+        line-height: 18px;
       }
     }
   }

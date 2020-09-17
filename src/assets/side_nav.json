@@ -1,17 +1,17 @@
 [{"id":1,
-  "name":"Default",
-   "icon":"assets/images/main/dashbboard-icon.svg"
+  "name":"Dashboard",
+   "icon":"assets/images/main/Leftnav/Dashboard_line.svg"
   },
   {"id":2,
-    "name":"Accounts",
-    "icon":"assets/images/main/accounts_projects.svg"
+    "name":"Admin",
+    "icon":"assets/images/main/Leftnav/Admin_line.svg"
   },
   {"id":3,
     "name":"HR",
-    "icon":"assets/images/main/HR-svg.svg"
+    "icon":"assets/images/main/Leftnav/hr_line.svg"
   },
   {"id":4,
     "name":"IT",
-    "icon":"assets/images/main/IT-svg.svg"
+    "icon":"assets/images/main/Leftnav/IT_line.svg"
   }
   ]

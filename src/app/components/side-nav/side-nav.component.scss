@@ -4,7 +4,7 @@
   border-radius:0px 0px 25px 0;
   background-color: #023047;
   width: 76px;
-  height: 560px;
+  height: Calc(100vh - 66px);
 }
 /* Style the buttons inside the tab */
 .tab button {
@@ -20,7 +20,6 @@
   text-align: center;
   cursor: pointer;
   transition: 0.3s;
-  font-size: 17px;
 }
 .tab button:hover, .tab button:active,
 .tab button:visited, .tab button:focus{
@@ -44,11 +43,10 @@ button.click-to-top {
   position:relative;
   }
   
-  button.click-to-top:hover{
+  .nav-img:hover{
   z-index:10;
   }
- 
-  button.click-to-top:hover ::after{
+ .nav-img:hover ::after{
     content: "";
     position: absolute;
     left: -26px;
@@ -59,7 +57,7 @@ button.click-to-top {
     border-color: transparent #F58944 transparent transparent;
     border-right: 15px solid #f58944;
   }
-  button.click-to-top p {
+  .nav-img p {
     // display: none;
     position: absolute;
     bottom: 11px;
@@ -70,13 +68,13 @@ button.click-to-top {
     font-size: 14px;
     height: 32px;
   }
-  button.click-to-top:hover p {
+  .nav-img:hover p {
     display: block; 
     padding: 5px 15px; 
     width: auto;
     // font-size: 14px;
   }
-  button::after, .click-to-top a:hover::after{
+  button::after, .nav-img:hover::after{
     border: 0px !important;
   }
   a::after{
@@ -88,6 +86,10 @@ button.click-to-top {
 .tablinks{
   margin-left: -3px;
 }
+button.click-to-top a img:hover, button.click-to-top a img:active, button.click-to-top:hover.img{
+  filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
+}
+//////ends here//////
 @media only screen and (min-width: 320px) and (max-width: 425px){
  /* Style the tab */
 .tab {

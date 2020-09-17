@@ -16,10 +16,10 @@
 .graph-head{
   display: flex;
   background: #f8f8fb;
-  padding: 15px 15px 18px;
+  padding: 10px 15px 9px;
   width: 100%;
   align-items: baseline;
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
   h5{
       color: #57565c;
   font-size: 16px;
@@ -38,16 +38,10 @@
   color: #7b7b7b;
   justify-self: auto;
   margin-left: auto;
-  // background: #fff;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
   border: 0;
-  // -webkit-appearance: none;
-  // -moz-appearance: none;
-  // appearance: none;
-  // background-image : url("../../assets/images/main/arrow_down.svg") no-repeat 100% #fff;
   background-position: right 10% top 45%;
   background-size: 12px;
-  // background-repeat: no-repeat;
 }
 .select-type:focus, .select-type:active{
   outline: none;
@@ -56,12 +50,16 @@
   width: 85px !important;
 }
 .graph-body{
-  padding: 15px 15px;
+  padding: 0px 15px;
   background-color: white;
   font-size: 14px;
   color: #57565c;
   height: 330px;
   overflow: overlay;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #afaeae #e3e1e1;
+  margin: 10px 10px 10px 0px;
   ul{
       padding:0px;
       margin: 0px;
@@ -82,6 +80,21 @@
           padding-bottom: 0px;
       }
   }
+}
+.graph-body::-webkit-scrollbar {
+  width: 5px;
+}
+.graph-body::-webkit-scrollbar-track {
+background: #e3e1e1; 
+border-radius: 15px;
+}
+.graph-body::-webkit-scrollbar-thumb {
+background: #afaeae; 
+border-radius: 15px;
+height: 5%;
+}
+.graph-body::-webkit-scrollbar-thumb:hover {
+background: #afaeae;
 }
 .graph-accounts{
   width: 68%;

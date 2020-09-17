@@ -4,10 +4,11 @@
   border-radius:0px 0px 25px 0;
   background-color: #023047;
   width: 76px;
+  min-height: 560px;
   height: calc(100vh - 66px);
 }
 /* Style the buttons inside the tab */
-.tab button {
+.tab .click-to-top {
   border-bottom: 1px solid #747474;
   display: block;
   border-left: 5px solid #023047;
@@ -21,13 +22,13 @@
   cursor: pointer;
   transition: 0.3s;
 }
-.tab button:hover, .tab button:active,
-.tab button:visited, .tab button:focus{
+.tab .click-to-top:hover, .tab .click-to-top:active,
+.tab .click-to-top:visited, .tab .click-to-top:focus{
   border-left: 5px solid #239EC5;
   outline: none;
 }
 /* Create an active/current "tab button" class */
-.tab button.active {
+.tab .click-to-top.active {
   border-left: 2px solid #239EC5;
 }
 /* Style the tab content */
@@ -38,7 +39,7 @@
   border-left: none;
 }
 
-button.click-to-top {
+.click-to-top {
   // display:inline-block;
   position:relative;
   }
@@ -57,7 +58,7 @@ button.click-to-top {
     border-color: transparent #F58944 transparent transparent;
     border-right: 15px solid #f58944;
   }
-  .nav-img p {
+  .nav-img .leftNavIcon {
     // display: none;
     position: absolute;
     bottom: 11px;
@@ -68,13 +69,13 @@ button.click-to-top {
     font-size: 14px;
     height: 32px;
   }
-  .nav-img:hover p {
+  .nav-img:hover .leftNavIcon {
     display: block;
     padding: 5px 15px;
     width: auto;
     // font-size: 14px;
   }
-  button::after, .nav-img:hover::after{
+  .click-to-top::after, .nav-img:hover::after{
     border: 0px !important;
   }
   a::after{
@@ -86,7 +87,7 @@ button.click-to-top {
 .tablinks{
   margin-left: -3px;
 }
-button.click-to-top a img:hover, button.click-to-top a img:active, button.click-to-top:hover.img{
+.click-to-top a img:hover, .click-to-top a img:active, .click-to-top:hover.img{
   filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
 }
 //////ends here//////
@@ -101,7 +102,7 @@ button.click-to-top a img:hover, button.click-to-top a img:active, button.click-
   position: sticky;
   top: 67px;
   z-index: auto;
-  p{
+  .leftNavIcon{
     text-align:center;
     margin-bottom: 0;
     margin-top: 5px;
@@ -109,7 +110,7 @@ button.click-to-top a img:hover, button.click-to-top a img:active, button.click-
   }
 }
 /* Style the buttons inside the tab */
-.tab button {
+.tab .click-to-top {
   display: inline-grid;
   border-bottom: 2px solid #023047;
   border-right: 0px;
@@ -125,13 +126,13 @@ button.click-to-top a img:hover, button.click-to-top a img:active, button.click-
   text-align:-webkit-center;
   justify-content: center;
 }
-.tab button:hover, .tab button:active,
-.tab button:visited, .tab button:focus{
+.tab .click-to-top:hover, .tab .click-to-top:active,
+.tab .click-to-top:visited, .tab .click-to-top:focus{
   border: 0px ;
   outline: none;
 }
 /* Create an active/current "tab button" class */
-.tab button.active {
+.tab .click-to-top.active {
   border-bottom: 0px;
 }
 /* Style the tab content */
@@ -141,10 +142,10 @@ button.click-to-top a img:hover, button.click-to-top a img:active, button.click-
   width: 70%;
   border-left: none;
 }
-button.click-to-top p{
+.click-to-top .leftNavIcon{
   display: contents !important;
 }
-button.click-to-top p::after{
+.click-to-top .leftNavIcon::after{
   display: none ;
 }
 }
@@ -153,7 +154,7 @@ button.click-to-top p::after{
     position: fixed;
     top: 66px;
     z-index: 1;
-    p{
+    .leftNavIcon{
       display: none;
     }
   }

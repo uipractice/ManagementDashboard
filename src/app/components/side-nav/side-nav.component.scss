@@ -4,7 +4,7 @@
   border-radius:0px 0px 25px 0;
   background-color: #023047;
   width: 76px;
-  height: Calc(100vh - 66px);
+  height: calc(100vh - 66px);
 }
 /* Style the buttons inside the tab */
 .tab button {
@@ -42,7 +42,7 @@ button.click-to-top {
   // display:inline-block;
   position:relative;
   }
-  
+
   .nav-img:hover{
   z-index:10;
   }
@@ -69,8 +69,8 @@ button.click-to-top {
     height: 32px;
   }
   .nav-img:hover p {
-    display: block; 
-    padding: 5px 15px; 
+    display: block;
+    padding: 5px 15px;
     width: auto;
     // font-size: 14px;
   }
@@ -143,10 +143,10 @@ button.click-to-top a img:hover, button.click-to-top a img:active, button.click-
 }
 button.click-to-top p{
   display: contents !important;
-} 
+}
 button.click-to-top p::after{
   display: none ;
-} 
+}
 }
 @media only screen and (min-width:426px) and (max-width:1440px){
   .tab{

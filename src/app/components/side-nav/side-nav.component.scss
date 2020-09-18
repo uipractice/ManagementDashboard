@@ -57,7 +57,7 @@ button.click-to-top {
     border-color: transparent #F58944 transparent transparent;
     border-right: 15px solid #f58944;
   }
-  .nav-img p {
+  .nav-img span {
     // display: none;
     position: absolute;
     bottom: 11px;
@@ -68,7 +68,7 @@ button.click-to-top {
     font-size: 14px;
     height: 32px;
   }
-  .nav-img:hover p {
+  .nav-img:hover span {
     display: block;
     padding: 5px 15px;
     width: auto;
@@ -141,11 +141,14 @@ button.click-to-top a img:hover, button.click-to-top a img:active, button.click-
   width: 70%;
   border-left: none;
 }
-button.click-to-top p{
+button.click-to-top span{
   display: contents !important;
 }
-button.click-to-top p::after{
+button.click-to-top span::after{
   display: none ;
+}
+.tab button a{
+  display: grid;
 }
 }
 @media only screen and (min-width:426px) and (max-width:1440px){
@@ -153,7 +156,7 @@ button.click-to-top p::after{
     position: fixed;
     top: 66px;
     z-index: 1;
-    p{
+    span{
       display: none;
     }
   }

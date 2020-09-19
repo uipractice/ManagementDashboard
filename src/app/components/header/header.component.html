@@ -25,14 +25,14 @@
           <ev-dashboard-search></ev-dashboard-search>
         </div>
       <div class="ver-line2 notification" >
-        <button  *ngIf="notificationCount"  class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge" *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></button>
+        <a  *ngIf="notificationCount"  class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge" *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
         <div class="dropdown-content notification-content" *ngIf="!isOpen && notificationCount.length > 0 ">
           <ul><li *ngFor="let data of notificationCount;" ><a href="#" class="">{{data.desc | charlimitpipe: 40}} </a></li>
         </ul>
           </div>
       </div>
       <div class="dropdown ver-line2 pdr-0">
-        <button class="dropbtn" (click)="toggleDropdown($event)"><img src="..\..\..\assets\images\main\user.svg"><img class="downarrow" src="..\..\..\assets\images\main\down-arrow-user.svg"></button>
+        <a class="dropbtn" (click)="toggleDropdown($event)"><img src="..\..\..\assets\images\main\user.svg"><img class="downarrow" src="..\..\..\assets\images\main\down-arrow-user.svg"></a>
          <div class="dropdown-content" *ngIf="!isShow">
            <ul>
              <li> <a href="#" class="user-dropdown">

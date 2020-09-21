@@ -8,7 +8,7 @@
   height: calc(100vh - 66px);
 }
 /* Style the buttons inside the tab */
-.tab .click-to-top {
+.tab .ClickTop {
   border-bottom: 1px solid #747474;
   display: block;
   border-left: 5px solid #023047;
@@ -22,13 +22,13 @@
   cursor: pointer;
   transition: 0.3s;
 }
-.tab .click-to-top:hover, .tab .click-to-top:active,
-.tab .click-to-top:visited, .tab .click-to-top:focus{
+.tab .ClickTop:hover, .tab .ClickTop:active,
+.tab .ClickTop:visited, .tab .ClickTop:focus{
   border-left: 5px solid #239EC5;
   outline: none;
 }
 /* Create an active/current "tab button" class */
-.tab .click-to-top.active {
+.tab .ClickTop.active {
   border-left: 2px solid #239EC5;
 }
 /* Style the tab content */
@@ -39,15 +39,15 @@
   border-left: none;
 }
 
-.click-to-top {
+.ClickTop {
   // display:inline-block;
   position:relative;
   }
 
-  .nav-img:hover{
+  .NavImg:hover{
   z-index:10;
   }
- .nav-img:hover ::after{
+ .NavImg:hover ::after{
     content: "";
     position: absolute;
     left: -26px;
@@ -58,7 +58,7 @@
     border-color: transparent #F58944 transparent transparent;
     border-right: 15px solid #f58944;
   }
-  .nav-img .leftNavIcon {
+  .NavImg .leftNavIcon {
     // display: none;
     position: absolute;
     bottom: 26px;
@@ -69,25 +69,28 @@
     font-size: 14px;
     height: 32px;
   }
-  .nav-img:hover .leftNavIcon {
+  .NavImg:hover .leftNavIcon {
     display: block;
     padding: 5px 15px;
     width: auto;
     // font-size: 14px;
   }
-  .click-to-top::after, .nav-img:hover::after{
+  .NavImg:focus{
+    outline: none;
+  }
+  .ClickTop::after, .NavImg:hover::after{
     border: 0px !important;
   }
   a::after{
     display: none;
   }
-  .tab:hover .click-to-top{
+  .tab:hover .ClickTop{
     visibility: visible;
   }
 .tablinks{
   margin-left: -3px;
 }
-.click-to-top span img:hover, .click-to-top span img:active, .click-to-top:hover.img{
+.ClickTop span img:hover, .ClickTop span img:active, .ClickTop:hover.img{
   filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
 }
 //////ends here//////
@@ -111,7 +114,7 @@
   }
 }
 /* Style the buttons inside the tab */
-.tab .click-to-top {
+.tab .ClickTop {
   display: inline-grid;
   border-bottom: 2px solid #023047;
   border-right: 0px;
@@ -127,13 +130,13 @@
   text-align:-webkit-center;
   justify-content: center;
 }
-.tab .click-to-top:hover, .tab .click-to-top:active,
-.tab .click-to-top:visited, .tab .click-to-top:focus{
+.tab .ClickTop:hover, .tab .ClickTop:active,
+.tab .ClickTop:visited, .tab .ClickTop:focus{
   border: 0px ;
   outline: none;
 }
 /* Create an active/current "tab button" class */
-.tab .click-to-top.active {
+.tab .ClickTop.active {
   border-bottom: 0px;
 }
 /* Style the tab content */
@@ -143,16 +146,16 @@
   width: 70%;
   border-left: none;
 }
-.click-to-top .leftNavIcon{
+.ClickTop .leftNavIcon{
   display: contents !important;
 }
-.click-to-top .leftNavIcon::after{
+.ClickTop .leftNavIcon::after{
   display: none ;
 }
 .tab button a{
   display: grid;
 }
-.nav-img{
+.NavImg{
   display: grid;
 }
 }

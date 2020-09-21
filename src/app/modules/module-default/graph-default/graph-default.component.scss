@@ -1,19 +1,19 @@
-.dashboard-graph{
+.DashboardGraph{
   margin-top: 15px;
   display: flex;
 }
-.graph{
+.Graph{
   width: 45%;
   border: 0;
   box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
   margin-right: 13px;
   background-color: #fff;
 }
-.graph-last{
+.GraphLast{
   width: 22% !important;
   margin-right: 0 !important;
 }
-.graph-head{
+.GraphHead{
   display: flex;
   background: #f8f8fb;
   padding: 10px 15px 9px;
@@ -30,7 +30,7 @@
 .ls{
   letter-spacing: -0.2px;
 }
-.select-type{
+.SelectType{
   width: 120px;
   height: 30px;
   font-size: 14px;
@@ -43,13 +43,13 @@
   background-position: right 10% top 45%;
   background-size: 12px;
 }
-.select-type:focus, .select-type:active{
+.SelectType:focus, .SelectType:active{
   outline: none;
 }
-.wd-select{
+.WidSelect{
   width: 85px !important;
 }
-.graph-body{
+.GraphBody{
   padding: 0px 15px;
   background-color: white;
   font-size: 14px;
@@ -81,36 +81,36 @@
       }
   }
 }
-.graph-body::-webkit-scrollbar {
+.GraphBody::-webkit-scrollbar {
   width: 5px;
 }
-.graph-body::-webkit-scrollbar-track {
+.GraphBody::-webkit-scrollbar-track {
 background: #e3e1e1; 
 border-radius: 15px;
 }
-.graph-body::-webkit-scrollbar-thumb {
+.GraphBody::-webkit-scrollbar-thumb {
 background: #afaeae; 
 border-radius: 15px;
 height: 5%;
 }
-.graph-body::-webkit-scrollbar-thumb:hover {
+.GraphBody::-webkit-scrollbar-thumb:hover {
 background: #afaeae;
 }
-.graph-accounts{
+.GraphAccounts{
   width: 68%;
   margin-right: 0 !important;
 }
 
 @media only screen and (max-width:425px) and (min-width:320px){
-  .dashboard-graph{
+  .DashboardGraph{
       display: block;
     }
-    .graph{
+    .Graph{
       width: 32% !important;
       margin-bottom: 40px;
       height: 370px;
     }
-    .graph-last{
+    .GraphLast{
       // width: 22% !important;
       margin-right: 0 !important;
   }

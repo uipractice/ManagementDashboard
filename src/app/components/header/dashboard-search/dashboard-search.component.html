@@ -1,8 +1,9 @@
 
   <div class="">
-    <input type="search" class="search" on-click="toggleDropdown($event)" placeholder="Search"><img class="search-img" src="..\..\..\assets\images\main\search.svg">
-    <div class="search-dropdown" *ngIf="!isShow">
-      <div class="search-dropdown-topbtn">
+    <input type="search" class="search SearchMob" on-click="toggleDropdown($event)" placeholder="Search"><img class="SearchImg" src="..\..\..\assets\images\main\search.svg">
+    <div class="">
+    <div class="SearchDropdown" *ngIf="!isShow">
+      <div class="SearchDropdownTopbtn">
         <ul>
         <li><a href="#" class=""><button>HR</button></a></li>
         <li><a href="#"><button>IT</button></a></li>
@@ -10,9 +11,9 @@
         <li><a href="#"><button>People</button></a></li>
         </ul>
       </div>
-      <div class="search-dropdown-data">
+      <div class="SearchDropdownData">
         <ul>
-        <li><a href="#" class="disabled">Try Searching for</a></li>
+        <li class="disabled"><a href="#">Try Searching for</a></li>
         <li><a href="#" class="">People </a></li>
         <li><a href="#">Account</a></li>
         <li><a href="#">Practice</a></li>
@@ -20,4 +21,5 @@
         </ul>
       </div>
     </div>
+  </div>
   </div>

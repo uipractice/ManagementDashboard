@@ -1,51 +1,51 @@
-<nav class="navbar navbar-expand-lg nav-header">
+<nav class="navbar navbar-expand-lg NavHeader">
   <div class="ds-con">
-      <div class="col-align">
+      <div class="ColAlign">
           <img class="navbar-brand logo" src="../../../../assets/images/main/logo.svg" alt="">
-        <!-- <div class="ver-line" *ngFor="let hours of arrHours; index as i;">{{hours.desc}}:{{hours.count}}
+        <!-- <div class="VerLine" *ngFor="let hours of arrHours; index as i;">{{hours.desc}}:{{hours.count}}
           <span *ngIf="hours.arrowFlag===true; else elseBlock"> ({{hours.value}}% )<img src="..\..\..\assets\images\main\arrow_up.svg">
           </span>
           <ng-template #elseBlock>
             <span>({{data.value}}% )&nbsp;<img src="..\..\..\assets\images\main\arrow_down.svg"></span>
           </ng-template>
         </div> -->
-        <div class="ver-line">
-          <span class="hours-detail">Total Working Hours:2400 </span>
-          <span class="hours-perc">(10%) </span>
-          <span class="hours-img"><img src="..\..\..\assets\images\main\arrow_up.svg"></span>
+        <div class="VerLine">
+          <span class="HoursDetails">Total Working Hours:2400 </span>
+          <span class="HoursPerc">(10%) </span>
+          <span class="HoursImg"><img src="..\..\..\assets\images\main\arrow_up.svg"></span>
         </div>
-        <div class="ver-line">
-          <span class="hours-detail">Average Hours:08 </span>
-          <span class="hours-perc">(10%) </span>
-          <span class="hours-img"><img src="..\..\..\assets\images\main\arrow_down.svg"></span>
+        <div class="VerLine">
+          <span class="HoursDetails">Average Hours:08 </span>
+          <span class="HoursPerc">(10%) </span>
+          <span class="HoursImg"><img src="..\..\..\assets\images\main\arrow_down.svg"></span>
         </div>
 
       </div>
-        <div class="ver-line2">
+        <div class="VerLine2">
           <ev-dashboard-search></ev-dashboard-search>
         </div>
-      <div class="ver-line2 notification" >
+      <div class="VerLine2 Notification" >
         <a  *ngIf="notificationCount"  class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge" *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
-        <div class="dropdown-content notification-content" *ngIf="!isOpen && notificationCount.length > 0 ">
+        <div class="DropdownContent NotificationContent" *ngIf="!isOpen && notificationCount.length > 0 ">
           <ul><li *ngFor="let data of notificationCount;" ><a href="#" class="">{{data.desc | charlimitpipe: 40}} </a></li>
         </ul>
           </div>
       </div>
-      <div class="dropdown ver-line2 pdr-0">
+      <div class="dropdown VerLine2 pdr-0">
         <a class="dropbtn" (click)="toggleDropdown($event)"><img src="..\..\..\assets\images\main\user.svg"><img class="downarrow" src="..\..\..\assets\images\main\down-arrow-user.svg"></a>
-         <div class="dropdown-content" *ngIf="!isShow">
+         <div class="DropdownContent" *ngIf="!isShow">
            <ul>
-             <li> <a href="#" class="user-dropdown">
+             <li class="UserIcon"> <a href="#" class="UserDropdown">
                 <img src="..\..\..\assets\images\main\user.svg">
                 <div class="user">User Name<br><span>Designation</span></div>
               </a></li>
               <li><a href="#">My Profile</a></li>
-            <li><a href="#">Update Password</a></li>
-              <!-- <div class="dark-theme"><a href="#">Dark Theme</a><label class="switch">
+            <!-- <li><a href="#">Update Password</a></li> -->
+              <li class="dark-theme"><a href="#">Dark Theme</a><label class="switch">
                 <input type="checkbox">
                 <span class="slider round"></span>
-              </label></div> -->
-            <li><a><button class="btn btn-primary btn-logout"(click)="logout()">Logout</button></a></li>
+              </label></li>
+            <li><a class=""(click)="logout()">Logout</a></li>
         </ul>
          </div>
         </div>
@@ -56,15 +56,18 @@
 
 
 
-<nav class="navbar nav-mobile-header">
-  <div class="nav-width">
+<nav class="navbar NavMobileHeader">
+  <div class="NavWidth">
       <a><img src="..\..\..\assets\images\main\Hamburger.svg"></a>
       <a><img src="..\..\..\assets\images\main\logo.svg"></a>
   </div>
-  <div class="nav-option">
-      <div class="search-mobile">
-        <button class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\search.svg"></button>
-        <div class="dropdown-content notification-content" *ngIf="!isOpen">
+  <div class="NavOption">
+      <div class="MobileSearch">
+        <ev-dashboard-search></ev-dashboard-search>
+      </div>
+      <div class="Notification">
+        <a class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge">5</span></a>
+        <!-- <div class="DropdownContent NotificationContent" *ngIf="!isOpen">
           <ul>
             <button type="button" class="close" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -74,22 +77,8 @@
           <li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
         <li><a href="#">Lorem ipsum  </a></li>
         </ul>
-          </div>
+          </div> -->
       </div>
-      <div class="notification">
-        <button class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge">05</span></button>
-        <div class="dropdown-content notification-content" *ngIf="!isOpen">
-          <ul>
-            <button type="button" class="close" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <li><a href="#" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            In in interdum eros.  </a></li>
-          <li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
-        <li><a href="#">Lorem ipsum  </a></li>
-        </ul>
-          </div>
-      </div>
-      <a><img class="news-img" src="..\..\..\assets\images\main\news.svg"></a>
+      <div class=""><a class="dropbtn"><img class="NewsImg" src="..\..\..\assets\images\main\news.svg"></a></div>
     </div>
 </nav>

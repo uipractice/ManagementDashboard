@@ -1,4 +1,4 @@
-.nav-header{
+.NavHeader{
   background: #f7f7f7;
   box-shadow: 0px 1.5px 0px rgba(0, 0, 0, 0.15);
   padding: 10px 15px;
@@ -9,7 +9,7 @@
 .ds-con{
   display: contents;
 }
-.col-align{
+.ColAlign{
   display: flex;
   place-items: center;
   width: 65%;
@@ -33,7 +33,7 @@ p{
   font-size: 16px;
   font-weight: bold;
 }
-.ver-line{
+.VerLine{
   border-right: 1.25px solid #dddddd;
   // width: 260px;
   padding-right: 10px;
@@ -45,29 +45,29 @@ p{
     line-height: 19px;
   }
 }
-.hours-detail{
+.HoursDetail{
   color: #023047;
 }
-.hours-perc{
+.HoursPerc{
   color: #929292;
 }
-.ver-line:last-of-type{
+.VerLine:last-of-type{
   border-right: none;
 }
-.btn-logout{
+.BtnLogout{
   font-size: 10px !important;
 }
 .pdr-0{
   padding-right: 0px !important;
 }
-.ver-line2{
+.VerLine2{
   border-left: 1.25px solid #dddddd;
   height: 40px;
   padding: 0 27px;
   justify-content: center;
   display: flex;
 }
-.ver-line-last{
+.VerLine-last{
   border: 0px !important;
 }
 span{
@@ -103,7 +103,7 @@ span{
   font-size: 16px;
   border: none;
   display: grid;
-  margin-top: 7px;
+  margin-top: 10px;
 }
 .dropbtn:active, .dropbtn:visited, .dropbtn:focus{
   outline: none;
@@ -113,7 +113,7 @@ span{
   position: relative;
 }
 
-.dropdown-content, .notification-content {
+.DropdownContent, .NotificationContent {
   position: absolute;
   background-color: #fff;
   min-width: 190px;
@@ -123,7 +123,7 @@ span{
   right: 0px;
   top: 60px;
 }
-.dropdown-content::after, .notification-content::after{
+.DropdownContent::after, .NotificationContent::after{
   content: "";
   position: absolute;
   top: -13%;
@@ -134,7 +134,7 @@ span{
   border-style: solid;
   border-color: transparent transparent #f8f8f8 transparent;
 }
-.notification-content::after{
+.NotificationContent::after{
   left: 50% !important;
   content: "";
   position: absolute;
@@ -145,7 +145,7 @@ span{
   border-style: solid;
   border-color: transparent transparent #fff transparent;
 }
-.notification-content{
+.NotificationContent{
   top: 153% !important;
   left: auto !important;
   ul{
@@ -169,54 +169,55 @@ span{
     }
   }
 }
-.notification {
+.Notification {
   position: relative;
 }
 
-.notification .badge {
+.Notification .badge {
   position: absolute;
-  top: 6px;
-  right: 21px;
+  top: 8px;
+  right: 24px;
   padding-top: 4px;
   border-radius: 50%;
   background-color: #F16A21;
   color: white;
-  font-size: 8px;
+  font-size: 9px;
+  font-weight: lighter;
   -moz-margin-end: 5px;
   width: 15px;
   height: 15px;
 }
-.notification-content{
+.NotificationContent{
   ul::-webkit-scrollbar {
     width: 5px;
   }
 }
-.notification-content{
+.NotificationContent{
   ul::-webkit-scrollbar-track {
   background: #e3e1e1; 
   border-radius: 15px;
 }
 }
-.notification-content{
+.NotificationContent{
   ul::-webkit-scrollbar-thumb {
   background: #afaeae; 
   border-radius: 15px;
   height: 5px !important;
 }
 }
-.notification-content {
+.NotificationContent {
   ul::-webkit-scrollbar-thumb:hover {
   background: #afaeae;
 }
 }
 @-moz-document url-prefix(){
-  .notification .badge{
+  .Notification .badge{
     padding-top:3px !important;
-    top: 5px !important;
+    top: 8px !important;
     right: 19px !important;
   }
 }
-.dropdown-content{
+.DropdownContent{
   width: 150px;
   ul{
     list-style: none;
@@ -233,15 +234,21 @@ span{
       }
     }
   }
-
+  ul
+  li.UserIcon:hover{
+    background: #023047 !important;
+  }
+   li:hover{
+    background: #e5e5e5;
+  }
 }
-.dropdown-content a:hover {background-color: none;}
+.DropdownContent a:hover {background-color: none;}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .DropdownContent {display: block;}
 
 .dropdown:hover .dropbtn {background-color: none;}
 
-.user-dropdown{
+.UserDropdown{
   background-color: #f8f8f8;
   padding: 8px 17px;
   color: #fff !important;
@@ -275,9 +282,9 @@ span{
   position: relative;
   display: inline-block;
   width: 35px;
-  height:15px;
-  margin-top: 13px;
-  margin-left: 25px;
+  height:13px;
+  margin-top: 15px;
+  margin-left: 30px;
 }
 
 .switch input {
@@ -301,9 +308,9 @@ span{
 .slider:before {
   position: absolute;
   content: "";
-  height: 20px;
-  width: 20px;
-  left: -5px;
+  height: 18px;
+  width: 18px;
+  left: -7px;
   bottom: -2px;
   background-color: #f1f1f1;
   transition: 0.4s;
@@ -343,10 +350,10 @@ input:checked + .slider:before {
 
 //header ends here//
 @media only screen and (min-width: 320px) and (max-width:425px){
-  .nav-header{
+  .NavHeader{
       display: none;
   }
-  .nav-width{
+  .NavWidth{
     width: 100%;
     display: flex;
     place-items: center;
@@ -358,7 +365,7 @@ input:checked + .slider:before {
   .pdt-0{
       padding-top: 0px !important;
   }
-  .nav-mobile-header{
+  .NavMobileHeader{
       background-color: #023047;
       padding: 15px 0 15px 15px;
       width: 100%;
@@ -373,17 +380,17 @@ input:checked + .slider:before {
           right: 27%;
           top: 35%;
       }
-      .news-img{
+      .NewsImg{
         filter: brightness(1.5) sepia(10) hue-rotate(-70deg) saturate(1);
         width: 23px;
       }
   }
   @-moz-document url-prefix() {
-    .dropdown-content, .notification-content  {
+    .DropdownContent, .NotificationContent  {
         width: 419px !important;
     }
 }
-  .dropdown-content, .notification-content {
+  .DropdownContent, .NotificationContent {
     position: absolute;
     background-color: #fff;
     width: max-content;
@@ -401,9 +408,10 @@ input:checked + .slider:before {
       li{
         width: 100% !important;
       }
+     
     }
   }
-  .dropdown-content::after, .notification-content::after{
+  .DropdownContent::after, .NotificationContent::after{
     position: absolute;
     top: -14%;
     left: 57%;
@@ -412,12 +420,12 @@ input:checked + .slider:before {
     border-bottom: 16px solid #f8f8f8;
     border:0px;
   }
-  .ver-line2{
+  .VerLine2{
     border: 0px;
   } 
-.notification .badge{
-  top: 5px;
-  left: 35px;
+.Notification .badge{
+  top: 0px;
+  left: 30px;
 }
 .close{
   width:20px;
@@ -428,15 +436,15 @@ input:checked + .slider:before {
 .close:focus{
   outline: none;
 }
-.nav-option{
+.NavOption{
   right: 0;
   position: absolute;
   display: flex;
   place-items: center;
-  .search-mobile{
+  .MobileSearch{
     padding:0px;
   }
-  .notification{
+  .Notification{
     padding: 0px 20px;
   }
   a{
@@ -444,14 +452,17 @@ input:checked + .slider:before {
     padding-top: 4px;
   }
 }
+.dropbtn{
+  margin-top:-2px;
+}
 }
 
 
 @media only screen and (min-width:426px) and (max-width:1440px){
-  .nav-mobile-header{
+  .NavMobileHeader{
       display: none !important;
   }
-  .notification-content{
+  .NotificationContent{
   width: 250px !important;
   }
 }

@@ -1,6 +1,6 @@
 // div{ border:1px solid ;width:100%; height:calc(100vh - 66px); overflow-y: scroll;}
 // div{border:1px solid blue; width:100%; height:calc(100vh - 76px); overflow-y: scroll;}
-.dashboard-header{
+.DashboardHeader{
   padding: 22px 13px 22px 22px;
   padding-bottom: 90px;
   margin-left: 65px;
@@ -17,29 +17,29 @@
       line-height: 29px;
   }
 }
-.dashboard-header::-webkit-scrollbar {
+.DashboardHeader::-webkit-scrollbar {
   width: 5px;
 }
-.dashboard-header::-webkit-scrollbar-track {
+.DashboardHeader::-webkit-scrollbar-track {
 background: #e3e1e1; 
 border-radius: 15px;
 }
-.dashboard-header::-webkit-scrollbar-thumb {
+.DashboardHeader::-webkit-scrollbar-thumb {
 background: #afaeae; 
 border-radius: 15px;
 height: 5%;
 }
-.dashboard-header::-webkit-scrollbar-thumb:hover {
+.DashboardHeader::-webkit-scrollbar-thumb:hover {
 background: #afaeae;
 }
 @media only screen and (min-width:320px) and (max-width:425px){
-  .dashboard-header{
+  .DashboardHeader{
       margin: 0px;
       padding: 0px 15px 30px 15px;
       top: 170px;
       z-index: -1;
   }
-  .mobile-none{
+  .MobileNone{
       display: none;
   }
 

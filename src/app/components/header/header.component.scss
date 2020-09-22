@@ -194,13 +194,13 @@ span{
 }
 .NotificationContent{
   ul::-webkit-scrollbar-track {
-  background: #e3e1e1; 
+  background: #e3e1e1;
   border-radius: 15px;
 }
 }
 .NotificationContent{
   ul::-webkit-scrollbar-thumb {
-  background: #afaeae; 
+  background: #afaeae;
   border-radius: 15px;
   height: 5px !important;
 }
@@ -408,7 +408,7 @@ input:checked + .slider:before {
       li{
         width: 100% !important;
       }
-     
+
     }
   }
   .DropdownContent::after, .NotificationContent::after{
@@ -422,7 +422,7 @@ input:checked + .slider:before {
   }
   .VerLine2{
     border: 0px;
-  } 
+  }
 .Notification .badge{
   top: 0px;
   left: 30px;
@@ -464,5 +464,171 @@ input:checked + .slider:before {
   }
   .NotificationContent{
   width: 250px !important;
+  }
+}
+//dashboard search styles
+
+
+.search{
+  border: 0px ;
+  width: 356px;
+  height: 40px;
+  padding: 0 20px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  color: #BDBDBD;
+}
+
+.search:focus{
+  outline: none;
+}
+.SearchImg{
+  position: fixed;
+    top: 23px;
+    right: 180px;
+  }
+.SearchImg:focus, .SearchImg:visited, .SearchImg:active{
+  outline: none;
+  display: none;
+}
+
+.SearchDropdown{
+  width: 355px;
+  background: #fff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 0px 0px 4px 4px;
+  ul{
+    list-style: none;
+    padding:0px;
+    margin: 0px;
+  //   li{
+  //   overflow: hidden;
+  //   padding:10px;
+    a{
+      font-size: 14px;
+      color: #7b7b7b;
+      margin-bottom: 20px;
+    }
+    // }
+  }
+  .SearchDropdownTopbtn{
+    background: #f8f8f8;
+    height: 50px;
+    padding: 2px 10px 0 10px;
+    box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
+    ul{
+      display: flex;
+      margin: 0px;
+      flex-wrap: wrap;
+      li{
+        padding: 10px 0px 10px 10px;
+      }
+      button{
+        border: 0.5px solid #6a7c88;
+        background: #023047;
+        border-radius: 20px;
+        padding: 2px 20px;
+        color: #fff;
+        transition: width 2s;
+      }
+    }
+  }
+  .SearchDropdownData{
+    overflow: hidden;
+    ul li{
+      padding: 10px 20px;
+    }
+    li:hover{
+      background: #e5e5e5;
+    }
+    li.disabled a{
+        color: #bdbdbd !important;
+        font-size: 12px !important;
+    }
+  }
+}
+.SearchDropdownTopbtn ul button:hover, .SearchDropdownTopbtn ul button:active, .SearchDropdownTopbtn ul li a:focus{
+  background-color: #239EC5 !important;
+  outline: none;
+}
+
+@media only screen and (min-width: 320px) and (max-width:425px){
+.search{
+  background: transparent;
+  border: 0px;
+  box-shadow: none;
+  padding: 0px;
+  width: 15%;
+  float: right;
+  margin-left: 35px;
+}
+
+.search:focus{
+  outline: none;
+}
+.SearchImg{
+  position: absolute;
+    top: 11px;
+    left: 58%;
+  }
+.SearchImg:focus, .SearchImg:visited, .SearchImg:active{
+  outline: none;
+  display: none;
+}
+.SearchDropdown{
+  width: 355px;
+  background: #fff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 0px 0px 4px 4px;
+  ul{
+    list-style: none;
+    padding:0px;
+    margin: 0px;
+    li{
+    overflow: hidden;
+    padding:10px;
+    a{
+      font-size: 14px;
+      color: #7b7b7b;
+      margin-bottom: 20px;
+    }
+    }
+  }
+  .SearchDropdownTopbtn{
+    background: #f8f8f8;
+    padding: 10px;
+    box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
+    ul{
+      display: flex;
+      margin: 0px;
+      flex-wrap: wrap;
+      li{
+        padding-right: 0px;
+      }
+      button{
+        border: 0px;
+        background: #023047;
+        border-radius: 20px;
+        padding: 5px 20px;
+        color: #fff;
+      }
+    }
+  }
+  .SearchDropdownData{
+    padding: 10px;
+    ul li:hover{
+      background: #e5e5e5;
+    }
+  }
+
+}
+}
+@media only screen and (max-width: 900px) and (min-width:426px){
+  .SearchMob{
+    display: none;
   }
 }

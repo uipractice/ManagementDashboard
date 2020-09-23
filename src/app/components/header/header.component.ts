@@ -15,28 +15,43 @@ import { Router } from '@angular/router';
   selector: 'ev-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  host: {
-    "(document:click)": "onClick()"
-  }
+  host: {"(document:click)": "onClick()"}
 })
 export class HeaderComponent implements OnInit {
   isShow = true;
   isOpen = true;
+  isSearch = true;
+  isparentSearch: any;
   notificationCount: any;
-  currentUser =  localStorage.getItem("user");
+  currentUser =  sessionStorage.getItem("user");
   hoursCount: any;
   toggleDropdown($event){
     $event.stopPropagation();
     this.isShow = !this.isShow;
+    this.isOpen = true;
+    this.isSearch = true;
   }
   toggleDowncontent($event){
     $event.stopPropagation();
     this.isOpen = !this.isOpen;
+    this.isShow = true;
+    this.isSearch = true;
   }
+  toggledownSearch(e){
+    e.stopPropagation();
+    this.isSearch = !this.isSearch;
+    this.isShow = true;
+    this.isOpen = true;
+  }
+//   GetChildData(data){
+//     console.log(data);
+//     this.isparentSearch = data;
+//  }
 
   onClick() {
     this.isShow = true;
     this.isOpen = true;
+    this.isSearch = true;
   }
   constructor(private httpService: HttpClient, private router: Router) { }
 
@@ -74,7 +89,7 @@ export class HeaderComponent implements OnInit {
 
   }
   logout() {
-    localStorage.clear();
+    sessionStorage.clear();
     this.router.navigate(['/login']);
     }
 }

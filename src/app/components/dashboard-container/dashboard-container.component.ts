@@ -8,12 +8,12 @@ import { Router } from '@angular/router';
 })
 export class DashboardContainerComponent {
 
-  currentUser =  localStorage.getItem("user");
+  currentUser =  sessionStorage.getItem("user");
   constructor(
     private router: Router,
 ) {}
 
-  
+
 
 
 }

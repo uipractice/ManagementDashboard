@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
     submitted = false;
     // flagsCheck = false;
     message = '';
-    currentUser =  localStorage.getItem("user");
+    currentUser =  sessionStorage.getItem("user");
     returnUrl: string;
 
     constructor(
@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
       if (this.loginForm.controls['username'].value ==="EAdmin"
       && this.loginForm.controls['password'].value ==="E@MDashboard"){
       this.message = 'login success';
-      localStorage.setItem("user", this.loginForm.controls['username'].value);
+      sessionStorage.setItem("user", this.loginForm.controls['username'].value);
         this.router.navigate(['/default']);
       }else{
         this.message = 'Username or password is incorrect';

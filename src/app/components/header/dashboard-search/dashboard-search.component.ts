@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ev-dashboard-search',
@@ -7,14 +7,25 @@ import { Component, OnInit } from '@angular/core';
   host: {'(document:click)': 'onClick()'}
 })
 export class DashboardSearchComponent implements OnInit {
-  isShow = true;
-  toggleDropdown($event){
-    $event.stopPropagation();
-    this.isShow = !this.isShow;
+  @Input() isShow: boolean;
+  @Input() isOpen: boolean;
+  @Output() myOutput:EventEmitter<boolean> = new EventEmitter();
+  isSearch: boolean= true;
+  toggledownSearch(e){
+    this.myOutput.emit(this.isSearch);
+    e.stopPropagation();
+    this.isSearch = !this.isSearch;
+    this.isShow = true;
+    this.isOpen = true;
   }
   onClick() {
     this.isShow = true;
+    this.isOpen = true;
+    this.isSearch = true;
   }
+
+
+
   constructor() { }
 
   ngOnInit(): void {

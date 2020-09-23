@@ -11,8 +11,31 @@
 }
 body{
   background-color: #e5e5e5;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  // overflow-x: hidden;
+  // overflow-y: hidden;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #afaeae #e3e1e1;
+  height:100%;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+body::-webkit-scrollbar-track {
+background: #e3e1e1; 
+border-radius: 15px;
+}
+body::-webkit-scrollbar-thumb {
+background: #afaeae; 
+border-radius: 15px;
+height: 5%;
+}
+body::-webkit-scrollbar-thumb:hover {
+background: #afaeae;
+}
+:root{
+  scrollbar-color:#afaeae #e3e1e1 !important;
+  scrollbar-width: thin !important;
 }
 * {
   font-family: "lato", sans-serif !important;

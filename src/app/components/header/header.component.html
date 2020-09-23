@@ -15,7 +15,8 @@
            <!-- <ev-dashboard-search [isShow]="isShow" [isOpen]="isOpen" (myOutput) ="GetChildData($event)"></ev-dashboard-search> -->
 
   <div class="">
-    <input type="search" class="search SearchMob" on-click="toggledownSearch($event)" placeholder="Search"><img class="SearchImg" src="..\..\..\assets\images\main\search.svg">
+    <input type="search" class="search SearchMob" on-click="toggledownSearch($event)" placeholder="Search">
+    <!-- <img class="SearchImg" src="..\..\..\assets\images\main\search.svg"> -->
     <div class="">
     <div class="SearchDropdown" *ngIf="!isSearch">
       <div class="SearchDropdownTopbtn">
@@ -80,9 +81,11 @@
       <div class="MobileSearch">
         <!-- <ev-dashboard-search></ev-dashboard-search> -->
         <div class="">
-          <input type="search" class="search SearchMob" on-click="toggledownSearch($event)" placeholder="Search"><img class="SearchImg" src="..\..\..\assets\images\main\search.svg">
-          <div class="">
-          <div class="SearchDropdown" *ngIf="!isSearch">
+          <input type="search" class="search SearchMob" on-click="toggledownSearch($event)" placeholder="Search">
+          <!-- <img class="SearchImg" src="..\..\..\assets\images\main\search.svg"> -->
+          <div class="DropdownMain" *ngIf="!isSearch">
+            <div class="CloseBtn"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+          <div class="SearchDropdown">
             <div class="SearchDropdownTopbtn">
               <ul>
               <li><a href="#" class=""><button>HR</button></a></li>

@@ -279,11 +279,12 @@ span{
   display: flex;
 }
 .switch {
-  position: relative;
+  position: absolute;
+  right: 0;
   display: inline-block;
   width: 35px;
   height:13px;
-  margin-top: 15px;
+  margin-top: 18px;
   margin-left: 30px;
 }
 
@@ -303,14 +304,16 @@ span{
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
+  width: 20px;
+  height: 8px;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 18px;
-  width: 18px;
-  left: -7px;
+  height: 12px;
+  width: 12px;
+  left: -6px;
   bottom: -2px;
   background-color: #f1f1f1;
   transition: 0.4s;

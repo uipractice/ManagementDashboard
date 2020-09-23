@@ -16,7 +16,7 @@
 .GraphHead{
   display: flex;
   background: #f8f8fb;
-  padding: 10px 15px 9px;
+  padding: 9px 15px 9px;
   width: 100%;
   align-items: baseline;
   box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
@@ -34,18 +34,26 @@
   width: 120px;
   height: 30px;
   font-size: 14px;
-  padding: 5px 5px 7px;
+  padding: 5px 10px 7px;
   color: #7b7b7b;
   justify-self: auto;
   margin-left: auto;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
   border: 0;
-  background-position: right 10% top 45%;
+  // background-position: right 10% top 45%;
+  // background-size: 12px;
+  -webkit-appearance: none;
+  background: url(src/assets/images/main/down-arrow-user.svg) no-repeat right #fff;
+  background-position: right;
   background-size: 12px;
+  background-blend-mode: difference;
+  background-origin: content-box;
+  background-position-y: center;
 }
 .SelectType:focus, .SelectType:active{
   outline: none;
 }
+
 .WidSelect{
   width: 85px !important;
 }

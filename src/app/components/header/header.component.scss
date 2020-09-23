@@ -349,6 +349,9 @@ input:checked + .slider:before {
   .pdt-0{
       padding-top: 0px !important;
   }
+  .SearchDropdown .SearchDropdownTopbtn ul li{
+    padding: 7px 0px 9px 10px;
+  }
   .NavMobileHeader{
       background-color: #023047;
       padding: 15px 0 15px 15px;
@@ -526,7 +529,7 @@ font-size: 30px;
       margin: 0px;
       flex-wrap: wrap;
       li{
-        padding: 7px 0px 9px 10px;
+        padding: 10px 0px 10px 10px;
       }
       button{
         border: 0.5px solid #6a7c88;

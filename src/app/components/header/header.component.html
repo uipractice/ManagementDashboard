@@ -109,7 +109,7 @@
       </div>
       <div class="Notification">
         <a *ngIf="notificationCount"  class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge" *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
-        <div class="DropdownContent NotificationContent" *ngIf="!isOpen">
+        <!-- <div class="DropdownContent NotificationContent" *ngIf="!isOpen">
           <div class="CloseBtn"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
           <ul>
             <li><a href="#" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -117,8 +117,31 @@
           <li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
         <li><a href="#">Lorem ipsum  </a></li>
         </ul>
-          </div>
+
+          </div> -->
+          <div class="DropdownContent NotificationContent" *ngIf="!isOpen && notificationCount.length > 0">
+            <div class="CloseBtn"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+            <ul><li *ngFor="let data of notificationCount;" ><a href="#" class="">{{data.desc | charlimitpipe: 40}} </a></li>
+          </ul>
+            </div>
       </div>
-      <div class=""><a class="dropbtn"><img class="NewsImg" src="..\..\..\assets\images\main\news.svg"></a></div>
+      <div class="dropdown VerLine2 pdr-0"><a class="dropbtn" (click)="toggleDropdown($event)"><img class="NewsImg" src="..\..\..\assets\images\main\news.svg"></a>
+        <div class="DropdownContent" *ngIf="!isShow">
+          <div class="CloseBtn"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+          <ul>
+            <li class="UserIcon"> <a href="#" class="UserDropdown">
+               <img src="..\..\..\assets\images\main\user.svg">
+               <div class="user">User Name<br><span>Designation</span></div>
+             </a></li>
+             <li><a href="#">My Profile</a></li>
+           <!-- <li><a href="#">Update Password</a></li> -->
+             <li class="dark-theme"><a href="#">Dark Theme</a><label class="switch">
+               <input type="checkbox">
+               <span class="slider round"></span>
+             </label></li>
+           <li><a class=""(click)="logout()">Logout</a></li>
+       </ul>
+        </div>
+      </div>
     </div>
 </nav>

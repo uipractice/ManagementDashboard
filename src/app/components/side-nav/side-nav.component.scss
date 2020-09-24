@@ -3,7 +3,7 @@
   float: left;
   border-radius:0px 0px 25px 0;
   background-color: #023047;
-  width: 76px;
+  width: 78px;
   min-height: 560px;
   height: calc(100vh - 66px);
 }
@@ -16,16 +16,22 @@
   border-top: 0px;
   background-color: inherit;
   color: #fff;
-  padding: 22px 22px 22px 12px;
-  width: 100%;
+  padding: 22px 19px 22px 12px;
+  // width: 78px;
+  height: 78px;
   text-align: center;
   cursor: pointer;
   transition: 0.3s;
+  background: url(src/assets/images/main/Leftnav/Dashboard_line.svg) no-repeat center;
+  background-origin: content-box;
 }
 .tab .ClickTop:hover, .tab .ClickTop:active,
 .tab .ClickTop:visited, .tab .ClickTop:focus{
   border-left: 5px solid #239EC5;
   outline: none;
+  background: url(src/assets/images/main/Leftnav/Dashboard_line.svg) no-repeat center;
+  background-origin: content-box;
+  filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
 }
 /* Create an active/current "tab button" class */
 .tab .ClickTop.active {
@@ -47,7 +53,7 @@
   .NavImg:hover{
   z-index:10;
   }
- .NavImg:hover ::after{
+ .ClickTop:hover ::after{
     content: "";
     position: absolute;
     left: -26px;

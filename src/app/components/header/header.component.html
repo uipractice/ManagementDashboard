@@ -109,17 +109,15 @@
       </div>
       <div class="Notification">
         <a *ngIf="notificationCount"  class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notification.svg"><span class="badge" *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
-        <!-- <div class="DropdownContent NotificationContent" *ngIf="!isOpen">
+        <div class="DropdownContent NotificationContent" *ngIf="!isOpen">
+          <div class="CloseBtn"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
           <ul>
-            <button type="button" class="close" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
             <li><a href="#" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             In in interdum eros.  </a></li>
           <li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
         <li><a href="#">Lorem ipsum  </a></li>
         </ul>
-          </div> -->
+          </div>
       </div>
       <div class=""><a class="dropbtn"><img class="NewsImg" src="..\..\..\assets\images\main\news.svg"></a></div>
     </div>

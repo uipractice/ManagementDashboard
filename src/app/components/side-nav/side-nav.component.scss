@@ -16,22 +16,22 @@
   border-top: 0px;
   background-color: inherit;
   color: #fff;
-  padding: 22px 19px 22px 12px;
+  padding: 18px 19px 18px 12px;
   // width: 78px;
   height: 78px;
   text-align: center;
   cursor: pointer;
   transition: 0.3s;
-  background: url(src/assets/images/main/Leftnav/Dashboard_line.svg) no-repeat center;
-  background-origin: content-box;
+  // background: url(src/assets/images/main/Leftnav/Dashboard_line.svg) no-repeat center;
+  // background-origin: content-box;
 }
 .tab .ClickTop:hover, .tab .ClickTop:active,
 .tab .ClickTop:visited, .tab .ClickTop:focus{
   border-left: 5px solid #239EC5;
   outline: none;
-  background: url(src/assets/images/main/Leftnav/Dashboard_line.svg) no-repeat center;
-  background-origin: content-box;
-  filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
+  // background: url(src/assets/images/main/Leftnav/Dashboard_filled.svg) no-repeat center;
+  // background-origin: content-box;
+  // filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
 }
 /* Create an active/current "tab button" class */
 .tab .ClickTop.active {
@@ -53,7 +53,7 @@
   .NavImg:hover{
   z-index:10;
   }
- .ClickTop:hover ::after{
+ .leftNavIcon::after{
     content: "";
     position: absolute;
     left: -26px;
@@ -64,10 +64,10 @@
     border-color: transparent #F58944 transparent transparent;
     border-right: 15px solid #f58944;
   }
-  .NavImg .leftNavIcon {
+   .leftNavIcon {
     // display: none;
     position: absolute;
-    bottom: 26px;
+    bottom: 22px;
     left: 65px;
     background: #F58944;
     color: #fff;
@@ -75,7 +75,7 @@
     font-size: 14px;
     height: 32px;
   }
-  .NavImg:hover .leftNavIcon {
+  .ClickTop:hover .leftNavIcon {
     display: block;
     padding: 5px 15px;
     width: auto;
@@ -96,8 +96,12 @@
 .tablinks{
   margin-left: -3px;
 }
-.ClickTop span img:hover, .ClickTop span img:active, .ClickTop:hover.img{
+.ClickTop:hover img{
   filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
+}
+.ClickTop:active img .ClickTop:visited img{
+  filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
+  background: url(src/assets/images/main/Leftnav/Dashboard_filled.svg) no-repeat center;
 }
 //////ends here//////
 @media only screen and (min-width: 320px) and (max-width: 425px){
@@ -178,3 +182,5 @@
     padding-left: 11px !important;
   }
 }
+
+

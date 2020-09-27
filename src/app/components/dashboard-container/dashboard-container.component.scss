@@ -38,8 +38,10 @@ background: #afaeae;
       margin: 0px;
       padding: 0px 15px 30px 15px;
       top: 156px;
-      z-index: -1;
+      z-index: 0;
       display:block;
+      position: relative;
+      overflow:auto;
   }
   .MobileNone{
       display: none;

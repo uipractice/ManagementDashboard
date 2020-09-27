@@ -359,7 +359,8 @@ input:checked + .slider:before {
       width: 100%;
       border-bottom: 1px solid #074E72;
       top: 0;
-      z-index: 1;
+      z-index: 2;
+      position:fixed;
       .text-align{
         text-align: center;
       }
@@ -658,4 +659,35 @@ font-size: 30px;
 }
 ::-webkit-search-cancel-button{ 
   display: none; 
+}
+@media screen and (min-width: 400px) and (max-width:414px){
+  .DropdownMain, .DropdownContent{
+    width:414px !important;
+  }
+}
+@media screen and (min-width: 350px) and (max-width:360px){
+  .DropdownMain, .DropdownContent{
+    width:360px !important;
+    min-width: 100%;
+  }
+  .SearchDropdown{
+    .SearchDropdownTopbtn{
+      button{
+        padding: 5px 17px !important;
+      }
+    }
+  }
+}
+@media(max-width:320px){
+  .DropdownMain, .DropdownContent{
+    width:320px !important;
+    min-width: 100%;
+  }
+  .SearchDropdown{
+    .SearchDropdownTopbtn{
+      button{
+        padding: 5px 11px !important;
+      }
+    }
+  }
 }

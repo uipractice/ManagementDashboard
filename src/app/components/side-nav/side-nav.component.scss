@@ -96,13 +96,13 @@
 .tablinks{
   margin-left: -3px;
 }
-.ClickTop:hover img{
-  filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
-}
-.ClickTop:active img .ClickTop:visited img{
-  filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
-  background: url(src/assets/images/main/Leftnav/Dashboard_filled.svg) no-repeat center;
-}
+// .ClickTop:hover img{
+//   filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
+// }
+// .ClickTop:active img .ClickTop:visited img{
+//   filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
+//   background: url(src/assets/images/main/Leftnav/Dashboard_filled.svg) no-repeat center;
+// }
 //////ends here//////
 @media only screen and (min-width: 320px) and (max-width: 425px){
  /* Style the tab */
@@ -112,38 +112,57 @@
   width: 100%;
   height: 100%;
   min-height: auto;
-  padding: 10px;
+  padding: 12px 30px 0px !important;
   position: sticky;
   top: 67px;
   z-index: auto;
+  display: flex;
+  ul{
+    display: flex;
+    width: auto;
+    li{
+      margin:0px;
+    }
+  }
   .leftNavIcon{
     text-align:center;
-    margin-bottom: 0;
-    margin-top: 5px;
+    display: block !important;
+    position: unset;
+    margin-top: 48px;
+    background: transparent;
     font-size: 12px;
+    height: auto !important;
   }
 }
 /* Style the buttons inside the tab */
 .tab .ClickTop {
   display: inline-grid;
-  border-bottom: 2px solid #023047;
+  border-bottom: 5px solid #023047;
   border-right: 0px;
   border-top: 0px;
   border-left: 0px;
   background-color: inherit;
   color: #fff;
-  padding: 7px;
+  padding: 0px !important;
   width: 25%;
   cursor: pointer;
   transition: 0.3s;
   font-size: 17px;
   text-align:-webkit-center;
   justify-content: center;
+ 
 }
 .tab .ClickTop:hover, .tab .ClickTop:active,
 .tab .ClickTop:visited, .tab .ClickTop:focus{
-  border: 0px ;
+  padding: 0px !important;
+  border-left: 0px !important;
+  border-bottom: 5px solid #239EC5;
   outline: none;
+}
+.ClickTop:hover .leftNavIcon {
+  display: block;
+  padding: 0px !important;
+  width: auto;
 }
 /* Create an active/current "tab button" class */
 .tab .ClickTop.active {
@@ -156,9 +175,6 @@
   width: 70%;
   border-left: none;
 }
-.ClickTop .leftNavIcon{
-  display: contents !important;
-}
 .ClickTop .leftNavIcon::after{
   display: none ;
 }
@@ -168,6 +184,30 @@
 .NavImg{
   display: grid;
 }
+#dashboard{
+  background: url(src/assets/images/main/leftnav_sprite.png) -91px -2px !important;
+}
+#admin{
+  background: url(src/assets/images/main/leftnav_sprite.png) -90px -47px !important;
+}
+#hr{
+  background: url(src/assets/images/main/leftnav_sprite.png) -91px -93px !important;
+}
+#it{
+  background: url(src/assets/images/main/leftnav_sprite.png) -226px -137px !important;
+}
+#dashboard > .leftNavIcon{
+  margin-left: -9px;
+}
+#admin > .leftNavIcon{
+  margin-left: -3px;
+}
+#hr > .leftNavIcon{
+  margin-left: 1px;
+}
+#it > .leftNavIcon{
+  margin-left: 0px;
+} 
 }
 @media only screen and (min-width:426px) and (max-width:1440px){
   .tab{
@@ -183,4 +223,83 @@
   }
 }
 
-
+.ClickTop .NavImg:hover::after {
+  content: "";
+  position: absolute;
+  left: 40px;
+  top: 32px;
+  margin-left: 6px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent #F58944 transparent transparent;
+  border-right: 15px solid #f58944;
+}
+.ClickTop:hover .NavImg {
+  visibility: visible;
+}
+#navlist{
+  display:block;
+  list-style:none;
+  text-decoration: none;
+  margin: 0px;
+  }
+  #dashboard {
+    width: 43px;
+    height: 43px;
+    background: url(src/assets/images/main/leftnav_sprite.png) -2px -2px;
+  }
+  .ClickTop:hover #dashboard:hover {
+    width: 43px;
+    height: 43px;
+    background: url(src/assets/images/main/leftnav_sprite.png) -46px -2px;
+  }
+  #dashboard:active, #dashboard:visited, #dashboard:focus{
+    width: 43px;
+    height: 43px;
+    background: url(src/assets/images/main/leftnav_sprite.png) -91px -2px;
+  }
+  #admin {
+    width: 43px;
+    height: 43px;
+    background: url(src/assets/images/main/leftnav_sprite.png) -2px -47px;
+  }
+  #admin:hover {
+    width: 43px;
+    height: 43px;
+    background: url(src/assets/images/main/leftnav_sprite.png) -46px -47px;
+  }
+  #admin:active, #admin:visited, #admin:focus{
+    width: 43px;
+    height: 43px;
+    background: url(src/assets/images/main/leftnav_sprite.png) -90px -47px;
+  }
+  #hr {
+    width: 43px;
+    height: 43px;
+    background: url(src/assets/images/main/leftnav_sprite.png) -2px -93px;
+  }
+  #hr:hover {
+    width: 43px;
+    height: 43px;
+    background: url(src/assets/images/main/leftnav_sprite.png) -46px -93px;
+  }
+  #hr:active, #hr:visited, #hr:focus{
+    width: 43px;
+    height: 43px;
+    background: url(src/assets/images/main/leftnav_sprite.png) -91px -93px;
+  }
+  #it {
+    width: 43px;
+    height: 43px;
+    background: url(src/assets/images/main/leftnav_sprite.png) -2px -137px;
+  }
+  #it:hover {
+    width: 43px;
+    height: 43px;
+    background: url(src/assets/images/main/leftnav_sprite.png) -46px -137px;
+  }
+  #it:active, #it:visited, #it:focus{
+    width: 43px;
+    height: 43px;
+    background: url(src/assets/images/main/leftnav_sprite.png) -226px -137px;
+  }

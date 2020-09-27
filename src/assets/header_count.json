@@ -2,7 +2,7 @@
   {
     "hoursCount":[
       {"id":1,"desc":"Total Working Hours","count":"2400","value":10,"arrowFlag":false},
-      {"id":2,"desc":"Avarage Hours","count":"08","value":10,"arrowFlag":true}
+      {"id":2,"desc":"Average Hours","count":"08","value":10,"arrowFlag":true}
     ]
 },
 {

@@ -2,7 +2,7 @@
 // div{border:1px solid blue; width:100%; height:calc(100vh - 76px); overflow-y: scroll;}
 .DashboardHeader{
   padding: 22px 13px 22px 22px;
-  padding-bottom: 90px;
+  padding-bottom: 30px;
   margin-left: 65px;
   position: absolute;
   top: 65px;
@@ -37,7 +37,7 @@ background: #afaeae;
   .DashboardHeader{
       margin: 0px;
       padding: 0px 15px 30px 15px;
-      top: 170px;
+      top: 156px;
       z-index: -1;
       display:block;
   }

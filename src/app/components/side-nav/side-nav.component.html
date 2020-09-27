@@ -5,18 +5,27 @@
     </a>
   </a>
 </div> -->
-<a class="tab">
+<!-- <a class="tab">
   <span class="ClickTop" *ngFor="let icons of arrIcons">
-     <span class="NavImg"
-      routerLink="/{{icons.name}}"><img class="" src="{{icons.icon}}">
-      <span class="leftNavIcon">{{icons.name}}</span>
+     <span class="NavImg" routerLink="/{{icons.name}}"> 
+      <img class="" src="{{icons.icon}}"> 
+     <span class="leftNavIcon">{{icons.name}}</span>
   </span>
   </span>
+</a> -->
+<a class="tab">
+  <ul id="navlist" class="ClickTop">
+    <li id="dashboard" class="NavImg">
+      <span class="leftNavIcon" href="">Dashboard</span>
+    </li>
+  </ul>
+  <ul id="navlist" class="ClickTop">
+    <li id="admin" class="NavImg"><span class="leftNavIcon" href="">Admin</span></li>
+    </ul>
+    <ul id="navlist" class="ClickTop">
+      <li id="it" class="NavImg"><span class="leftNavIcon" href="">HR</span></li>
+    </ul>
+    <ul id="navlist" class="ClickTop">
+      <li id="hr" class="NavImg"><span class="leftNavIcon" href="">IT</span></li>
+    </ul>
 </a>
-
-<!-- <div class="tab">
-  <button type="button" class="ClickTop"><img class="" src="..\..\assets\images\main\dashbboard-icon.svg"><p>Dashboard</p></button>
-  <button type="button" class="ClickTop"><img class="" src="..\..\assets\images\main\accounts_projects.svg"><p>Accounts</p></button>
-  <button type="button" class="ClickTop"><img class="" src="..\..\assets\images\main\HR-svg.svg"><p>HR</p></button>
-  <button type="button" class="ClickTop"><img class="" src="..\..\assets\images\main\IT-svg.svg"><p>IT</p></button>
-</div> -->

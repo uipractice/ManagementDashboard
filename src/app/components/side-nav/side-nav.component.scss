@@ -61,16 +61,16 @@
     margin-left: 6px;
     border-width: 7px;
     border-style: solid;
-    border-color: transparent #F58944 transparent transparent;
-    border-right: 15px solid #f58944;
+    border-color: transparent #fff transparent transparent;
+    border-right: 15px solid #fff;
   }
    .leftNavIcon {
     // display: none;
     position: absolute;
     bottom: 22px;
     left: 65px;
-    background: #F58944;
-    color: #fff;
+    background: #fff;
+    color: #000;
     border-radius: 4px;
     font-size: 14px;
     height: 32px;
@@ -79,6 +79,7 @@
     display: block;
     padding: 5px 15px;
     width: auto;
+    box-shadow: 2px 0px 4px 1px rgba(0, 0, 0, 0.20)
     // font-size: 14px;
   }
   .NavImg:focus{
@@ -96,13 +97,6 @@
 .tablinks{
   margin-left: -3px;
 }
-// .ClickTop:hover img{
-//   filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
-// }
-// .ClickTop:active img .ClickTop:visited img{
-//   filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
-//   background: url(src/assets/images/main/Leftnav/Dashboard_filled.svg) no-repeat center;
-// }
 //////ends here//////
 @media only screen and (min-width: 320px) and (max-width: 425px){
  /* Style the tab */
@@ -113,7 +107,7 @@
   height: auto;
   min-height: auto;
   padding: 12px 30px 0px !important;
-  position: sticky;
+  position: absolute;
   top: 67px;
   z-index: auto;
   display: flex;
@@ -132,6 +126,7 @@
     background: transparent;
     font-size: 12px;
     height: auto !important;
+    color: #fff;
   }
 }
 /* Style the buttons inside the tab */

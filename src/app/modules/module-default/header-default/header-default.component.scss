@@ -4,8 +4,8 @@
 .FlxContainer {display: flex; margin-top: 18px;flex-wrap: nowrap;border-radius: 6px;}
 .card{
   width: 100%;
-  height: 90px;
-  padding: 15px 0px;
+  height: 108px;
+  // padding: 6px 15px 12px;
   border-radius: 0px;
   margin-right: 10px;
   box-shadow: -1px 2px 1px rgba(0, 0, 0, 0.08);
@@ -20,12 +20,26 @@
       font-weight: 600px;
       color: #7b7b7b;
   }
-}
+  .CardCount{
+    padding:6px 15px 0px;
+  }
+  .ThisMonth{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #A7A5A5;
+    padding: 8px 15px 5px;
+    box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
+    height: 28px;
+    }
 .CardImg img{
   position: absolute;
   right: 15px;
-  top: 15px;
+  top: 46px;
 }
+}
+
 
 @media only screen and (min-width:320px) and (max-width:425px){
 

@@ -167,8 +167,14 @@
 
           </div> -->
           <div class="DropdownContent NotificationContent" *ngIf="!isOpen && notificationCount.length > 0">
-            <div class="CloseNotify"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
-            <ul><li *ngFor="let data of notificationCount;" ><a href="#" class="">{{data.desc | charlimitpipe: 40}} </a></li>
+            <div class="CloseNotify"><h4>Notifications <span>(20)</span></h4><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+            <ul><li *ngFor="let data of notificationCount;" class="notication-border">
+              <a href="#" class="">
+                <img class="NotifyIcon" src="..\..\..\assets\images\main\notifyicon.svg">
+                <div class="NotifyText">{{data.desc | charlimitpipe: 40}}
+                  <span>10-09-2020</span>
+                </div>
+              </a></li>
                 <li><a class="More">MORE</a></li>
           </ul>
             </div>

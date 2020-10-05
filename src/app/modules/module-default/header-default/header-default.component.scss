@@ -21,7 +21,7 @@
       color: #7b7b7b;
   }
   .CardCount{
-    padding:6px 15px 0px;
+    padding:8px 15px 0px;
   }
   .ThisMonth{
     font-style: normal;
@@ -36,7 +36,9 @@
 .CardImg img{
   position: absolute;
   right: 15px;
-  top: 46px;
+  top: 40px;
+  width: 43px;
+  height: 40px;
 }
 }
 
@@ -52,7 +54,6 @@
   }
   .card{
       width: 240px;
-      padding: 15px 0px;
       border-radius: 0px;
       margin-right: 10px;
       min-width: 240px;

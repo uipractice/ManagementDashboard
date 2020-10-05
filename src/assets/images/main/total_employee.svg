@@ -1,23 +1,23 @@
-<svg width="51" height="58" viewBox="0 0 51 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d)">
-<path d="M33.8847 36.5417C33.1335 37.7621 31.9727 38.5078 30.6071 38.5078C29.2414 38.5078 28.0806 37.6943 27.3295 36.5417C25.1444 37.6943 23.6422 39.9315 23.6422 42.5078C23.6422 42.5756 23.6422 42.6434 23.6422 42.6434H37.572C37.572 42.5756 37.572 42.5078 37.572 42.5078C37.572 39.9315 36.138 37.6943 33.8847 36.5417Z" stroke="#239EC5" stroke-width="1.0438" stroke-miterlimit="10"/>
-<path d="M30.607 36.2027C32.2664 36.2027 33.6115 34.8368 33.6115 33.1519C33.6115 31.467 32.2664 30.101 30.607 30.101C28.9477 30.101 27.6026 31.467 27.6026 33.1519C27.6026 34.8368 28.9477 36.2027 30.607 36.2027Z" stroke="#239EC5" stroke-width="0.8872" stroke-miterlimit="10"/>
-<path d="M30.4705 49.084C36.5044 49.084 41.3959 44.2275 41.3959 38.2366C41.3959 32.2457 36.5044 27.3891 30.4705 27.3891C24.4366 27.3891 19.5452 32.2457 19.5452 38.2366C19.5452 44.2275 24.4366 49.084 30.4705 49.084Z" stroke="#239EC5" stroke-miterlimit="10"/>
-<path d="M23.6422 18.9146C22.8911 20.1349 21.7302 20.8807 20.3646 20.8807C18.9989 20.8807 17.8381 20.0671 17.087 18.9146C14.9019 20.0671 13.3997 22.3044 13.3997 24.8807C13.3997 24.9485 13.3997 25.0162 13.3997 25.0162H27.3295C27.3295 24.9484 27.3295 24.8807 27.3295 24.8807C27.3295 22.3044 25.8955 20.0671 23.6422 18.9146Z" stroke="#239EC5" stroke-width="1.0438" stroke-miterlimit="10"/>
-<path d="M20.3646 18.5756C22.0239 18.5756 23.369 17.2097 23.369 15.5247C23.369 13.8398 22.0239 12.4739 20.3646 12.4739C18.7053 12.4739 17.3601 13.8398 17.3601 15.5247C17.3601 17.2097 18.7053 18.5756 20.3646 18.5756Z" stroke="#239EC5" stroke-width="0.8872" stroke-miterlimit="10"/>
-<path d="M19.5452 30.7112C14.1508 30.0332 9.98547 25.4908 9.98547 19.9315C9.98547 13.9654 14.9019 9.08405 20.9108 9.08405C26.9198 9.08405 31.8362 13.9654 31.8362 19.9315C31.8362 21.6264 31.4265 23.1857 30.7436 24.6095" stroke="#239EC5" stroke-miterlimit="10"/>
-<path d="M9.30264 28.7451V42.9823H17.4967" stroke="#239EC5" stroke-width="1.5" stroke-miterlimit="10"/>
-<path d="M33.8847 15.8637H42.0787V29.423" stroke="#239EC5" stroke-width="1.5" stroke-miterlimit="10"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 42 42" style="enable-background:new 0 0 42 42;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#239EC5;stroke-width:1.0438;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#239EC5;stroke-width:0.8872;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#239EC5;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#239EC5;stroke-width:1.5;stroke-miterlimit:10;}
+</style>
+<g>
+	<path class="st0" d="M29.4,28.5c-0.8,1.2-1.9,2-3.3,2s-2.5-0.8-3.3-2c-2.2,1.2-3.7,3.4-3.7,6c0,0.1,0,0.1,0,0.1H33
+		c0-0.1,0-0.1,0-0.1C33.1,31.8,31.6,29.6,29.4,28.5z"/>
+	<path class="st1" d="M26.1,28.1c1.7,0,3-1.4,3-3.1s-1.3-3.1-3-3.1s-3,1.4-3,3.1C23.1,26.8,24.4,28.1,26.1,28.1z"/>
+	<path class="st2" d="M26,41c6,0,10.9-4.9,10.9-10.8S32,19.3,26,19.3s-11,4.9-11,10.9S19.9,41,26,41z"/>
+	<path class="st0" d="M19.1,10.8c-0.8,1.2-1.9,2-3.3,2s-2.5-0.8-3.3-2c-2.2,1.2-3.7,3.4-3.7,6c0,0.1,0,0.1,0,0.1h13.9
+		c0-0.1,0-0.1,0-0.1C22.8,14.2,21.4,12,19.1,10.8z"/>
+	<path class="st1" d="M15.9,10.5c1.7,0,3-1.4,3-3.1s-1.3-3.1-3-3.1s-3,1.4-3,3.1S14.2,10.5,15.9,10.5z"/>
+	<path class="st2" d="M15,22.6c-5.4-0.7-9.6-5.2-9.6-10.8C5.5,5.9,10.4,1,16.4,1s10.9,4.9,10.9,10.8c0,1.7-0.4,3.3-1.1,4.7"/>
+	<path class="st3" d="M4.8,20.7v14.2H13"/>
+	<path class="st3" d="M29.4,7.8h8.2v13.6"/>
 </g>
-<defs>
-<filter id="filter0_d" x="0.552643" y="0.584045" width="50.276" height="57" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-<feOffset/>
-<feGaussianBlur stdDeviation="4"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.137255 0 0 0 0 0.619608 0 0 0 0 0.772549 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-</filter>
-</defs>
 </svg>

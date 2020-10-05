@@ -375,6 +375,7 @@ input:checked + .slider:before {
       border-bottom: 1px solid #074E72;
       top: 0;
       z-index: 2;
+      flex-wrap: nowrap;
       .text-align{
         text-align: center;
       }
@@ -465,7 +466,7 @@ font-size: 30px;
 }
 .NavOption{
   right: 0;
-  position: absolute;
+  position: static;
   display: flex;
   place-items: center;
   .MobileSearch{
@@ -592,7 +593,7 @@ font-size: 30px;
   border: 0px;
   box-shadow: none;
   padding: 0px;
-  width: 15%;
+  width: 100%;
   float: right;
   margin-left: 35px;
 }
@@ -602,7 +603,7 @@ font-size: 30px;
     width: 100%;
     right: 0;
     top: -13px;
-    min-width: max-content;
+    min-width: 100%;
     background: #fff;
     border-radius: 0 0 20px 20px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);

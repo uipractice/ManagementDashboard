@@ -88,3 +88,33 @@
         margin-top: 14px;
     }
 } 
+
+@media(max-width:768px){
+    .left-img-part{
+        width: 100%;
+        img{
+            top:17%;
+        }
+    }
+    .dashboardLogin{
+        background:transparent;
+    }
+    .right-loginpart{
+        height:auto;
+        width:100%;
+        top:-41%;
+        .card{
+            background-color: #fff;
+            width: 315px;
+            p{
+                font-size: 12px;
+            }
+        }
+        .card-body{
+            margin-top: 0;
+        }
+        .card-header{
+            padding: 10px 1.25rem 3px;
+        }
+    }
+}

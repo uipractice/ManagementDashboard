@@ -154,8 +154,8 @@ span{
   }
 }
 .NotifyIcon{
-  width:25px;
-  height: 25px;
+  width:20px;
+  height: 20px;
   margin-right: 18px;
 }
 .NotifyText{
@@ -257,7 +257,6 @@ span{
     width: 50px;
     vertical-align: text-top;
   }
-
  .user{
    font-size: 16px !important;
    color: #000;
@@ -347,6 +346,10 @@ input:checked + .slider:before {
 }
 .slider.round:before {
   border-radius: 50%;
+}
+.HeaderIcons{
+  width: 22px;
+  height: 22px;
 }
 //header ends here//
 @media only screen and (min-width: 320px) and (max-width:425px){
@@ -482,9 +485,9 @@ font-size: 30px;
 .dropbtn{
   margin-top:-2px;
 }
-::-webkit-input-placeholder {
-   color: transparent;
-}
+// ::-webkit-input-placeholder {
+//    color: transparent;
+// }
 :-moz-placeholder {
    color: transparent;
 }
@@ -596,6 +599,19 @@ font-size: 30px;
   float: right;
   margin-left: 35px;
 }
+.SearchDrop{
+  background: url(src/assets/images/main/search.svg) no-repeat right transparent;
+  border: 0.5px solid #e5e5e5;
+  width: 376.7px;
+  height: 40.04px;
+  box-shadow: none;
+  padding: 0px 20px;
+  background-origin: content-box;
+  border-bottom:0px;
+  // width: 15%;
+  // float: right;
+  // margin-left: 35px;
+}
 .DropdownMain{
   position: absolute;
     z-index: 1;
@@ -625,7 +641,7 @@ font-size: 30px;
   box-shadow: 0 0 black;
   border-radius: 0px 0px 4px 4px;
   border: 1px solid #e5e5e5;
-  margin: 28px 0 35px;
+  margin: 0px 0 35px;
   ul{
     list-style: none;
     padding:0px;

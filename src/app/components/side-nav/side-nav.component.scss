@@ -16,7 +16,7 @@
   border-top: 0px;
   background-color: inherit;
   color: #fff;
-  padding: 18px 19px 18px 12px;
+  padding: 0px;
   // width: 78px;
   height: 78px;
   text-align: center;
@@ -181,16 +181,16 @@
   display: grid;
 }
 #dashboard{
-  background: url(src/assets/images/main/leftnav_sprite.png) -91px -2px !important;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -91px -2px !important;
 }
 #admin{
-  background: url(src/assets/images/main/leftnav_sprite.png) -90px -48px !important;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -90px -48px !important;
 }
 #hr{
-  background: url(src/assets/images/main/leftnav_sprite.png) -91px -93px !important;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -91px -93px !important;
 }
 #it{
-  background: url(src/assets/images/main/leftnav_sprite.png) -226px -139px !important;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -226px -139px !important;
 }
 #dashboard > .leftNavIcon{
   margin-left: -9px;
@@ -242,60 +242,65 @@
   #dashboard {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite.png) -2px -2px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -6px 0px;
+    padding: 37px 37px 40px;
   }
   .ClickTop:hover #dashboard:hover {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite.png) -46px -2px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -84px -0px;
   }
   #dashboard:active, #dashboard:visited, #dashboard:focus{
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite.png) -91px -2px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -162px 0px;
   }
   #admin {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite.png) -2px -48px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -5px -78px;
+    padding: 37px 37px 40px;
   }
   #admin:hover {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite.png) -46px -48px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -83px -78px;
   }
   #admin:active, #admin:visited, #admin:focus{
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite.png) -90px -48px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -161px -78px;
   }
   #hr {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite.png) -2px -93px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -3px -233px;
+    padding: 37px 37px 40px;
   }
   #hr:hover {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite.png) -46px -93px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -81px -233px;
   }
   #hr:active, #hr:visited, #hr:focus{
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite.png) -91px -93px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -159px -233px;
   }
   #it {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite.png) -2px -139px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -3px -156px;
+    padding: 37px 37px 40px;
   }
   #it:hover {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite.png) -46px -139px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -81px -154px;
   }
   #it:active, #it:visited, #it:focus{
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite.png) -226px -139px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -393px -154px;
+    padding: 37px 37px 40px;
   }

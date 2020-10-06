@@ -1,5 +1,5 @@
 .NavHeader{
-  background: #f7f7f7;
+  background: #f6f6f6;
   box-shadow: 0px 1.5px 0px rgba(0, 0, 0, 0.15);
   padding: 12px 25px;
   position: fixed;
@@ -43,7 +43,7 @@ p{
   span{
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 0.875rem;
     line-height: 19.2px;
   }
 }
@@ -509,6 +509,10 @@ right: 20px;
 :-moz-placeholder {
    color: transparent;
 }
+.HeaderIcons{
+  width: 22px;
+  height: 22px;
+}
 }
 
 
@@ -523,6 +527,7 @@ right: 20px;
 //dashboard search styles
 .search{
   border: 0px ;
+  border-radius: 2px;
   width: 356px;
   height: 40px;
   padding: 0 20px;
@@ -582,7 +587,7 @@ right: 20px;
         border: 0.5px solid #6a7c88;
         background: #023047;
         border-radius: 20px;
-        padding: 2px 20px;
+        padding: 2px 12px;
         color: #fff;
         transition: width 2s;
       }
@@ -620,7 +625,7 @@ right: 20px;
 .SearchDrop{
   background: url(src/assets/images/main/search.svg) no-repeat right transparent;
   border: 0.5px solid #e5e5e5;
-  width: 376.7px;
+  width: 373.7px;
   height: 40.04px;
   box-shadow: none;
   padding: 0px 20px;
@@ -628,7 +633,7 @@ right: 20px;
   border-bottom:0px;
   // width: 15%;
   // float: right;
-  // margin-left: 35px;
+  margin-top: 30px;
 }
 .DropdownMain{
   position: absolute;

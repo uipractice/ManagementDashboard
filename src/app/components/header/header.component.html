@@ -21,7 +21,7 @@
     <div class="SearchDropdown" *ngIf="!isSearch">
       <div class="SearchDropdownTopbtn">
         <ul>
-        <li><a href="#"><button>Mgmt.Dashboard</button></a></li>
+        <li><a href="#"><button>Mgmt. Dashboard</button></a></li>
         <li><a href="#" class=""><button>HR</button></a></li>
         <li><a href="#"><button>IT</button></a></li>
         <li><a href="#"><button>Admin</button></a></li>
@@ -136,7 +136,7 @@
           <div class="SearchDropdown">
             <div class="SearchDropdownTopbtn">
               <ul>
-              <li><a href="#"><button>Mgmt.Dashboard</button></a></li>
+              <li><a href="#"><button>Mgmt. Dashboard</button></a></li>
               <li><a href="#" class=""><button>HR</button></a></li>
               <li><a href="#"><button>IT</button></a></li>
               <li><a href="#"><button>Admin</button></a></li>
@@ -156,7 +156,7 @@
         </div>
       </div>
       <div class="Notification">
-        <a *ngIf="notificationCount"  class="dropbtn" (click)="toggleDowncontent($event)"><img src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge" *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
+        <a *ngIf="notificationCount"  class="dropbtn" (click)="toggleDowncontent($event)"><img class="HeaderIcons" src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge" *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
         <!-- <div class="DropdownContent NotificationContent" *ngIf="!isOpen">
           <div class="CloseBtn"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
           <ul>

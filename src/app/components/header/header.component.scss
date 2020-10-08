@@ -514,6 +514,43 @@ right: 20px;
   width: 22px;
   height: 22px;
 }
+  .mobile-usermenu{
+    width:70% !important;
+    height:100vh;
+    left:0;
+    border-radius: 0;
+    ul{
+      position: relative;
+      height: 100vh;
+      li{
+        a{
+          width:100%;
+        }
+      }
+      .logout-link{
+        position: absolute;
+        bottom:20px;       
+        a{
+          border:0 !important;
+        }
+      }
+    }
+    .UserDropdown{
+      text-align: center;
+      display: grid !important;
+      img{
+        margin: 5px auto;
+        padding: 5px;
+      }
+    }
+    .close{
+      top: 7px;
+      z-index: 1;
+      color: #000;
+      opacity: 1;
+    }
+  }
+  
 }
 
 

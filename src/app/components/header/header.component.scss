@@ -101,7 +101,7 @@ span{
   background-color: #fff;
   min-width: 190px;
   border-radius: 0 0 4px 4px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,.2);
   z-index: 1;
   right: 0px;
   top: 60px;
@@ -112,18 +112,18 @@ span{
 .DropdownContent::after, .NotificationContent::after{
   content: "";
   position: absolute;
-  top: -13%;
+  top: -11%;
   left: 60%;
     margin-left: 55px;
     border-width: 10px;
-    border-bottom: 16px solid #f8f8f8;
+    border-bottom: 16px solid #F8F8FB;
   border-style: solid;
-  border-color: transparent transparent #f8f8f8 transparent;
+  border-color: transparent transparent #F8F8FB transparent;
 }
 .NotificationContent::after{
   content: "";
   position: absolute;
-  top: -9%;
+  top: -10%;
     margin-left: 67px;
     border-width: 10px;
     border-bottom: 16px solid #fff;
@@ -137,7 +137,7 @@ span{
     list-style: none;
     margin: 0px;
     overflow-y: scroll;
-    margin: 15px 10px 15px 0 !important;
+    margin: 15px 8px 15px 0 !important;
     scrollbar-width: thin;
     scrollbar-color: #afaeae #e3e1e1;
     height: 235px;
@@ -226,12 +226,13 @@ span{
     padding: 0px;
     li{
       a {
-        color:#7b7b7b;
+        color:#57565C;
         text-decoration: none;
         display: block;
         font-size: 14px;
         padding: 13px 10px 10px 17px;
         line-height: 18px;
+        font-weight: 400;
       }
     }
   }
@@ -242,7 +243,7 @@ span{
     background: #023047 !important;
   }
    li:hover{
-    background: #F0F4F6;
+    background: #F2F6FA;
   }
 }
 .DropdownContent a:hover {background-color: none;}

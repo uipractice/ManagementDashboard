@@ -45,6 +45,7 @@ p{
     font-weight: bold;
     font-size: 0.875rem;
     line-height: 19.2px;
+    color: #023047;
   }
 }
 .HoursDetail{
@@ -103,18 +104,16 @@ span{
   border-radius: 0 0 4px 4px;
   box-shadow: 0 2px 16px 0 rgba(0,0,0,.2);
   z-index: 1;
-  right: 0px;
+  right: -11px;
   top: 60px;
 }
-.notication-border a{
-  border-bottom: 1px solid #C4C4C4;
-}
+
 .DropdownContent::after, .NotificationContent::after{
   content: "";
   position: absolute;
   top: -11%;
   left: 60%;
-    margin-left: 55px;
+    margin-left: 43px;
     border-width: 10px;
     border-bottom: 16px solid #F8F8FB;
   border-style: solid;
@@ -160,8 +159,10 @@ span{
   width:20px;
   height: 20px;
   margin-right: 18px;
+  margin-top: 3px;
 }
 .NotifyText{
+  display: grid;
   span{
     line-height: 29px;
   }
@@ -411,6 +412,7 @@ input:checked + .slider:before {
     right: 0;
     top: 0 !important;
     width: 100% !important;
+    height: auto;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     z-index: 1;
@@ -559,6 +561,9 @@ right: 20px;
   .NavMobileHeader{
       display: none !important;
   }
+  .notication-border a{
+    border-bottom: 1px solid #C4C4C4;
+  }
   .NotificationContent{
   width: 285px !important;
   }
@@ -597,7 +602,7 @@ right: 20px;
 
 .SearchDropdown{
   background: #fff;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,.2);
   border-radius: 0px 0px 4px 4px;
   ul{
     list-style: none;
@@ -607,6 +612,7 @@ right: 20px;
       font-size: 14px;
       color: #7b7b7b;
       margin-bottom: 20px;
+      font-weight: 400;
     }
   }
   .SearchDropdownTopbtn{
@@ -638,7 +644,7 @@ right: 20px;
       padding: 10px 20px;
     }
     li:hover{
-      background: #e5e5e5;
+      background: #F2F6FA;
     }
     li.disabled a{
         color: #bdbdbd !important;
@@ -722,7 +728,7 @@ right: 20px;
     }
   }
   .SearchDropdownTopbtn{
-    background: #f8f8f8;
+    background: #f8f8fB;
     width: auto;
     flex-wrap: wrap;
     box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
@@ -731,13 +737,13 @@ right: 20px;
       margin: 0px;
       flex-wrap: wrap;
       li{
-        padding: 10px 3px 10px 2px;
+        padding: 10px 4px 10px 2px;
       }
       button{
         border: 0px;
         background: #023047;
         border-radius: 20px;
-        padding: 5px 20px;
+        padding: 5px 14px;
         color: #fff;
       }
     }
@@ -751,12 +757,12 @@ right: 20px;
 }
 .NotificationContent{
    ul {
-  margin: 15px 10px !important;
+  margin: 0 10px 15px !important;
   overflow-y: hidden;
   height: auto;
 }
 li {
-  padding: 10px 15px !important;
+  padding: 10px 15px 7px!important;
 }
 }
 }
@@ -792,5 +798,15 @@ li {
         padding: 5px 11px !important;
       }
     }
+  }
+}
+@media(max-width:320px){
+  .SearchDrop{
+    width: 279.7px;
+  }
+}
+@media(max-width:375px){
+  .SearchDrop{
+    width: 334.7px;
   }
 }

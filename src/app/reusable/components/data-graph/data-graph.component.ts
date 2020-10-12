@@ -1,0 +1,312 @@
+import {
+  Component,
+  OnInit,
+  Inject,
+  NgZone,
+  PLATFORM_ID,
+  Input,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import * as am4core from '@amcharts/amcharts4/core';
+import * as am4charts from '@amcharts/amcharts4/charts';
+import am4themes_animated from '@amcharts/amcharts4/themes/animated';
+import am4themes_kelly from '@amcharts/amcharts4/themes/animated';
+
+@Component({
+  selector: 'ev-data-graph',
+  templateUrl: './data-graph.component.html',
+  styleUrls: ['./data-graph.component.scss'],
+})
+export class DataGraphComponent implements OnInit {
+  private chart: am4charts.XYChart;
+  @Input() chartData: any;
+  @Input() chartType: any;
+  @Input() dataLoaded: any;
+  @Input() newsData: any;
+  @Input() isNoGraphShown: any;
+  @Input() titleCommon: any;
+  categoryAxis: any;
+  valueAxis: any;
+  series: any;
+  series2: any;
+  bullet1: any;
+  bullet: any;
+  series1: any;
+  bullet2: any;
+  series3: any;
+  bullet3: any;
+  constructor(@Inject(PLATFORM_ID) private platformId, private zone: NgZone) {}
+  browserOnly(f: () => void) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.zone.runOutsideAngular(() => {
+        f();
+      });
+    }
+  }
+  ngOnInit(): void {}
+  ngAfterViewInit() {
+    // Chart code goes in here
+    if (this.dataLoaded)
+      this.browserOnly(() => {
+        switch (this.chartType) {
+          case 'barChart':
+            am4core.useTheme(am4themes_animated);
+
+            this.chart = am4core.create(
+              this.chartData.idName,
+              am4charts.XYChart
+            );
+
+            let data = [];
+            let visits = 10;
+
+            this.chart.data = this.chartData.data;
+
+            this.categoryAxis = this.chart.xAxes.push(
+              new am4charts.CategoryAxis()
+            );
+
+            this.categoryAxis.dataFields.category = 'country';
+
+            this.categoryAxis.title.text = 'Accounts';
+
+            this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
+
+            this.valueAxis.title.text = 'Members';
+            this.series = this.chart.series.push(new am4charts.ColumnSeries());
+            this.series.dataFields.valueY = 'litres';
+            this.series.dataFields.categoryX = 'country';
+            this.series.name = 'Sales';
+            this.series.columns.template.tooltipText =
+              'Series: {name}\nCategory: {categoryX}\nValue: {valueY}';
+            this.series.columns.template.fill = am4core.color('#104547');
+
+            this.series2 = this.chart.series.push(new am4charts.LineSeries());
+            this.series2.name = 'Units';
+            this.series2.stroke = am4core.color('#CDA2AB');
+            this.series2.strokeWidth = 3;
+            this.series2.dataFields.valueY = 'units';
+            this.series2.dataFields.categoryX = 'country';
+            this.categoryAxis.renderer.grid.template.disabled = true;
+            this.valueAxis.renderer.grid.template.disabled = true;
+            this.chart = this.chart;
+
+            break;
+          case 'multiDataChart':
+            am4core.useTheme(am4themes_animated);
+
+            this.chart = am4core.create(
+              this.chartData.idName,
+              am4charts.XYChart
+            );
+            this.chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+            this.chart.data = this.chartData.data;
+
+            this.chart.colors.step = 2;
+            this.chart.padding(30, 30, 10, 30);
+            this.chart.legend = new am4charts.Legend();
+
+            this.categoryAxis = this.chart.xAxes.push(
+              new am4charts.CategoryAxis()
+            );
+            this.categoryAxis.dataFields.category = 'category';
+            this.categoryAxis.renderer.grid.template.location = 0;
+
+            this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
+            this.valueAxis.min = 0;
+            // this.valueAxis.max = 100;
+            this.valueAxis.strictMinMax = true;
+            this.valueAxis.calculateTotals = true;
+            this.valueAxis.renderer.minWidth = 50;
+
+            this.series = this.chart.series.push(new am4charts.ColumnSeries());
+            this.series.columns.template.width = am4core.percent(80);
+            this.series.columns.template.tooltipText =
+              "{name}: {valueY.totalPercent.formatNumber('#.00')}";
+            this.series.name = 'Series 1';
+            this.series.dataFields.categoryX = 'category';
+            this.series.dataFields.valueY = 'value1';
+            // #ce0c0c
+            this.series.dataFields.valueYShow = 'totalPercent';
+            this.series.dataItems.template.locations.categoryX = 0.5;
+            this.series.stacked = true;
+            this.series.tooltip.pointerOrientation = 'vertical';
+
+            this.bullet1 = this.series.bullets.push(
+              new am4charts.LabelBullet()
+            );
+            this.bullet1.label.text =
+              "{valueY.totalPercent.formatNumber('#.00')}";
+            this.bullet1.label.fill = am4core.color('#ffffff');
+            this.bullet1.locationY = 0.5;
+
+            this.series2 = this.chart.series.push(new am4charts.ColumnSeries());
+            this.series2.columns.template.width = am4core.percent(80);
+            this.series2.columns.template.tooltipText =
+              "{name}: {valueY.totalPercent.formatNumber('#.00')}";
+            this.series2.name = 'Series 2';
+            this.series2.dataFields.categoryX = 'category';
+            this.series2.dataFields.valueY = 'value2';
+            this.series2.dataFields.valueYShow = 'totalPercent';
+            this.series2.dataItems.template.locations.categoryX = 0.5;
+            this.series2.stacked = true;
+            this.series2.tooltip.pointerOrientation = 'vertical';
+
+            this.bullet2 = this.series2.bullets.push(
+              new am4charts.LabelBullet()
+            );
+            this.bullet2.label.text =
+              "{valueY.totalPercent.formatNumber('#.00')}";
+            this.bullet2.locationY = 0.5;
+            this.bullet2.label.fill = am4core.color('#ffffff');
+            this.categoryAxis.renderer.grid.template.disabled = true;
+            this.valueAxis.renderer.grid.template.disabled = true;
+            this.series2.strokeWidth = 3;
+
+            // this.series3 = this.chart.series.push(new am4charts.ColumnSeries());
+            // this.series3.columns.template.width = am4core.percent(80);
+            // this.series3.columns.template.tooltipText =
+            //   "{name}: {valueY.totalPercent.formatNumber('#.00')}%";
+            // this.series3.name = 'Series 3';
+            // this.series3.dataFields.categoryX = 'category';
+            // this.series3.dataFields.valueY = 'value3';
+            // this.series3.dataFields.valueYShow = 'totalPercent';
+            // this.series3.dataItems.template.locations.categoryX = 0.5;
+            // this.series3.stacked = true;
+            // this.series3.tooltip.pointerOrientation = 'vertical';
+
+            // this.bullet3 = this.series3.bullets.push(new am4charts.LabelBullet());
+            // this.bullet3.label.text =
+            //   "{valueY.totalPercent.formatNumber('#.00')}";
+            // this.bullet3.locationY = 0.5;
+            // this.bullet3.label.fill = am4core.color('#ffffff');
+
+            // this.chart.scrollbarX = new am4core.Scrollbar();
+            break;
+
+          case 'multiColorBarChartMultiLevel':
+            console.log(this.chartData);
+            this.chartData.data[3] = {};
+            // alert(this.chartData.data.findIndex((el) => el._id === 'CSC'));
+            this.chartData.data.splice(
+              this.chartData.data.findIndex((el) => el._id === 'CSC'),
+              1
+            );
+            let color = ['#9c66cf', '#d669a9', '#cfc666', '#7d85ce'];
+            // this.chartData.data.map((val, index) => {
+            //   console.log(color[Math.floor(Math.random() * 4)]);
+            //   this.chartData.data[index]['color'];
+            // });
+
+            am4core.useTheme(am4themes_animated);
+            am4core.useTheme(am4themes_kelly);
+
+            // Create chart instance
+            this.chart = am4core.create(
+              this.chartData.idName,
+              am4charts.XYChart
+            );
+
+            // Add data
+            this.chart.data = this.chartData.data;
+
+            // Create axes
+            this.categoryAxis = this.chart.xAxes.push(
+              new am4charts.CategoryAxis()
+            );
+            this.categoryAxis.dataFields.category = '_id';
+            // this.categoryAxis.title.text = 'Local country offices';
+            this.categoryAxis.renderer.grid.template.location = 0;
+            this.categoryAxis.renderer.minGridDistance = 10;
+            this.categoryAxis.renderer.labels.template.rotation = 270;
+            this.categoryAxis.renderer.labels.template.verticalCenter =
+              'middle';
+            this.categoryAxis.renderer.labels.template.horizontalCenter =
+              'right';
+            this.categoryAxis.renderer.labels.template.fontSize = '9px';
+
+            this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
+            this.valueAxis.renderer.labels.template.fontSize = '9px';
+
+            this.valueAxis.title.text = '';
+            // this.valueAxis.min = this.valueAxis.minZoomed;
+            // this.valueAxis.max = this.valueAxis.maxZoomed;
+            // this.valueAxis.max = 'auto';
+            // this.valueAxis.min = 0.1;
+            this.valueAxis.renderer.minGridDistance = 10;
+            this.valueAxis.strictMinMax = true;
+
+            // Create series
+            // this.series = this.chart.series.push(new am4charts.ColumnSeries());
+            // this.series.dataFields.valueY = 'research';
+            // this.series.dataFields.categoryX = 'country';
+            // this.series.name = 'Research';
+            // this.series.tooltipText = '{name}: [bold]{valueY}[/]';
+            // This has no effect
+            // series.stacked = true;
+
+            this.series2 = this.chart.series.push(new am4charts.ColumnSeries());
+            this.series2.dataFields.valueY = 'billableCount';
+            this.series2.dataFields.categoryX = '_id';
+            this.series2.name = 'Billable';
+            this.series2.tooltipText = '{name}: [bold]{valueY}[/]';
+            this.series2.heatRules.push({
+              target: this.series2.columns.template,
+              property: 'fill',
+              // min: am4core.color('#F5DBCB'),
+              // max: am4core.color('#9c66cf'),
+              dataField: 'valueY',
+            });
+            // this.series2.columns.template.adapter.add('fill', function (
+            //   fill,
+            //   target
+            // ) {
+            //   return this.chart.colors.getIndex(target.dataItem.index);
+            // });
+            // Do not try to stack on top of previous series
+            // series2.stacked = true;
+            this.series2.columns.template.strokeWidth = 0;
+            this.series2.columns.template.fontSize = '7px';
+            this.series2.tooltip.pointerOrientation = 'vertical';
+            this.series2.fill = am4core.color('#9c66cf');
+
+            // this.series2.columns.template.column.cornerRadiusTopLeft = 10;
+            // this.series2.columns.template.column.cornerRadiusTopRight = 10;
+            this.series2.columns.template.column.fillOpacity = 0.8;
+
+            this.series3 = this.chart.series.push(new am4charts.ColumnSeries());
+            this.series3.dataFields.valueY = 'nonBillableCount';
+            this.series3.dataFields.categoryX = '_id';
+            this.series3.name = 'Non Billable';
+            this.series3.stroke = am4core.color('#cd3f72');
+            this.series3.fill = am4core.color('#cd3f72');
+            this.series3.tooltipText = '{name}: [bold]{valueY}[/]';
+            this.series3.stacked = true;
+            this.series3.tooltip.pointerOrientation = 'vertical';
+
+            // Add cursor
+            this.chart.cursor = new am4charts.XYCursor();
+
+            // Add legend
+            this.chart.legend = new am4charts.Legend();
+            this.categoryAxis.renderer.grid.template.disabled = true;
+            this.valueAxis.renderer.grid.template.disabled = true;
+            this.series3.strokeWidth = 3;
+
+            // this.chart.scrollbarX = new am4core.Scrollbar();
+            // this.series3
+            break;
+        }
+      });
+  }
+
+  ngOnDestroy() {
+    // Clean up chart when the component is removed
+    this.browserOnly(() => {
+      if (this.chart) {
+        this.chart.dispose();
+      }
+    });
+  }
+}

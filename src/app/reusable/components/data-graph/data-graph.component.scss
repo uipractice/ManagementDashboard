@@ -1,0 +1,131 @@
+.graphContainer {
+  background-color: white !important;
+}
+.DashboardGraph {
+  margin-top: 15px;
+  display: flex;
+}
+.Graph {
+  width: 100%;
+  border: 0;
+  box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
+  // margin-right: 13px;
+  background-color: #fff;
+}
+.GraphLast {
+  width: 100% !important;
+  margin-right: 0 !important;
+}
+.GraphHead {
+  display: flex;
+  background: #f8f8fb;
+  padding: 9px 15px 9px;
+  width: 100%;
+  align-items: baseline;
+  box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
+  h5 {
+    color: #57565c;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+  }
+}
+.ls {
+  letter-spacing: -0.2px;
+}
+.SelectType {
+  width: 120px;
+  height: 30px;
+  font-size: 14px;
+  padding: 5px 10px 7px;
+  color: #7b7b7b;
+  justify-self: auto;
+  margin-left: auto;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  border: 0;
+  // background-position: right 10% top 45%;
+  // background-size: 12px;
+  -webkit-appearance: none;
+  background: url(src/assets/images/main/down-arrow-user.svg) no-repeat right
+    #fff;
+  background-position: right;
+  background-size: 12px;
+  background-blend-mode: difference;
+  background-origin: content-box;
+  background-position-y: center;
+}
+.SelectType:focus,
+.SelectType:active {
+  outline: none;
+}
+
+.WidSelect {
+  width: 85px !important;
+}
+.GraphBody {
+  // padding: 0px 15px;
+  background-color: white;
+  font-size: 14px;
+  color: #57565c;
+  height: 500px;
+  overflow: overlay;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #afaeae #e3e1e1;
+  // margin: 10px 10px 10px 0px;
+  ul {
+    padding: 0px;
+    margin: 0px;
+    padding: 0px 15px;
+    li {
+      list-style: none;
+      height: 57px;
+      border-bottom: 1px solid #c4c4c4;
+      padding: 10px 0px;
+      overflow: hidden;
+      a {
+        color: #7b7b7b;
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+    li:last-child {
+      border: 0px;
+      padding-bottom: 0px;
+    }
+  }
+}
+.GraphBody::-webkit-scrollbar {
+  width: 5px;
+}
+.GraphBody::-webkit-scrollbar-track {
+  background: #e3e1e1;
+  border-radius: 15px;
+}
+.GraphBody::-webkit-scrollbar-thumb {
+  background: #afaeae;
+  border-radius: 15px;
+  height: 5%;
+}
+.GraphBody::-webkit-scrollbar-thumb:hover {
+  background: #afaeae;
+}
+.GraphAccounts {
+  width: 68%;
+  margin-right: 0 !important;
+}
+
+@media only screen and (max-width: 425px) and (min-width: 320px) {
+  .DashboardGraph {
+    display: block;
+  }
+  .Graph {
+    width: 100% !important;
+    margin-bottom: 15px;
+    // height: 370px;
+  }
+  .GraphLast {
+    // width: 22% !important;
+    margin-right: 0 !important;
+  }
+}

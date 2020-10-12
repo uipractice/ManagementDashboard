@@ -1,6 +1,6 @@
 // div{ border:1px solid ;width:100%; height:calc(100vh - 66px); overflow-y: scroll;}
 // div{border:1px solid blue; width:100%; height:calc(100vh - 76px); overflow-y: scroll;}
-.DashboardHeader{
+.DashboardHeader {
   padding: 22px 13px 22px 22px;
   padding-bottom: 30px;
   margin-left: 65px;
@@ -10,41 +10,41 @@
   scrollbar-width: thin;
   scrollbar-color: #afaeae #e3e1e1;
   height: 100%;
-  display:inline-table;
-  h3{
-      font-size: 24px;
-      font-weight: bold;
-      color: #57565c;
-      line-height: 29px;
+  width: 95%;
+  display: inline-table;
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #57565c;
+    line-height: 29px;
   }
 }
 .DashboardHeader::-webkit-scrollbar {
   width: 5px;
 }
 .DashboardHeader::-webkit-scrollbar-track {
-background: #e3e1e1; 
-border-radius: 15px;
+  background: #e3e1e1;
+  border-radius: 15px;
 }
 .DashboardHeader::-webkit-scrollbar-thumb {
-background: #afaeae; 
-border-radius: 15px;
-height: 5%;
+  background: #afaeae;
+  border-radius: 15px;
+  height: 5%;
 }
 .DashboardHeader::-webkit-scrollbar-thumb:hover {
-background: #afaeae;
+  background: #afaeae;
 }
-@media only screen and (min-width:320px) and (max-width:425px){
-  .DashboardHeader{
-      margin: 0px;
-      padding: 0px 15px 30px 15px;
-      top: 90px;
-      z-index: 0;
-      display:block;
-      position: relative;
-      overflow:auto;
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .DashboardHeader {
+    margin: 0px;
+    padding: 0px 15px 30px 15px;
+    top: 90px;
+    z-index: 0;
+    display: block;
+    position: relative;
+    overflow: auto;
   }
-  .MobileNone{
-      display: none;
+  .MobileNone {
+    display: none;
   }
-
 }

@@ -14,9 +14,23 @@ import { ModuleDefaultModule } from './modules/module-default/module-default.mod
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CharLimitpipe } from './components/pipes/char-limit.pipe';
+import { DataGraphComponent } from './reusable/components/data-graph/data-graph.component';
+import { DataFilterComponent } from './reusable/components/data-filter/data-filter.component';
+import { CssLoaderComponent } from './reusable/components/css-loader/css-loader.component';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SideNavComponent,
-    DashboardContainerComponent, DashboardSearchComponent, DashboardContainerComponent, LoginComponent, CharLimitpipe],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SideNavComponent,
+    DashboardContainerComponent,
+    DashboardSearchComponent,
+    DashboardContainerComponent,
+    LoginComponent,
+    CharLimitpipe,
+    DataGraphComponent,
+    DataFilterComponent,
+    CssLoaderComponent,
+  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

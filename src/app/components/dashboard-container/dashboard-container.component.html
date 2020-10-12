@@ -1,8 +1,31 @@
-<div *ngIf="currentUser"><ev-header></ev-header>
-<ev-side-nav></ev-side-nav>
-<div class="DashboardHeader">
-<h3 class="MobileNone">Mgmt. Dashboard</h3>
-<ev-header-default></ev-header-default>
-<ev-graph-default></ev-graph-default>
-</div>
+<div *ngIf="currentUser">
+  <ev-header></ev-header>
+
+
+  <ev-side-nav></ev-side-nav>
+  <div class="DashboardHeader">
+    <h3 class="MobileNone">Mgmt. Dashboard</h3>
+    <ev-header-default></ev-header-default>
+    <div class="row">
+      <div class="col-md-9 p-0" *ngIf="isDataLoaded">
+        <ev-data-graph [chartData]="chartData" chartType="multiColorBarChartMultiLevel" [dataLoaded]="isDataLoaded"
+          [isNoGraphShown]="false">
+        </ev-data-graph>
+      </div>
+
+      <div class="col-md-9 p-0 m-2" *ngIf="!isDataLoaded">
+        <ev-css-loader></ev-css-loader>
+      </div>
+      <div class="col-md-2 p-0 m-2" *ngIf="!isDataLoaded">
+        <ev-css-loader></ev-css-loader>
+      </div>
+
+      <div class="col-md-3 p-0" *ngIf="isDataLoaded">
+        <ev-data-graph [isNoGraphShown]="true" [newsData]="newsLetterData" titleCommon="News and Events">
+        </ev-data-graph>
+      </div>
+    </div>
+
+    <!-- <ev-graph-default></ev-graph-default> -->
+  </div>
 </div>

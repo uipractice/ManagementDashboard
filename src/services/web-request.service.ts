@@ -59,6 +59,20 @@ export class WebRequestService {
     }).catch((err) => console.error(err));
   }
 
+  // GET_GRAPH_DATA_PRACTICE
+
+  async getPracticeGraphData() {
+    return new Promise((resolve, reject) => {
+      this.http
+        .get(`${this.ROOT_URL}${this._urls.GET_GRAPH_DATA_PRACTICE}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+
   async setEmpDetails(data) {
     return new Promise((resolve, reject) => {
       this.http

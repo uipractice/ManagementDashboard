@@ -250,8 +250,9 @@ export class DataGraphComponent implements OnInit {
             this.series2 = this.chart.series.push(new am4charts.ColumnSeries());
             this.series2.dataFields.valueY = this.chartData.series1;
             this.series2.dataFields.categoryX = '_id';
-            this.series2.name = this.chartData.data.legendName1;
-            this.series2.tooltipText = '{name}: [bold]{valueY}[/]';
+            this.series2.fontSize = '10px';
+            this.series2.name = this.chartData.legendName1;
+            this.series2.tooltipText = '[bold][font-size: 10px]{valueY}[/]';
             this.series2.heatRules.push({
               target: this.series2.columns.template,
               property: 'fill',
@@ -275,16 +276,21 @@ export class DataGraphComponent implements OnInit {
             // this.series2.columns.template.column.cornerRadiusTopLeft = 10;
             // this.series2.columns.template.column.cornerRadiusTopRight = 10;
             this.series2.columns.template.column.fillOpacity = 0.8;
-
-            this.series3 = this.chart.series.push(new am4charts.ColumnSeries());
-            this.series3.dataFields.valueY = this.chartData.series2;
-            this.series3.dataFields.categoryX = '_id';
-            this.series3.name = this.chartData.data.legendName2;
-            this.series3.stroke = am4core.color('#cd3f72');
-            this.series3.fill = am4core.color('#cd3f72');
-            this.series3.tooltipText = '{name}: [bold]{valueY}[/]';
-            this.series3.stacked = true;
-            this.series3.tooltip.pointerOrientation = 'vertical';
+            if (this.chartData.series2) {
+              this.series3 = this.chart.series.push(
+                new am4charts.ColumnSeries()
+              );
+              this.series3.dataFields.valueY = this.chartData.series2;
+              this.series3.dataFields.categoryX = '_id';
+              this.series3.name = this.chartData.legendName2;
+              this.series3.stroke = am4core.color('#cd3f72');
+              this.series3.fontSize = '10px';
+              this.series3.fill = am4core.color('#cd3f72');
+              this.series3.tooltipText = '[bold][font-size: 10px]{valueY}[/]';
+              // this.series3.tooltipText.fontSize = '9px';
+              this.series3.stacked = true;
+              this.series3.tooltip.pointerOrientation = 'vertical';
+            }
 
             // Add cursor
             this.chart.cursor = new am4charts.XYCursor();

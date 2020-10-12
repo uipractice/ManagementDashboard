@@ -37,7 +37,6 @@ export class DashboardContainerComponent implements OnInit {
         this.chartData2['idName'] = 'overAllChart4';
         this.chartData2['title'] = 'Resource Engagement';
         this.chartData2['series1'] = 'count';
-        this.chartData2['series2'] = 'nonBillableCount';
         this.chartData2['legendName1'] = 'Practices';
         this.chartData2['legendName2'] = '';
         this.chartData2['data'] = res['data'];

@@ -13,5 +13,6 @@ export class UrlConstants {
     GET_USERS: 'api/emp/getAllEmp',
     DELETE_EMP: 'api/emp/deleteEmp',
     GET_GRAPH_DATA_ACCOUNTS: '/api/emp/getAccountGraphData',
+    GET_GRAPH_DATA_PRACTICE: '/api/emp/getPracticeGraphData',
   };
 }

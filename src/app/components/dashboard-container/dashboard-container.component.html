@@ -20,8 +20,15 @@
         <ev-css-loader></ev-css-loader>
       </div>
 
+
       <div class="col-md-3 p-0" *ngIf="isDataLoaded">
         <ev-data-graph [isNoGraphShown]="true" [newsData]="newsLetterData" titleCommon="News and Events">
+        </ev-data-graph>
+      </div>
+
+      <div class="col-md-6 p-0" *ngIf="isDataLoadedPractice">
+        <ev-data-graph [chartData]="chartData2" chartType="multiColorBarChartMultiLevel"
+          [dataLoaded]="isDataLoadedPractice" [isNoGraphShown]="false">
         </ev-data-graph>
       </div>
     </div>

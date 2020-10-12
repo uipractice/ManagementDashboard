@@ -193,6 +193,7 @@ export class DataGraphComponent implements OnInit {
               this.chartData.data.findIndex((el) => el._id === 'CSC'),
               1
             );
+            this, this.chartData.data.sort();
             let color = ['#9c66cf', '#d669a9', '#cfc666', '#7d85ce'];
             // this.chartData.data.map((val, index) => {
             //   console.log(color[Math.floor(Math.random() * 4)]);
@@ -247,15 +248,15 @@ export class DataGraphComponent implements OnInit {
             // series.stacked = true;
 
             this.series2 = this.chart.series.push(new am4charts.ColumnSeries());
-            this.series2.dataFields.valueY = 'billableCount';
+            this.series2.dataFields.valueY = this.chartData.series1;
             this.series2.dataFields.categoryX = '_id';
-            this.series2.name = 'Billable';
+            this.series2.name = this.chartData.data.legendName1;
             this.series2.tooltipText = '{name}: [bold]{valueY}[/]';
             this.series2.heatRules.push({
               target: this.series2.columns.template,
               property: 'fill',
-              // min: am4core.color('#F5DBCB'),
-              // max: am4core.color('#9c66cf'),
+              // min: am4core.color('#a657e6'),
+              // max: am4core.color('#1946a2'),
               dataField: 'valueY',
             });
             // this.series2.columns.template.adapter.add('fill', function (
@@ -269,16 +270,16 @@ export class DataGraphComponent implements OnInit {
             this.series2.columns.template.strokeWidth = 0;
             this.series2.columns.template.fontSize = '7px';
             this.series2.tooltip.pointerOrientation = 'vertical';
-            this.series2.fill = am4core.color('#9c66cf');
+            this.series2.fill = am4core.color('#66aecf');
 
             // this.series2.columns.template.column.cornerRadiusTopLeft = 10;
             // this.series2.columns.template.column.cornerRadiusTopRight = 10;
             this.series2.columns.template.column.fillOpacity = 0.8;
 
             this.series3 = this.chart.series.push(new am4charts.ColumnSeries());
-            this.series3.dataFields.valueY = 'nonBillableCount';
+            this.series3.dataFields.valueY = this.chartData.series2;
             this.series3.dataFields.categoryX = '_id';
-            this.series3.name = 'Non Billable';
+            this.series3.name = this.chartData.data.legendName2;
             this.series3.stroke = am4core.color('#cd3f72');
             this.series3.fill = am4core.color('#cd3f72');
             this.series3.tooltipText = '{name}: [bold]{valueY}[/]';

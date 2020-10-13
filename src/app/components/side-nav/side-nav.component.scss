@@ -30,8 +30,6 @@
   border-left: 5px solid #239EC5;
   outline: none;
   // background: url(src/assets/images/main/Leftnav/Dashboard_filled.svg) no-repeat center;
-  // background-origin: content-box;
-  // filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
 }
 /* Create an active/current "tab button" class */
 .tab .ClickTop.active {
@@ -65,17 +63,16 @@
     border-right: 15px solid #fff;
   }
    .leftNavIcon {
-    // display: none;
     position: absolute;
-    bottom: 22px;
-    left: 65px;
+    top: 22px;
+    left: 75px;
     background: #fff;
     color: #000;
     border-radius: 4px;
     font-size: 14px;
     height: 32px;
   }
-  .ClickTop:hover .leftNavIcon {
+  .NavImg:hover .leftNavIcon {
     display: block;
     padding: 5px 15px;
     width: auto;
@@ -181,42 +178,6 @@
 .NavImg{
   display: grid;
 }
-#dashboard{
-  background: url(src/assets/images/main/leftnav_sprite_new.png) -3px -9px !important;
-}
-#admin{
-  background: url(src/assets/images/main/leftnav_sprite_new.png) -2px -87px !important;
-}
-#hr{
-  background: url(src/assets/images/main/leftnav_sprite_new.png) -2px -241px !important;
-}
-#it{
-  background: url(src/assets/images/main/leftnav_sprite_new.png) -2px -164px !important;
-}
-#dashboard:active{
-  background: url(src/assets/images/main/leftnav_sprite_new.png) -158px -9px !important;
-}
-#admin:active{
-  background: url(src/assets/images/main/leftnav_sprite_new.png) -157px -87px !important;
-}
-#hr:active{
-  background: url(src/assets/images/main/leftnav_sprite_new.png) -157px -241px !important;
-}
-#it:active{
-  background: url(src/assets/images/main/leftnav_sprite_new.png) -157px -163px !important;
-}
-#dashboard > .leftNavIcon{
-  margin-left: -32px;
-}
-#admin > .leftNavIcon{
-  margin-left: -9px;
-}
-#hr > .leftNavIcon{
-  margin-left: -17px;
-}
-#it > .leftNavIcon{
-  margin-left: -6px;
-} 
 }
 @media only screen and (min-width:426px) and (max-width:1440px){
   .tab{
@@ -231,18 +192,6 @@
     padding-left: 11px !important;
   }
 }
-
-.ClickTop .NavImg:hover::after {
-  content: "";
-  position: absolute;
-  left: 40px;
-  top: 32px;
-  margin-left: 6px;
-  border-width: 7px;
-  border-style: solid;
-  border-color: transparent #F58944 transparent transparent;
-  border-right: 15px solid #f58944;
-}
 .ClickTop:hover .NavImg {
   visibility: visible;
 }
@@ -251,69 +200,84 @@
   list-style:none;
   text-decoration: none;
   margin: 0px;
+  padding: 0px;
+  }
+  .NavImg{
+    border-bottom:0.5px solid #747474;
   }
   #dashboard {
-    width: 41px;
-    height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -6px 0px;
-    padding: 37px 37px 40px;
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/Dashboard_line.svg) center no-repeat;
+    background-size: 60%;
+    border-left: 5px solid;
   }
-  .ClickTop:hover #dashboard:hover {
-    width: 41px;
-    height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -84px -0px;
+  #dashboard:hover {
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/Dashboard_line.svg) center no-repeat;
+    background-size: 60%;
+    border-left: 5px solid #239EC5;
+    filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
   }
   #dashboard:active, #dashboard:visited, #dashboard:focus{
-    width: 41px;
-    height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -162px 0px;
-  }
-  #admin {
-    width: 41px;
-    height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -6px -78px;
-    padding: 37px 37px 40px;
-  }
-  #admin:hover {
-    width: 41px;
-    height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -84px -78px;
-  }
-  #admin:active, #admin:visited, #admin:focus{
-    width: 41px;
-    height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -162px -78px;
-  }
-  #hr {
-    width: 41px;
-    height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -6px -233px;
-    padding: 37px 37px 40px;
-  }
-  #hr:hover {
-    width: 41px;
-    height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -84px -233px;
-  }
-  #hr:active, #hr:visited, #hr:focus{
-    width: 41px;
-    height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -162px -233px;
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/Dashboard_filled.svg) center no-repeat;
+    background-size: 60%;
   }
   #it {
-    width: 41px;
-    height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -6px -156px;
-    padding: 37px 37px 40px;
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/IT_line.svg) center no-repeat;
+    background-size: 60%;
+    border-left: 5px solid transparent;
   }
-  #it:hover {
-    width: 41px;
-    height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -84px -154px;
+   #it:hover {
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/IT_line.svg) center no-repeat;
+    background-size: 60%;
+    border-left: 5px solid #239EC5;
+    filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
   }
   #it:active, #it:visited, #it:focus{
-    width: 41px;
-    height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -395px -154px;
-    padding: 37px 37px 40px;
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/IT_filled.svg) center no-repeat;
+    background-size: 60%;
+  }
+  #hr {
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/HR_line.svg) center no-repeat;
+    background-size: 60%;
+    border-left: 5px solid transparent;
+  }
+   #hr:hover {
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/HR_line.svg) center no-repeat;
+    background-size: 60%;
+    border-left: 5px solid #239EC5;
+    filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
+  }
+  #hr:active, #hr:visited, #hr:focus{
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/HR_filled.svg) center no-repeat;
+    background-size: 60%;
+  }
+  #admin {
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/Admin_line.svg) center no-repeat;
+    background-size: 60%;
+    border-left: 5px solid transparent;
+  }
+   #admin:hover {
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/Admin_line.svg) center no-repeat;
+    background-size: 60%;
+    border-left: 5px solid #239EC5;
+    filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
+  }
+  #admin:active, #admin:visited, #admin:focus{
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/Admin_filled.svg) center no-repeat;
+    background-size: 60%;
+  }
+  .active{
+    border-left: 5px solid #239EC5 !important;
+    background-color: #01273A !important;
   }

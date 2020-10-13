@@ -52,7 +52,7 @@ p{
   color: #023047;
 }
 .HoursPerc{
-  color: #929292;
+  color: #929292 !important;
 }
 .VerLine:last-of-type{
   border-right: none;
@@ -108,7 +108,9 @@ span{
   right: -11px;
   top: 60px;
 }
-
+.NotificationContent{
+  right: 0px !important;
+}
 .DropdownContent::after, .NotificationContent::after{
   content: "";
   position: absolute;
@@ -124,7 +126,7 @@ span{
   content: "";
   position: absolute;
   top: -10%;
-    margin-left: 67px;
+    margin-left: 66px;
     border-width: 10px;
     border-bottom: 16px solid #fff;
   border-style: solid;
@@ -164,10 +166,34 @@ span{
 }
 .NotifyText{
   display: grid;
-  span{
+  .NotifyDate{
     line-height: 29px;
   }
 }
+.text {
+  position: relative;
+  font-size: 14px;
+  width: 250px; 
+} 
+.text-concat {
+  position: relative;
+  display: inline-block;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 5.2em; /* (Number of lines you want visible) * (line-height) */
+  min-height: 1em;
+  text-align:justify;
+  font-size:14px;
+  font-weight: normal;
+}
+
+// .text.ellipsis::after {
+//   content: "...";
+//   position: absolute;
+//   right: 4px;
+//   top: 18px;
+//   font-weight: 600;
+// }
 .Notification {
   position: relative;
 }
@@ -220,6 +246,31 @@ span{
   margin-right: 18px;
   width: 13px;
 }
+.ProfileBg{
+  background: url(src/assets/images/main/myprofile.svg) no-repeat left #fff;
+  background-size: 13px;
+  padding-left: 21px;
+  background-origin: content-box;
+}
+.FeedbackBg{
+  background: url(src/assets/images/main/feedback.svg) no-repeat left #fff;
+  background-size: 13px;
+  padding-left: 21px;
+  background-origin: content-box;
+}
+.LogoutBg{
+  background: url(src/assets/images/main/Logout_icon.svg) no-repeat left #fff;
+  background-size: 13px;
+  padding-left: 21px;
+  background-origin: content-box;
+  border-top: 0.5px solid #C4C4C4;
+}
+.Darkbg{
+  background: url(src/assets/images/main/theme_icon.svg) no-repeat left #fff;
+  background-size: 13px;
+  padding-left: 21px;
+  background-origin: content-box;
+}
 .DropdownContent{
   width: 150px;
   ul{
@@ -232,7 +283,7 @@ span{
         text-decoration: none;
         display: block;
         font-size: 14px;
-        padding: 13px 10px 10px 17px;
+        padding: 13px 10px 10px 38px;
         line-height: 18px;
         font-weight: 400;
       }
@@ -245,7 +296,7 @@ span{
     background: #023047 !important;
   }
    li:hover{
-    background: #F2F6FA;
+    background-color: #F2F6FA;
   }
 }
 .DropdownContent a:hover {background-color: none;}
@@ -270,7 +321,7 @@ span{
    vertical-align: sub;
  }
   span{
-    color: #626364;
+    color: #757575;
     font-size: 12px;
     display: inline-grid;
   }
@@ -281,7 +332,16 @@ span{
   position: relative;
 }
 .dark-theme{
-  display: flex;
+  text-decoration: none;
+  display: block;
+  padding: 13px 10px 10px 21px;
+  line-height: 18px !important;
+  .ml-40{
+    margin-left: 38px;
+  color: #57565C;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  }
 }
 .Logout{
   border-top: 0.5px solid #C4C4C4;
@@ -292,7 +352,7 @@ span{
   display: inline-block;
   width: 35px;
   height:13px;
-  margin-top: 17px;
+  margin-top: 4px;
   margin-left: 30px;
 }
 .switch input {
@@ -642,7 +702,7 @@ right: 20px;
   .SearchDropdownData{
     overflow: hidden;
     ul li{
-      padding: 10px 20px;
+      padding: 8px 20px;
     }
     li:hover{
       background: #F2F6FA;

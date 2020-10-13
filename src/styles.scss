@@ -10,7 +10,7 @@
   background-color: #023047 !important;
 }
 body {
-  background-color: #e5e5e5;
+  background-color: #ecedf1;
   // overflow-x: hidden;
   // overflow-y: hidden;
   overflow-y: scroll;
@@ -71,16 +71,4 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .modal-header {
   border-bottom: 0 !important;
-}
-#overAllChart3
-  > div
-  > svg
-  > g
-  > g:nth-child(2)
-  > g:nth-child(2)
-  > g
-  > g:nth-child(5)
-  > g:nth-child(1)
-  > rect {
-  display: none !important;
 }

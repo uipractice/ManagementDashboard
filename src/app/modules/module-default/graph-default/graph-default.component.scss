@@ -30,6 +30,9 @@
 .ls{
   letter-spacing: -0.2px;
 }
+select > option:hover{
+  background: #F2F6FA !important;
+}
 .SelectType{
   width: 120px;
   height: 30px;
@@ -81,6 +84,7 @@
               color: #7b7b7b;
               font-size: 14px;
               line-height: 18px;
+              font-weight: 400;
           }
       }
       li:last-child{

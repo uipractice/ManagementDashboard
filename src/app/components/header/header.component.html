@@ -83,7 +83,7 @@
             </a>
           </li>   <li>
             <a>
-              <img class="NotifyIcon" src="..\..\..\assets\images\main\notifyicon.svg">
+              <img class="NotifyIcon" src="..\..\..\assets\images\main\Notification_bell.svg">
               <div class="NotifyText">
                 <a>Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</a>
                 <span>10-09-2020</span>
@@ -94,7 +94,7 @@
         </div>
       </div>
       <div class="dropdown VerLine2 pdr-0">
-        <a class="dropbtn" (click)="toggleDropdown($event)"><img class="HeaderIcons" src="..\..\..\assets\images\main\user.svg"><img class="downarrow" src="..\..\..\assets\images\main\down-arrow-user.svg"></a>
+        <a class="dropbtn" (click)="toggleDropdown($event)"><img class="HeaderIcons" src="..\..\..\assets\images\main\user.svg"></a>
          <div class="DropdownContent" *ngIf="!isShow">
            <ul>
              <li class="UserIcon"> <a href="#" class="UserDropdown">
@@ -121,7 +121,24 @@
 
 <nav class="navbar NavMobileHeader">
   <div class="NavWidth">
-      <a><img src="..\..\..\assets\images\main\Hamburger.svg"></a>
+      <a class="dropbtn hamburger-mobile" (click)="toggleDropdown($event)"><img src="..\..\..\assets\images\main\Hamburger.svg"></a>
+      <div class="DropdownContent mobile-usermenu" *ngIf="!isShow">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <ul>
+          <li class="UserIcon"> <a href="#" class="UserDropdown">
+             <img src="..\..\..\assets\images\main\user.svg">
+             <div class="user">User Name<br><span>Designation</span></div>
+           </a></li>
+           <li><a href="#"><img class="UserImg" src="..\..\..\assets\images\main\myprofile.svg"> My Profile</a></li>
+         <li><a class=""><img class="UserImg" src="..\..\..\assets\images\main\feedback.svg"> Provide Feedback</a></li>
+         <!-- <li><a href="#">Update Password</a></li> -->
+           <li class="dark-theme"><a href="#"><img class="UserImg" src="..\..\..\assets\images\main\theme_icon.svg"> Dark Theme</a><label class="switch">
+             <input type="checkbox">
+             <span class="slider round"></span>
+           </label></li>
+           <li class="logout-link"><a class="Logout"(click)="logout()"><img class="UserImg" src="..\..\..\assets\images\main\Logout_icon.svg"> Logout</a></li>
+     </ul>
+      </div>
       <a><img src="..\..\..\assets\images\main\logo.svg"></a>
   </div>
   <div class="NavOption">
@@ -171,7 +188,7 @@
             <div class="CloseNotify"><h4>Notifications <span>(20)</span></h4><button type="button" class="close" data-dismiss="modal">&times;</button></div>
             <ul><li *ngFor="let data of notificationCount;" class="notication-border">
               <a href="#" class="">
-                <img class="NotifyIcon" src="..\..\..\assets\images\main\notifyicon.svg">
+                <img class="NotifyIcon" src="..\..\..\assets\images\main\Notification_bell.svg">
                 <div class="NotifyText">{{data.desc | charlimitpipe: 40}}
                   <span>10-09-2020</span>
                 </div>
@@ -180,7 +197,7 @@
           </ul>
             </div>
       </div>
-      <div class="dropdown VerLine2 pdr-0"><a class="dropbtn" (click)="toggleDropdown($event)"><img class="NewsImg" src="..\..\..\assets\images\main\news.svg"></a>
+      <div class="dropdown VerLine2 pdr-0"><a class="dropbtn" ><img class="NewsImg" src="..\..\..\assets\images\main\news.svg"></a>
 
       </div>
     </div>

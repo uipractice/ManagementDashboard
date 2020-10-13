@@ -45,6 +45,7 @@ p{
     font-weight: bold;
     font-size: 0.875rem;
     line-height: 19.2px;
+    color: #023047;
   }
 }
 .HoursDetail{
@@ -75,6 +76,7 @@ p{
 span{
   color: #626364;
   font-size: 12px;
+  font-weight: 600;
 }
 .icon-hamburger{
   position: absolute;
@@ -101,29 +103,27 @@ span{
   background-color: #fff;
   min-width: 190px;
   border-radius: 0 0 4px 4px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,.2);
   z-index: 1;
-  right: 0px;
+  right: -11px;
   top: 60px;
 }
-.notication-border a{
-  border-bottom: 1px solid #C4C4C4;
-}
+
 .DropdownContent::after, .NotificationContent::after{
   content: "";
   position: absolute;
-  top: -13%;
+  top: -11%;
   left: 60%;
-    margin-left: 55px;
+    margin-left: 43px;
     border-width: 10px;
-    border-bottom: 16px solid #f8f8f8;
+    border-bottom: 16px solid #F8F8FB;
   border-style: solid;
-  border-color: transparent transparent #f8f8f8 transparent;
+  border-color: transparent transparent #F8F8FB transparent;
 }
 .NotificationContent::after{
   content: "";
   position: absolute;
-  top: -9%;
+  top: -10%;
     margin-left: 67px;
     border-width: 10px;
     border-bottom: 16px solid #fff;
@@ -137,7 +137,7 @@ span{
     list-style: none;
     margin: 0px;
     overflow-y: scroll;
-    margin: 15px 10px 15px 0 !important;
+    margin: 15px 8px 15px 0 !important;
     scrollbar-width: thin;
     scrollbar-color: #afaeae #e3e1e1;
     height: 235px;
@@ -160,8 +160,10 @@ span{
   width:20px;
   height: 20px;
   margin-right: 18px;
+  margin-top: 3px;
 }
 .NotifyText{
+  display: grid;
   span{
     line-height: 29px;
   }
@@ -226,12 +228,13 @@ span{
     padding: 0px;
     li{
       a {
-        color:#7b7b7b;
+        color:#57565C;
         text-decoration: none;
         display: block;
         font-size: 14px;
         padding: 13px 10px 10px 17px;
         line-height: 18px;
+        font-weight: 400;
       }
     }
   }
@@ -242,7 +245,7 @@ span{
     background: #023047 !important;
   }
    li:hover{
-    background: #F0F4F6;
+    background: #F2F6FA;
   }
 }
 .DropdownContent a:hover {background-color: none;}
@@ -281,7 +284,7 @@ span{
   display: flex;
 }
 .Logout{
-  border: 0.5px solid #C4C4C4;
+  border-top: 0.5px solid #C4C4C4;
 }
 .switch {
   position: absolute;
@@ -289,7 +292,7 @@ span{
   display: inline-block;
   width: 35px;
   height:13px;
-  margin-top: 18px;
+  margin-top: 17px;
   margin-left: 30px;
 }
 .switch input {
@@ -304,20 +307,21 @@ span{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #D4D4D4;
   -webkit-transition: .4s;
   transition: .4s;
   width: 20px;
-  height: 8px;
+  height: 10px;
 }
 .slider:before {
   position: absolute;
   content: "";
-  height: 12px;
-  width: 12px;
+  height: 15px;
+  width: 15px;
   left: -6px;
   bottom: -2px;
-  background-color: #f1f1f1;
+  background: #F1F1F1;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
   transition: 0.4s;
 }
 .tooltip .tooltiptext::after {
@@ -409,6 +413,7 @@ input:checked + .slider:before {
     right: 0;
     top: 0 !important;
     width: 100% !important;
+    height: auto;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     z-index: 1;
@@ -513,12 +518,52 @@ right: 20px;
   width: 22px;
   height: 22px;
 }
+  .mobile-usermenu{
+    width:70% !important;
+    height:100vh;
+    left:0;
+    border-radius: 0;
+    ul{
+      position: relative;
+      height: 100vh;
+      li{
+        a{
+          width:100%;
+        }
+      }
+      .logout-link{
+        position: absolute;
+        bottom:20px;       
+        a{
+          border:0 !important;
+        }
+      }
+    }
+    .UserDropdown{
+      text-align: center;
+      display: grid !important;
+      img{
+        margin: 5px auto;
+        padding: 5px;
+      }
+    }
+    .close{
+      top: 7px;
+      z-index: 1;
+      color: #000;
+      opacity: 1;
+    }
+  }
+  
 }
 
 
 @media only screen and (min-width:426px) and (max-width:1440px){
   .NavMobileHeader{
       display: none !important;
+  }
+  .notication-border a{
+    border-bottom: 1px solid #C4C4C4;
   }
   .NotificationContent{
   width: 285px !important;
@@ -558,7 +603,7 @@ right: 20px;
 
 .SearchDropdown{
   background: #fff;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,.2);
   border-radius: 0px 0px 4px 4px;
   ul{
     list-style: none;
@@ -568,6 +613,7 @@ right: 20px;
       font-size: 14px;
       color: #7b7b7b;
       margin-bottom: 20px;
+      font-weight: 400;
     }
   }
   .SearchDropdownTopbtn{
@@ -599,11 +645,14 @@ right: 20px;
       padding: 10px 20px;
     }
     li:hover{
-      background: #e5e5e5;
+      background: #F2F6FA;
     }
     li.disabled a{
         color: #bdbdbd !important;
         font-size: 12px !important;
+    }
+    li:last-child{
+      margin-bottom: 9px;
     }
   }
 }
@@ -680,7 +729,7 @@ right: 20px;
     }
   }
   .SearchDropdownTopbtn{
-    background: #f8f8f8;
+    background: #f8f8fB;
     width: auto;
     flex-wrap: wrap;
     box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
@@ -689,13 +738,13 @@ right: 20px;
       margin: 0px;
       flex-wrap: wrap;
       li{
-        padding: 10px 3px 10px 2px;
+        padding: 10px 4px 10px 2px;
       }
       button{
         border: 0px;
         background: #023047;
         border-radius: 20px;
-        padding: 5px 20px;
+        padding: 5px 14px;
         color: #fff;
       }
     }
@@ -709,12 +758,12 @@ right: 20px;
 }
 .NotificationContent{
    ul {
-  margin: 15px 10px !important;
+  margin: 0 10px 15px !important;
   overflow-y: hidden;
   height: auto;
 }
 li {
-  padding: 10px 15px !important;
+  padding: 10px 15px 7px!important;
 }
 }
 }
@@ -750,5 +799,15 @@ li {
         padding: 5px 11px !important;
       }
     }
+  }
+}
+@media(max-width:320px){
+  .SearchDrop{
+    width: 279.7px;
+  }
+}
+@media(max-width:375px){
+  .SearchDrop{
+    width: 334.7px;
   }
 }

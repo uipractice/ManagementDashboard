@@ -122,7 +122,7 @@
     text-align:center;
     display: block !important;
     position: unset;
-    margin-top: 48px;
+    margin-top: 16px;
     background: transparent;
     font-size: 12px;
     height: auto !important;
@@ -159,6 +159,7 @@
   display: block;
   padding: 0px !important;
   width: auto;
+  box-shadow: none;
 }
 /* Create an active/current "tab button" class */
 .tab .ClickTop.active {
@@ -181,28 +182,40 @@
   display: grid;
 }
 #dashboard{
-  background: url(src/assets/images/main/leftnav_sprite_new.png) -157px -9px !important;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -3px -9px !important;
 }
 #admin{
-  background: url(src/assets/images/main/leftnav_sprite_new.png) -157px -87px !important;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -2px -87px !important;
 }
 #hr{
-  background: url(src/assets/images/main/leftnav_sprite_new.png) -157px -241px !important;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -2px -241px !important;
 }
 #it{
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -2px -164px !important;
+}
+#dashboard:active{
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -158px -9px !important;
+}
+#admin:active{
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -157px -87px !important;
+}
+#hr:active{
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -157px -241px !important;
+}
+#it:active{
   background: url(src/assets/images/main/leftnav_sprite_new.png) -157px -163px !important;
 }
 #dashboard > .leftNavIcon{
-  margin-left: -9px;
+  margin-left: -32px;
 }
 #admin > .leftNavIcon{
-  margin-left: -3px;
+  margin-left: -9px;
 }
 #hr > .leftNavIcon{
-  margin-left: 1px;
+  margin-left: -17px;
 }
 #it > .leftNavIcon{
-  margin-left: 0px;
+  margin-left: -6px;
 } 
 }
 @media only screen and (min-width:426px) and (max-width:1440px){
@@ -258,49 +271,49 @@
   #admin {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -5px -78px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -6px -78px;
     padding: 37px 37px 40px;
   }
   #admin:hover {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -83px -78px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -84px -78px;
   }
   #admin:active, #admin:visited, #admin:focus{
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -161px -78px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -162px -78px;
   }
   #hr {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -3px -233px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -6px -233px;
     padding: 37px 37px 40px;
   }
   #hr:hover {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -81px -233px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -84px -233px;
   }
   #hr:active, #hr:visited, #hr:focus{
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -159px -233px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -162px -233px;
   }
   #it {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -3px -156px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -6px -156px;
     padding: 37px 37px 40px;
   }
   #it:hover {
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -81px -154px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -84px -154px;
   }
   #it:active, #it:visited, #it:focus{
     width: 41px;
     height: 41px;
-    background: url(src/assets/images/main/leftnav_sprite_new.png) -393px -154px;
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -395px -154px;
     padding: 37px 37px 40px;
   }

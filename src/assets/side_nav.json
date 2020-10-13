@@ -3,15 +3,15 @@
    "icon":"assets/images/main/Leftnav/Dashboard_line.svg"
   },
   {"id":2,
-    "name":"Admin",
+    "name":"HR",
     "icon":"assets/images/main/Leftnav/Admin_line.svg"
   },
   {"id":3,
-    "name":"HR",
+    "name":"IT",
     "icon":"assets/images/main/Leftnav/hr_line.svg"
   },
   {"id":4,
-    "name":"IT",
+    "name":"Admin",
     "icon":"assets/images/main/Leftnav/IT_line.svg"
   }
   ]

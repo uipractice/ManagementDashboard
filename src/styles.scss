@@ -9,14 +9,14 @@
 .indigo {
   background-color: #023047 !important;
 }
-body{
+body {
   background-color: #e5e5e5;
   // overflow-x: hidden;
   // overflow-y: hidden;
   overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: #afaeae #e3e1e1;
-  height:100%;
+  height: 100%;
   font-family: "lato", sans-serif !important;
   letter-spacing: 0.5px;
 }
@@ -24,19 +24,19 @@ body::-webkit-scrollbar {
   width: 5px;
 }
 body::-webkit-scrollbar-track {
-background: #e3e1e1; 
-border-radius: 15px;
+  background: #e3e1e1;
+  border-radius: 15px;
 }
 body::-webkit-scrollbar-thumb {
-background: #afaeae; 
-border-radius: 15px;
-height: 5%;
+  background: #afaeae;
+  border-radius: 15px;
+  height: 5%;
 }
 body::-webkit-scrollbar-thumb:hover {
-background: #afaeae;
+  background: #afaeae;
 }
-:root{
-  scrollbar-color:#afaeae #e3e1e1 !important;
+:root {
+  scrollbar-color: #afaeae #e3e1e1 !important;
   scrollbar-width: thin !important;
 }
 * {
@@ -71,4 +71,16 @@ background: #afaeae;
 }
 .modal-header {
   border-bottom: 0 !important;
+}
+#overAllChart3
+  > div
+  > svg
+  > g
+  > g:nth-child(2)
+  > g:nth-child(2)
+  > g
+  > g:nth-child(5)
+  > g:nth-child(1)
+  > rect {
+  display: none !important;
 }

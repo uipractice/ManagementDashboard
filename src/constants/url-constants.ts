@@ -14,5 +14,7 @@ export class UrlConstants {
     DELETE_EMP: 'api/emp/deleteEmp',
     GET_GRAPH_DATA_ACCOUNTS: '/api/emp/getAccountGraphData',
     GET_GRAPH_DATA_PRACTICE: '/api/emp/getPracticeGraphData',
+    USER_LOGIN: '/api/auth/login',
+    AUTHENTICATE_USER: '/api/auth/authenticate',
   };
 }

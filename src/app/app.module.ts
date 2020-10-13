@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { DashboardSearchComponent } from './components/header/dashboard-search/dashboard-search.component';
 import { DashboardContainerComponent } from './components/dashboard-container/dashboard-container.component';
@@ -17,6 +18,9 @@ import { CharLimitpipe } from './components/pipes/char-limit.pipe';
 import { DataGraphComponent } from './reusable/components/data-graph/data-graph.component';
 import { DataFilterComponent } from './reusable/components/data-filter/data-filter.component';
 import { CssLoaderComponent } from './reusable/components/css-loader/css-loader.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { WebReqInterceptor } from '../services/web-req.interceptor';
+import { Data } from './helper/datastore';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +45,11 @@ import { CssLoaderComponent } from './reusable/components/css-loader/css-loader.
     HttpClientModule,
     AgGridModule.withComponents(null),
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: WebReqInterceptor, multi: true },
+    Data,
+    CookieService,
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

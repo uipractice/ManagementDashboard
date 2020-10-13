@@ -189,9 +189,15 @@ export class DataGraphComponent implements OnInit {
             console.log(this.chartData);
             this.chartData.data[3] = {};
             // alert(this.chartData.data.findIndex((el) => el._id === 'CSC'));
-            this.chartData.data.splice(
-              this.chartData.data.findIndex((el) => el._id === 'CSC'),
-              1
+            // this.chartData.data.splice(
+            //   this.chartData.data.findIndex((el) => el._id === 'CSC'),
+            //   1
+            // );
+            console.log(
+              this.chartData.data.sort((a, b) => {
+                console.log(a, b);
+                return a._id > b._id;
+              })
             );
             this, this.chartData.data.sort();
             let color = ['#9c66cf', '#d669a9', '#cfc666', '#7d85ce'];
@@ -246,12 +252,13 @@ export class DataGraphComponent implements OnInit {
             // this.series.tooltipText = '{name}: [bold]{valueY}[/]';
             // This has no effect
             // series.stacked = true;
-
             this.series2 = this.chart.series.push(new am4charts.ColumnSeries());
             this.series2.dataFields.valueY = this.chartData.series1;
             this.series2.dataFields.categoryX = '_id';
             this.series2.fontSize = '10px';
-            this.series2.name = this.chartData.legendName1;
+            if (this.chartData.series2) {
+              this.series2.name = this.chartData.legendName1;
+            }
             this.series2.tooltipText = '[bold][font-size: 10px]{valueY}[/]';
             this.series2.heatRules.push({
               target: this.series2.columns.template,
@@ -276,7 +283,9 @@ export class DataGraphComponent implements OnInit {
             // this.series2.columns.template.column.cornerRadiusTopLeft = 10;
             // this.series2.columns.template.column.cornerRadiusTopRight = 10;
             this.series2.columns.template.column.fillOpacity = 0.8;
+
             if (this.chartData.series2) {
+              // this.chart.legend.markers.template.disabled = true;
               this.series3 = this.chart.series.push(
                 new am4charts.ColumnSeries()
               );

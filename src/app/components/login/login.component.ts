@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/services/auth.service';
 import { Data } from '../../helper/datastore';
+import { CookieService } from 'ngx-cookie-service';
 // import { first } from 'rxjs/operators';
 
 @Component({
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+
     public router: Router,
     public data: Data,
     public auth: AuthService
@@ -62,6 +64,7 @@ export class LoginComponent implements OnInit {
     this.auth.login(loginData).then((res) => {
       if (res['statusCode'] === 200) {
         this.data._accessToken = res['token'];
+        localStorage.setItem('userInfo', JSON.stringify(res['data']));
         this.router.navigate(['default']);
       } else {
       }

@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   selector: 'ev-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  host: {"(document:click)": "onClick()"}
+  host: { '(document:click)': 'onClick()' },
 })
 export class HeaderComponent implements OnInit {
   isShow = true;
@@ -23,73 +23,75 @@ export class HeaderComponent implements OnInit {
   isSearch = true;
   isparentSearch: any;
   notificationCount: any;
-  currentUser =  sessionStorage.getItem("user");
+  userInfo: any;
+  currentUser = sessionStorage.getItem('user');
   hoursCount: any;
-  toggleDropdown($event){
+  toggleDropdown($event) {
     $event.stopPropagation();
     this.isShow = !this.isShow;
     this.isOpen = true;
     this.isSearch = true;
   }
-  toggleDowncontent($event){
+  toggleDowncontent($event) {
     $event.stopPropagation();
     this.isOpen = !this.isOpen;
     this.isShow = true;
     this.isSearch = true;
   }
-  toggledownSearch(e){
+  toggledownSearch(e) {
     e.stopPropagation();
     this.isSearch = !this.isSearch;
     this.isShow = true;
     this.isOpen = true;
   }
-//   GetChildData(data){
-//     console.log(data);
-//     this.isparentSearch = data;
-//  }
+  //   GetChildData(data){
+  //     console.log(data);
+  //     this.isparentSearch = data;
+  //  }
 
   onClick() {
     this.isShow = true;
     this.isOpen = true;
     this.isSearch = true;
   }
-  constructor(private httpService: HttpClient, private router: Router) { }
+  constructor(private httpService: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
+    if (localStorage.getItem('userInfo')) {
+      this.userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    }
 
-    this.httpService.get('assets/header_count.json').subscribe( res => {
+    this.httpService.get('assets/header_count.json').subscribe(
+      (res) => {
         // this.arrHours = data; // FILL THE ARRAY WITH DATA.
         const data: any = res;
         // this.hoursCount = res[0].hoursCount;
-        data.forEach(e => {
+        data.forEach((e) => {
           if (e.hoursCount) {
             this.hoursCount = e.hoursCount;
             // console.log(e.hoursCount);
           }
-          if (e.notification){
+          if (e.notification) {
             this.notificationCount = e.notification;
           }
-        // this.hoursCount = element.hoursCount;
-        // console.log(this.hoursCount);
+          // this.hoursCount = element.hoursCount;
+          // console.log(this.hoursCount);
         });
         // console.log(this.hoursCount);
       },
       (err: HttpErrorResponse) => {
-        console.log (err.message);
+        console.log(err.message);
       }
     );
 
-
-
-  //   getcustomcss(){
-  //     if(this.arrHours[i]== this.arrHours[this.arrHours.length-1]){
-  //     return 'class1';
-  //   }
-  // }
-
+    //   getcustomcss(){
+    //     if(this.arrHours[i]== this.arrHours[this.arrHours.length-1]){
+    //     return 'class1';
+    //   }
+    // }
   }
   logout() {
     sessionStorage.clear();
     this.router.navigate(['/login']);
-    }
+  }
 }

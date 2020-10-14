@@ -9,6 +9,9 @@
 .indigo {
   background-color: #023047 !important;
 }
+*{
+  font-family: 'Lato', sans-serif !important;
+}
 body {
   background-color: #ecedf1;
   // overflow-x: hidden;
@@ -17,7 +20,7 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #afaeae #e3e1e1;
   height: 100%;
-  font-family: "lato", sans-serif !important;
+  font-family: "Lato", sans-serif !important;
   letter-spacing: 0.5px;
 }
 body::-webkit-scrollbar {
@@ -40,7 +43,7 @@ body::-webkit-scrollbar-thumb:hover {
   scrollbar-width: thin !important;
 }
 * {
-  font-family: "lato", sans-serif !important;
+  font-family: "Lato", sans-serif !important;
 }
 .headerCol {
   display: flex;

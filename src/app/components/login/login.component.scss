@@ -2,16 +2,15 @@
 
 .dashboardLogin{
     position: relative;
-    background:#ffffff;
     height:100vh;
 }
 .left-img-part{
     height:100vh;
-    background:url(src/assets/images/main/login_bg.jpg) no-repeat;
+    background:#023047 url(src/assets/images/main/login_graphics.png) no-repeat;
     width:40%;
     float: left;
-    background-size: contain;
     position: relative;
+    border-bottom-right-radius: 80px;
 }
 .left-img-part img{
     position: absolute;
@@ -79,7 +78,7 @@
         font-size: 14px;
         line-height: 16px;
         text-align: right;
-        color: #2A292A;
+        color: #7B7B7B;
     }
     .btn-primary{
         height: 44px;
@@ -89,13 +88,20 @@
         margin-top: 14px;
     }
 } 
-
+@media screen and(max-width:1024px) and (min-width:991px){
+    .left-img-part{
+        background-size:80%;
+    }
+}
 @media(max-width:768px){
     .left-img-part{
         width: 100%;
-        img{
-            top:17%;
-        }
+        background:#023047 url(src/assets/images/main/login_graphics_mobile.png) no-repeat;
+        background-size:70%;
+        height: 60vh;
+        // img{
+        //     top:17%;
+        // }
     }
     .dashboardLogin{
         background:transparent;
@@ -103,7 +109,7 @@
     .right-loginpart{
         height:auto;
         width:100%;
-        top:-41%;
+        top:-7%;
         .card{
             background-color: #fff;
             width: 315px;
@@ -117,5 +123,10 @@
         .card-header{
             padding: 10px 1.25rem 3px;
         }
+    }
+}
+@media(max-width:420px){
+    .right-loginpart{
+        top:-17%;
     }
 }

@@ -7,6 +7,11 @@
     <h3 class="MobileNone">Mgmt. Dashboard</h3>
     <ev-header-default></ev-header-default>
     <div class="row">
+      <div class="col-md-6 p-0" *ngIf="isDataLoadedPractice">
+        <ev-data-graph [chartData]="chartData2" chartType="multiColorBarChartMultiLevel"
+          [dataLoaded]="isDataLoadedPractice" [isNoGraphShown]="false">
+        </ev-data-graph>
+      </div>
       <div class="col-md-9 p-0" *ngIf="isDataLoaded">
         <ev-data-graph [chartData]="chartData" chartType="multiColorBarChartMultiLevel" [dataLoaded]="isDataLoaded"
           [isNoGraphShown]="false">
@@ -26,11 +31,7 @@
         </ev-data-graph>
       </div>
 
-      <div class="col-md-6 p-0" *ngIf="isDataLoadedPractice">
-        <ev-data-graph [chartData]="chartData2" chartType="multiColorBarChartMultiLevel"
-          [dataLoaded]="isDataLoadedPractice" [isNoGraphShown]="false">
-        </ev-data-graph>
-      </div>
+
     </div>
 
     <!-- <ev-graph-default></ev-graph-default> -->

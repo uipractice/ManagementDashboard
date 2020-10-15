@@ -1,15 +1,18 @@
 <!-- If the data type is graph compon -->
 <div *ngIf="!isNoGraphShown">
-  <div class="graphContainer mt-3 mb-3 mr-3 ml-3 ">
+  <div class="graphContainer mt-3 mb-3 mr-3 ">
     <ev-data-filter [title]="chartData.title"></ev-data-filter>
-    <div id="{{chartData.idName}}" style="width: 100%; height: 500px">
+    <p class="graphPointsHeading">Billable : <span class="positive">420</span> | Non - Billable : <span
+        class="negetive">87</span></p>
+    <div id="{{chartData.idName}}" style="width: 100%; height:400px"
+      [class]="chartData.type === 'normal' ? 'fullHeight' :'notmalHeight'">
 
     </div>
   </div>
 </div>
 
 <!-- If its news letter -->
-<div class="GraphBody  mt-3 mb-3 " *ngIf="isNoGraphShown">
+<div class="GraphBody  mt-3 mb-3 mr-3 " *ngIf="isNoGraphShown">
   <ev-data-filter [title]="titleCommon"></ev-data-filter>
   <div class="GraphLast Graph">
     <ul>

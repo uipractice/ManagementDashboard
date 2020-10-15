@@ -1,56 +1,60 @@
 <nav class="navbar navbar-expand-lg NavHeader">
   <div class="ds-con">
-      <div class="ColAlign">
-        <img class="navbar-brand logo" src="../../../../assets/images/main/logo.svg" alt="">
-        <div class="VerLine"  *ngFor="let hours of hoursCount; index as i;">
-          <span class="HoursDetails">{{hours.desc}}:{{hours.count}} </span>
-          <span class="HoursPerc">({{hours.value}}% ) </span>
-          <span class="HoursImg" *ngIf="hours.arrowFlag===true; else elseBlock"><img src="..\..\..\assets\images\main\arrow_up.svg"></span>
-          <ng-template #elseBlock>
-            <span class="hours-img"><img src="..\..\..\assets\images\main\arrow_down.svg"></span>
-            </ng-template>
-        </div>
-      </div>
-        <div class="VerLine2">
-           <!-- <ev-dashboard-search [isShow]="isShow" [isOpen]="isOpen" (myOutput) ="GetChildData($event)"></ev-dashboard-search> -->
-
-  <div class="">
-    <input type="search" class="search SearchMob" on-click="toggledownSearch($event)" placeholder="Search">
-    <!-- <img class="SearchImg" src="..\..\..\assets\images\main\search.svg"> -->
-    <div class="">
-    <div class="SearchDropdown" *ngIf="!isSearch">
-      <div class="SearchDropdownTopbtn">
-        <ul>
-        <li><a href="#"><button>Mgmt. Dashboard</button></a></li>
-        <li><a href="#" class=""><button>HR</button></a></li>
-        <li><a href="#"><button>IT</button></a></li>
-        <li><a href="#"><button>Admin</button></a></li>
-        </ul>
-      </div>
-      <div class="SearchDropdownData">
-        <ul>
-        <li class="disabled"><a href="#">Try Searching for</a></li>
-        <li><a href="#" class="">People </a></li>
-        <li><a href="#">Account</a></li>
-        <li><a href="#">Practice</a></li>
-        <li><a href="#">Department</a></li>
-        </ul>
+    <div class="ColAlign">
+      <img class="navbar-brand logo" src="../../../../assets/images/main/logo.svg" alt="">
+      <div class="VerLine" *ngFor="let hours of hoursCount; index as i;">
+        <span class="HoursDetails">{{hours.desc}}:{{hours.count}} </span>
+        <span class="HoursPerc">({{hours.value}}% ) </span>
+        <span class="HoursImg" *ngIf="hours.arrowFlag===true; else elseBlock"><img
+            src="..\..\..\assets\images\main\arrow_up.svg"></span>
+        <ng-template #elseBlock>
+          <span class="hours-img"><img src="..\..\..\assets\images\main\arrow_down.svg"></span>
+        </ng-template>
       </div>
     </div>
-  </div>
-  </div>
+    <div class="VerLine2">
+      <!-- <ev-dashboard-search [isShow]="isShow" [isOpen]="isOpen" (myOutput) ="GetChildData($event)"></ev-dashboard-search> -->
+
+      <div class="">
+        <input type="search" class="search SearchMob" on-click="toggledownSearch($event)" placeholder="Search">
+        <!-- <img class="SearchImg" src="..\..\..\assets\images\main\search.svg"> -->
+        <div class="">
+          <div class="SearchDropdown" *ngIf="!isSearch">
+            <div class="SearchDropdownTopbtn">
+              <ul>
+                <li><a href="#"><button>Mgmt. Dashboard</button></a></li>
+                <li><a href="#" class=""><button>HR</button></a></li>
+                <li><a href="#"><button>IT</button></a></li>
+                <li><a href="#"><button>Admin</button></a></li>
+              </ul>
+            </div>
+            <div class="SearchDropdownData">
+              <ul>
+                <li class="disabled"><a href="#">Try Searching for</a></li>
+                <li><a href="#" class="">People </a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Practice</a></li>
+                <li><a href="#">Department</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      <div class="VerLine2 Notification" >
-        <a  *ngIf="notificationCount"  class="dropbtn" (click)="toggleDowncontent($event)"><img class="HeaderIcons" src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge" *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
-        <div class="DropdownContent NotificationContent" *ngIf="!isOpen && notificationCount.length > 0">
-          <!-- <ul><li *ngFor="let data of notificationCount;" ><a href="#" class="" data-toggle="modal" data-target="#myModal">{{data.desc | charlimitpipe: 40}} </a></li>
+      </div>
+    </div>
+    <div class="VerLine2 Notification">
+      <a *ngIf="notificationCount" class="dropbtn" (click)="toggleDowncontent($event)"><img class="HeaderIcons"
+          src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge"
+          *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
+      <div class="DropdownContent NotificationContent" *ngIf="!isOpen && notificationCount.length > 0">
+        <!-- <ul><li *ngFor="let data of notificationCount;" ><a href="#" class="" data-toggle="modal" data-target="#myModal">{{data.desc | charlimitpipe: 40}} </a></li>
         </ul> -->
         <ul>
           <li>
             <a>
               <img class="NotifyIcon" src="..\..\..\assets\images\main\Notification_bell.svg">
               <div class="text ellipsis NotifyText">
-                <span class="text-concat">Lorem ipsum dolor sit amet,consectetuer adipiscing elit Lorem ipsum dolor sit amet,consectetuer adipiscing elit,.</span>
+                <span class="text-concat">Lorem ipsum dolor sit amet,consectetuer adipiscing elit Lorem ipsum dolor sit
+                  amet,consectetuer adipiscing elit,.</span>
                 <span class="NotifyDate">10-09-2020</span>
               </div>
             </a>
@@ -68,33 +72,41 @@
             <a>
               <img class="NotifyIcon" src="..\..\..\assets\images\main\Notification_bell.svg">
               <div class="text ellipsis NotifyText">
-                <span class="text-concat">Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetuer adipiscing elit Lorem ipsum dolor sit amet, consectetuer adipiscing elit ipsum dolor sit amet, consectetuer adipiscing elit.</span>
+                <span class="text-concat">Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit
+                  amet, consectetuer adipiscing elit Lorem ipsum dolor sit amet, consectetuer adipiscing elit ipsum
+                  dolor sit amet, consectetuer adipiscing elit.</span>
                 <span class="NotifyDate">10-09-2020</span>
               </div>
             </a>
           </li>
         </ul>
-        </div>
       </div>
-      <div class="dropdown VerLine2 pdr-0">
-        <a class="dropbtn" (click)="toggleDropdown($event)"><img class="HeaderIcons" src="..\..\..\assets\images\main\user.svg"></a>
-         <div class="DropdownContent" *ngIf="!isShow">
-           <ul>
-             <li class="UserIcon"> <a href="#" class="UserDropdown">
-                <img src="..\..\..\assets\images\main\user.svg">
-                <div class="user">User Name<br><span>Designation</span></div>
-              </a></li>
-              <li class="ProfileBg"><a href="#" class=""><!--<img class="UserImg" src="..\..\..\assets\images\main\myprofile.svg">--> My Profile</a></li>
-            <li class="FeedbackBg"><a href="#" class=""><!--<img class="UserImg" src="..\..\..\assets\images\main\feedback.svg">--> Provide Feedback</a></li>
-            <!-- <li><a href="#">Update Password</a></li> -->
-              <li class="Darkbg dark-theme"><!--<img class="UserImg" src="..\..\..\assets\images\main\theme_icon.svg">--><span class="ml-40"> Dark Theme</span><label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label></li>
-              <li class="LogoutBg"><a class="" (click)="logout()"><!--<img class="UserImg" src="..\..\..\assets\images\main\Logout_icon.svg">--> Logout</a></li>
+    </div>
+    <div class="dropdown VerLine2 pdr-0">
+      <a class="dropbtn" (click)="toggleDropdown($event)"><img class="HeaderIcons"
+          src="..\..\..\assets\images\main\user.svg"></a>
+      <div class="DropdownContent" *ngIf="!isShow">
+        <ul>
+          <li class="UserIcon"> <a href="#" class="UserDropdown">
+              <img src="..\..\..\assets\images\main\user.svg">
+              <div class="user">{{userInfo.name}}<br><span>{{userInfo.designation}}</span></div>
+            </a></li>
+          <li class="ProfileBg"><a href="#" class="">
+              <!--<img class="UserImg" src="..\..\..\assets\images\main\myprofile.svg">--> My Profile</a></li>
+          <li class="FeedbackBg"><a href="#" class="">
+              <!--<img class="UserImg" src="..\..\..\assets\images\main\feedback.svg">--> Provide Feedback</a></li>
+          <!-- <li><a href="#">Update Password</a></li> -->
+          <li class="Darkbg dark-theme">
+            <!--<img class="UserImg" src="..\..\..\assets\images\main\theme_icon.svg">--><span class="ml-40"> Dark
+              Theme</span><label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label></li>
+          <li class="LogoutBg"><a class="" (click)="logout()">
+              <!--<img class="UserImg" src="..\..\..\assets\images\main\Logout_icon.svg">--> Logout</a></li>
         </ul>
-         </div>
-        </div>
+      </div>
+    </div>
   </div>
 </nav>
 
@@ -104,60 +116,65 @@
 
 <nav class="navbar NavMobileHeader">
   <div class="NavWidth">
-      <a class="dropbtn hamburger-mobile" (click)="toggleDropdown($event)"><img src="..\..\..\assets\images\main\Hamburger.svg"></a>
-      <div class="DropdownContent mobile-usermenu" *ngIf="!isShow">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <ul>
-          <li class="UserIcon"> <a href="#" class="UserDropdown">
-             <img src="..\..\..\assets\images\main\user.svg">
-             <div class="user">User Name<br><span>Designation</span></div>
-           </a></li>
-           <li><a href="#"><img class="UserImg" src="..\..\..\assets\images\main\myprofile.svg"> My Profile</a></li>
-         <li><a class=""><img class="UserImg" src="..\..\..\assets\images\main\feedback.svg"> Provide Feedback</a></li>
-         <!-- <li><a href="#">Update Password</a></li> -->
-           <li class="dark-theme"><a href="#"><img class="UserImg" src="..\..\..\assets\images\main\theme_icon.svg"> Dark Theme</a><label class="switch">
-             <input type="checkbox">
-             <span class="slider round"></span>
-           </label></li>
-           <li class="logout-link"><a class="Logout"(click)="logout()"><img class="UserImg" src="..\..\..\assets\images\main\Logout_icon.svg"> Logout</a></li>
-     </ul>
-      </div>
-      <a><img src="..\..\..\assets\images\main\logo.svg"></a>
+    <a class="dropbtn hamburger-mobile" (click)="toggleDropdown($event)"><img
+        src="..\..\..\assets\images\main\Hamburger.svg"></a>
+    <div class="DropdownContent mobile-usermenu" *ngIf="!isShow">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <ul>
+        <li class="UserIcon"> <a href="#" class="UserDropdown">
+            <img src="..\..\..\assets\images\main\user.svg">
+            <div class="user">User Name<br><span>Designation</span></div>
+          </a></li>
+        <li><a href="#"><img class="UserImg" src="..\..\..\assets\images\main\myprofile.svg"> My Profile</a></li>
+        <li><a class=""><img class="UserImg" src="..\..\..\assets\images\main\feedback.svg"> Provide Feedback</a></li>
+        <!-- <li><a href="#">Update Password</a></li> -->
+        <li class="dark-theme"><a href="#"><img class="UserImg" src="..\..\..\assets\images\main\theme_icon.svg"> Dark
+            Theme</a><label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label></li>
+        <li class="logout-link"><a class="Logout" (click)="logout()"><img class="UserImg"
+              src="..\..\..\assets\images\main\Logout_icon.svg"> Logout</a></li>
+      </ul>
+    </div>
+    <a><img src="..\..\..\assets\images\main\logo.svg"></a>
   </div>
   <div class="NavOption">
-      <div class="MobileSearch">
-        <!-- <ev-dashboard-search></ev-dashboard-search> -->
-        <div class="">
-          <input type="search" class="search SearchMob" on-click="toggledownSearch($event)" placeholder="">
-          <!-- <img class="SearchImg" src="..\..\..\assets\images\main\search.svg"> -->
-          <div class="DropdownMain" *ngIf="!isSearch">
-            <div class="CloseBtn"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
-            <input type="search" class="SearchDrop SearchMob" placeholder="Search">
+    <div class="MobileSearch">
+      <!-- <ev-dashboard-search></ev-dashboard-search> -->
+      <div class="">
+        <input type="search" class="search SearchMob" on-click="toggledownSearch($event)" placeholder="">
+        <!-- <img class="SearchImg" src="..\..\..\assets\images\main\search.svg"> -->
+        <div class="DropdownMain" *ngIf="!isSearch">
+          <div class="CloseBtn"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+          <input type="search" class="SearchDrop SearchMob" placeholder="Search">
           <div class="SearchDropdown">
             <div class="SearchDropdownTopbtn">
               <ul>
-              <li><a href="#"><button>Mgmt. Dashboard</button></a></li>
-              <li><a href="#" class=""><button>HR</button></a></li>
-              <li><a href="#"><button>IT</button></a></li>
-              <li><a href="#"><button>Admin</button></a></li>
+                <li><a href="#"><button>Mgmt. Dashboard</button></a></li>
+                <li><a href="#" class=""><button>HR</button></a></li>
+                <li><a href="#"><button>IT</button></a></li>
+                <li><a href="#"><button>Admin</button></a></li>
               </ul>
             </div>
             <div class="SearchDropdownData">
               <ul>
-              <li class="disabled"><a href="#">Try Searching for</a></li>
-              <li><a href="#" class="">People </a></li>
-              <li><a href="#">Account</a></li>
-              <li><a href="#">Practice</a></li>
-              <li><a href="#">Department</a></li>
+                <li class="disabled"><a href="#">Try Searching for</a></li>
+                <li><a href="#" class="">People </a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Practice</a></li>
+                <li><a href="#">Department</a></li>
               </ul>
             </div>
           </div>
         </div>
-        </div>
       </div>
-      <div class="Notification">
-        <a *ngIf="notificationCount"  class="dropbtn" (click)="toggleDowncontent($event)"><img class="HeaderIcons" src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge" *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
-        <!-- <div class="DropdownContent NotificationContent" *ngIf="!isOpen">
+    </div>
+    <div class="Notification">
+      <a *ngIf="notificationCount" class="dropbtn" (click)="toggleDowncontent($event)"><img class="HeaderIcons"
+          src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge"
+          *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
+      <!-- <div class="DropdownContent NotificationContent" *ngIf="!isOpen">
           <div class="CloseBtn"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
           <ul>
             <li><a href="#" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -167,21 +184,26 @@
         </ul>
 
           </div> -->
-          <div class="DropdownContent NotificationContent" *ngIf="!isOpen && notificationCount.length > 0">
-            <div class="CloseNotify"><h4>Notifications <span>(20)</span></h4><button type="button" class="close" data-dismiss="modal">&times;</button></div>
-            <ul><li *ngFor="let data of notificationCount;" class="notication-border">
-              <a href="#" class="">
-                <img class="NotifyIcon" src="..\..\..\assets\images\main\Notification_bell.svg">
-                <div class="text ellipsis NotifyText">{{data.desc | charlimitpipe: 40}}
-                  <span class="NotifyDate">10-09-2020</span>
-                </div>
-              </a></li>
-                <li><a class="More">MORE</a></li>
-          </ul>
-            </div>
-      </div>
-      <div class="dropdown VerLine2 pdr-0"><a class="dropbtn" ><img class="NewsImg" src="..\..\..\assets\images\main\news.svg"></a>
-
+      <div class="DropdownContent NotificationContent" *ngIf="!isOpen && notificationCount.length > 0">
+        <div class="CloseNotify">
+          <h4>Notifications <span>(20)</span></h4><button type="button" class="close"
+            data-dismiss="modal">&times;</button>
+        </div>
+        <ul>
+          <li *ngFor="let data of notificationCount;" class="notication-border">
+            <a href="#" class="">
+              <img class="NotifyIcon" src="..\..\..\assets\images\main\Notification_bell.svg">
+              <div class="text ellipsis NotifyText">{{data.desc | charlimitpipe: 40}}
+                <span class="NotifyDate">10-09-2020</span>
+              </div>
+            </a></li>
+          <li><a class="More">MORE</a></li>
+        </ul>
       </div>
     </div>
+    <div class="dropdown VerLine2 pdr-0"><a class="dropbtn"><img class="NewsImg"
+          src="..\..\..\assets\images\main\news.svg"></a>
+
+    </div>
+  </div>
 </nav>

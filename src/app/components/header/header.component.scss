@@ -1,4 +1,4 @@
-.NavHeader{
+.NavHeader {
   background: #f6f6f6;
   box-shadow: 0px 1.5px 0px rgba(0, 0, 0, 0.15);
   padding: 12px 25px;
@@ -7,40 +7,40 @@
   z-index: 1;
   height: 66px;
 }
-.ds-con{
+.ds-con {
   display: contents;
 }
-.ColAlign{
+.ColAlign {
   display: flex;
   place-items: center;
   width: 65%;
-  p{
-      padding-left: 20px;
-      padding-right: 30px;
+  p {
+    padding-left: 20px;
+    padding-right: 30px;
   }
 }
-.logo{
+.logo {
   margin-right: 29px;
   width: 35px;
 }
-.align{
+.align {
   text-align: center;
 }
-.pd-l{
+.pd-l {
   padding-left: 20px;
 }
-p{
+p {
   margin: 0;
   color: #023047;
   font-size: 16px;
   font-weight: bold;
 }
-.VerLine{
+.VerLine {
   border-right: 0.5px solid #acacad;
   padding-right: 37px;
   margin-right: 24px;
   font-family: "Lato", sans-serif !important;
-  span{
+  span {
     font-style: normal;
     font-weight: bold;
     font-size: 0.875rem;
@@ -48,37 +48,37 @@ p{
     color: #023047;
   }
 }
-.HoursDetail{
+.HoursDetail {
   color: #023047;
 }
-.HoursPerc{
+.HoursPerc {
   color: #929292 !important;
 }
-.VerLine:last-of-type{
+.VerLine:last-of-type {
   border-right: none;
 }
-.BtnLogout{
+.BtnLogout {
   font-size: 10px !important;
 }
-.pdr-0{
+.pdr-0 {
   padding-right: 0px !important;
 }
-.VerLine2{
+.VerLine2 {
   border-left: 0.5px solid #e3e3e3;
   height: 40px;
   padding: 0 27px;
   justify-content: center;
   display: flex;
 }
-.VerLine-last{
+.VerLine-last {
   border: 0px !important;
 }
-span{
+span {
   color: #626364;
   font-size: 12px;
   font-weight: 600;
 }
-.icon-hamburger{
+.icon-hamburger {
   position: absolute;
   right: 15px;
 }
@@ -90,7 +90,9 @@ span{
   display: grid;
   margin-top: 10px;
 }
-.dropbtn:active, .dropbtn:visited, .dropbtn:focus{
+.dropbtn:active,
+.dropbtn:visited,
+.dropbtn:focus {
   outline: none;
   border: none;
 }
@@ -98,44 +100,46 @@ span{
   position: relative;
 }
 
-.DropdownContent, .NotificationContent {
+.DropdownContent,
+.NotificationContent {
   position: absolute;
   background-color: #fff;
   min-width: 190px;
   border-radius: 0 0 4px 4px;
-  box-shadow: 0 2px 16px 0 rgba(0,0,0,.2);
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
   right: -11px;
   top: 60px;
 }
-.NotificationContent{
+.NotificationContent {
   right: 0px !important;
 }
-.DropdownContent::after, .NotificationContent::after{
+.DropdownContent::after,
+.NotificationContent::after {
   content: "";
   position: absolute;
   top: -11%;
   left: 60%;
-    margin-left: 43px;
-    border-width: 10px;
-    border-bottom: 16px solid #F8F8FB;
+  margin-left: 43px;
+  border-width: 10px;
+  border-bottom: 16px solid #f8f8fb;
   border-style: solid;
-  border-color: transparent transparent #F8F8FB transparent;
+  border-color: transparent transparent #f8f8fb transparent;
 }
-.NotificationContent::after{
+.NotificationContent::after {
   content: "";
   position: absolute;
   top: -10%;
-    margin-left: 66px;
-    border-width: 10px;
-    border-bottom: 16px solid #fff;
+  margin-left: 66px;
+  border-width: 10px;
+  border-bottom: 16px solid #fff;
   border-style: solid;
   border-color: transparent transparent #fff transparent;
 }
-.NotificationContent{
+.NotificationContent {
   top: 153% !important;
   left: auto !important;
-  ul{
+  ul {
     list-style: none;
     margin: 0px;
     overflow-y: scroll;
@@ -143,38 +147,38 @@ span{
     scrollbar-width: thin;
     scrollbar-color: #afaeae #e3e1e1;
     height: 235px;
-    li{
-    border-bottom: 0.5px solid #c4c4c4;
-    overflow: hidden;
-     padding: 10px 15px 0px;
-     letter-spacing: 0.7px;
+    li {
+      border-bottom: 0.5px solid #c4c4c4;
+      overflow: hidden;
+      padding: 10px 15px 0px;
+      letter-spacing: 0.7px;
     }
-    li:last-child{
+    li:last-child {
       border: none;
     }
-    a{
+    a {
       display: flex !important;
       padding: 0px !important;
     }
   }
 }
-.NotifyIcon{
-  width:20px;
+.NotifyIcon {
+  width: 20px;
   height: 20px;
   margin-right: 18px;
   margin-top: 3px;
 }
-.NotifyText{
+.NotifyText {
   display: grid;
-  .NotifyDate{
+  .NotifyDate {
     line-height: 29px;
   }
 }
 .text {
   position: relative;
   font-size: 14px;
-  width: 250px; 
-} 
+  width: 250px;
+}
 .text-concat {
   position: relative;
   display: inline-block;
@@ -182,8 +186,8 @@ span{
   overflow: hidden;
   max-height: 5.2em; /* (Number of lines you want visible) * (line-height) */
   min-height: 1em;
-  text-align:justify;
-  font-size:14px;
+  text-align: justify;
+  font-size: 14px;
   font-weight: normal;
 }
 
@@ -204,7 +208,7 @@ span{
   right: 24px;
   padding-top: 4px;
   border-radius: 50%;
-  background-color: #F16A21;
+  background-color: #f16a21;
   color: white;
   font-size: 9px;
   font-weight: lighter;
@@ -212,74 +216,74 @@ span{
   width: 15px;
   height: 15px;
 }
-.NotificationContent{
+.NotificationContent {
   ul::-webkit-scrollbar {
     width: 5px;
   }
 }
-.NotificationContent{
+.NotificationContent {
   ul::-webkit-scrollbar-track {
-  background: #e3e1e1;
-  border-radius: 15px;
+    background: #e3e1e1;
+    border-radius: 15px;
+  }
 }
-}
-.NotificationContent{
+.NotificationContent {
   ul::-webkit-scrollbar-thumb {
-  background: #afaeae;
-  border-radius: 15px;
-  height: 5px !important;
-}
+    background: #afaeae;
+    border-radius: 15px;
+    height: 5px !important;
+  }
 }
 .NotificationContent {
   ul::-webkit-scrollbar-thumb:hover {
-  background: #afaeae;
+    background: #afaeae;
+  }
 }
-}
-@-moz-document url-prefix(){
-  .Notification .badge{
-    padding-top:3px !important;
+@-moz-document url-prefix() {
+  .Notification .badge {
+    padding-top: 3px !important;
     top: 8px !important;
     right: 19px !important;
   }
 }
-.UserImg{
+.UserImg {
   margin-right: 18px;
   width: 13px;
 }
-.ProfileBg{
+.ProfileBg {
   background: url(src/assets/images/main/myprofile.svg) no-repeat left #fff;
   background-size: 13px;
   padding-left: 21px;
   background-origin: content-box;
 }
-.FeedbackBg{
+.FeedbackBg {
   background: url(src/assets/images/main/feedback.svg) no-repeat left #fff;
   background-size: 13px;
   padding-left: 21px;
   background-origin: content-box;
 }
-.LogoutBg{
+.LogoutBg {
   background: url(src/assets/images/main/Logout_icon.svg) no-repeat left #fff;
   background-size: 13px;
   padding-left: 21px;
   background-origin: content-box;
-  border-top: 0.5px solid #C4C4C4;
+  border-top: 0.5px solid #c4c4c4;
 }
-.Darkbg{
+.Darkbg {
   background: url(src/assets/images/main/theme_icon.svg) no-repeat left #fff;
   background-size: 13px;
   padding-left: 21px;
   background-origin: content-box;
 }
-.DropdownContent{
+.DropdownContent {
   width: 150px;
-  ul{
+  ul {
     list-style: none;
     margin: 0px;
     padding: 0px;
-    li{
+    li {
       a {
-        color:#57565C;
+        color: #57565c;
         text-decoration: none;
         display: block;
         font-size: 14px;
@@ -289,69 +293,75 @@ span{
       }
     }
   }
-  .UserIcon{
+  .UserIcon {
     box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
   }
-  ul li.UserIcon:hover{
+  ul li.UserIcon:hover {
     background: #023047 !important;
   }
-   li:hover{
-    background-color: #F2F6FA;
+  li:hover {
+    background-color: #f2f6fa;
   }
 }
-.DropdownContent a:hover {background-color: none;}
+.DropdownContent a:hover {
+  background-color: none;
+}
 
-.dropdown:hover .DropdownContent {display: block;}
+.dropdown:hover .DropdownContent {
+  display: block;
+}
 
-.dropdown:hover .dropbtn {background-color: none;}
+.dropdown:hover .dropbtn {
+  background-color: none;
+}
 
-.UserDropdown{
+.UserDropdown {
   background-color: #f8f8f8;
   padding: 11px 10px !important;
   color: #fff !important;
-  img{
+  img {
     padding-right: 15px;
     width: 50px;
     vertical-align: text-top;
   }
- .user{
-   font-size: 16px !important;
-   color: #000;
-   display: inline-grid;
-   vertical-align: sub;
- }
-  span{
+  .user {
+    font-size: 16px !important;
+    color: #000;
+    display: inline-grid;
+    vertical-align: sub;
+  }
+  span {
     color: #757575;
     font-size: 12px;
     display: inline-grid;
   }
 }
-.downarrow{
+.downarrow {
   width: 10px;
   left: 6px;
   position: relative;
 }
-.dark-theme{
+.dark-theme {
   text-decoration: none;
   display: block;
   padding: 13px 10px 10px 21px;
   line-height: 18px !important;
-  .ml-40{
+  .ml-40 {
     margin-left: 38px;
-  color: #57565C;
-  font-weight: 400 !important;
-  font-size: 14px !important;
+    color: #57565c;
+    font-weight: 400 !important;
+    font-size: 14px !important;
   }
 }
-.Logout{
-  border-top: 0.5px solid #C4C4C4;
+.Logout {
+  border-top: 0.5px solid #c4c4c4;
 }
 .switch {
   position: absolute;
   right: 0;
   display: inline-block;
   width: 35px;
-  height:13px;
+  height: 13px;
   margin-top: 4px;
   margin-left: 30px;
 }
@@ -367,9 +377,9 @@ span{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #D4D4D4;
-  -webkit-transition: .4s;
-  transition: .4s;
+  background-color: #d4d4d4;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   width: 20px;
   height: 10px;
 }
@@ -380,7 +390,7 @@ span{
   width: 15px;
   left: -6px;
   bottom: -2px;
-  background: #F1F1F1;
+  background: #f1f1f1;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
   transition: 0.4s;
 }
@@ -395,11 +405,11 @@ span{
   border-color: transparent transparent black transparent;
 }
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
@@ -414,62 +424,64 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-.HeaderIcons{
+.HeaderIcons {
   width: 22px;
   height: 22px;
 }
 //header ends here//
-@media only screen and (min-width: 320px) and (max-width:425px){
-  .NavHeader{
-      display: none;
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .NavHeader {
+    display: none;
   }
-  .NavWidth{
+  .NavWidth {
     width: 100%;
     display: flex;
     place-items: center;
-    a{
+    a {
       width: 45px;
       padding-right: 10px;
     }
   }
-  .pdt-0{
-      padding-top: 0px !important;
+  .pdt-0 {
+    padding-top: 0px !important;
   }
-  .SearchDropdown .SearchDropdownTopbtn ul li{
+  .SearchDropdown .SearchDropdownTopbtn ul li {
     padding: 7px 0px 9px 10px;
   }
-  .NavMobileHeader{
-      background-color: #023047;
-      padding: 15px 10px 15px 15px;
-      width: 100%;
-      border-bottom: 1px solid #074E72;
-      top: 0;
-      z-index: 2;
-      flex-wrap: nowrap;
-      .text-align{
-        text-align: center;
-      }
-      .img{
-          position: absolute;
-          right: 27%;
-          top: 35%;
-      }
-      .NewsImg{
-        filter: brightness(1.5) sepia(10) hue-rotate(-70deg) saturate(1);
-        width: 23px;
-      }
+  .NavMobileHeader {
+    background-color: #023047;
+    padding: 15px 10px 15px 15px;
+    width: 100%;
+    border-bottom: 1px solid #074e72;
+    top: 0;
+    z-index: 2;
+    flex-wrap: nowrap;
+    .text-align {
+      text-align: center;
+    }
+    .img {
+      position: absolute;
+      right: 27%;
+      top: 35%;
+    }
+    .NewsImg {
+      filter: brightness(1.5) sepia(10) hue-rotate(-70deg) saturate(1);
+      width: 23px;
+    }
   }
   @-moz-document url-prefix() {
-    .DropdownContent, .NotificationContent  {
-        width: 419px !important;
+    .DropdownContent,
+    .NotificationContent {
+      width: 419px !important;
     }
-}
-  .DropdownContent, .NotificationContent {
+  }
+  .DropdownContent,
+  .NotificationContent {
     position: absolute;
     background-color: #fff;
     width: max-content;
     border-radius: 0 0 4px 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     right: 0;
     top: 0 !important;
     width: 100% !important;
@@ -477,161 +489,160 @@ input:checked + .slider:before {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     z-index: 1;
-    ul{
+    ul {
       display: block;
-      li{
+      li {
         width: 100% !important;
       }
-
     }
   }
   .VerLine2 {
-    .DropdownContent{
-      right:0;
+    .DropdownContent {
+      right: 0;
     }
   }
-  .DropdownContent::after, .NotificationContent::after{
+  .DropdownContent::after,
+  .NotificationContent::after {
     position: absolute;
     top: -14%;
     left: 57%;
     margin-left: 79px;
     border-width: 10px;
     border-bottom: 16px solid #f8f8f8;
-    border:0px;
-  }
-  .VerLine2{
     border: 0px;
-    height:auto;
-    padding:0;
   }
-.Notification .badge{
-  top: 0px;
-  left: 10px;
-}
-.close{
-  width:20px;
-  span{
-    font-size: 20px;
+  .VerLine2 {
+    border: 0px;
+    height: auto;
+    padding: 0;
   }
-}
-.close:focus{
-  outline: none;
-}
-.CloseBtn{
-  padding: 3px 10px 27px 0;
-}
-.CloseNotify{
-  padding: 28px;
-  padding-bottom: 10px;
-}
-.CloseNotify h4, .CloseNotify h4 span{
-  font-family: Lato;
+  .Notification .badge {
+    top: 0px;
+    left: 10px;
+  }
+  .close {
+    width: 20px;
+    span {
+      font-size: 20px;
+    }
+  }
+  .close:focus {
+    outline: none;
+  }
+  .CloseBtn {
+    padding: 3px 10px 27px 0;
+  }
+  .CloseNotify {
+    padding: 28px;
+    padding-bottom: 10px;
+  }
+  .CloseNotify h4,
+  .CloseNotify h4 span {
+    font-family: Lato;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
     line-height: 32px;
-    color: #0088D1;
-}
-.More{
-  float: right;
-    color: #F16A21 !important;
+    color: #0088d1;
+  }
+  .More {
+    float: right;
+    color: #f16a21 !important;
     font-size: 12px !important;
     line-height: 18px !important;
     font-weight: 500;
-}
-.close{
-color: #0C0310;
-font-weight: lighter;
-font-size: 30px;
-position: absolute;
-top:27px;
-right: 20px;
-}
-.NavOption{
-  right: 0;
-  position: static;
-  display: flex;
-  place-items: center;
-  .MobileSearch{
-    padding:0px;
   }
-  .Notification{
-    padding: 0px 20px;
-    position: initial;
+  .close {
+    color: #0c0310;
+    font-weight: lighter;
+    font-size: 30px;
+    position: absolute;
+    top: 27px;
+    right: 20px;
   }
-  a{
-    padding-right: 0;
-    padding-top: 4px;
-    position: relative;
+  .NavOption {
+    right: 0;
+    position: static;
+    display: flex;
+    place-items: center;
+    .MobileSearch {
+      padding: 0px;
+    }
+    .Notification {
+      padding: 0px 20px;
+      position: initial;
+    }
+    a {
+      padding-right: 0;
+      padding-top: 4px;
+      position: relative;
+    }
   }
-}
-.dropbtn{
-  margin-top:-2px;
-}
-// ::-webkit-input-placeholder {
-//    color: transparent;
-// }
-:-moz-placeholder {
-   color: transparent;
-}
-.HeaderIcons{
-  width: 22px;
-  height: 22px;
-}
-  .mobile-usermenu{
-    width:70% !important;
-    height:100vh;
-    left:0;
+  .dropbtn {
+    margin-top: -2px;
+  }
+  // ::-webkit-input-placeholder {
+  //    color: transparent;
+  // }
+  :-moz-placeholder {
+    color: transparent;
+  }
+  .HeaderIcons {
+    width: 22px;
+    height: 22px;
+  }
+  .mobile-usermenu {
+    width: 70% !important;
+    height: 100vh;
+    left: 0;
     border-radius: 0;
-    ul{
+    ul {
       position: relative;
       height: 100vh;
-      li{
-        a{
-          width:100%;
+      li {
+        a {
+          width: 100%;
         }
       }
-      .logout-link{
+      .logout-link {
         position: absolute;
-        bottom:20px;       
-        a{
-          border:0 !important;
+        bottom: 20px;
+        a {
+          border: 0 !important;
         }
       }
     }
-    .UserDropdown{
+    .UserDropdown {
       text-align: center;
       display: grid !important;
-      img{
+      img {
         margin: 5px auto;
         padding: 5px;
       }
     }
-    .close{
+    .close {
       top: 7px;
       z-index: 1;
       color: #000;
       opacity: 1;
     }
   }
-  
 }
 
-
-@media only screen and (min-width:426px) and (max-width:1440px){
-  .NavMobileHeader{
-      display: none !important;
+@media only screen and (min-width: 426px) and (max-width: 1440px) {
+  .NavMobileHeader {
+    display: none !important;
   }
-  .notication-border a{
-    border-bottom: 1px solid #C4C4C4;
+  .notication-border a {
+    border-bottom: 1px solid #c4c4c4;
   }
-  .NotificationContent{
-  width: 285px !important;
+  .NotificationContent {
+    width: 285px !important;
   }
 }
 //dashboard search styles
-.search{
-  border: 0px ;
+.search {
+  border: 0px;
   border-radius: 2px;
   width: 356px;
   height: 40px;
@@ -642,54 +653,56 @@ right: 20px;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.01em;
-  color: #BDBDBD;
+  color: #bdbdbd;
   background: url(src/assets/images/main/search.svg) no-repeat right #fff;
   cursor: pointer;
   background-origin: content-box;
 }
 
-.search:focus{
+.search:focus {
   outline: none;
 }
-.SearchImg{
+.SearchImg {
   position: fixed;
-    top: 23px;
-    right: 180px;
-  }
-.SearchImg:focus, .SearchImg:visited, .SearchImg:active{
+  top: 23px;
+  right: 180px;
+}
+.SearchImg:focus,
+.SearchImg:visited,
+.SearchImg:active {
   outline: none;
   display: none;
 }
 
-.SearchDropdown{
+.SearchDropdown {
   background: #fff;
-  box-shadow: 0 2px 16px 0 rgba(0,0,0,.2);
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-  ul{
+  ul {
     list-style: none;
-    padding:0px;
+    padding: 0px;
     margin: 0px;
-    a{
+    a {
       font-size: 14px;
       color: #7b7b7b;
       margin-bottom: 20px;
       font-weight: 400;
     }
   }
-  .SearchDropdownTopbtn{
+  .SearchDropdownTopbtn {
     background: #f8f8f8;
     height: auto;
     width: 356px;
     padding: 2px 5px 0 5px;
     box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
-    ul{
+    ul {
       display: flex;
       margin: 0px;
       flex-wrap: wrap;
-      li{
+      li {
         padding: 10px 0px 10px 10px;
       }
-      button{
+      button {
         border: 0.5px solid #6a7c88;
         background: #023047;
         border-radius: 20px;
@@ -699,53 +712,56 @@ right: 20px;
       }
     }
   }
-  .SearchDropdownData{
+  .SearchDropdownData {
     overflow: hidden;
-    ul li{
+    ul li {
       padding: 8px 20px;
     }
-    li:hover{
-      background: #F2F6FA;
+    li:hover {
+      background: #f2f6fa;
     }
-    li.disabled a{
-        color: #bdbdbd !important;
-        font-size: 12px !important;
+    li.disabled a {
+      color: #bdbdbd !important;
+      font-size: 12px !important;
     }
-    li:last-child{
+    li:last-child {
       margin-bottom: 9px;
     }
   }
 }
-.SearchDropdownTopbtn ul button:hover, .SearchDropdownTopbtn ul button:active, .SearchDropdownTopbtn ul li a:focus{
-  background-color: #239EC5 !important;
+.SearchDropdownTopbtn ul button:hover,
+.SearchDropdownTopbtn ul button:active,
+.SearchDropdownTopbtn ul li a:focus {
+  background-color: #239ec5 !important;
   outline: none;
 }
 
-@media only screen and (min-width: 320px) and (max-width:425px){
-.search{
-  background: url(src/assets/images/main/search.svg) no-repeat right #023047;
-  border: 0px;
-  box-shadow: none;
-  padding: 0px;
-  width: 100%;
-  float: right;
-  margin-left: 35px;
-}
-.SearchDrop{
-  background: url(src/assets/images/main/search.svg) no-repeat right transparent;
-  border: 0.5px solid #e5e5e5;
-  width: 373.7px;
-  height: 40.04px;
-  box-shadow: none;
-  padding: 0px 20px;
-  background-origin: content-box;
-  border-bottom:0px;
-  // width: 15%;
-  // float: right;
-  margin-top: 30px;
-}
-.DropdownMain{
-  position: absolute;
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .search {
+    background: url(src/assets/images/main/search.svg) no-repeat right #023047;
+    border: 0px;
+    box-shadow: none;
+    padding: 0px;
+    width: 100%;
+    float: right;
+    margin-left: 35px;
+  }
+  .SearchDrop {
+    background: url(src/assets/images/main/search.svg) no-repeat right
+      transparent;
+    border: 0.5px solid #e5e5e5;
+    width: 373.7px;
+    height: 40.04px;
+    box-shadow: none;
+    padding: 0px 20px;
+    background-origin: content-box;
+    border-bottom: 0px;
+    // width: 15%;
+    // float: right;
+    margin-top: 30px;
+  }
+  .DropdownMain {
+    position: absolute;
     z-index: 1;
     width: 100%;
     right: 0;
@@ -755,119 +771,121 @@ right: 20px;
     border-radius: 0 0 20px 20px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
     padding: 10px 20px;
-}
-.search:focus{
-  outline: none;
-}
-.SearchImg{
-  position: absolute;
+  }
+  .search:focus {
+    outline: none;
+  }
+  .SearchImg {
+    position: absolute;
     top: 11px;
     left: 58%;
   }
-.SearchImg:focus, .SearchImg:visited, .SearchImg:active{
-  outline: none;
-  display: none;
-}
-.SearchDropdown{
-  background: #fff;
-  box-shadow: 0 0 black;
-  border-radius: 0px 0px 4px 4px;
-  border: 1px solid #e5e5e5;
-  margin: 0px 0 35px;
-  ul{
-    list-style: none;
-    padding:0px;
-    margin: 0px;
-    li{
-    overflow: hidden;
-    padding:10px;
-    a{
-      font-size: 14px;
-      color: #7b7b7b;
-      margin-bottom: 20px;
-    }
-    }
+  .SearchImg:focus,
+  .SearchImg:visited,
+  .SearchImg:active {
+    outline: none;
+    display: none;
   }
-  .SearchDropdownTopbtn{
-    background: #f8f8fB;
-    width: auto;
-    flex-wrap: wrap;
-    box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
-    ul{
-      display: flex;
+  .SearchDropdown {
+    background: #fff;
+    box-shadow: 0 0 black;
+    border-radius: 0px 0px 4px 4px;
+    border: 1px solid #e5e5e5;
+    margin: 0px 0 35px;
+    ul {
+      list-style: none;
+      padding: 0px;
       margin: 0px;
+      li {
+        overflow: hidden;
+        padding: 10px;
+        a {
+          font-size: 14px;
+          color: #7b7b7b;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .SearchDropdownTopbtn {
+      background: #f8f8fb;
+      width: auto;
       flex-wrap: wrap;
-      li{
-        padding: 10px 4px 10px 2px;
+      box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
+      ul {
+        display: flex;
+        margin: 0px;
+        flex-wrap: wrap;
+        li {
+          padding: 10px 4px 10px 2px;
+        }
+        button {
+          border: 0px;
+          background: #023047;
+          border-radius: 20px;
+          padding: 5px 14px;
+          color: #fff;
+        }
       }
-      button{
-        border: 0px;
-        background: #023047;
-        border-radius: 20px;
-        padding: 5px 14px;
-        color: #fff;
+    }
+    .SearchDropdownData {
+      padding: 10px;
+      ul li:hover {
+        background: #e5e5e5;
       }
     }
   }
-  .SearchDropdownData{
-    padding: 10px;
-    ul li:hover{
-      background: #e5e5e5;
+  .NotificationContent {
+    ul {
+      margin: 0 10px 15px !important;
+      overflow-y: hidden;
+      height: auto;
+    }
+    li {
+      padding: 10px 15px 7px !important;
     }
   }
 }
-.NotificationContent{
-   ul {
-  margin: 0 10px 15px !important;
-  overflow-y: hidden;
-  height: auto;
-}
-li {
-  padding: 10px 15px 7px!important;
-}
-}
-}
-@media only screen and (max-width: 900px) and (min-width:426px){
-  .SearchMob{
+@media only screen and (max-width: 900px) and (min-width: 426px) {
+  .SearchMob {
     display: none;
   }
 }
-::-webkit-search-cancel-button{ 
-  display: none; 
+::-webkit-search-cancel-button {
+  display: none;
 }
-@media screen and (min-width: 400px) and (max-width:414px){
-  .SearchDropdown{
-    .SearchDropdownTopbtn{
+@media screen and (min-width: 400px) and (max-width: 414px) {
+  .SearchDropdown {
+    .SearchDropdownTopbtn {
       width: 372px;
       flex-wrap: wrap;
     }
   }
 }
-@media screen and (min-width: 350px) and (max-width:360px){
-  .SearchDropdown{
-    .SearchDropdownTopbtn{
-      button{
+@media screen and (min-width: 350px) and (max-width: 360px) {
+  .SearchDropdown {
+    .SearchDropdownTopbtn {
+      button {
         padding: 5px 17px !important;
       }
     }
   }
 }
-@media(max-width:320px){
-  .SearchDropdown{
-    .SearchDropdownTopbtn{
-      button{
+@media (max-width: 320px) {
+  .SearchDropdown {
+    .SearchDropdownTopbtn {
+      button {
         padding: 5px 11px !important;
       }
     }
   }
 }
-@media(max-width:320px){
-  .SearchDrop{
+@media (max-width: 320px) {
+  .SearchDrop {
     width: 279.7px;
   }
 }
-@media(max-width:375px){
-  .SearchDrop{
+@media (max-width: 375px) {
+  .SearchDrop {
     width: 334.7px;
   }
 }

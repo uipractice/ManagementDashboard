@@ -58,16 +58,30 @@
 .SelectType:active {
   outline: none;
 }
-
+.graphPointsHeading {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 2%;
+  display: none;
+  .positive {
+    color: #7598cf;
+  }
+  .negetive {
+    color: #ee5873;
+  }
+}
 .WidSelect {
   width: 85px !important;
+}
+.fullHeight {
+  height: 600px !important;
 }
 .GraphBody {
   // padding: 0px 15px;
   background-color: white;
   font-size: 14px;
   color: #57565c;
-  height: 500px;
+  height: 465px;
   overflow: overlay;
   overflow-y: auto;
   scrollbar-width: thin;

@@ -16,5 +16,6 @@ export class UrlConstants {
     GET_GRAPH_DATA_PRACTICE: '/api/emp/getPracticeGraphData',
     USER_LOGIN: '/api/auth/login',
     AUTHENTICATE_USER: '/api/auth/authenticate',
+    GET_SUMMERY_COUNT: '/api/emp/getAllCounts',
   };
 }

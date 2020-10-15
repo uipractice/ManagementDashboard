@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'ev-header-default',
   templateUrl: './header-default.component.html',
-  styleUrls: ['./header-default.component.scss']
+  styleUrls: ['./header-default.component.scss'],
 })
 export class HeaderDefaultComponent implements OnInit {
-
-  constructor() { }
+  @Input() summeryData: any;
+  constructor() {}
 
   ngOnInit(): void {
+    console.log(this.summeryData);
   }
-
 }

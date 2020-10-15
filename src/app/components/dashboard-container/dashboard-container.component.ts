@@ -11,7 +11,10 @@ export class DashboardContainerComponent implements OnInit {
   chartData: any = {};
   chartData2: any = {};
   isDataLoaded: any = false;
+  chartData3: any = {};
+  summeryData: any = {};
   isDataLoadedPractice: any = false;
+  summeryDataLoaded: any = false;
   currentUser = sessionStorage.getItem('user');
   newsLetterData: any = [];
   constructor(private router: Router, public service: WebRequestService) {}
@@ -25,10 +28,29 @@ export class DashboardContainerComponent implements OnInit {
         this.chartData['series2'] = 'nonBillableCount';
         this.chartData['legendName1'] = 'Billable';
         this.chartData['legendName2'] = 'Non Billable';
+        this.chartData['colorCode'] = '#7cc1e8';
+        this.chartData['label'] = true;
+        // this.chartData['height'] = '500px';
+        this.chartData['type'] = 'normal';
+        // 797FC8
         this.chartData['data'] = res['data'];
         this.isDataLoaded = true;
       } else {
         throw new console.error('Something went wrong');
+      }
+    });
+    this.service.getSummeryCount().then((res) => {
+      console.log(res);
+      if (res['statusCode'] === 200) {
+        // this.chartData['idName'] = 'overAllChart3';
+        // this.chartData['title'] = 'Accounts Wise Resource Utilization';
+        // this.chartData['colorCode'] = '#797FC8';
+        // this.chartData['height'] = '500px';
+        // this.chartData['type'] = 'normal';
+        // 797FC8
+        this.summeryData['data'] = res['data']['data'];
+        console.log(this.summeryData);
+        this.summeryDataLoaded = true;
       }
     });
     this.service.getPracticeGraphData().then((res) => {
@@ -40,13 +62,40 @@ export class DashboardContainerComponent implements OnInit {
         this.chartData2['legendName1'] = 'Practices';
         this.chartData2['legendName2'] = '';
         this.chartData2['data'] = res['data'];
+        this.chartData2['height'] = '300px';
+        this.chartData2['colorCode'] = '#797FC8';
+        this.chartData2['type'] = 'extended';
+        this.chartData2['label'] = false;
         this.isDataLoadedPractice = true;
       } else {
         throw new console.error('Something went wrong');
       }
     });
 
-    for (var i = 0; i < 10; i++) {
+    this.chartData3 = {
+      idName: 'overAllChart5',
+      title: 'Overall Attendance',
+      series1: 'litres',
+      legendName1: 'Practices',
+      type: 'extended',
+      label: false,
+
+      colorCode: '#797FC8',
+      data: [
+        {
+          _id: 'Present',
+          count: 709,
+          color: '#7CC1E8',
+        },
+        {
+          _id: 'Absent',
+          count: 10,
+          color: '#FF4A6B',
+        },
+      ],
+    };
+
+    for (var i = 0; i < 6; i++) {
       this.newsLetterData.push({
         title:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",

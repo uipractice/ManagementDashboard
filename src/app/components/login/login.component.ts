@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
       if (res['statusCode'] === 200) {
         this.data._accessToken = res['token'];
         localStorage.setItem('userInfo', JSON.stringify(res['data']));
-        this.router.navigate(['default']);
+        this.router.navigate(['dashboard']);
       } else {
       }
     });

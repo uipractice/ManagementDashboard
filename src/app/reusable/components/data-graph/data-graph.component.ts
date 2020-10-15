@@ -19,6 +19,7 @@ import am4themes_kelly from '@amcharts/amcharts4/themes/animated';
 })
 export class DataGraphComponent implements OnInit {
   private chart: am4charts.XYChart;
+  private pieChart: am4charts.PieChart;
   @Input() chartData: any;
   @Input() chartType: any;
   @Input() dataLoaded: any;
@@ -35,6 +36,7 @@ export class DataGraphComponent implements OnInit {
   bullet2: any;
   series3: any;
   bullet3: any;
+  pieSeries: any;
   constructor(@Inject(PLATFORM_ID) private platformId, private zone: NgZone) {}
   browserOnly(f: () => void) {
     if (isPlatformBrowser(this.platformId)) {
@@ -56,9 +58,6 @@ export class DataGraphComponent implements OnInit {
               this.chartData.idName,
               am4charts.XYChart
             );
-
-            let data = [];
-            let visits = 10;
 
             this.chart.data = this.chartData.data;
 
@@ -214,6 +213,7 @@ export class DataGraphComponent implements OnInit {
               this.chartData.idName,
               am4charts.XYChart
             );
+            this.chart.responsive.enabled = true;
 
             // Add data
             this.chart.data = this.chartData.data;
@@ -232,7 +232,8 @@ export class DataGraphComponent implements OnInit {
             this.categoryAxis.renderer.labels.template.horizontalCenter =
               'right';
             this.categoryAxis.renderer.labels.template.fontSize = '9px';
-
+            this.categoryAxis.renderer.cellStartLocation = 0.2;
+            this.categoryAxis.renderer.cellEndLocation = 0.8;
             this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
             this.valueAxis.renderer.labels.template.fontSize = '9px';
 
@@ -255,6 +256,8 @@ export class DataGraphComponent implements OnInit {
             this.series2 = this.chart.series.push(new am4charts.ColumnSeries());
             this.series2.dataFields.valueY = this.chartData.series1;
             this.series2.dataFields.categoryX = '_id';
+
+            // this.pieSeries.template.maxWidth = 20;
             this.series2.fontSize = '10px';
             if (this.chartData.series2) {
               this.series2.name = this.chartData.legendName1;
@@ -278,8 +281,8 @@ export class DataGraphComponent implements OnInit {
             this.series2.columns.template.strokeWidth = 0;
             this.series2.columns.template.fontSize = '7px';
             this.series2.tooltip.pointerOrientation = 'vertical';
-            this.series2.fill = am4core.color('#66aecf');
-
+            this.series2.fill = am4core.color(this.chartData.colorCode);
+            // this.series1.columns.template.width = am4core.percent(70);
             // this.series2.columns.template.column.cornerRadiusTopLeft = 10;
             // this.series2.columns.template.column.cornerRadiusTopRight = 10;
             this.series2.columns.template.column.fillOpacity = 0.8;
@@ -309,9 +312,41 @@ export class DataGraphComponent implements OnInit {
             this.categoryAxis.renderer.grid.template.disabled = true;
             this.valueAxis.renderer.grid.template.disabled = true;
             this.series3.strokeWidth = 3;
-
+            this.chart.legend.position = 'top';
+            this.chart.legend.fontSize = '10px';
             // this.chart.scrollbarX = new am4core.Scrollbar();
             // this.series3
+            break;
+
+          case 'donutChart':
+            am4core.useTheme(am4themes_animated);
+
+            this.pieChart = am4core.create(
+              this.chartData.idName,
+              am4charts.PieChart
+            );
+            this.pieChart.responsive.enabled = true;
+            this.pieChart.data = this.chartData.data;
+            this.pieSeries = this.pieChart.series.push(
+              new am4charts.PieSeries()
+            );
+            this.pieSeries.dataFields.value = 'count';
+            this.pieSeries.dataFields.category = '_id';
+            this.pieSeries.dataFields.fontSize = '9px';
+            this.pieChart;
+            this.pieSeries.slices.template.propertyFields.fill = 'color';
+            // Let's cut a hole in our Pie chart the size of 40% the radius
+            this.pieChart.innerRadius = am4core.percent(70);
+
+            // Set up fills
+            this.pieSeries.slices.template.fillOpacity = 1;
+
+            var hs = this.pieSeries.slices.template.states.getKey('hover');
+            hs.properties.scale = 1;
+            hs.properties.fillOpacity = 0.5;
+            this.pieChart.legend = new am4charts.Legend();
+            this.pieChart.legend.position = 'top';
+            this.pieChart.legend.fontSize = '10px';
             break;
         }
       });

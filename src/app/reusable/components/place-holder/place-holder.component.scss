@@ -4,11 +4,17 @@
   align-items: center;
   justify-content: center;
   display: flex;
+  flex-direction: column;
   padding: 6%;
   p {
-    color: black;
+    color: #f78c57;
     text-align: center;
-    font-weight: 600;
-    font-size: 17px;
+    font-weight: 500;
+    font-size: 23px;
+    span {
+      color: black;
+      font-weight: 300;
+      font-size: 23px;
+    }
   }
 }

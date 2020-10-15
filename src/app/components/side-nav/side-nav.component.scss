@@ -220,71 +220,83 @@
   }
   #dashboard {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/dashboard.svg) center no-repeat;
+    background: url(src/assets/images/main/Leftnav/dashboard.svg)  no-repeat;
     background-size: 60%;
     border-left: 5px solid;
+    background-position: 12px;
   }
   #dashboard:hover {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/dashboard_h.svg) center no-repeat;
+    background: url(src/assets/images/main/Leftnav/dashboard_h.svg)  no-repeat;
     background-size: 60%;
     border-left: 5px solid #239EC5;
+    background-position: 12px;
   }
   #dashboard:active, #dashboard:visited, #dashboard:focus{
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/dashboard_s.svg) center no-repeat;
+    background: url(src/assets/images/main/Leftnav/dashboard_s.svg)  no-repeat;
     background-size: 60%;
+    background-position: 12px;
   }
   #it {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/IT.svg) center no-repeat;
+    background: url(src/assets/images/main/Leftnav/IT.svg)  no-repeat;
     background-size: 60%;
     border-left: 5px solid transparent;
+    background-position: 12px;
   }
    #it:hover {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/IT_h.svg) center no-repeat;
+    background: url(src/assets/images/main/Leftnav/IT_h.svg)  no-repeat;
     background-size: 60%;
     border-left: 5px solid #239EC5;
+    background-position: 12px;
   }
   #it:active, #it:visited, #it:focus{
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/IT_s.svg) center no-repeat;
+    background: url(src/assets/images/main/Leftnav/IT_s.svg)  no-repeat;
     background-size: 60%;
+    background-position: 12px;
   }
   #hr {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/hr.svg) center no-repeat;
+    background: url(src/assets/images/main/Leftnav/hr.svg)  no-repeat;
     background-size: 60%;
     border-left: 5px solid transparent;
+    background-position: 12px;
   }
    #hr:hover {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/hr_h.svg) center no-repeat;
+    background: url(src/assets/images/main/Leftnav/hr_h.svg)  no-repeat;
     background-size: 60%;
     border-left: 5px solid #239EC5;
+    background-position: 12px;
   }
   #hr:active, #hr:visited, #hr:focus{
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/hr_s.svg) center no-repeat;
+    background: url(src/assets/images/main/Leftnav/hr_s.svg)  no-repeat;
     background-size: 60%;
+    background-position: 12px;
   }
   #admin {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/Admin.svg) center no-repeat;
+    background: url(src/assets/images/main/Leftnav/Admin.svg)  no-repeat;
     background-size: 60%;
     border-left: 5px solid transparent;
+    background-position: 12px;
   }
    #admin:hover {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/Admin_h.svg) center no-repeat;
+    background: url(src/assets/images/main/Leftnav/Admin_h.svg)  no-repeat;
     background-size: 60%;
     border-left: 5px solid #239EC5;
+    background-position: 12px;
   }
   #admin:active, #admin:visited, #admin:focus{
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/Admin_s.svg) center no-repeat;
+    background: url(src/assets/images/main/Leftnav/Admin_s.svg)  no-repeat;
     background-size: 60%;
+    background-position: 12px;
   }
   .active{
     border-left: 5px solid #239EC5 !important;

@@ -15,6 +15,10 @@
 .GraphLast {
   width: 100% !important;
   margin-right: 0 !important;
+  overflow: overlay;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #afaeae #e3e1e1;
 }
 .GraphHead {
   display: flex;
@@ -82,46 +86,70 @@
   font-size: 14px;
   color: #57565c;
   height: 465px;
-  overflow: overlay;
-  overflow-y: auto;
+  // overflow: overlay;
+  // overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #afaeae #e3e1e1;
   // margin: 10px 10px 10px 0px;
   ul {
     padding: 0px;
     margin: 0px;
-    padding: 0px 15px;
+    padding: 0px;
+    // overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #afaeae #e3e1e1;
+    height: 500px;
+    margin-bottom: 10px;
     li {
       list-style: none;
       height: 57px;
       border-bottom: 1px solid #c4c4c4;
-      padding: 10px 0px;
+      padding: 10px;
       overflow: hidden;
       a {
         color: #7b7b7b;
         font-size: 14px;
         line-height: 18px;
+        font-weight: 400;
       }
     }
     li:last-child {
       border: 0px;
       padding-bottom: 0px;
     }
+    li:hover{
+      background: #F2F6FA;
+    }
   }
 }
-.GraphBody::-webkit-scrollbar {
+.GraphLast ul::-webkit-scrollbar  {
   width: 5px;
 }
-.GraphBody::-webkit-scrollbar-track {
-  background: #e3e1e1;
+.GraphLast ul:-webkit-scrollbar-track  {
+  background: #000;
   border-radius: 15px;
 }
-.GraphBody::-webkit-scrollbar-thumb {
+ .GraphLast ul::-webkit-scrollbar-thumb  {
   background: #afaeae;
   border-radius: 15px;
   height: 5%;
 }
-.GraphBody::-webkit-scrollbar-thumb:hover {
+.GraphLast ul::-webkit-scrollbar-thumb:hover  {
+  background: #afaeae;
+}
+.GraphBody::-webkit-scrollbar, .GraphLast::-webkit-scrollbar  {
+  width: 5px;
+}
+.GraphBody::-webkit-scrollbar-track, .GraphLast:-webkit-scrollbar-track  {
+  background: #e3e1e1 !important;
+  border-radius: 15px;
+}
+.GraphBody::-webkit-scrollbar-thumb, .GraphLast::-webkit-scrollbar-thumb  {
+  background: #afaeae;
+  border-radius: 15px;
+  height: 5%;
+}
+.GraphBody::-webkit-scrollbar-thumb:hover, .GraphLast::-webkit-scrollbar-thumb:hover  {
   background: #afaeae;
 }
 .GraphAccounts {

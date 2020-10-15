@@ -1,34 +1,83 @@
 [
   {
-    "hoursCount":[
-      {"id":1,"desc":"Total Working Hours","count":"2400","value":10,"arrowFlag":false},
-      {"id":2,"desc":"Average Hours","count":"08","value":10,"arrowFlag":true}
+    "hoursCount": [
+      {
+        "id": 1,
+        "desc": "Working Hours",
+        "count": "2400",
+        "value": 10,
+        "arrowFlag": false
+      },
+      {
+        "id": 2,
+        "desc": "Average Hours",
+        "count": "08",
+        "value": 10,
+        "arrowFlag": true
+      }
     ]
-},
-{
-  "notification":[
-    {"id":1,"desc":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu"},
-    {"id":2,"desc":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m"},
-    {"id":3,"desc":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m"},
-    {"id":2,"desc":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m"},
-    {"id":3,"desc":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m"}
-  ]
-},{
-  "search":[
-    {"id":1, "cat":"HR"},
-    {"id":2, "cat":"IT"},
-    {"id":3, "cat":"Admin"},
-    {"id":4, "cat":"People"}
-  ]
-},
-{
-  "user":[
-    {"id":1, "name":"Akash", "designation":"UI Developer"},
-    {"id":2, "name":"Kanak", "designation":"UX Developer"},
-    {"id":2, "name":"john", "designation":"Software Developer"}
-  ]
-}
+  },
+  {
+    "notification": [
+      {
+        "id": 1,
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu"
+      },
+      {
+        "id": 2,
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m"
+      },
+      {
+        "id": 3,
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m"
+      },
+      {
+        "id": 2,
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m"
+      },
+      {
+        "id": 3,
+        "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m"
+      }
+    ]
+  },
+  {
+    "search": [
+      {
+        "id": 1,
+        "cat": "HR"
+      },
+      {
+        "id": 2,
+        "cat": "IT"
+      },
+      {
+        "id": 3,
+        "cat": "Admin"
+      },
+      {
+        "id": 4,
+        "cat": "People"
+      }
+    ]
+  },
+  {
+    "user": [
+      {
+        "id": 1,
+        "name": "Akash",
+        "designation": "UI Developer"
+      },
+      {
+        "id": 2,
+        "name": "Kanak",
+        "designation": "UX Developer"
+      },
+      {
+        "id": 2,
+        "name": "john",
+        "designation": "Software Developer"
+      }
+    ]
+  }
 ]
-
-
-

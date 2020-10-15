@@ -231,9 +231,13 @@ export class DataGraphComponent implements OnInit {
               'middle';
             this.categoryAxis.renderer.labels.template.horizontalCenter =
               'right';
-            this.categoryAxis.renderer.labels.template.fontSize = '11px';
+            this.categoryAxis.renderer.labels.template.fontSize = '11.5px';
             this.categoryAxis.renderer.labels.template.fontWeight = '600';
-            this.categoryAxis.renderer.labels.template.fontFamily = 'consolas';
+            this.categoryAxis.renderer.labels.template.fontWeight = '600';
+
+            // this.categoryAxis.renderer.labels.template.fontColor = am4core.color(
+            //   '#7b7b7b'
+            // );
 
             this.categoryAxis.renderer.cellStartLocation = 0.2;
             this.categoryAxis.renderer.cellEndLocation = 0.8;
@@ -261,7 +265,7 @@ export class DataGraphComponent implements OnInit {
             this.series2.dataFields.categoryX = '_id';
 
             // this.pieSeries.template.maxWidth = 20;
-            this.series2.fontSize = '11px';
+            this.series2.fontSize = '11.5px';
             this.series2.fontWeight = '600';
             if (this.chartData.series2) {
               this.series2.name = this.chartData.legendName1;
@@ -283,7 +287,7 @@ export class DataGraphComponent implements OnInit {
             // Do not try to stack on top of previous series
             // series2.stacked = true;
             this.series2.columns.template.strokeWidth = 0;
-            this.series2.columns.template.fontSize = '7px';
+            this.series2.columns.template.fontSize = '11.5px';
             this.series2.tooltip.pointerOrientation = 'vertical';
             this.series2.fill = am4core.color(this.chartData.colorCode);
             // this.series1.columns.template.width = am4core.percent(70);
@@ -299,11 +303,11 @@ export class DataGraphComponent implements OnInit {
               this.series3.dataFields.valueY = this.chartData.series2;
               this.series3.dataFields.categoryX = '_id';
               this.series3.name = this.chartData.legendName2;
-              this.series3.stroke = am4core.color('#cd3f72');
+              this.series3.stroke = am4core.color('#EE5873');
               // this.series3.fontSize = '10px';
-              this.series3.fontSize = '11px';
+              this.series3.fontSize = '11.5px';
               // this.series3.fontWeight = '600';
-              this.series3.fill = am4core.color('#cd3f72');
+              this.series3.fill = am4core.color('#EE5873');
               this.series3.tooltipText = '[bold][font-size: 10px]{valueY}[/]';
               // this.series3.tooltipText.fontSize = '9px';
               this.series3.stacked = true;
@@ -318,8 +322,9 @@ export class DataGraphComponent implements OnInit {
             this.categoryAxis.renderer.grid.template.disabled = true;
             this.valueAxis.renderer.grid.template.disabled = true;
             this.series3.strokeWidth = 3;
-            this.chart.legend.position = 'top';
-            this.chart.legend.fontSize = '10px';
+            this.chart.legend.position = 'bottom';
+            this.chart.legend.fontSize = '11.5px';
+            this.chart.legend.fontWeight = '400';
             // this.chart.scrollbarX = new am4core.Scrollbar();
             // this.series3
             break;
@@ -367,6 +372,9 @@ export class DataGraphComponent implements OnInit {
 
             this.pieChart.legend = new am4charts.Legend();
             this.pieChart.legend.position = 'right';
+            this.pieChart.legend.position = 'bottom';
+            this.pieChart.legend.fontSize = '11.5px';
+            this.pieChart.legend.fontWeight = '400';
 
             this.pieChart.innerRadius = am4core.percent(70);
 

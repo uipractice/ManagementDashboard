@@ -63,15 +63,17 @@
   outline: none;
 }
 .graphPointsHeading {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
   margin-left: 2%;
   // display: none;
   .positive {
-    color: #7598cf;
+    color: #92b7f2;
+    font-weight: 600;
   }
   .negetive {
     color: #ee5873;
+    font-weight: 600;
   }
 }
 .WidSelect {

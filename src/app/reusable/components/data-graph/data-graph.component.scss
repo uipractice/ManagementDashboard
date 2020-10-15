@@ -1,5 +1,6 @@
 .graphContainer {
   background-color: white !important;
+  box-shadow:0px 0px 2px 1px rgba(0,0,0,0.12);
 }
 .DashboardGraph {
   margin-top: 15px;
@@ -15,10 +16,13 @@
 .GraphLast {
   width: 100% !important;
   margin-right: 0 !important;
-  overflow: overlay;
-  overflow-y: scroll;
+  ul{
+    overflow-y: scroll;
+    margin: 10px 5px 10px 0 !important;
+  height: 395px !important;
   scrollbar-width: thin;
   scrollbar-color: #afaeae #e3e1e1;
+  }
 }
 .GraphHead {
   display: flex;
@@ -88,6 +92,7 @@
   font-size: 14px;
   color: #57565c;
   height: 465px;
+  box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.12);
   // overflow: overlay;
   // overflow-y: auto;
   scrollbar-width: thin;
@@ -126,9 +131,10 @@
 }
 .GraphLast ul::-webkit-scrollbar  {
   width: 5px;
+  margin-right: 10px !important;
 }
-.GraphLast ul:-webkit-scrollbar-track  {
-  background: #000;
+.GraphLast ul::-webkit-scrollbar-track  {
+  background: #e3e1e1;
   border-radius: 15px;
 }
  .GraphLast ul::-webkit-scrollbar-thumb  {
@@ -139,14 +145,14 @@
 .GraphLast ul::-webkit-scrollbar-thumb:hover  {
   background: #afaeae;
 }
-.GraphBody::-webkit-scrollbar, .GraphLast::-webkit-scrollbar  {
+.GraphBody::-webkit-scrollbar  {
   width: 5px;
 }
-.GraphBody::-webkit-scrollbar-track, .GraphLast:-webkit-scrollbar-track  {
+.GraphBody::-webkit-scrollbar-track  {
   background: #e3e1e1 !important;
   border-radius: 15px;
 }
-.GraphBody::-webkit-scrollbar-thumb, .GraphLast::-webkit-scrollbar-thumb  {
+.GraphBody::-webkit-scrollbar-thumb  {
   background: #afaeae;
   border-radius: 15px;
   height: 5%;

@@ -7,7 +7,7 @@
     <h3 class="MobileNone">{{pageHeader}}</h3>
     <div *ngIf="!isOtherNavSelected">
       <ev-header-default [summeryData]="summeryData" *ngIf="summeryDataLoaded"></ev-header-default>
-      <div class="row ml-2">
+      <div class="row ml-0">
         <div class="col-md-4 p-0 " *ngIf="isDataLoadedPractice">
           <ev-data-graph [chartData]="chartData3" chartType="donutChart" [dataLoaded]="isDataLoadedPractice"
             [isNoGraphShown]="false">

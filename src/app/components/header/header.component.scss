@@ -129,12 +129,12 @@ span {
 .NotificationContent::after {
   content: "";
   position: absolute;
-  top: -10%;
+  top: -9%;
   margin-left: 66px;
   border-width: 10px;
-  border-bottom: 16px solid #fff;
+  border-bottom: 18px solid #f8f8fb;
   border-style: solid;
-  border-color: transparent transparent #fff transparent;
+  border-color: transparent transparent #f8f8fb transparent;
 }
 .NotificationContent {
   top: 153% !important;
@@ -143,14 +143,14 @@ span {
     list-style: none;
     margin: 0px;
     overflow-y: scroll;
-    margin: 15px 8px 15px 0 !important;
+    margin: 10px 5px 10px 0 !important;
     scrollbar-width: thin;
     scrollbar-color: #afaeae #e3e1e1;
     height: 235px;
     li {
       border-bottom: 0.5px solid #c4c4c4;
       overflow: hidden;
-      padding: 10px 15px 0px;
+      padding: 8px 15px 0px 20px;
       letter-spacing: 0.7px;
     }
     li:last-child {
@@ -161,6 +161,13 @@ span {
       padding: 0px !important;
     }
   }
+}
+.NotifyHeader {
+  color: #57565c;
+  padding: 11px 22px 0;
+  height: 37px;
+  background: #f8f8fb;
+  box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
 }
 .NotifyIcon {
   width: 20px;
@@ -186,7 +193,7 @@ span {
   overflow: hidden;
   max-height: 5.2em; /* (Number of lines you want visible) * (line-height) */
   min-height: 1em;
-  text-align: justify;
+  text-align: left;
   font-size: 14px;
   font-weight: normal;
 }
@@ -255,12 +262,14 @@ span {
   background-size: 13px;
   padding-left: 21px;
   background-origin: content-box;
+  background-position-y: 11px;
 }
 .FeedbackBg {
   background: url(src/assets/images/main/feedback.svg) no-repeat left #fff;
   background-size: 13px;
   padding-left: 21px;
   background-origin: content-box;
+  background-position-y: 15px;
 }
 .LogoutBg {
   background: url(src/assets/images/main/Logout_icon.svg) no-repeat left #fff;
@@ -268,12 +277,14 @@ span {
   padding-left: 21px;
   background-origin: content-box;
   border-top: 0.5px solid #c4c4c4;
+  background-position-y: 15px;
 }
 .Darkbg {
   background: url(src/assets/images/main/theme_icon.svg) no-repeat left #fff;
   background-size: 13px;
   padding-left: 21px;
   background-origin: content-box;
+  background-position-y: 3px;
 }
 .DropdownContent {
   width: 150px;
@@ -295,6 +306,7 @@ span {
   }
   .UserIcon {
     box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
+    border-bottom: 0.8px solid #ccc;
   }
   ul li.UserIcon:hover {
     background: #023047 !important;

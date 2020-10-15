@@ -8,18 +8,18 @@
     <div *ngIf="!isOtherNavSelected">
       <ev-header-default [summeryData]="summeryData" *ngIf="summeryDataLoaded"></ev-header-default>
       <div class="row ml-2">
-        <div class="col-md-4 p-0 " *ngIf="isDataLoadedPractice">
+        <div class="col-md-4 p-0 " *ngIf="isDataLoadedPractice && summeryDataLoaded">
           <ev-data-graph [chartData]="chartData3" chartType="donutChart" [dataLoaded]="isDataLoadedPractice"
             [isNoGraphShown]="false">
           </ev-data-graph>
         </div>
-        <div class="col-md-5 p-0" *ngIf="isDataLoadedPractice">
+        <div class="col-md-5 p-0" *ngIf="isDataLoadedPractice && summeryDataLoaded">
           <ev-data-graph [chartData]="chartData2" chartType="multiColorBarChartMultiLevel"
             [dataLoaded]="isDataLoadedPractice" [isNoGraphShown]="false">
           </ev-data-graph>
         </div>
 
-        <div class="col-md-3 p-0" *ngIf="isDataLoaded">
+        <div class="col-md-3 p-0" *ngIf="isDataLoaded && summeryDataLoaded">
           <ev-data-graph [isNoGraphShown]="true" [newsData]="newsLetterData" titleCommon="News and Events">
           </ev-data-graph>
         </div>
@@ -33,26 +33,28 @@
           <ev-css-loader></ev-css-loader>
         </div> -->
 
-        <div class="col-md-12 p-0" *ngIf="isDataLoaded">
+        <div class="col-md-12 p-0" *ngIf="isDataLoaded && summeryDataLoaded">
           <ev-data-graph [chartData]="chartData" chartType="multiColorBarChartMultiLevel" [dataLoaded]="isDataLoaded"
             [isNoGraphShown]="false">
           </ev-data-graph>
         </div>
         <!-- *ngIf="!isDataLoaded" -->
-        <div class="loader" *ngIf="!isDataLoaded">
-          <ev-css-loader></ev-css-loader>
-        </div>
+
 
 
 
 
       </div>
     </div>
-    <div class="col-md-12" *ngIf="isOtherNavSelected">
+    <div class="col-md-12 p-0" *ngIf="isOtherNavSelected">
       <ev-place-holder></ev-place-holder>
     </div>
+
 
     <!-- <ev-graph-default></ev-graph-default> -->
   </div>
 
+</div>
+<div class="loader" *ngIf="!summeryDataLoaded">
+  <ev-css-loader></ev-css-loader>
 </div>

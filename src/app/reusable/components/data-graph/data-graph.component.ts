@@ -318,13 +318,21 @@ export class DataGraphComponent implements OnInit {
             this.chart.cursor = new am4charts.XYCursor();
 
             // Add legend
-            this.chart.legend = new am4charts.Legend();
             this.categoryAxis.renderer.grid.template.disabled = true;
             this.valueAxis.renderer.grid.template.disabled = true;
-            this.series3.strokeWidth = 3;
-            this.chart.legend.position = 'bottom';
-            this.chart.legend.fontSize = '11.5px';
-            this.chart.legend.fontWeight = '400';
+            if (this.chartData.isLegend) {
+              this.chart.legend = new am4charts.Legend();
+
+              this.series3.strokeWidth = 3;
+              this.chart.legend.position = 'bottom';
+              this.chart.legend.fontSize = '11.5px';
+              this.chart.legend.fontWeight = '400';
+              // this.chart.legend.disabled = true;
+            }
+
+            // this.chartData.series2
+            //   ? (this.chart.legend.disabled = true)
+            //   : (this.chart.legend.disabled = false);
             // this.chart.scrollbarX = new am4core.Scrollbar();
             // this.series3
             break;
@@ -371,13 +379,14 @@ export class DataGraphComponent implements OnInit {
             this.pieChart.seriesContainer.zIndex = -1;
 
             this.pieChart.legend = new am4charts.Legend();
-            this.pieChart.legend.position = 'right';
+            // this.pieChart.legend.position = 'center';
             this.pieChart.legend.position = 'bottom';
             this.pieChart.legend.fontSize = '11.5px';
             this.pieChart.legend.fontWeight = '400';
+            this.pieChart.legend.marginBottom = 15;
 
             this.pieChart.innerRadius = am4core.percent(70);
-
+            // this.pieChart.legend.disabled = true;
             var container = new am4core.Container();
             container.parent = this.pieSeries;
             container.horizontalCenter = 'middle';

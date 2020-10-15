@@ -70,6 +70,8 @@
   font-size: 14px;
   font-weight: 400;
   margin-left: 2%;
+  line-height: 0;
+  position: absolute;
   // display: none;
   .positive {
     color: #92b7f2;
@@ -85,6 +87,9 @@
 }
 .fullHeight {
   height: 700px !important;
+}
+.notmalHeight {
+  height: 400px !important;
 }
 .GraphBody {
   // padding: 0px 15px;

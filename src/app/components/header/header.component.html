@@ -2,8 +2,8 @@
   <div class="ds-con">
     <div class="ColAlign">
       <img class="navbar-brand logo" src="../../../../assets/images/main/logo.svg" alt="">
-      <div class="VerLine"  *ngIf="headerCount">
-        <span class="HoursDetails">Total Working Hours:{{headerCount['workingHour']}} </span>
+      <div class="VerLine" *ngIf="headerCount">
+        <span class="HoursDetails">Total Working Hours: {{headerCount['workingHour']}} </span>
         <!-- <span class="HoursPerc">({{hours.value}}% ) </span> -->
         <!-- <span class="HoursImg" *ngIf="hours.arrowFlag===true; else elseBlock"><img
             src="..\..\..\assets\images\main\arrow_up.svg"></span>
@@ -11,8 +11,8 @@
           <span class="hours-img"><img src="..\..\..\assets\images\main\arrow_down.svg"></span>
         </ng-template> -->
       </div>
-      <div class="VerLine" >
-        <span class="HoursDetails">Total Average Hours:08 </span>
+      <div class="VerLine">
+        <span class="HoursDetails">Average Hours: 08 </span>
         <!-- <span class="HoursPerc">({{hours.value}}% ) </span> -->
         <!-- <span class="HoursImg" ><img src="..\..\..\assets\images\main\arrow_up.svg"></span>-->
       </div>
@@ -55,17 +55,16 @@
         </ul> -->
         <h6 class="NotifyHeader">Notifications</h6>
         <ul>
-          <li>
+          <li *ngFor="let _nt of notificationCount">
             <a>
               <img class="NotifyIcon" src="..\..\..\assets\images\main\Notification_bell.svg">
               <div class="text ellipsis NotifyText">
-                <span class="text-concat">Lorem ipsum dolor sit amet,consectetuer adipiscing elit Lorem ipsum dolor sit
-                  amet,consectetuer adipiscing elit,.</span>
+                <span class="text-concat">{{_nt.desc}}</span>
                 <span class="NotifyDate">10-09-2020</span>
               </div>
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a>
               <img class="NotifyIcon" src="..\..\..\assets\images\main\Notification_bell.svg">
               <div class="text ellipsis NotifyText">
@@ -84,7 +83,7 @@
                 <span class="NotifyDate">10-09-2020</span>
               </div>
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

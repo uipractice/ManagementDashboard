@@ -32,6 +32,18 @@ export class DashboardContainerComponent implements OnInit {
         this.chartData['legendName2'] = 'Non Billable';
         this.chartData['colorCode'] = '#92b7f2';
         this.chartData['label'] = true;
+        this.chartData['labelData1'] = {
+          name: 'Billable',
+          count: '---',
+          calss: 'positive',
+        };
+        this.chartData['labelData2'] = {
+          name: 'Non Billable',
+          count: '---',
+          calss: 'positive',
+        };
+        this.chartData['isLegend'] = true;
+
         // this.chartData['height'] = '500px';
         this.chartData['type'] = 'normal';
         // 797FC8
@@ -51,6 +63,9 @@ export class DashboardContainerComponent implements OnInit {
         // this.chartData['type'] = 'normal';
         // 797FC8
         this.summeryData['data'] = res['data']['data'];
+        this.chartData.labelData1.count = res['data']['result']['billingCount'];
+        this.chartData.labelData2.count =
+          res['data']['result']['nonBillingCount'];
         console.log(this.summeryData);
         this.summeryDataLoaded = true;
       }
@@ -66,8 +81,19 @@ export class DashboardContainerComponent implements OnInit {
         this.chartData2['data'] = res['data'];
         this.chartData2['height'] = '300px';
         this.chartData2['colorCode'] = '#797FC8';
+        this.chartData2['isLegend'] = false;
         this.chartData2['type'] = 'extended';
         this.chartData2['label'] = false;
+        this.chartData2.labelData = [
+          {
+            name: 'Billable',
+            count: 730,
+          },
+          {
+            name: 'Non Billable',
+            count: 23,
+          },
+        ];
         this.isDataLoadedPractice = true;
       } else {
         throw new console.error('Something went wrong');
@@ -80,18 +106,28 @@ export class DashboardContainerComponent implements OnInit {
       series1: 'litres',
       legendName1: 'Practices',
       type: 'extended',
-      label: false,
+      label: true,
+      labelData1: {
+        name: 'Present',
+        count: 686,
+        calss: 'positive',
+      },
+      labelData2: {
+        name: 'Absent',
+        count: 23,
+        calss: 'positive',
+      },
 
       colorCode: '#797FC8',
       data: [
         {
           _id: 'Present',
-          count: 700,
+          count: 686,
           color: '#7CC1E8',
         },
         {
           _id: 'Absent',
-          count: 9,
+          count: 23,
           color: '#FF4A6B',
         },
       ],

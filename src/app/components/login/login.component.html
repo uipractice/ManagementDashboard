@@ -51,11 +51,11 @@
               <div *ngIf="f.password.errors.required">Password is required</div>
             </div>
           </div>
-          <button [disabled]="loading" class="btn btn-primary" (click)="onSubmit()">
-            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          <button [disabled]="!loginForm.valid" class="btn btn-primary" (click)="onSubmit()">
+            <!-- <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span> -->
             Login
           </button>
-          <div *ngIf="message" class="alert alert-danger mt-3 mb-0">{{message}}</div>
+          <!-- <div *ngIf="message" class="alert alert-danger mt-3 mb-0">{{message}}</div> -->
         </form>
       </div>
     </div>

@@ -15,9 +15,9 @@
 </div>
 
 <!-- If its news letter -->
-<div class="GraphBody  mt-3 mb-3 mr-3 " *ngIf="isNoGraphShown">
+<div class="GraphBody  mt-3 mb-3 mr-2 " *ngIf="isNoGraphShown">
   <ev-data-filter [title]="titleCommon"></ev-data-filter>
-  <div class="GraphLast Graph">
+  <div class="GraphLast">
     <ul>
       <li *ngFor="let news of newsData"><a href="#">{{news.title}}</a></li>
     </ul>

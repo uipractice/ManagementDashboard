@@ -1,7 +1,7 @@
 /* Style the tab */
 .tab {
   float: left;
-  border-radius:0px 0px 25px 0;
+  border-radius: 0px 0px 25px 0;
   background-color: #023047;
   width: 78px;
   min-height: 560px;
@@ -25,15 +25,19 @@
   // background: url(src/assets/images/main/Leftnav/Dashboard_line.svg) no-repeat center;
   // background-origin: content-box;
 }
-.tab .ClickTop:hover, .tab .ClickTop:active,
-.tab .ClickTop:visited, .tab .ClickTop:focus{
-  border-left: 5px solid #239EC5;
+.tab .ClickTop:hover,
+.tab .ClickTop:active,
+.tab .ClickTop:visited,
+.tab .ClickTop:focus {
+  border-left: 5px solid #239ec5;
   outline: none;
   // background: url(src/assets/images/main/Leftnav/Dashboard_filled.svg) no-repeat center;
+  // background-origin: content-box;
+  // filter:sepia(1%) saturate(28%) hue-rotate(346deg) brightness(100%) contrast(3);
 }
 /* Create an active/current "tab button" class */
 .tab .ClickTop.active {
-  border-left: 2px solid #239EC5;
+  border-left: 2px solid #239ec5;
 }
 /* Style the tab content */
 .tabcontent {
@@ -45,261 +49,270 @@
 
 .ClickTop {
   // display:inline-block;
-  position:relative;
-  }
+  position: relative;
+}
 
-  .NavImg:hover{
-  z-index:10;
-  }
- .NavImg .leftNavIcon::after{
-    content: "";
-    position: absolute;
-    left: -26px;
-    top: 9px;
-    margin-left: 6px;
-    border-width: 7px;
-    border-style: solid;
-    border-color: transparent #000 transparent transparent;
-    border-right: 15px solid #000;
-  }
-   .leftNavIcon {
-    position: relative;
-    top: 22px;
-    left: 70px;
-    background: #fff;
-    color: #000;
-    border-radius: 4px;
-    font-size: 14px;
-    height: 32px;
-  }
-  .leftNavIcon::before {
-    content: '';
-    position: absolute;
-    display: block;    
-    width: 0px;        
-    left: 0;
-    top: 50%;
-    border: 8px solid transparent;
-    border-left: 0;
-    border-right: 15px solid #fff;
-    transform: translate(calc(-50% - 5px), -50%);
-  }
-  .NavImg:hover .leftNavIcon {
-    display: inline-block;
-    padding: 5px 15px;
-    width: auto;
-    box-shadow: 2px 0px 4px 1px rgba(0, 0, 0, 0.20);
-    visibility: visible;
-    // font-size: 14px;
-  }
-  .NavImg:focus{
-    outline: none;
-  }
-  .ClickTop::after, .NavImg:hover::after{
-    border: 0px !important;
-  }
-  a::after{
-    display: none;
-  }
-  .tab:hover .ClickTop{
-    visibility: visible;
-  }
-.tablinks{
-  margin-left: -3px;
+.NavImg:hover {
+  z-index: 10;
 }
-//////ends here//////
-@media only screen and (min-width: 320px) and (max-width: 425px){
- /* Style the tab */
-.tab {
-  border-radius:0px 0px 36px 36px;
-  background-color: #023047;
-  width: 100%;
-  height: auto;
-  min-height: auto;
-  padding: 12px 30px 0px !important;
+.leftNavIcon::after {
+  content: "";
   position: absolute;
-  top: 67px;
-  z-index: auto;
-  display: flex;
-  ul{
-    display: flex;
-    width: auto;
-    li{
-      margin:0px;
-    }
-  }
-  .leftNavIcon{
-    text-align:center;
-    display: block !important;
-    position: unset;
-    margin-top: 16px;
-    background: transparent;
-    font-size: 12px;
-    height: auto !important;
-    color: #fff;
-  }
+  left: -26px;
+  top: 9px;
+  margin-left: 6px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  border-right: 15px solid #fff;
 }
-/* Style the buttons inside the tab */
-.tab .ClickTop {
-  display: inline-grid;
-  border-bottom: 5px solid #023047;
-  border-right: 0px;
-  border-top: 0px;
-  border-left: 0px;
-  background-color: inherit;
-  color: #fff;
-  padding: 0px !important;
-  width: 25%;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 17px;
-  text-align:-webkit-center;
-  text-align: -moz-center;
-  justify-content: center;
- 
-}
-.tab .ClickTop:hover, .tab .ClickTop:active,
-.tab .ClickTop:visited, .tab .ClickTop:focus{
-  padding: 0px !important;
-  border-left: 0px !important;
-  border-bottom: 5px solid #239EC5;
-  outline: none;
+.leftNavIcon {
+  // display: none;
+  position: absolute;
+  bottom: 22px;
+  left: 65px;
+  background: #fff;
+  color: #000;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 32px;
 }
 .ClickTop:hover .leftNavIcon {
   display: block;
-  padding: 0px !important;
+  padding: 5px 15px;
   width: auto;
-  box-shadow: none;
+  box-shadow: 2px 0px 4px 1px rgba(0, 0, 0, 0.2);
+  // font-size: 14px;
 }
-/* Create an active/current "tab button" class */
-.tab .ClickTop.active {
-  border-bottom: 0px;
+.NavImg:focus {
+  outline: none;
 }
-/* Style the tab content */
-.tabcontent {
-  float: left;
-  padding: 0px 12px;
-  width: 70%;
-  border-left: none;
+.ClickTop::after,
+.NavImg:hover::after {
+  border: 0px !important;
 }
-.ClickTop .leftNavIcon::after{
-  display: none ;
+a::after {
+  display: none;
 }
-.tab button a{
-  display: grid;
+.tab:hover .ClickTop {
+  visibility: visible;
 }
-.NavImg{
-  display: grid;
+.tablinks {
+  margin-left: -3px;
 }
+//////ends here//////
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  /* Style the tab */
+  .tab {
+    border-radius: 0px 0px 36px 36px;
+    background-color: #023047;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 12px 30px 0px !important;
+    position: absolute;
+    top: 67px;
+    z-index: auto;
+    display: flex;
+    ul {
+      display: flex;
+      width: auto;
+      li {
+        margin: 0px;
+      }
+    }
+    .leftNavIcon {
+      text-align: center;
+      display: block !important;
+      position: unset;
+      margin-top: 48px;
+      background: transparent;
+      font-size: 12px;
+      height: auto !important;
+      color: #fff;
+    }
+  }
+  /* Style the buttons inside the tab */
+  .tab .ClickTop {
+    display: inline-grid;
+    border-bottom: 5px solid #023047;
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    background-color: inherit;
+    color: #fff;
+    padding: 0px !important;
+    width: 25%;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    justify-content: center;
+  }
+  .tab .ClickTop:hover,
+  .tab .ClickTop:active,
+  .tab .ClickTop:visited,
+  .tab .ClickTop:focus {
+    padding: 0px !important;
+    border-left: 0px !important;
+    border-bottom: 5px solid #239ec5;
+    outline: none;
+  }
+  .ClickTop:hover .leftNavIcon {
+    display: block;
+    padding: 0px !important;
+    width: auto;
+  }
+  /* Create an active/current "tab button" class */
+  .tab .ClickTop.active {
+    border-bottom: 0px;
+  }
+  /* Style the tab content */
+  .tabcontent {
+    float: left;
+    padding: 0px 12px;
+    width: 70%;
+    border-left: none;
+  }
+  .ClickTop .leftNavIcon::after {
+    display: none;
+  }
+  .tab button a {
+    display: grid;
+  }
+  .NavImg {
+    display: grid;
+  }
+  #dashboard {
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -157px -9px !important;
+  }
+  #admin {
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -157px -87px !important;
+  }
+  #hr {
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -157px -241px !important;
+  }
+  #it {
+    background: url(src/assets/images/main/leftnav_sprite_new.png) -157px -163px !important;
+  }
+  #dashboard > .leftNavIcon {
+    margin-left: -9px;
+  }
+  #admin > .leftNavIcon {
+    margin-left: -3px;
+  }
+  #hr > .leftNavIcon {
+    margin-left: 1px;
+  }
+  #it > .leftNavIcon {
+    margin-left: 0px;
+  }
 }
-@media only screen and (min-width:426px) and (max-width:1440px){
-  .tab{
+@media only screen and (min-width: 426px) and (max-width: 1440px) {
+  .tab {
     position: fixed;
     top: 66px;
     z-index: 1;
-    .leftNavIcon{
+    .leftNavIcon {
       display: none;
     }
   }
-  .btn-align{
+  .btn-align {
     padding-left: 11px !important;
   }
+}
+
+.ClickTop .NavImg:hover::after {
+  content: "";
+  position: absolute;
+  left: 40px;
+  top: 32px;
+  margin-left: 6px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent #f58944 transparent transparent;
+  border-right: 15px solid #f58944;
 }
 .ClickTop:hover .NavImg {
   visibility: visible;
 }
-#navlist{
-  display:block;
-  list-style:none;
+#navlist {
+  display: block;
+  list-style: none;
   text-decoration: none;
   margin: 0px;
-  padding: 0px;
-  }
-  .NavImg{
-    border-bottom:0.5px solid #747474;
-  }
-  #dashboard {
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/dashboard.svg)  no-repeat;
-    background-size: 60%;
-    border-left: 5px solid;
-    background-position: 12px;
-  }
-  #dashboard:hover {
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/dashboard_h.svg)  no-repeat;
-    background-size: 60%;
-    border-left: 5px solid #239EC5;
-    background-position: 12px;
-  }
-  #dashboard:active, #dashboard:visited, #dashboard:focus{
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/dashboard_s.svg)  no-repeat;
-    background-size: 60%;
-    background-position: 12px;
-  }
-  #it {
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/IT.svg)  no-repeat;
-    background-size: 60%;
-    border-left: 5px solid transparent;
-    background-position: 12px;
-  }
-   #it:hover {
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/IT_h.svg)  no-repeat;
-    background-size: 60%;
-    border-left: 5px solid #239EC5;
-    background-position: 12px;
-  }
-  #it:active, #it:visited, #it:focus{
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/IT_s.svg)  no-repeat;
-    background-size: 60%;
-    background-position: 12px;
-  }
-  #hr {
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/hr.svg)  no-repeat;
-    background-size: 60%;
-    border-left: 5px solid transparent;
-    background-position: 12px;
-  }
-   #hr:hover {
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/hr_h.svg)  no-repeat;
-    background-size: 60%;
-    border-left: 5px solid #239EC5;
-    background-position: 12px;
-  }
-  #hr:active, #hr:visited, #hr:focus{
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/hr_s.svg)  no-repeat;
-    background-size: 60%;
-    background-position: 12px;
-  }
-  #admin {
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/Admin.svg)  no-repeat;
-    background-size: 60%;
-    border-left: 5px solid transparent;
-    background-position: 12px;
-  }
-   #admin:hover {
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/Admin_h.svg)  no-repeat;
-    background-size: 60%;
-    border-left: 5px solid #239EC5;
-    background-position: 12px;
-  }
-  #admin:active, #admin:visited, #admin:focus{
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/Admin_s.svg)  no-repeat;
-    background-size: 60%;
-    background-position: 12px;
-  }
-  .active{
-    border-left: 5px solid #239EC5 !important;
-    background-color: #01273A !important;
-  }
-  
+}
+#dashboard {
+  width: 41px;
+  height: 41px;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -6px 0px;
+  padding: 37px 37px 40px;
+}
+.ClickTop:hover #dashboard:hover {
+  width: 41px;
+  height: 41px;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -84px -0px;
+}
+#dashboard:active,
+#dashboard:visited,
+#dashboard:focus {
+  width: 41px;
+  height: 41px;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -162px 0px;
+}
+#admin {
+  width: 41px;
+  height: 41px;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -5px -78px;
+  padding: 37px 37px 40px;
+}
+#admin:hover {
+  width: 41px;
+  height: 41px;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -83px -78px;
+}
+#admin:active,
+#admin:visited,
+#admin:focus {
+  width: 41px;
+  height: 41px;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -161px -78px;
+}
+#hr {
+  width: 41px;
+  height: 41px;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -3px -233px;
+  padding: 37px 37px 40px;
+}
+#hr:hover {
+  width: 41px;
+  height: 41px;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -81px -233px;
+}
+#hr:active,
+#hr:visited,
+#hr:focus {
+  width: 41px;
+  height: 41px;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -159px -233px;
+}
+#it {
+  width: 41px;
+  height: 41px;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -3px -156px;
+  padding: 37px 37px 40px;
+}
+#it:hover {
+  width: 41px;
+  height: 41px;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -81px -154px;
+}
+#it:active,
+#it:visited,
+#it:focus {
+  width: 41px;
+  height: 41px;
+  background: url(src/assets/images/main/leftnav_sprite_new.png) -393px -154px;
+  padding: 37px 37px 40px;
+}

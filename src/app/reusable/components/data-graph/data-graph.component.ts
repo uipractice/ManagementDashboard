@@ -231,7 +231,10 @@ export class DataGraphComponent implements OnInit {
               'middle';
             this.categoryAxis.renderer.labels.template.horizontalCenter =
               'right';
-            this.categoryAxis.renderer.labels.template.fontSize = '9px';
+            this.categoryAxis.renderer.labels.template.fontSize = '11px';
+            this.categoryAxis.renderer.labels.template.fontWeight = '600';
+            this.categoryAxis.renderer.labels.template.fontFamily = 'consolas';
+
             this.categoryAxis.renderer.cellStartLocation = 0.2;
             this.categoryAxis.renderer.cellEndLocation = 0.8;
             this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
@@ -258,7 +261,8 @@ export class DataGraphComponent implements OnInit {
             this.series2.dataFields.categoryX = '_id';
 
             // this.pieSeries.template.maxWidth = 20;
-            this.series2.fontSize = '10px';
+            this.series2.fontSize = '11px';
+            this.series2.fontWeight = '600';
             if (this.chartData.series2) {
               this.series2.name = this.chartData.legendName1;
             }
@@ -296,7 +300,9 @@ export class DataGraphComponent implements OnInit {
               this.series3.dataFields.categoryX = '_id';
               this.series3.name = this.chartData.legendName2;
               this.series3.stroke = am4core.color('#cd3f72');
-              this.series3.fontSize = '10px';
+              // this.series3.fontSize = '10px';
+              this.series3.fontSize = '11px';
+              // this.series3.fontWeight = '600';
               this.series3.fill = am4core.color('#cd3f72');
               this.series3.tooltipText = '[bold][font-size: 10px]{valueY}[/]';
               // this.series3.tooltipText.fontSize = '9px';
@@ -327,26 +333,55 @@ export class DataGraphComponent implements OnInit {
             );
             this.pieChart.responsive.enabled = true;
             this.pieChart.data = this.chartData.data;
+            // // this.pieSeries.labels.template.disabled = true;
+            // // this.pieSeries.ticks.template.disabled = true;
+            // this.pieSeries = this.pieChart.series.push(
+            //   new am4charts.PieSeries()
+            // );
+            // this.pieSeries.dataFields.value = 'count';
+            // this.pieSeries.dataFields.category = '_id';
+            // this.pieSeries.dataFields.fontSize = '9px';
+            // this.pieSeries.slices.template.propertyFields.fill = 'color';
+            // // Let's cut a hole in our Pie chart the size of 40% the radius
+            // this.pieChart.innerRadius = am4core.percent(70);
+
+            // // Set up fills
+            // this.pieSeries.slices.template.fillOpacity = 1;
+
+            // var hs = this.pieSeries.slices.template.states.getKey('hover');
+            // hs.properties.scale = 1;
+            // hs.properties.fillOpacity = 0.5;
+            // this.pieChart.legend = new am4charts.Legend();
+            // this.pieChart.legend.position = 'top';
+            // this.pieChart.legend.fontSize = '10px';
             this.pieSeries = this.pieChart.series.push(
               new am4charts.PieSeries()
             );
+            this.pieChart.numberFormatter.numberFormat = '#.';
             this.pieSeries.dataFields.value = 'count';
             this.pieSeries.dataFields.category = '_id';
-            this.pieSeries.dataFields.fontSize = '9px';
-            this.pieChart;
+            this.pieSeries.labels.template.disabled = true;
+            this.pieSeries.ticks.template.disabled = true;
             this.pieSeries.slices.template.propertyFields.fill = 'color';
-            // Let's cut a hole in our Pie chart the size of 40% the radius
+            this.pieChart.seriesContainer.zIndex = -1;
+
+            this.pieChart.legend = new am4charts.Legend();
+            this.pieChart.legend.position = 'right';
+
             this.pieChart.innerRadius = am4core.percent(70);
 
-            // Set up fills
-            this.pieSeries.slices.template.fillOpacity = 1;
+            var container = new am4core.Container();
+            container.parent = this.pieSeries;
+            container.horizontalCenter = 'middle';
+            container.verticalCenter = 'middle';
 
-            var hs = this.pieSeries.slices.template.states.getKey('hover');
-            hs.properties.scale = 1;
-            hs.properties.fillOpacity = 0.5;
-            this.pieChart.legend = new am4charts.Legend();
-            this.pieChart.legend.position = 'top';
-            this.pieChart.legend.fontSize = '10px';
+            // var label = new am4core.Label();
+            // label.parent = container;
+            // // label.text = 'SUM: ${values.value.sum}';
+            // label.horizontalCenter = 'middle';
+            // label.verticalCenter = 'middle';
+            // label.fontSize = 30;
+
             break;
         }
       });

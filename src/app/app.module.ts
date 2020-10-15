@@ -21,6 +21,7 @@ import { CssLoaderComponent } from './reusable/components/css-loader/css-loader.
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { WebReqInterceptor } from '../services/web-req.interceptor';
 import { Data } from './helper/datastore';
+import { PlaceHolderComponent } from './reusable/components/place-holder/place-holder.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { Data } from './helper/datastore';
     DataGraphComponent,
     DataFilterComponent,
     CssLoaderComponent,
+    PlaceHolderComponent,
   ],
   imports: [
     BrowserModule,

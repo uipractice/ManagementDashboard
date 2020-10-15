@@ -11,8 +11,10 @@ export class DashboardContainerComponent implements OnInit {
   chartData: any = {};
   chartData2: any = {};
   isDataLoaded: any = false;
+  isOtherNavSelected: any = false;
   chartData3: any = {};
   summeryData: any = {};
+  pageHeader: any = 'Management Dashboard';
   isDataLoadedPractice: any = false;
   summeryDataLoaded: any = false;
   currentUser = sessionStorage.getItem('user');
@@ -84,12 +86,12 @@ export class DashboardContainerComponent implements OnInit {
       data: [
         {
           _id: 'Present',
-          count: 709,
+          count: 700,
           color: '#7CC1E8',
         },
         {
           _id: 'Absent',
-          count: 10,
+          count: 9,
           color: '#FF4A6B',
         },
       ],
@@ -209,5 +211,15 @@ export class DashboardContainerComponent implements OnInit {
     //     },
     //   ],
     // };
+  }
+  navigationClicked(event) {
+    console.log(event);
+    if (event !== 'Dashboard') {
+      this.pageHeader = event + ' Dashboard ';
+      this.isOtherNavSelected = true;
+    } else {
+      this.pageHeader = 'Management Dashboard ';
+      this.isOtherNavSelected = false;
+    }
   }
 }

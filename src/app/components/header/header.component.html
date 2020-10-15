@@ -2,14 +2,19 @@
   <div class="ds-con">
     <div class="ColAlign">
       <img class="navbar-brand logo" src="../../../../assets/images/main/logo.svg" alt="">
-      <div class="VerLine" *ngFor="let hours of hoursCount; index as i;">
-        <span class="HoursDetails">{{hours.desc}}:{{hours.count}} </span>
-        <span class="HoursPerc">({{hours.value}}% ) </span>
-        <span class="HoursImg" *ngIf="hours.arrowFlag===true; else elseBlock"><img
+      <div class="VerLine"  *ngIf="headerCount">
+        <span class="HoursDetails">Total Working Hours:{{headerCount['workingHour']}} </span>
+        <!-- <span class="HoursPerc">({{hours.value}}% ) </span> -->
+        <!-- <span class="HoursImg" *ngIf="hours.arrowFlag===true; else elseBlock"><img
             src="..\..\..\assets\images\main\arrow_up.svg"></span>
         <ng-template #elseBlock>
           <span class="hours-img"><img src="..\..\..\assets\images\main\arrow_down.svg"></span>
-        </ng-template>
+        </ng-template> -->
+      </div>
+      <div class="VerLine" >
+        <span class="HoursDetails">Total Average Hours:08 </span>
+        <!-- <span class="HoursPerc">({{hours.value}}% ) </span> -->
+        <!-- <span class="HoursImg" ><img src="..\..\..\assets\images\main\arrow_up.svg"></span>-->
       </div>
     </div>
     <div class="VerLine2">

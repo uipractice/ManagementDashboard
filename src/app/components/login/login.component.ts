@@ -13,16 +13,15 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  loading = false;
+  //loading = true;
   submitted = false;
   // flagsCheck = false;
   message = '';
-  currentUser = sessionStorage.getItem('user');
+  currentUser = sessionStorage.getItem('userInfo');
   returnUrl: string;
 
   constructor(
     private formBuilder: FormBuilder,
-
     public router: Router,
     public data: Data,
     public auth: AuthService
@@ -39,7 +38,7 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required],
     });
     this.auth.authenticate().then((res) => {
-      res['statusCode'] === 200 ? this.router.navigate['/default'] : '';
+      res['statusCode'] === 200 ? this.router.navigate['/dashboard'] : '';
     });
 
     // get return url from route parameters or default to '/'
@@ -52,23 +51,34 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+
+    //this.loading = false;
     this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     }
+
+
     // alert('hi');
     let loginData = {
       email: this.loginForm.value.username,
       password: this.loginForm.value.password,
     };
     this.auth.login(loginData).then((res) => {
-      if (res['statusCode'] === 200) {
+      if (res['statusCode'] === 200  ) {
+        //alert('login success');
         this.data._accessToken = res['token'];
         localStorage.setItem('userInfo', JSON.stringify(res['data']));
-        this.router.navigate(['dashboard']);
+        //this.message = 'login success';
+
+        this.router.navigate(['/dashboard']);
       } else {
+        //alert('login failure');
+
       }
+
     });
+
     // if (
     //   this.loginForm.controls['username'].value === 'EAdmin' &&
     //   this.loginForm.controls['password'].value === 'E@MDashboard'

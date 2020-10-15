@@ -23,22 +23,23 @@
           <ev-data-graph [isNoGraphShown]="true" [newsData]="newsLetterData" titleCommon="News and Events">
           </ev-data-graph>
         </div>
-        <div class="col-md-4 p-0 m-2" *ngIf="!isDataLoadedPractice">
+        <!-- <div class="col-md-4 p-0 m-2" *ngIf="!isDataLoadedPractice">
           <ev-css-loader></ev-css-loader>
-        </div>
-        <div class="col-md-4 p-0 m-2" *ngIf="!isDataLoadedPractice">
+        </div> -->
+        <!-- <div class="col-md-4 p-0 m-2" *ngIf="!isDataLoadedPractice">
           <ev-css-loader></ev-css-loader>
         </div>
         <div class="col-md-3 p-0 m-2" *ngIf="!isDataLoadedPractice">
           <ev-css-loader></ev-css-loader>
-        </div>
+        </div> -->
 
         <div class="col-md-12 p-0" *ngIf="isDataLoaded">
           <ev-data-graph [chartData]="chartData" chartType="multiColorBarChartMultiLevel" [dataLoaded]="isDataLoaded"
             [isNoGraphShown]="false">
           </ev-data-graph>
         </div>
-        <div class="col-md-12 p-0 m-2" *ngIf="!isDataLoaded">
+        <!-- *ngIf="!isDataLoaded" -->
+        <div class="loader" *ngIf="!isDataLoaded">
           <ev-css-loader></ev-css-loader>
         </div>
 

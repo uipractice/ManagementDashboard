@@ -30,7 +30,7 @@ export class DashboardContainerComponent implements OnInit {
         this.chartData['series2'] = 'nonBillableCount';
         this.chartData['legendName1'] = 'Billable';
         this.chartData['legendName2'] = 'Non Billable';
-        this.chartData['colorCode'] = '#7cc1e8';
+        this.chartData['colorCode'] = '#92b7f2';
         this.chartData['label'] = true;
         // this.chartData['height'] = '500px';
         this.chartData['type'] = 'normal';

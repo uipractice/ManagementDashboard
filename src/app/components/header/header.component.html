@@ -56,34 +56,13 @@
         <h6 class="NotifyHeader">Notifications</h6>
         <ul>
           <li *ngFor="let _nt of notificationCount">
-            <a>
-              <img class="NotifyIcon" src="..\..\..\assets\images\main\Notification_bell.svg">
+            <a class="NotifyIcon">
               <div class="text ellipsis NotifyText">
                 <span class="text-concat">{{_nt.desc}}</span>
                 <span class="NotifyDate">10-09-2020</span>
               </div>
             </a>
           </li>
-          <!-- <li>
-            <a>
-              <img class="NotifyIcon" src="..\..\..\assets\images\main\Notification_bell.svg">
-              <div class="text ellipsis NotifyText">
-                <span class="text-concat">Lorem ipsum dolor sit amet elit</span>
-                <span class="NotifyDate">10-09-2020</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a>
-              <img class="NotifyIcon" src="..\..\..\assets\images\main\Notification_bell.svg">
-              <div class="text ellipsis NotifyText">
-                <span class="text-concat">Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit
-                  amet, consectetuer adipiscing elit Lorem ipsum dolor sit amet, consectetuer adipiscing elit ipsum
-                  dolor sit amet, consectetuer adipiscing elit.</span>
-                <span class="NotifyDate">10-09-2020</span>
-              </div>
-            </a>
-          </li> -->
         </ul>
       </div>
     </div>
@@ -93,22 +72,17 @@
       <div class="DropdownContent" *ngIf="!isShow">
         <ul>
           <li class="UserIcon"> <a href="#" class="UserDropdown">
-              <img src="..\..\..\assets\images\main\user.svg">
+              <!-- <img src="..\..\..\assets\images\main\user.svg"> -->
               <div class="user">{{userInfo.name}}<br><span>{{userInfo.designation}}</span></div>
             </a></li>
-          <li class="ProfileBg"><a href="#" class="">
-              <!--<img class="UserImg" src="..\..\..\assets\images\main\myprofile.svg">--> My Profile</a></li>
-          <li class="FeedbackBg"><a href="#" class="">
-              <!--<img class="UserImg" src="..\..\..\assets\images\main\feedback.svg">--> Provide Feedback</a></li>
-          <!-- <li><a href="#">Update Password</a></li> -->
-          <li class="Darkbg dark-theme">
-            <!--<img class="UserImg" src="..\..\..\assets\images\main\theme_icon.svg">--><span class="ml-40"> Dark
+          <li class="ProfileBg"><a href="#" class=""> My Profile</a></li>
+          <li class="FeedbackBg"><a href="#" class=""> Provide Feedback</a></li>
+          <li class="Darkbg dark-theme"><span class="ml-40"> Dark
               Theme</span><label class="switch">
               <input type="checkbox">
               <span class="slider round"></span>
             </label></li>
-          <li class="LogoutBg"><a class="" (click)="logout()">
-              <!--<img class="UserImg" src="..\..\..\assets\images\main\Logout_icon.svg">--> Logout</a></li>
+          <li class="LogoutBg"><a class="" (click)="logout()"> Logout</a></li>
         </ul>
       </div>
     </div>
@@ -127,19 +101,19 @@
       <button type="button" class="close" data-dismiss="modal">&times;</button>
       <ul>
         <li class="UserIcon"> <a href="#" class="UserDropdown">
-            <img src="..\..\..\assets\images\main\user.svg">
+            <!-- <img src="..\..\..\assets\images\main\user.svg"> -->
             <div class="user">User Name<br><span>Designation</span></div>
           </a></li>
-        <li><a href="#"><img class="UserImg" src="..\..\..\assets\images\main\myprofile.svg"> My Profile</a></li>
-        <li><a class=""><img class="UserImg" src="..\..\..\assets\images\main\feedback.svg"> Provide Feedback</a></li>
+        <li class="ProfileBg"><a href="#"><!--<img class="UserImg" src="..\..\..\assets\images\main\myprofile.svg">--> My Profile</a></li>
+        <li class="FeedbackBg"><a class=""><!--<img class="UserImg" src="..\..\..\assets\images\main\feedback.svg">--> Provide Feedback</a></li>
         <!-- <li><a href="#">Update Password</a></li> -->
-        <li class="dark-theme"><a href="#"><img class="UserImg" src="..\..\..\assets\images\main\theme_icon.svg"> Dark
+        <li class="Darkbg dark-theme"><a href="#"><!--<img class="UserImg" src="..\..\..\assets\images\main\theme_icon.svg">--> Dark
             Theme</a><label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
           </label></li>
-        <li class="logout-link"><a class="Logout" (click)="logout()"><img class="UserImg"
-              src="..\..\..\assets\images\main\Logout_icon.svg"> Logout</a></li>
+        <li class="LogoutBg logout-link"><a class="Logout" (click)="logout()"><!--<img class="UserImg"
+              src="..\..\..\assets\images\main\Logout_icon.svg">--> Logout</a></li>
       </ul>
     </div>
     <a><img src="..\..\..\assets\images\main\logo.svg"></a>
@@ -196,8 +170,8 @@
         </div>
         <ul>
           <li *ngFor="let data of notificationCount;" class="notication-border">
-            <a href="#" class="">
-              <img class="NotifyIcon" src="..\..\..\assets\images\main\Notification_bell.svg">
+            <a href="#" class="NotifyIcon">
+              <!-- <img class="" src="..\..\..\assets\images\main\Notification_bell.svg"> -->
               <div class="text ellipsis NotifyText">{{data.desc | charlimitpipe: 40}}
                 <span class="NotifyDate">10-09-2020</span>
               </div>

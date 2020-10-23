@@ -7,6 +7,8 @@
 	.st1{display:inline;}
 	.st2{opacity:0.9;}
 	.st3{fill:none;stroke:#B3C1C8;}
+	.st3:hover{fill:none;stroke:#fff !important}
+	.st3.active{fill:white;stroke:#fff !important}
 	.st4{clip-path:url(#SVGID_2_);}
 	.st5{fill:none;stroke:#B3C1C8;stroke-width:0.923;stroke-miterlimit:10;}
 	.st6{fill:none;stroke:#B3C1C8;stroke-width:0.8968;stroke-linecap:round;stroke-miterlimit:10;}

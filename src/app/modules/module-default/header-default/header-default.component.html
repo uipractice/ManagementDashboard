@@ -1,14 +1,14 @@
-
 <div class="FlxContainer">
-  <div class="card">
+  <div class="card" *ngFor="let summery of summeryData.data">
     <div class="ThisMonth"><span>This Month</span></div>
     <div class="CardCount">
-      <h2>705</h2>
-      <h3>Total Employee <span>(10%) <img src="..\..\assets\images\main\arrow_up.svg"></span></h3>
+      <h2>{{summery.count}}</h2>
+      <h3>{{summery.title}}<span *ngIf="summery.staticAvailable">(10%) <img
+            src="..\..\assets\images\main\arrow_up.svg"></span></h3>
     </div>
-    <div class="CardImg"><img src="..\..\assets\images\main\total_employee.svg"></div>
+    <div class="CardImg"><img src="..\..\assets\images\main\{{summery.icon}}"></div>
   </div>
-  <div class="card">
+  <!-- <div class="card">
     <div class="ThisMonth"><span>This Month</span></div>
     <div class="CardCount">
       <h2>3200</h2>
@@ -39,5 +39,5 @@
       <h3>Practices </h3>
     </div>
     <div class="CardImg"><img src="..\..\assets\images\main\Practices.svg"></div>
-  </div>
+  </div> -->
 </div>

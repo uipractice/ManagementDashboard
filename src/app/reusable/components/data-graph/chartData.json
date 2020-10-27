@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "country": "Lithuania",
+      "litres": 501
+    },
+    {
+      "country": "Czechia",
+      "litres": 301
+    },
+    {
+      "country": "Ireland",
+      "litres": 201
+    },
+    {
+      "country": "Germany",
+      "litres": 165
+    },
+    {
+      "country": "Australia",
+      "litres": 139
+    },
+    {
+      "country": "Austria",
+      "litres": 128
+    },
+    {
+      "country": "UK",
+      "litres": 99
+    },
+    {
+      "country": "Belgium",
+      "litres": 60
+    },
+    {
+      "country": "The Netherlands",
+      "litres": 50
+    }
+  ]
+}

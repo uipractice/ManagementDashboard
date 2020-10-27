@@ -9,6 +9,7 @@
 // ---------------------------------------------------------------------------------------
 
 import { Injectable } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import {
   HttpClient,
   HttpHeaders,
@@ -19,6 +20,7 @@ import {
 import { UrlConstants } from 'src/constants/url-constants';
 import { map, tap, last } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
+import { Data } from '../app/helper/datastore';
 
 @Injectable({
   providedIn: 'root',
@@ -29,15 +31,120 @@ export class WebRequestService {
   public progressSource = new BehaviorSubject<number>(0);
 
   readonly ROOT_URL;
+  _commonHeader: any;
+  _herderOption: any;
+  _header: any;
+  _imageherderOption: any;
+  _imageHeader: any;
+  _accessToken: any;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private cookieService: CookieService,
+    private data: Data
+  ) {
     this.ROOT_URL = this._urls.DEV_URL;
+  }
+
+  setToken() {
+    const cookieExists: boolean = this.cookieService.check('x-access-token');
+    // //console.log(cookieExists);
+    if (cookieExists) {
+      this._accessToken = this.cookieService.get('x-access-token');
+
+      this._commonHeader = this._accessToken;
+      // //console.log(this._commonHeader);
+      this._herderOption = new HttpHeaders({
+        'auth-header': this._commonHeader,
+      });
+
+      this._header = { headers: this._herderOption };
+
+      this._commonHeader = this._accessToken;
+      // //console.log(this._commonHeader);
+      this._imageherderOption = new HttpHeaders({
+        'auth-header': this._commonHeader,
+      });
+
+      this._imageHeader = { headers: this._imageherderOption };
+    } else {
+      // //console.log('has access token' + this.data._accessToken);
+
+      this._accessToken = this.data._accessToken;
+
+      this._commonHeader = this._accessToken;
+      // //console.log(this._commonHeader);
+      this._herderOption = new HttpHeaders({
+        Authorization: this._commonHeader,
+      });
+
+      this._header = { headers: this._herderOption };
+
+      this._commonHeader = 'bearer' + this._accessToken;
+      // //console.log(this._commonHeader);
+      this._imageherderOption = new HttpHeaders({
+        Authorization: this._commonHeader,
+      });
+
+      this._imageHeader = { headers: this._imageherderOption };
+      // alert(this.data._accessToken);
+    }
   }
 
   async getProfileData() {
     return new Promise((resolve, reject) => {
       this.http
         .get(`${this.ROOT_URL}${this._urls.GET_USERS}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  // GET_GRAPH_DATA_ACCOUNTS
+
+  async getAccountGraphData() {
+    this.setToken();
+    console.log(this._header);
+    return new Promise((resolve, reject) => {
+      this.http
+        .get(
+          `${this.ROOT_URL}${this._urls.GET_GRAPH_DATA_ACCOUNTS}`,
+          this._header
+        )
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+
+  // GET_SUMMERY_COUNT
+  async getSummeryCount() {
+    this.setToken();
+    console.log(this._header);
+    return new Promise((resolve, reject) => {
+      this.http
+        .get(`${this.ROOT_URL}${this._urls.GET_SUMMERY_COUNT}`, this._header)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  // GET_GRAPH_DATA_PRACTICE
+
+  async getPracticeGraphData() {
+    this.setToken();
+    return new Promise((resolve, reject) => {
+      this.http
+        .get(
+          `${this.ROOT_URL}${this._urls.GET_GRAPH_DATA_PRACTICE}`,
+          this._header
+        )
         .toPromise()
         .then((response) => {
           // //console.log(response);

@@ -1,8 +1,60 @@
-<div *ngIf="currentUser"><ev-header></ev-header>
-<ev-side-nav></ev-side-nav>
-<div class="DashboardHeader">
-<h3 class="MobileNone">Mgmt. Dashboard</h3>
-<ev-header-default></ev-header-default>
-<ev-graph-default></ev-graph-default>
+<div>
+  <ev-header></ev-header>
+
+
+  <ev-side-nav (navigatoinChangeEvent)='navigationClicked($event)'></ev-side-nav>
+  <div class="DashboardHeader">
+    <h3 class="MobileNone">{{pageHeader}}</h3>
+    <div *ngIf="!isOtherNavSelected">
+      <ev-header-default [summeryData]="summeryData" *ngIf="summeryDataLoaded"></ev-header-default>
+      <div class="row ml-0">
+        <div class="col-md-4 p-0 pr-2" *ngIf="isDataLoadedPractice && summeryDataLoaded">
+          <ev-data-graph [chartData]="chartData3" chartType="donutChart" [dataLoaded]="isDataLoadedPractice"
+            [isNoGraphShown]="false">
+          </ev-data-graph>
+        </div>
+        <div class="col-md-5 p-0 pr-2" *ngIf="isDataLoadedPractice && summeryDataLoaded">
+          <ev-data-graph [chartData]="chartData2" chartType="multiColorBarChartMultiLevel"
+            [dataLoaded]="isDataLoadedPractice" [isNoGraphShown]="false">
+          </ev-data-graph>
+        </div>
+
+        <div class="col-md-3 p-0" *ngIf="isDataLoaded && summeryDataLoaded">
+          <ev-data-graph [isNoGraphShown]="true" [newsData]="newsLetterData" titleCommon="News and Events">
+          </ev-data-graph>
+        </div>
+        <!-- <div class="col-md-4 p-0 m-2" *ngIf="!isDataLoadedPractice">
+          <ev-css-loader></ev-css-loader>
+        </div> -->
+        <!-- <div class="col-md-4 p-0 m-2" *ngIf="!isDataLoadedPractice">
+          <ev-css-loader></ev-css-loader>
+        </div>
+        <div class="col-md-3 p-0 m-2" *ngIf="!isDataLoadedPractice">
+          <ev-css-loader></ev-css-loader>
+        </div> -->
+
+        <div class="col-md-12 p-0" *ngIf="isDataLoaded && summeryDataLoaded">
+          <ev-data-graph [chartData]="chartData" chartType="multiColorBarChartMultiLevel" [dataLoaded]="isDataLoaded"
+            [isNoGraphShown]="false">
+          </ev-data-graph>
+        </div>
+        <!-- *ngIf="!isDataLoaded" -->
+
+
+
+
+
+      </div>
+    </div>
+    <div class="col-md-12 p-0" *ngIf="isOtherNavSelected">
+      <ev-place-holder></ev-place-holder>
+    </div>
+
+
+    <!-- <ev-graph-default></ev-graph-default> -->
+  </div>
+
 </div>
+<div class="loader" *ngIf="!summeryDataLoaded">
+  <ev-css-loader></ev-css-loader>
 </div>

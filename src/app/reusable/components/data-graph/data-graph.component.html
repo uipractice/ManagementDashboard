@@ -1,0 +1,25 @@
+<!-- If the data type is graph compon -->
+<div *ngIf="!isNoGraphShown">
+  <div class="graphContainer mt-3 mb-2 mr-2 ">
+    <ev-data-filter [title]="chartData.title"></ev-data-filter>
+
+    <p class="graphPointsHeading" *ngIf="chartData.label">{{chartData.labelData1.name}}: <span
+        class="positive">{{chartData.labelData1.count}}</span> | {{chartData.labelData2.name}}:
+      <span class="negetive">{{chartData.labelData2.count}}</span></p>
+
+    <div id="{{chartData.idName}}" style="width: 100%; height:400px"
+      [class]="chartData.type === 'normal' ? 'fullHeight' :'notmalHeight'">
+
+    </div>
+  </div>
+</div>
+
+<!-- If its news letter -->
+<div class="GraphBody  mt-3 mb-2 mr-2 " *ngIf="isNoGraphShown">
+  <ev-data-filter [title]="titleCommon"></ev-data-filter>
+  <div class="GraphLast">
+    <ul>
+      <li *ngFor="let news of newsData"><a href="#">{{news.title}}</a></li>
+    </ul>
+  </div>
+</div>

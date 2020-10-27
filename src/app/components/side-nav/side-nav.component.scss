@@ -67,7 +67,7 @@
     top: 22px;
     left: 70px;
     background: #fff;
-    color: #000;
+    color: #023047;
     border-radius: 4px;
     font-size: 14px;
     height: 32px;
@@ -88,7 +88,7 @@
     display: inline-block;
     padding: 5px 15px;
     width: auto;
-    box-shadow: 2px 0px 4px 1px rgba(0, 0, 0, 0.20);
+    box-shadow: 2px 0px 4px 1px rgba(0, 0, 0, 0.25);
     visibility: visible;
     // font-size: 14px;
   }
@@ -119,7 +119,7 @@
   padding: 0px;
   }
   .NavImg{
-    border-bottom:0.5px solid #747474;
+    border-bottom:0.5px solid #57565C;
   }
   #dashboard {
     height: 78px;
@@ -128,18 +128,13 @@
     border-left: 5px solid transparent;
     background-position-x: 13px;
   }
-  #dashboard:hover {
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/dashboard_h.svg) center no-repeat;
-    background-size: 58%;
-    border-left: 5px solid #239EC5;
-    background-position-x: 13px;
-  }
-  #dashboard:active, #dashboard:visited, #dashboard:focus{
+  #dashboard:active, #dashboard:visited, #dashboard:focus, #dashboard.active {
     height: 78px;
     background: url(src/assets/images/main/Leftnav/dashboard_s.svg) center no-repeat;
     background-size: 58%;
     background-position-x: 13px;
+    border-left: 5px solid #239EC5;
+    background-color: #01273A;
   }
   #it {
     height: 78px;
@@ -148,18 +143,12 @@
     border-left: 5px solid transparent;
     background-position-x: 13px;
   }
-   #it:hover {
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/IT_h.svg) center no-repeat;
-    background-size: 58%;
-    border-left: 5px solid #239EC5;
-    background-position-x: 13px;
-  }
-  #it:active, #it:visited, #it:focus{
+  #it:active, #it:visited, #it:focus, #it.active{
     height: 78px;
     background: url(src/assets/images/main/Leftnav/IT_s.svg) center no-repeat;
     background-size: 58%;
     background-position-x: 13px;
+    background-color: #01273A;
   }
   #hr {
     height: 78px;
@@ -168,18 +157,12 @@
     border-left: 5px solid transparent;
     background-position-x: 13px;
   }
-   #hr:hover {
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/hr_h.svg) center no-repeat;
-    background-size: 58%;
-    border-left: 5px solid #239EC5;
-    background-position-x: 13px;
-  }
-  #hr:active, #hr:visited, #hr:focus{
+  #hr:active, #hr:visited, #hr:focus, #hr.active{
     height: 78px;
     background: url(src/assets/images/main/Leftnav/hr_s.svg) center no-repeat;
     background-size: 58%;
     background-position-x: 13px;
+    background-color: #01273A;
   }
   #admin {
     height: 78px;
@@ -188,19 +171,20 @@
     border-left: 5px solid transparent;
     background-position-x: 13px;
   }
-   #admin:hover {
-    height: 78px;
-    background: url(src/assets/images/main/Leftnav/Admin_h.svg) center no-repeat;
-    background-size: 58%;
-    border-left: 5px solid #239EC5;
-    background-position-x: 13px;
-  }
-  #admin:active, #admin:visited, #admin:focus{
+  #admin:active, #admin:visited, #admin:focus, #admin.active{
     height: 78px;
     background: url(src/assets/images/main/Leftnav/Admin_s.svg) center no-repeat;
     background-size: 58%;
     background-position-x: 13px;
+    background-color: #01273A;
   }
+  // .active{
+  //   border-left: 5px solid #239EC5 !important;
+  //   background-color: #01273A !important;
+  //   background-size: 58% !important;
+  //   height: 78px;
+  //   background: url(src/assets/images/main/Leftnav/dashboard_s.svg) center no-repeat !important;
+  // }
   @media only screen and (min-width: 320px) and (max-width: 425px){
     /* Style the tab */
    .tab {
@@ -228,7 +212,7 @@
        background: transparent;
        height: auto !important;
        font-style: normal;
-       font-weight: bold;
+      //  font-weight: bold;
        font-size: 14px;
        line-height: 16px;
        color: #FFFFFF;
@@ -239,6 +223,10 @@
    }
    #navlist{
     text-align:center;
+  }
+  .NavImg:hover .leftNavIcon {
+    padding: 0px; 
+    box-shadow: none;
   }
    /* Style the buttons inside the tab */
    .tab .ClickTop {
@@ -324,39 +312,48 @@
     background-position-y: 3px;
     background-size: 50%;
   }
-  #dashboard.active{
+  #dashboard.active, #dashboard:active, #dashboard:visited, #dashboard:focus{
     border-left: 0px !important;
-    border-bottom: 5px solid transparent;
-    background-position-x: 20px;
+    border-bottom: 5px solid #239EC5;
+    background-position-x: 22px;
     background-position-y: 3px;
     background-size: 50%;
+    background-color: transparent;
+    font-weight: bold;
   }
-  #hr.active{
+  #hr.active, #hr:active, #hr:visited, #hr:focus{
    border-left: 0px !important;
-   border-bottom: 5px solid transparent;
-   background-position-x: 20px;
+   border-bottom: 5px solid #239EC5;
+   background-position-x: 22px;
    background-position-y: 3px;
    background-size: 50%;
+   background-color: transparent;
+   font-weight: bold;
  }
- #it.active{
+ #it.active, #it:active, #it:visited, #it:focus{
    border-left: 0px !important;
-   border-bottom: 5px solid transparent;
-   background-position-x: 20px;
+   border-bottom: 5px solid #239EC5;
+   background-position-x: 22px;
    background-position-y: 3px;
    background-size: 50%;
+   background-color: transparent;
+   font-weight: bold;
  }
- #admin.active{
+ #admin.active, #admin:active, #admin:visited, #admin:focus{
    border-left: 0px !important;
-   border-bottom: 5px solid transparent;
-   background-position-x: 20px;
+   border-bottom: 5px solid #239EC5;
+   background-position-x: 22px;
    background-position-y: 3px;
    background-size: 50%;
+   background-color: transparent;
+   font-weight: bold;
  }
-   .active{
-    border-bottom: 5px solid #239EC5 !important;
-    background-color: transparent !important;
-    background-size: 50%;
-  }
+  //  .active{
+  //   border-bottom: 5px solid #239EC5 !important;
+  //   background-color: transparent !important;
+  //   background-size: 50% !important;
+  //   background: url(src/assets/images/main/Leftnav/dashboard_s.svg) center no-repeat !important;
+  // }
    .leftNavIcon::before{
      display: none;
    }
@@ -397,8 +394,48 @@
  #admin.active{
    background-position-x: 18px;
  }
+ .ColAlign {
+  top: 140px !important;
+  padding: 30px 5px 0 15px !important;
+ }
+.VerLine span{
+  font-size: 10px !important;
+}
+  }
+  @media only screen and (min-width:411px) and (max-width:414px){
+    .ColAlign{
+      padding: 30px 0px 0px 0px !important;
+    }
+    .leftNavIcon{
+      top:55px !important;
+    }
+    .NavImg{
+      width:87px;
+    }
+    #dashboard, #hr, #it, #admin{
+      background-position-x: 22px;
+    }
+  }
+  @media only screen and (width:375px){
+    .ColAlign{
+      padding: 30px 5px 0 13px !important;
+    }
+  }
+  @media only screen and (width: 360px){
+    .VerLine{
+      margin: 0px !important;
+    }
+    .ColAlign{
+      top: 153px;
+      z-index: 1;
+      padding: 30px 10px 0 13px !important;
+      justify-content: space-around;
+    }
   }
    @media only screen and (min-width:426px) and (max-width:1440px){
+     .ColAlign{
+       display: none !important;
+     }
      .tab{
        position: fixed;
        top: 66px;
@@ -406,12 +443,74 @@
        .leftNavIcon{
          display: none;
        }
+       #dashboard:hover {
+        height: 78px;
+        background: url(src/assets/images/main/Leftnav/dashboard_h.svg) center no-repeat;
+        background-size: 58%;
+        border-left: 5px solid #239EC5;
+        background-position-x: 13px;
+      }
+      #it:hover {
+        height: 78px;
+        background: url(src/assets/images/main/Leftnav/IT_h.svg) center no-repeat;
+        background-size: 58%;
+        border-left: 5px solid #239EC5;
+        background-position-x: 13px;
+      }
+      #hr:hover {
+        height: 78px;
+        background: url(src/assets/images/main/Leftnav/hr_h.svg) center no-repeat;
+        background-size: 58%;
+        border-left: 5px solid #239EC5;
+        background-position-x: 13px;
+      }
+   #admin:hover {
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/Admin_h.svg) center no-repeat;
+    background-size: 58%;
+    border-left: 5px solid #239EC5;
+    background-position-x: 13px;
+  }
      }
      .btn-align{
        padding-left: 11px !important;
      }
-     .active{
-       border-left: 5px solid #239EC5 !important;
-       background-color: #01273A !important;
-     }
    }
+   .ColAlign {
+    display: flex;
+    place-items: center;
+    width: 100%;
+    position: absolute;
+    top: 150px;
+    z-index: 1;
+    padding: 30px 5px 0 10px;
+    justify-content: space-around;
+    p {
+      padding-left: 20px;
+      padding-right: 30px;
+    }
+  }
+  .VerLine {
+    margin-right: 5px;
+    // margin-right: 24px;
+    font-family: "Lato", sans-serif !important;
+    span {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 0.75rem;
+      line-height: 19.2px;
+      color: #023047;
+    }
+  }
+  .HoursDetail {
+    color: #023047;
+  }
+  .HoursPerc {
+    color: #929292 !important;
+  }
+  .VerLine:last-of-type {
+    border-right: none;
+  }
+  .HoursImg{
+    padding-right: 5px;
+  }

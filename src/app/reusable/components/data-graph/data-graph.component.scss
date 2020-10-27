@@ -106,6 +106,7 @@
   ul {
     padding: 0px;
     margin: 0px;
+    margin-top: -10px !important;
     padding: 0px;
     overflow-y: auto;
     scrollbar-width: thin;
@@ -114,7 +115,7 @@
       list-style: none;
       height: 57px;
       border-bottom: 1px solid #c4c4c4;
-      padding: 10px;
+      padding:8px 10px 10px 15px;
       overflow: hidden;
       a {
         color: #7b7b7b;

@@ -1,7 +1,7 @@
 // div{ border:1px solid ;width:100%; height:calc(100vh - 66px); overflow-y: scroll;}
 // div{border:1px solid blue; width:100%; height:calc(100vh - 76px); overflow-y: scroll;}
 .DashboardHeader {
-  padding: 22px 13px 22px 22px;
+  padding: 22px 20px 22px 27px;
   padding-bottom: 30px;
   margin-left: 65px;
   position: absolute;
@@ -45,8 +45,8 @@
 @media only screen and (min-width: 320px) and (max-width: 425px) {
   .DashboardHeader {
     margin: 0px;
-    padding: 0px 15px 30px 15px;
-    top: 90px;
+    padding: 0px 0px 30px 15px;
+    top: 130px;
     z-index: 0;
     display: block;
     position: relative;
@@ -54,5 +54,10 @@
   }
   .MobileNone {
     display: none;
+  }
+}
+@media only screen and (width: 320px){
+  .DashboardHeader{
+    top: 115px;
   }
 }

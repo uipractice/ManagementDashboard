@@ -8,12 +8,12 @@
     <div *ngIf="!isOtherNavSelected">
       <ev-header-default [summeryData]="summeryData" *ngIf="summeryDataLoaded"></ev-header-default>
       <div class="row ml-0">
-        <div class="col-md-4 p-0 " *ngIf="isDataLoadedPractice && summeryDataLoaded">
+        <div class="col-md-4 p-0 pr-2" *ngIf="isDataLoadedPractice && summeryDataLoaded">
           <ev-data-graph [chartData]="chartData3" chartType="donutChart" [dataLoaded]="isDataLoadedPractice"
             [isNoGraphShown]="false">
           </ev-data-graph>
         </div>
-        <div class="col-md-5 p-0" *ngIf="isDataLoadedPractice && summeryDataLoaded">
+        <div class="col-md-5 p-0 pr-2" *ngIf="isDataLoadedPractice && summeryDataLoaded">
           <ev-data-graph [chartData]="chartData2" chartType="multiColorBarChartMultiLevel"
             [dataLoaded]="isDataLoadedPractice" [isNoGraphShown]="false">
           </ev-data-graph>

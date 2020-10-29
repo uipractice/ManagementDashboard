@@ -626,14 +626,29 @@ input:checked + .slider:before {
     width: 22px;
     height: 22px;
   }
+  .mobile-usermenu:before{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color:rgba(0, 0, 0, 0.4);
+    content: '';
+    // opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    width:145%;
+  }
   .mobile-usermenu {
     width: 70% !important;
     height: 100vh;
     left: 0;
     border-radius: 0;
+    position:fixed;
     ul {
       position: relative;
       height: 100vh;
+      background:#fff;
       li {
         a {
           width: 100%;

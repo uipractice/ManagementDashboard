@@ -22,6 +22,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { WebReqInterceptor } from '../services/web-req.interceptor';
 import { Data } from './helper/datastore';
 import { PlaceHolderComponent } from './reusable/components/place-holder/place-holder.component';
+import { DashboardComponent } from './reusable/svg/navigation/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { PlaceHolderComponent } from './reusable/components/place-holder/place-h
     DataFilterComponent,
     CssLoaderComponent,
     PlaceHolderComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

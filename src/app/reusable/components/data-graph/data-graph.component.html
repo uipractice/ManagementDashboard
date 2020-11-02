@@ -1,6 +1,6 @@
 <!-- If the data type is graph compon -->
 <div *ngIf="!isNoGraphShown">
-  <div class="graphContainer mt-3 mb-2 mr-2 ">
+  <div class="graphContainer mt-3 mr-2 ">
     <ev-data-filter [title]="chartData.title"></ev-data-filter>
 
     <p class="graphPointsHeading" *ngIf="chartData.label">{{chartData.labelData1.name}}: <span
@@ -15,7 +15,7 @@
 </div>
 
 <!-- If its news letter -->
-<div class="GraphBody  mt-3 mb-2 mr-2 " *ngIf="isNoGraphShown">
+<div class="GraphBody  mt-3 mr-2 " *ngIf="isNoGraphShown">
   <ev-data-filter [title]="titleCommon"></ev-data-filter>
   <div class="GraphLast">
     <ul>

@@ -1,0 +1,122 @@
+.normalSvg{
+    padding: 15px 17px 15px 13px;
+    border-bottom: 0.5px solid #57565C;
+    width: 78px;
+    height: 78px;
+    border-left: 5px solid transparent;
+    cursor: pointer;
+  }
+  
+  .normalSvg:hover{
+    border-left: 5px solid #239EC5;
+    .st5, .st7, .st6, .st8{
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 0.8968;
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+  }
+  .st17, .st15{
+      stroke: #FFFFFF;
+  }
+  .st18{
+      fill: #FFFFFF;
+      stroke: none;
+  }
+  .st7, .st19{
+      fill: #FFFFFF;
+  }
+  .st3{
+    fill: none;
+    stroke: #fff !important;
+  }
+  }
+  .normalSvg:active, .normalSvg.active, .normalSvg.active:hover{
+      border-left: 5px solid #239EC5;
+      background:#01273A;
+      .st8, .st17, .st19, .st18, .fwhite{
+          fill: #FFFFFF;
+      }
+      .fcolor{
+          fill: #01273A;
+      }
+      .st3, .st17{
+          stroke: #FFFFFF;
+      }
+      .st7, .st5{
+          fill: #FFFFFF;
+          stroke: #FFFFFF;
+      }
+      .st6{
+          stroke: #023047;
+      }
+  }
+  
+
+  /*tooltip on svg path */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #fff;
+    color: #023047;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px 10px;
+    height: 32px;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    left: 76px;
+    top: 22px;
+    transition: all 0.2s ease;
+    box-shadow: 2px 0px 4px 1px rgba(0, 0, 0, 0.25);
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  .tooltiptext::before{
+    content: '';
+    position: absolute;
+    display: block;    
+    width: 0px;        
+    left: 0;
+    top: 50%;
+    border: 8px solid transparent;
+    border-left: 0;
+    border-right: 15px solid #fff;
+    transform: translate(calc(-50% - 5px), -50%);
+  }
+
+
+  @media only screen and (max-width:425px) and (min-width:320px){
+      .normalSvg{
+          background-color: transparent;
+          border-bottom: 5px solid transparent;
+          padding:15px !important;
+      }
+      .normalSvg:hover{
+          border: none;
+      }
+    .normalSvg.active, .normalSvg:active{
+        background-color: transparent;
+        border-left: 0px !important;
+        border-bottom: 5px solid #239EC5;
+       }
+       .tooltiptext{
+           display: none;
+       }
+  }
+  @media only screen and (width:320px){
+      .normalSvg{
+        text-align: center;
+        display: flex;
+        padding: 10px 20px 0 20px !important;
+      }
+  }

@@ -117,12 +117,21 @@
       border-bottom: 1px solid #c4c4c4;
       padding:8px 10px 10px 15px;
       overflow: hidden;
+      position: relative;
       a {
         color: #7b7b7b;
         font-size: 14px;
-        line-height: 18px;
+        line-height: 22px;
         font-weight: 400;
       }
+    }
+    li:before{
+      content: "...";
+      position: absolute;
+      bottom: 2.5px;
+      right: 13px;
+      font-size: 18px;
+      color: #7b7b7b;
     }
     li:last-child {
       border: 0px;

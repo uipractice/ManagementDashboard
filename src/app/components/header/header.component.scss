@@ -308,7 +308,7 @@ span {
         text-decoration: none;
         display: block;
         font-size: 14px;
-        padding: 13px 10px 10px 30px;
+        padding: 13px 10px 10px 25px;
         line-height: 18px;
         font-weight: 400;
       }
@@ -374,7 +374,7 @@ span {
   padding: 13px 10px 10px 21px;
   line-height: 18px !important;
   .ml-40 {
-    margin-left: 30px;
+    margin-left: 25px;
     color: #57565c;
     font-weight: 400 !important;
     font-size: 14px !important;
@@ -645,6 +645,8 @@ input:checked + .slider:before {
     left: 0;
     border-radius: 0;
     position:fixed;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
     ul {
       position: relative;
       height: 100vh;

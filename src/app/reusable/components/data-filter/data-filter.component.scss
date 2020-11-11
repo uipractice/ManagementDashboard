@@ -16,7 +16,7 @@
 .GraphHead {
   display: flex;
   background: #f8f8fb;
-  padding: 9px 15px 9px;
+  padding: 15px;
   width: 100%;
   align-items: baseline;
   box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
@@ -25,6 +25,7 @@
     font-size: 16px;
     font-weight: 600;
     line-height: 19px;
+    margin-bottom:0;
   }
 }
 .ls {
@@ -124,4 +125,174 @@
     // width: 22% !important;
     margin-right: 0 !important;
   }
+}
+
+.kebabMenu-icon{
+  height:31px;
+  width:31px;
+  background: url(src/assets/images/main/kebab_menu.svg) no-repeat center;
+  background-size: 12%;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  cursor: pointer;
+}
+.kebabMenu-icon:hover{
+  background-color:#E8EFF5;
+  border-radius: 50%;
+}
+.DropdownContent{
+  position: absolute;
+    background-color: #fff;
+    min-width: 190px;
+    width:253px;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 17px;
+    top: 60px;
+    padding:10px;
+    font-size:14px;
+}
+.DropdownContent:after{
+  content: "";
+    position: absolute;
+    top: -26px;
+    left: 70%;
+    margin-left: 43px;
+    border-width: 10px;
+    border-bottom: 16px solid #f8f8fb;
+    border-style: solid;
+    border-color: transparent transparent #f8f8fb transparent;
+}
+#dropdown-tab .tab-content {
+  color : white;
+  padding : 5px 0;
+}
+#dropdown-tab{
+  .tab-wrap{
+    input{
+      display:none;
+    }
+    label{
+      border: 1px solid #239EC5;
+      box-sizing: border-box;  
+      border-radius: 0px 2px 2px 0px;
+      width: 116px;
+      height: 32px;
+      text-align: center;
+      font-family: Lato;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 30px;
+      text-align: center;
+      letter-spacing: 0.01em;
+      color: #239EC5;
+    }
+    
+  }
+}
+.tab:checked+label{
+  background: #239EC5 !important;
+  border-radius: 2px 0px 0px 2px !important;
+    color:#fff !important;
+}
+.tab__content label.select-label{
+  width: 100% !important;
+  font-weight: normal !important;
+  font-size: 12px !important;
+  line-height: 14px !important;
+  letter-spacing: 0.01em !important;
+  color: #BDBDBD !important;
+  border:0 !important;
+  height: auto !important;
+  text-align: left !important;
+}
+.tab__content select{
+  border: 1px solid #BDBDBD;
+  box-sizing: border-box;
+  border-radius: 2px;
+  width: 100%;
+  height: 32px;
+  font-family: Lato;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: #BDBDBD;
+  margin-bottom: 10px;
+}
+.tab__content select:focus, .tab__content select:active{
+  border: 1px solid #BDBDBD;
+  outline: none;
+}
+.tab-wrap {
+  position: relative;
+  list-style: none;
+  background-color: #fff;
+  
+}
+.tab:checked:nth-of-type(1)~.tab__content:nth-of-type(1) {
+	opacity: 1;
+	-webkit-transition: .5s opacity ease-in, .8s -webkit-transform ease;
+	transition: .5s opacity ease-in, .8s -webkit-transform ease;
+	transition: .5s opacity ease-in, .8s transform ease;
+	transition: .5s opacity ease-in, .8s transform ease, .8s -webkit-transform ease;
+	position: relative;
+	top: 0;
+	z-index: 100;
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);
+	text-shadow: 0 0 0
+}
+
+.tab:checked:nth-of-type(2)~.tab__content:nth-of-type(2) {
+	opacity: 1;
+	-webkit-transition: .5s opacity ease-in, .8s -webkit-transform ease;
+	transition: .5s opacity ease-in, .8s -webkit-transform ease;
+	transition: .5s opacity ease-in, .8s transform ease;
+	transition: .5s opacity ease-in, .8s transform ease, .8s -webkit-transform ease;
+	position: relative;
+	top: 0;
+	z-index: 100;
+	-webkit-transform: translateY(0px);
+	transform: translateY(0px);
+	text-shadow: 0 0 0
+}
+
+.tab__content {
+  padding: 10px 0;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  opacity: 0;
+  left: 0;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  border-radius: 6px;
+}  
+.radio-btn{
+  display: inline !important;
+}
+.year-label{
+  font-style: normal;
+  font-weight: normal !important;
+  font-size: 12px !important;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: #BDBDBD !important;
+  border: 0 !important;
+  display: inline;
+  margin: 0px 7px 0 4px;
+}
+.select-account{
+  position: relative;
+}
+.select-account:before{
+  content: "";
+  position: absolute;
+  height: 32px;
+  width:30px;
+  background:#ddd;
 }

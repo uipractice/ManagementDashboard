@@ -76,3 +76,8 @@ body::-webkit-scrollbar-thumb:hover {
 .modal-header {
   border-bottom: 0 !important;
 }
+@media(max-width:414px){
+  body{
+    overflow-x: hidden;
+  }
+}

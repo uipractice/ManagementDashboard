@@ -192,3 +192,8 @@
     margin-right: 0 !important;
   }
 }
+@media(max-width:768px){
+  .news-mobile{
+    display:none;
+  }
+}

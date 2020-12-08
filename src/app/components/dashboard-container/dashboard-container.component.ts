@@ -248,14 +248,4 @@ export class DashboardContainerComponent implements OnInit {
     //   ],
     // };
   }
-  navigationClicked(event) {
-    console.log(event);
-    if (event !== 'Dashboard') {
-      this.pageHeader = event + ' Dashboard ';
-      this.isOtherNavSelected = true;
-    } else {
-      this.pageHeader = 'Management Dashboard ';
-      this.isOtherNavSelected = false;
-    }
-  }
 }

@@ -1,8 +1,4 @@
 <div>
-  <ev-header></ev-header>
-
-
-  <ev-side-nav (navigatoinChangeEvent)='navigationClicked($event)'></ev-side-nav>
   <div class="DashboardHeader">
     <h3 class="MobileNone">{{pageHeader}}</h3>
     <div *ngIf="!isOtherNavSelected">
@@ -39,18 +35,11 @@
           </ev-data-graph>
         </div>
         <!-- *ngIf="!isDataLoaded" -->
-
-
-
-
-
       </div>
     </div>
     <div class="col-md-12 p-0" *ngIf="isOtherNavSelected">
       <ev-place-holder></ev-place-holder>
     </div>
-
-
     <!-- <ev-graph-default></ev-graph-default> -->
   </div>
 

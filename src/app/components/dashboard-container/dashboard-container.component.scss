@@ -62,3 +62,77 @@
     top: 115px;
   }
 }
+.account-resource{
+  background-color: #fff;
+  padding:20px;
+  display:flex;
+  width:100%;
+  // display:none;
+  .account-right{
+    width:80%;
+    padding-left: 40px;
+    h4{
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 22px;
+      color: #023047;
+    }
+    p{
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      color: #929292;
+    }
+    .tech-stack{
+      p{
+        line-height: 40px;
+        color: #626364;
+        span{
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 14px;
+          color: #FC8500;
+          background: rgba(252, 133, 0, 0.1);
+          border: 0.5px solid #FC8500;
+          border-radius: 20px;
+          padding: 5px 12px;
+          margin-left: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+ .account-rleft{
+   width: 20%;
+   select{
+    border: none;
+    background: transparent;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 32px;
+    color: #0088D1;
+   }
+   p{
+    font-size: 14px;
+    line-height: 32px;
+    color: #023047;
+   }
+   ul{
+     list-style:none;
+     padding-left:0;
+     border-right: 2px solid #B4B0B0;
+     li{
+       padding: 5px;
+       font-size: 14px;
+       line-height: 20px;
+       color: #626364;
+       margin-bottom: 10px;
+       position: relative;
+       cursor: pointer;
+     }
+     li.active{
+      border-left:2px solid #0088D1;
+     }
+   }
+ }
+}

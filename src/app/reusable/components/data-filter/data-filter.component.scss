@@ -297,3 +297,16 @@
   width:30px;
   background:#ddd;
 }
+@media only screen and (max-width: 768px) and (min-width: 600px){
+  #dropdown-tab{
+    .tab-wrap{
+      label{
+        width: auto;
+        padding: 0 5px;
+      }
+    }
+  }
+  .DropdownContent{
+    width: 215px;
+  }
+}

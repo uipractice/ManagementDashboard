@@ -44,6 +44,31 @@
 .card:last-child{
   margin-right: -8px !important;
 }
+@media only screen and (min-width: 600px) and (max-width:768px){
+  .FlxContainer{
+    display: inline-flex;
+    margin-top: 18px;
+    flex-wrap: nowrap;
+    width: 700px;
+    overflow: auto;
+    border-radius: 0px;
+}
+.card{
+    width: 200px;
+    border-radius: 0px;
+    margin-right: 10px;
+    min-width: 200px;
+    h2{
+        font-size: 24px;
+        font-weight: bold;
+    }
+    h3{
+        font-size: 12px;
+        color: #7b7b7b;
+        font-weight: 500 !important;
+    }
+}
+}
 @media only screen and (min-width: 426px) and (max-width:1440px){
   .AvgHours{
     display: none;

@@ -23,21 +23,22 @@ import { WebReqInterceptor } from '../services/web-req.interceptor';
 import { Data } from './helper/datastore';
 import { PlaceHolderComponent } from './reusable/components/place-holder/place-holder.component';
 import { DashboardComponent } from './reusable/svg/navigation/dashboard/dashboard.component';
+import { SharedModule } from './modules/shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SideNavComponent,
+    // HeaderComponent,
+    // SideNavComponent,
     DashboardContainerComponent,
     DashboardSearchComponent,
     DashboardContainerComponent,
     LoginComponent,
-    CharLimitpipe,
+    // CharLimitpipe,
     DataGraphComponent,
     DataFilterComponent,
     CssLoaderComponent,
     PlaceHolderComponent,
-    DashboardComponent,
+    // DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +46,7 @@ import { DashboardComponent } from './reusable/svg/navigation/dashboard/dashboar
     AppRoutingModule,
     ModuleDefaultModule,
     ModuleDefaultRoutingModule,
+    SharedModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
     AgGridModule.withComponents(null),

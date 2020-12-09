@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 interface Icon {
   id: number;
@@ -16,9 +17,11 @@ interface Icon {
 export class SideNavComponent implements OnInit {
   arrIcons: Icon[] = [];
   @Output() navigatoinChangeEvent = new EventEmitter();
-  constructor(private httpService: HttpClient) {}
+  constructor(private httpService: HttpClient, private router: Router) {}
+
   navigatoinChange(data) {
-    this.navigatoinChangeEvent.emit(data);
+    // this.navigatoinChangeEvent.emit(data);
+    this.router.navigate([data]);
   }
   ngOnInit(): void {
     this.httpService.get('assets/side_nav.json').subscribe(

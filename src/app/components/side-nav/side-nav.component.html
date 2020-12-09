@@ -33,12 +33,10 @@
 
 <ul id="navlist" class="tab ClickTop">
 
-<ev-dashboard [hoverClas]="true" name="dashboard"  routerLink = 'dashboard'></ev-dashboard>
-<ev-dashboard [hoverClas]="true" name="hr" routerLink = 'hr'></ev-dashboard>
-<ev-dashboard [hoverClas]="true" name="it" routerLink = 'it'></ev-dashboard>
-<ev-dashboard [hoverClas]="true" name="admin" routerLink = 'admin'></ev-dashboard>
-
-
+<ev-dashboard [hoverClas]="true" name="dashboard" (click) =" navigatoinChange('dashboard')"></ev-dashboard>
+<ev-dashboard [hoverClas]="true" name="hr"(click) =" navigatoinChange('hr')"></ev-dashboard>
+<ev-dashboard [hoverClas]="true" name="it" (click) =" navigatoinChange('it')"></ev-dashboard>
+<ev-dashboard [hoverClas]="true" name="admin" (click) =" navigatoinChange('admin')"></ev-dashboard>
 
 
   <!--svgv bgs -->

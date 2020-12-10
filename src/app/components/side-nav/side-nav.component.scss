@@ -7,6 +7,28 @@
   min-height: 560px;
   height: calc(100vh - 66px);
 }
+
+// SVG
+
+.normalSvg{
+  padding: 15px 15px 15px 15px;
+  border-bottom: 0.5px solid #57565C;
+  width: 78px;
+  height: 78px;
+}
+.normalSvg:hover{
+  .st6 {
+    fill: #FFFFFF;
+    stroke: #FFFFFF;
+    stroke-width: 0.8968;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+}
+.st3:hover{
+  fill: none;
+  stroke: #fff !important;
+}
+}
 /* Style the buttons inside the tab */
 .tab .ClickTop {
   border-bottom: 1px solid #747474;
@@ -136,6 +158,13 @@
     border-left: 5px solid #239EC5;
     background-color: #01273A;
   }
+  #dashboard.active:hover{
+  background: url(src/assets/images/main/Leftnav/dashboard_s.svg) 50% no-repeat !important;
+    background-size: 58% !important;
+    background-position-x: 13px !important;
+    height: 78px !important;
+    background-color: #01273A !important;
+  }
   #it {
     height: 78px;
     background: url(src/assets/images/main/Leftnav/IT.svg) center no-repeat;
@@ -149,6 +178,13 @@
     background-size: 58%;
     background-position-x: 13px;
     background-color: #01273A;
+  }
+  #it.active:hover{
+    background: url(src/assets/images/main/Leftnav/IT_s.svg) center no-repeat !important;
+    background-size: 58% !important;
+    background-position-x: 13px !important;
+    height: 78px !important;
+    background-color: #01273A !important;
   }
   #hr {
     height: 78px;
@@ -164,6 +200,13 @@
     background-position-x: 13px;
     background-color: #01273A;
   }
+ #hr.active:hover{
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/hr_s.svg) center no-repeat !important;
+    background-size: 58% !important;
+    background-position-x: 13px !important;
+    background-color: #01273A !important;
+  }
   #admin {
     height: 78px;
     background: url(src/assets/images/main/Leftnav/Admin.svg) center no-repeat;
@@ -178,13 +221,13 @@
     background-position-x: 13px;
     background-color: #01273A;
   }
-  // .active{
-  //   border-left: 5px solid #239EC5 !important;
-  //   background-color: #01273A !important;
-  //   background-size: 58% !important;
-  //   height: 78px;
-  //   background: url(src/assets/images/main/Leftnav/dashboard_s.svg) center no-repeat !important;
-  // }
+  #admin.active:hover{
+    height: 78px;
+    background: url(src/assets/images/main/Leftnav/Admin_s.svg) center no-repeat !important;
+    background-size: 58% !important;
+    background-position-x: 13px !important;
+    background-color: #01273A !important;
+  }
   @media only screen and (min-width: 320px) and (max-width: 425px){
     /* Style the tab */
    .tab {
@@ -193,10 +236,10 @@
      width: 100%;
      height: auto;
      min-height: auto;
-     padding: 10px 0px 0 0px !important;
+    //  padding: 10px 0px 0 0px !important;
      position: absolute;
-     top: 67px;
-     z-index: auto;
+     top: 60px;
+     z-index: 1;
      display: flex;
      ul{
        display: flex;
@@ -513,4 +556,9 @@
   }
   .HoursImg{
     padding-right: 5px;
+  }
+  @media(max-width:414px){
+    .ColAlign{
+      top:133px;
+    }
   }

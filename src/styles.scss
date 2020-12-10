@@ -76,3 +76,29 @@ body::-webkit-scrollbar-thumb:hover {
 .modal-header {
   border-bottom: 0 !important;
 }
+@media(max-width:414px){
+  body{
+    overflow-x: hidden;
+  }
+}
+
+.DashboardHeader {
+  padding: 21px 12px 30px 24px;
+  padding-bottom: 30px;
+  margin-left: 65px;
+  position: absolute;
+  top: 65px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #afaeae #e3e1e1;
+  height: 100%;
+  width: 95%;
+  display: inline-table;
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #57565c;
+    line-height: 29px;
+  }
+}

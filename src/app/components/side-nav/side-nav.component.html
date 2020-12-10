@@ -32,7 +32,15 @@
 </a> -->
 
 <ul id="navlist" class="tab ClickTop">
-  <li id="dashboard" class="active NavImg" (click)="navigatoinChange('Dashboard')">
+
+<ev-dashboard [hoverClas]="true" name="dashboard" (click) =" navigatoinChange('dashboard')"></ev-dashboard>
+<ev-dashboard [hoverClas]="true" name="hr"(click) =" navigatoinChange('hr')"></ev-dashboard>
+<ev-dashboard [hoverClas]="true" name="it" (click) =" navigatoinChange('it')"></ev-dashboard>
+<ev-dashboard [hoverClas]="true" name="admin" (click) =" navigatoinChange('admin')"></ev-dashboard>
+
+
+  <!--svgv bgs -->
+  <!--<li id="dashboard" class="active NavImg" (click)="navigatoinChange('Dashboard')">
     <a class="leftNavIcon" href="">Dashboard</a>
   </li>
   <li id="hr" class="NavImg" (click)="navigatoinChange('HR')">
@@ -43,7 +51,7 @@
   </li>
   <li id="admin" class="NavImg" (click)="navigatoinChange('Admin')">
     <a class="leftNavIcon" href="">Admin</a>
-  </li>
+  </li> -->
 </ul>
 <div class="ColAlign">
   <div class="VerLine">

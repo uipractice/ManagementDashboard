@@ -133,7 +133,7 @@ export class DashboardContainerComponent implements OnInit {
       ],
     };
 
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 10; i++) {
       this.newsLetterData.push({
         title:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -247,15 +247,5 @@ export class DashboardContainerComponent implements OnInit {
     //     },
     //   ],
     // };
-  }
-  navigationClicked(event) {
-    console.log(event);
-    if (event !== 'Dashboard') {
-      this.pageHeader = event + ' Dashboard ';
-      this.isOtherNavSelected = true;
-    } else {
-      this.pageHeader = 'Management Dashboard ';
-      this.isOtherNavSelected = false;
-    }
   }
 }

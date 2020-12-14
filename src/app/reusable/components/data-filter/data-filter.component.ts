@@ -10,7 +10,13 @@ export class DataFilterComponent implements OnInit {
   @Input() selectOptions: any;
   @Input() settings: any;
   @Input() dataPoints: any;
+  isDesiable: boolean;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+    if(this.title == 'News and Events') {
+      this.isDesiable = false
+    }else {this.isDesiable = true}
+  }
 }

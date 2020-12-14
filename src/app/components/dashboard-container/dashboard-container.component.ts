@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WebRequestService } from 'src/services/web-request.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DataModalComponent } from 'src/app/reusable/components/data-modal/data-modal.component';
 
 @Component({
   selector: 'ev-dashboard-container',
@@ -19,7 +21,7 @@ export class DashboardContainerComponent implements OnInit {
   summeryDataLoaded: any = false;
   currentUser = sessionStorage.getItem('user');
   newsLetterData: any = [];
-  constructor(private router: Router, public service: WebRequestService) {}
+  constructor(private router: Router, public service: WebRequestService, public matDialog: MatDialog) {}
   ngOnInit() {
     this.service.getAccountGraphData().then((res) => {
       console.log(res);
@@ -247,5 +249,24 @@ export class DashboardContainerComponent implements OnInit {
     //     },
     //   ],
     // };
+  }
+
+  openLogoutModal() {
+    const userId = "user01";
+    const dialogConfig = new MatDialogConfig();
+    // The user can't close the dialog by clicking outside its body
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.height = "100%";
+    dialogConfig.width = "96%";
+    dialogConfig.data = {
+      // name: "logout",
+      // title: "Are you sure you want to logout?",
+      // description: "Pretend this is a convincing argument on why you shouldn't logout :)",
+      // actionButtonText: "Logout",
+      // userId: userId
+    }
+    // https://material.angular.io/components/dialog/overview
+    const modalDialog = this.matDialog.open(DataModalComponent, dialogConfig);
   }
 }

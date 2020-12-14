@@ -7,6 +7,7 @@
 
 #modal-title {
     font-size: 22px;
+    display: none;
 }
 
 #modal-footer {
@@ -99,3 +100,42 @@
      }
    }
   }
+
+  @media(max-width:414px){
+    .account-resource{
+      display: block;
+      .account-rleft{
+        width:100%;
+        ul{
+          border-right: none;
+        }
+      }
+      .account-right{
+        padding: 0;
+        width:100%;
+        .tech-stack{
+          span{
+            display:inline-block;
+          }
+        }
+      }
+      .desktop-hidden{
+        display:block;
+        .employee-detail{
+          border: 1px solid #C4C4C4;
+          border-radius: 2px;
+          padding:8px;
+          margin-bottom: 10px;
+          p{
+            margin-bottom: 5px;
+            span{
+              float: right;
+            }
+            .emp-name{
+              font-weight: 600;
+            }
+          } 
+        }
+      }
+    }
+    }

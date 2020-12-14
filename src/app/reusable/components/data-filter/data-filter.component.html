@@ -59,7 +59,7 @@
       <!-- <mat-icon>more_vert</mat-icon> -->
     </button>
     <mat-menu #menu="matMenu" xPosition="before">
-      <div (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()">
+      <div (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" class="DropdownContent">
         <div id="dropdown-tab">	
           <div class="tab-wrap">
             <input type="radio" id="tab1" name="tabGroup1" class="tab" value="consolidate" checked>
@@ -77,6 +77,10 @@
               <label for="year" class="year-label">Yearly</label>
               <input type="checkbox" id="tab2" name="quaterly" class="radio-btn">
               <label for="quaterly" class="year-label">Quaterly</label>
+              <div class="button-row">
+                <button>Apply</button>
+                <button>Cancel</button>
+              </div>
             </div>
             <div class="tab__content">
               <label class="select-label">Select Account</label>
@@ -96,6 +100,10 @@
             
               <input type="checkbox" id="tab2" name="quaterly" class="radio-btn">
               <label for="quaterly" class="year-label">Quaterly</label>
+              <div class="button-row">
+                <button>Apply</button>
+                <button>Cancel</button>
+              </div>
             </div>
         </div>
         </div>

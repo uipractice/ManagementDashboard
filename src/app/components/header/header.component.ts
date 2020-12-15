@@ -8,7 +8,7 @@ import { WebRequestService } from 'src/services/web-request.service';
   selector: 'ev-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  // host: { '(document:click)': 'onClick()' },
+  host: { '(document:click)': 'onClick()' },
 })
 export class HeaderComponent implements OnInit {
   headerCount: any = {};
@@ -24,30 +24,30 @@ export class HeaderComponent implements OnInit {
   toggleDropdown() {
     // $event.stopPropagation();
     this.isShow = !this.isShow;
-    this.isOpen = true;
-    this.isSearch = true;
+    // this.isOpen = true;
+    // this.isSearch = true;
   }
   toggleDowncontent() {
     this.isOpen = !this.isOpen;
-    this.isShow = true;
-    this.isSearch = true;
+    // this.isShow = true;
+    // this.isSearch = true;
   }
   toggledownSearch(e) {
     e.stopPropagation();
     this.isSearch = !this.isSearch;
-    this.isShow = true;
-    this.isOpen = true;
+    // this.isShow = true;
+    // this.isOpen = true;
   }
   //   GetChildData(data){
   //     console.log(data);
   //     this.isparentSearch = data;
   //  }
 
-  // onClick() {
-  //   this.isShow = true;
-  //   this.isOpen = true;
-  //   this.isSearch = true;
-  // }
+  onClick() {
+    // this.isShow = true;
+    // this.isOpen = true;
+    this.isSearch = true;
+  }
   constructor(
     private httpService: HttpClient,
     private router: Router,

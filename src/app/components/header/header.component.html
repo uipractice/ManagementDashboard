@@ -47,12 +47,11 @@
       </div>
     </div>
     <div class="VerLine2 Notification">
-      <a *ngIf="notificationCount" class="dropbtn" [matMenuTriggerFor]="menu" (click)="toggleDowncontent()"><img class="HeaderIcons"
+      <a *ngIf="notificationCount" class="dropbtn" [matMenuTriggerFor]="notificationMenu"><img class="HeaderIcons"
           src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge"
           *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
-          
-          <mat-menu #menu="matMenu"  xPosition="before">
 
+          <mat-menu #notificationMenu="matMenu" xPosition="before">
             <div class="NotificationContent" (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()"
             *ngIf="!isOpen && notificationCount.length > 0">
               <h6 class="NotifyHeader">Notifications</h6>
@@ -68,6 +67,23 @@
               </ul>
             </div>
           </mat-menu>
+
+          <!-- <mat-menu #menu="matMenu"  xPosition="before">
+            <div class="NotificationContent" (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()"
+            *ngIf="!isOpen && notificationCount.length > 0">
+              <h6 class="NotifyHeader">Notifications</h6>
+              <ul>
+                <li *ngFor="let _nt of notificationCount">
+                  <a class="NotifyIcon">
+                    <div class="text ellipsis NotifyText">
+                      <span class="text-concat">{{_nt.desc}}</span>
+                      <span class="NotifyDate">10-09-2020</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </mat-menu> -->
     </div>
     <div class="dropdown VerLine2 pdr-0">
       <a class="dropbtn" (click)="toggleDropdown()" [matMenuTriggerFor]="profileMenu"><img class="HeaderIcons"
@@ -97,12 +113,11 @@
 </nav>
 
 
+<!--Mobile view-->
 
-
-
-<!-- <nav class="navbar NavMobileHeader">
+<nav class="navbar NavMobileHeader">
   <div class="NavWidth">
-    <a class="dropbtn hamburger-mobile" (click)="toggleDropdown($event)"><img
+    <a class="dropbtn hamburger-mobile" (click)="toggleDropdown()"><img
         src="..\..\..\assets\images\main\Hamburger.svg"></a>
     <div class="DropdownContent mobile-usermenu" *ngIf="!isShow">
       <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -157,7 +172,7 @@
       </div>
     </div>
     <div class="Notification">
-      <a *ngIf="notificationCount" class="dropbtn" (click)="toggleDowncontent($event)"><img class="HeaderIcons"
+      <a *ngIf="notificationCount" class="dropbtn" (click)="toggleDowncontent()"><img class="HeaderIcons"
           src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge"
           *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
     
@@ -203,4 +218,4 @@
           </div>
     </div>
   </div>
-</nav> -->
+</nav>

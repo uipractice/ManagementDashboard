@@ -43,7 +43,7 @@ import { DataModalComponent } from './reusable/components/data-modal/data-modal.
     DataGraphComponent,
     DataFilterComponent,
     CssLoaderComponent,
-    PlaceHolderComponent,
+    // PlaceHolderComponent,
     DataModalComponent,
     // DashboardComponent,
   ],

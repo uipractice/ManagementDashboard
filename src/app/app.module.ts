@@ -24,6 +24,12 @@ import { Data } from './helper/datastore';
 import { PlaceHolderComponent } from './reusable/components/place-holder/place-holder.component';
 import { DashboardComponent } from './reusable/svg/navigation/dashboard/dashboard.component';
 import { SharedModule } from './modules/shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import {MatMenuModule} from '@angular/material/menu';
+// import {MatIconModule} from '@angular/material/icon';
+import { MaterialModule } from './modules/shared/material.module';
+import { DataModalComponent } from './reusable/components/data-modal/data-modal.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +43,8 @@ import { SharedModule } from './modules/shared/shared.module';
     DataGraphComponent,
     DataFilterComponent,
     CssLoaderComponent,
-    PlaceHolderComponent,
+    // PlaceHolderComponent,
+    DataModalComponent,
     // DashboardComponent,
   ],
   imports: [
@@ -50,6 +57,10 @@ import { SharedModule } from './modules/shared/shared.module';
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
     AgGridModule.withComponents(null),
+    BrowserAnimationsModule,
+    // MatMenuModule,
+    // MatIconModule,
+    MaterialModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: WebReqInterceptor, multi: true },

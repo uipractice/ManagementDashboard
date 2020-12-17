@@ -21,23 +21,22 @@ export class HeaderComponent implements OnInit {
   userInfo: any;
   currentUser = sessionStorage.getItem('user');
   hoursCount: any;
-  toggleDropdown($event) {
-    $event.stopPropagation();
+  toggleDropdown() {
+    // $event.stopPropagation();
     this.isShow = !this.isShow;
-    this.isOpen = true;
-    this.isSearch = true;
+    // this.isOpen = true;
+    // this.isSearch = true;
   }
-  toggleDowncontent($event) {
-    $event.stopPropagation();
+  toggleDowncontent() {
     this.isOpen = !this.isOpen;
-    this.isShow = true;
-    this.isSearch = true;
+    // this.isShow = true;
+    // this.isSearch = true;
   }
   toggledownSearch(e) {
     e.stopPropagation();
     this.isSearch = !this.isSearch;
-    this.isShow = true;
-    this.isOpen = true;
+    // this.isShow = true;
+    // this.isOpen = true;
   }
   //   GetChildData(data){
   //     console.log(data);
@@ -45,8 +44,8 @@ export class HeaderComponent implements OnInit {
   //  }
 
   onClick() {
-    this.isShow = true;
-    this.isOpen = true;
+    // this.isShow = true;
+    // this.isOpen = true;
     this.isSearch = true;
   }
   constructor(

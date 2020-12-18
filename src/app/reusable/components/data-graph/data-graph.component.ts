@@ -11,6 +11,7 @@ import * as am4core from '@amcharts/amcharts4/core';
 import * as am4charts from '@amcharts/amcharts4/charts';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 import am4themes_kelly from '@amcharts/amcharts4/themes/animated';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'ev-data-graph',
@@ -37,7 +38,8 @@ export class DataGraphComponent implements OnInit {
   series3: any;
   bullet3: any;
   pieSeries: any;
-  constructor(@Inject(PLATFORM_ID) private platformId, private zone: NgZone) {}
+  constructor(@Inject(PLATFORM_ID) private platformId, private zone: NgZone, 
+  public matDialog: MatDialog) {}
   browserOnly(f: () => void) {
     if (isPlatformBrowser(this.platformId)) {
       this.zone.runOutsideAngular(() => {
@@ -45,7 +47,24 @@ export class DataGraphComponent implements OnInit {
       });
     }
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('newsdata',this.newsData)
+  }
+  clickedItem(i){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.height = "70%";
+    dialogConfig.width = "60% ";
+    dialogConfig.data = {
+      // name: "logout",
+      // title: "Are you sure you want to logout?",
+      // description: "Pretend this is a convincing argument on why you shouldn't logout :)",
+      // actionButtonText: "Logout",
+      // userId: userId
+    }
+    const modalDialog = this.matDialog.open(DataGraphComponent, dialogConfig);
+  }
+  
   ngAfterViewInit() {
     // Chart code goes in here
     if (this.dataLoaded)

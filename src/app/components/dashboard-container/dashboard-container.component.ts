@@ -252,13 +252,13 @@ export class DashboardContainerComponent implements OnInit {
   }
 
   openLogoutModal() {
-    const userId = "user01";
+    // const userId = "user01";
     const dialogConfig = new MatDialogConfig();
     // The user can't close the dialog by clicking outside its body
     dialogConfig.disableClose = true;
-    dialogConfig.id = "modal-component";
+    // dialogConfig.id = "modal-component";
     dialogConfig.height = "100%";
-    dialogConfig.width = "96%";
+    dialogConfig.width = "100% ";
     dialogConfig.data = {
       // name: "logout",
       // title: "Are you sure you want to logout?",

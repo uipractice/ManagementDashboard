@@ -1,4 +1,4 @@
-<div id="modal-content-wrapper" *ngIf="modalId == 'modal01'">
+<div class="account-detail-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal01'">
   <header id="modal-header">
     <h1 id="modal-title">Modal title</h1>
     <button
@@ -96,9 +96,9 @@
     </footer> -->
 </div>
 
-<div id="modal-content-wrapper" *ngIf="modalId == 'modal02'">
+<div class="news-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal02'">
   <header id="modal-header">
-    <h1 id="modal-title">Modal title</h1>
+    <h1 id="modal-title">News and Events</h1>
     <button
       type="button"
       class="close pull-right"
@@ -109,6 +109,9 @@
     </button>
   </header>
   <section id="modal-body">
-  <p style="color: black;">{{data}}</p>
+    <h4>This is the section of news title</h4>
+  <p>{{data}}</p>
+  <div class="date">07 Oct - Wednesday</div>
+  <a href="#" class="view-btn">View All</a>
   </section>
 </div>

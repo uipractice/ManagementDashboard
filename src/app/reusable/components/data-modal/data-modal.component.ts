@@ -8,12 +8,16 @@ import { ModalActionsService } from 'src/services/modal-actions.service';
   styleUrls: ['./data-modal.component.scss']
 })
 export class DataModalComponent implements OnInit {
+  data: any;
+  modalId: any;
 
   constructor( public dialogRef: MatDialogRef<DataModalComponent>,
     @Inject(MAT_DIALOG_DATA) private modalData: any,
     private modalService: ModalActionsService) { }
 
   ngOnInit(): void {
+    this.modalId = this.modalData.modalId
+    this.data = this.modalData.modalData
   }
   columnDefs = [
     { field: 'make' },

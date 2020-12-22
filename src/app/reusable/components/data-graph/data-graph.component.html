@@ -19,26 +19,9 @@
   <ev-data-filter [title]="titleCommon"></ev-data-filter>
   <div class="GraphLast">
     <ul>
-      <li *ngFor="let news of newsData; let i= index;"><a (click)="clickedItem(i)">{{news.title}}</a></li>
+      <li *ngFor="let news of newsData; let i= index;"><a (click)="clickedItem(news)">{{news.title}}</a></li>
     </ul>
   </div>
 </div>
 
-<!--Modal content-->
-<div id="modal-content-wrapper">
-  <header id="modal-header">
-    <h1 id="modal-title">Modal title</h1>
-  </header>
-  <section id="modal-body">
-    
-  </section>
-  <!-- <footer id="modal-footer">
-        <button mat-raised-button id="modal-action-button" (click)="actionFunction()">
-           Submit
-        </button>
-        <button mat-raised-button id="modal-cancel-button" (click)="closeModal()">
-           Close
-        </button>
-    </footer> -->
-</div>
 

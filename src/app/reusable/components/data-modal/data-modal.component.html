@@ -1,4 +1,4 @@
-<div id="modal-content-wrapper">
+<div id="modal-content-wrapper" *ngIf="modalId == 'modal01'">
   <header id="modal-header">
     <h1 id="modal-title">Modal title</h1>
     <button
@@ -94,4 +94,21 @@
            Close
         </button>
     </footer> -->
+</div>
+
+<div id="modal-content-wrapper" *ngIf="modalId == 'modal02'">
+  <header id="modal-header">
+    <h1 id="modal-title">Modal title</h1>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="closeModal()"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  </header>
+  <section id="modal-body">
+  <p style="color: black;">{{data}}</p>
+  </section>
 </div>

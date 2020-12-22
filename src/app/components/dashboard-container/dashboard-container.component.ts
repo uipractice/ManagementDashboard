@@ -252,7 +252,7 @@ export class DashboardContainerComponent implements OnInit {
   }
 
   openLogoutModal() {
-    // const userId = "user01";
+    const modalId = "modal01";
     const dialogConfig = new MatDialogConfig();
     // The user can't close the dialog by clicking outside its body
     dialogConfig.disableClose = true;
@@ -260,11 +260,11 @@ export class DashboardContainerComponent implements OnInit {
     dialogConfig.height = "100%";
     dialogConfig.width = "100% ";
     dialogConfig.data = {
+      modalId: modalId
       // name: "logout",
       // title: "Are you sure you want to logout?",
       // description: "Pretend this is a convincing argument on why you shouldn't logout :)",
       // actionButtonText: "Logout",
-      // userId: userId
     }
     // https://material.angular.io/components/dialog/overview
     const modalDialog = this.matDialog.open(DataModalComponent, dialogConfig);

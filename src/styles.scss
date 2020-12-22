@@ -126,3 +126,15 @@ button:focus{
 .cdk-overlay-pane {
   max-width: 100% !important;
 }
+@media(max-width:425px){
+  .DashboardHeader{
+    margin: 0px;
+    padding: 0px 0px 30px 15px;
+    top: 130px;
+    z-index: 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 96%;
+  }
+}

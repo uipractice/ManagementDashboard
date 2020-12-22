@@ -34,13 +34,10 @@
 <ul id="navlist" class="tab ClickTop">
   
 <a (click)="navigatoinChange('dashboard')">
-<ev-dashboard [hoverClas]="true" name="dashboard" ></ev-dashboard></a>
-<a (click)="navigatoinChange('hr')"><ev-dashboard [hoverClas]="true" name="hr" ></ev-dashboard></a>
-<a (click)="navigatoinChange('it')"><ev-dashboard [hoverClas]="true" name="it" ></ev-dashboard></a>
-<a (click)="navigatoinChange('admin')"><ev-dashboard [hoverClas]="true" name="admin" ></ev-dashboard></a>
-
-
-
+<ev-dashboard [hoverClas]="true" name="dashboard" ></ev-dashboard><span class="mobile-text-nav">Dashboard</span></a>
+<a (click)="navigatoinChange('hr')"><ev-dashboard [hoverClas]="true" name="hr" ></ev-dashboard><span class="mobile-text-nav mobile-hr">HR</span></a>
+<a (click)="navigatoinChange('it')"><ev-dashboard [hoverClas]="true" name="it" ></ev-dashboard><span class="mobile-text-nav mobile-it">IT</span></a>
+<a (click)="navigatoinChange('admin')"><ev-dashboard [hoverClas]="true" name="admin" ></ev-dashboard><span class="mobile-text-nav mobile-admin">Admin</span></a>
 
 
   <!--svgv bgs -->

@@ -56,7 +56,7 @@ export class DataGraphComponent implements OnInit {
     const modalId = "modal02";
     const modalData = content.title;
     dialogConfig.disableClose = false;
-    dialogConfig.height = "29%";
+    dialogConfig.height = "40%";
     dialogConfig.width = "44% ";
     dialogConfig.data = {
       modalId: modalId,

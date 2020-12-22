@@ -13,7 +13,7 @@ import { DashboardContainerComponent } from './components/dashboard-container/da
 import { ModuleDefaultRoutingModule } from './modules/module-default/module-default-routing.module';
 import { ModuleDefaultModule } from './modules/module-default/module-default.module';
 import { LoginComponent } from './components/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CharLimitpipe } from './components/pipes/char-limit.pipe';
 import { DataGraphComponent } from './reusable/components/data-graph/data-graph.component';
 import { DataFilterComponent } from './reusable/components/data-filter/data-filter.component';
@@ -50,6 +50,7 @@ import { DataModalComponent } from './reusable/components/data-modal/data-modal.
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     ModuleDefaultModule,
     ModuleDefaultRoutingModule,

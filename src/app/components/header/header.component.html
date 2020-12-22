@@ -27,19 +27,19 @@
           <div class="SearchDropdown" *ngIf="!isSearch">
             <div class="SearchDropdownTopbtn">
               <ul>
-                <li><a href="#"><button>Mgmt. Dashboard</button></a></li>
-                <li><a href="#" class=""><button>HR</button></a></li>
-                <li><a href="#"><button>IT</button></a></li>
-                <li><a href="#"><button>Admin</button></a></li>
+                <li><a><button>Mgmt. Dashboard</button></a></li>
+                <li><a  class=""><button>HR</button></a></li>
+                <li><a><button>IT</button></a></li>
+                <li><a><button>Admin</button></a></li>
               </ul>
             </div>
             <div class="SearchDropdownData">
               <ul>
                 <li class="disabled"><a href="#">Try Searching for</a></li>
-                <li><a href="#" class="">People </a></li>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Practice</a></li>
-                <li><a href="#">Department</a></li>
+                <li><a class="">People </a></li>
+                <li><a>Account</a></li>
+                <li><a>Practice</a></li>
+                <li><a>Department</a></li>
               </ul>
             </div>
           </div>
@@ -47,13 +47,12 @@
       </div>
     </div>
     <div class="VerLine2 Notification">
-      <a class="dropbtn" [matMenuTriggerFor]="notificationMenu"><img class="HeaderIcons"
+      <a *ngIf="notificationCount" class="dropbtn" [matMenuTriggerFor]="notificationMenu"><img class="HeaderIcons"
           src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge"
           *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
 
           <mat-menu #notificationMenu="matMenu" xPosition="before">
-            <div class="NotificationContent-new" (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()"
-            >
+            <div class="NotificationContent-new" (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()">
               <h6 class="NotifyHeader">Notifications</h6>
               <ul>
                 <li *ngFor="let _nt of notificationCount">
@@ -154,19 +153,19 @@
           <div class="SearchDropdown">
             <div class="SearchDropdownTopbtn">
               <ul>
-                <li><a href="#"><button>Mgmt. Dashboard</button></a></li>
-                <li><a href="#" class=""><button>HR</button></a></li>
-                <li><a href="#"><button>IT</button></a></li>
-                <li><a href="#"><button>Admin</button></a></li>
+                <li><a><button>Mgmt. Dashboard</button></a></li>
+                <li><a class=""><button>HR</button></a></li>
+                <li><a><button>IT</button></a></li>
+                <li><a><button>Admin</button></a></li>
               </ul>
             </div>
             <div class="SearchDropdownData">
               <ul>
                 <li class="disabled"><a href="#">Try Searching for</a></li>
-                <li><a href="#" class="">People </a></li>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Practice</a></li>
-                <li><a href="#">Department</a></li>
+                <li><a class="">People </a></li>
+                <li><a>Account</a></li>
+                <li><a>Practice</a></li>
+                <li><a>Department</a></li>
               </ul>
             </div>
           </div>

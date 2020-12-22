@@ -19,7 +19,9 @@
   <ev-data-filter [title]="titleCommon"></ev-data-filter>
   <div class="GraphLast">
     <ul>
-      <li *ngFor="let news of newsData"><a href="#">{{news.title}}</a></li>
+      <li *ngFor="let news of newsData; let i= index;"><a (click)="clickedItem(news)">{{news.title}}</a></li>
     </ul>
   </div>
 </div>
+
+

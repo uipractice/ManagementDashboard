@@ -75,13 +75,13 @@
                 <option value="2020">2020</option>
                 <option value="2021">2021</option>
               </select>
-              <input type="radio" class="radio-btn" formControlName="selectFormat" value="yearly">
+              <input type="radio" class="radio-btn" formControlName="selectFormat" value="yearly" >
               <label for="year" class="year-label">Yearly</label>
               <input type="radio" class="radio-btn" id="tab2" formControlName="selectFormat"  value="quaterly">
               <label for="quaterly" class="year-label">Quaterly</label>
               <div class="button-row">
                 <button class="cancel-btn" (click)="onCancel()">Cancel</button>
-                <button  (click)="onSubmit()" [disabled]="!consolidatedForm.valid">Apply</button>  
+                <button  [ngClass]="{'disabled': !consolidatedForm.valid}" (click)="onSubmit()" [disabled]="!consolidatedForm.valid">Apply</button>  
               </div>
             </form>
             

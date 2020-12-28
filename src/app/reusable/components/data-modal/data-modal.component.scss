@@ -25,7 +25,62 @@
     background-color: #4e4e4e;
     color: white;
 }
-
+.news-modal{
+  #modal-title{
+    display: block;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 32px;
+    color: #0088D1;
+    margin-bottom: 0;
+  }
+  .view-btn{
+    font-size: 16px;
+    line-height: 14px;
+    color: #FC8500;
+    float: right;
+  }
+  #modal-header{
+    position: relative;
+    border-bottom: 1px solid #C4C4C4;
+  }
+  .close {
+    position:absolute;
+    right:0;
+    top:0;
+  }
+  #modal-body{
+    padding: 10px 0;
+    h4{
+      font-family: Lato !important;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 32px;
+      color: #57565C;
+      margin: 0;
+    }
+    .date{
+      float: left;
+      font-size: 14px;
+      line-height: 14px;
+      color: #57565C;
+    }
+    p{
+      font-size: 14px;
+      line-height: 24px;
+      color: #7B7B7B;
+    }
+  }
+} 
+.account-detail-modal{
+  .close{
+    position:absolute;
+    top:10px;
+    right:25px;
+  }
+}
 .account-resource{
     background-color: #fff;
     padding:20px;
@@ -84,7 +139,10 @@
      ul{
        list-style:none;
        padding-left:0;
-       border-right: 2px solid #B4B0B0;
+       max-height:450px;
+       overflow-y: auto;
+      scrollbar-width: thin;
+        scrollbar-color: #afaeae #e3e1e1;
        li{
          padding: 5px;
          font-size: 14px;
@@ -100,7 +158,19 @@
      }
    }
   }
-
+  .account-rleft ul::-webkit-scrollbar  {
+    width: 5px;
+    margin-right: 10px !important;
+  }
+  .account-rleft ul::-webkit-scrollbar-track  {
+    background: #e3e1e1;
+    border-radius: 15px;
+  }
+   .account-rleft ul::-webkit-scrollbar-thumb  {
+    background: #afaeae;
+    border-radius: 15px;
+    height: 5%;
+  }
   @media(max-width:414px){
     .account-resource{
       display: block;
@@ -108,6 +178,7 @@
         width:100%;
         ul{
           border-right: none;
+          max-height:200px;
         }
       }
       .account-right{
@@ -117,6 +188,9 @@
           span{
             display:inline-block;
           }
+        }
+        .account-detail-table{
+          display:none;
         }
       }
       .desktop-hidden{

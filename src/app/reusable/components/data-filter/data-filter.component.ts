@@ -26,12 +26,12 @@ export class DataFilterComponent implements OnInit {
 
     this.consolidatedForm = this.formBuilder.group({
       yearList: ['', Validators.required],
-      selectFormat: ['',Validators.required]
+      selectFormat: ['yearly',Validators.required]
   });
   this.accountwiseForm = this.formBuilder.group({
     accountList: ['', Validators.required],
     yearList: ['', Validators.required],
-    selectFormat: ['',Validators.required]
+    selectFormat: ['yearly',Validators.required]
 });
 
     if(this.title == 'News and Events') {

@@ -126,7 +126,11 @@
     margin-right: 0 !important;
   }
 }
-
+.disabled {
+  cursor: not-allowed !important;
+  opacity:0.6;
+  pointer-events: auto !important; 
+}
 .kebabMenu-icon{
   height:31px;
   width:31px;

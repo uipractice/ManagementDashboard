@@ -109,9 +109,18 @@
     </button>
   </header>
   <section id="modal-body">
-    <h4>This is the section of news title</h4>
-  <p>{{data}}</p>
-  <div class="date">07 Oct - Wednesday</div>
-  <a (click)="isListExpanded()" class="view-btn">View All</a>
+    <div *ngIf="!isExpand">
+      <h4>This is the section of news title</h4>
+      <p>{{data}}</p>
+     <div class="date">07 Oct - Wednesday</div>
+    </div>
+  <a (click)="isListExpanded()" class="view-btn">{{isExpand ? '': 'View All'}}</a>
+  <div *ngIf="isExpand">
+    <div *ngFor="let news of allNewData; let i= index;">
+      <h4>This is the section of news title</h4>
+      <p>{{data}}</p>
+      <div class="date">07 Oct - Wednesday</div>
+    </div>
+  </div>
   </section>
 </div>

@@ -55,12 +55,14 @@ export class DataGraphComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     const modalId = "modal02";
     const modalData = content.title;
+    const allNewsData = this.newsData;
     dialogConfig.disableClose = false;
     dialogConfig.height = "40%";
     dialogConfig.width = "44% ";
     dialogConfig.data = {
       modalId: modalId,
-      modalData: modalData
+      modalData: modalData,
+      allNewsData:allNewsData
     }
     const modalDialog = this.matDialog.open(DataModalComponent, dialogConfig);
   }

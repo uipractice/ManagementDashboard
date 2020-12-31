@@ -11,6 +11,7 @@ export class DataModalComponent implements OnInit {
   data: any;
   modalId: any;
   isExpand = false;
+  allNewData: any;
   constructor( public dialogRef: MatDialogRef<DataModalComponent>,
     @Inject(MAT_DIALOG_DATA) private modalData: any,
     private modalService: ModalActionsService) { }
@@ -18,6 +19,9 @@ export class DataModalComponent implements OnInit {
   ngOnInit(): void {
     this.modalId = this.modalData.modalId
     this.data = this.modalData.modalData
+    this.allNewData = this.modalData.allNewsData
+
+    console.log('this.data',this.modalData.allNewsData)
     // this.classHeight= "small-height";
   }
   columnDefs = [
@@ -42,8 +46,6 @@ rowData = [
     this.isExpand = !this.isExpand;
     if(this.isExpand){
       this.dialogRef.updateSize('40%','80%')
-    }else{
-       this.dialogRef.updateSize('40%','44%')
     }
  };
 }

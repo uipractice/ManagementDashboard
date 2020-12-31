@@ -29,7 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import {MatIconModule} from '@angular/material/icon';
 import { MaterialModule } from './modules/shared/material.module';
 import { DataModalComponent } from './reusable/components/data-modal/data-modal.component';
-
+import {AutoCompleteModule} from 'primeng/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +44,7 @@ import { DataModalComponent } from './reusable/components/data-modal/data-modal.
     DataFilterComponent,
     CssLoaderComponent,
     // PlaceHolderComponent,
-    DataModalComponent,
+    DataModalComponent
     // DashboardComponent,
   ],
   imports: [
@@ -61,7 +61,8 @@ import { DataModalComponent } from './reusable/components/data-modal/data-modal.
     BrowserAnimationsModule,
     // MatMenuModule,
     // MatIconModule,
-    MaterialModule
+    MaterialModule,
+    AutoCompleteModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: WebReqInterceptor, multi: true },

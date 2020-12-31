@@ -37,10 +37,10 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
   background: #afaeae;
 }
-:root {
-  scrollbar-color: #afaeae #e3e1e1 !important;
-  scrollbar-width: thin !important;
-}
+// :root {
+//   scrollbar-color: #afaeae #e3e1e1 !important;
+//   scrollbar-width: thin !important;
+// }
 * {
   font-family: "Lato", sans-serif !important;
 }
@@ -91,7 +91,7 @@ body::-webkit-scrollbar-thumb:hover {
   scrollbar-width: thin;
   scrollbar-color: #afaeae #e3e1e1;
   height: 100%;
-  width: 95%;
+  width: 94.9%;
   display: inline-table;
   h3 {
     font-size: 24px;

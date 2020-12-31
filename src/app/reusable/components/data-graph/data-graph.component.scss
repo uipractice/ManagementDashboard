@@ -106,7 +106,7 @@
   ul {
     padding: 0px;
     margin: 0px;
-    margin-top: -10px !important;
+    // margin-top: -10px !important;
     padding: 0px;
     overflow-y: auto;
     scrollbar-width: thin;
@@ -128,8 +128,8 @@
     li:before{
       content: "...";
       position: absolute;
-      bottom: 2.5px;
-      right: 13px;
+      bottom: 5.5px;
+      right: 5px;
       font-size: 18px;
       color: #7b7b7b;
     }

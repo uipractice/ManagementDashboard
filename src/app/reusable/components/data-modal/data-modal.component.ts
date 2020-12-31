@@ -45,7 +45,7 @@ rowData = [
   isListExpanded() {
     this.isExpand = !this.isExpand;
     if(this.isExpand){
-      this.dialogRef.updateSize('40%','80%')
+      this.dialogRef.updateSize('42%','80%')
     }
  };
 }

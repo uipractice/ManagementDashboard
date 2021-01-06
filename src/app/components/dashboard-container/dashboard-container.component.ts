@@ -21,10 +21,60 @@ export class DashboardContainerComponent implements OnInit {
   summeryDataLoaded: any = false;
   currentUser = sessionStorage.getItem('user');
   newsLetterData: any = [];
+  AccountWiseEmpData = [
+    {​​​​​​​
+    "id": "5f841caa03356a95d0aeeff4",
+    "master1": "Billable",
+    "employee_employee_id": "2",
+    "employee_company_name": "Hari Babu Madduluri",
+    "employee_date_of_joining": "11/17/03",
+    "employee_mail_id": "hmadduluri@evoketechnologies.com",
+    "personal_gender": "Male",
+    "employee_ou_name": "Alliance",
+    "employee_grade_name": "C2",
+    "employee_designation_name": "Delivery Manager",
+    "master3": "Delivery",
+    "employee_functional_reporting_to": "Ramesh Madala",
+    "employee_department_name": "CSC",
+    "employee_reporting_to": "Ramesh Madala"
+}​​​​​​​,
+{​​​​​​​
+    "id": "5f841caa03356a95d0aeeff5",
+    "master1": "Billable",
+    "employee_employee_id": "12",
+    "employee_company_name": "Dayanand Lingampally",
+    "employee_date_of_joining": "3/20/04",
+    "employee_mail_id": "dlingampally@evoketechnologies.com",
+    "personal_gender": "Male",
+    "employee_ou_name": "Clopay Support",
+    "employee_grade_name": "C2",
+    "employee_designation_name": "Delivery Manager",
+    "master3": "Oracle Practice",
+    "employee_functional_reporting_to": "Prasad Kotikalapudi",
+    "employee_department_name": "Clopay",
+    "employee_reporting_to": "Venkat Naidu"
+}​​​​​​​,
+{​​​​​​​
+    "id": "5f841caa03356a95d0aeeff6",
+    "master1": "Billable",
+    "employee_employee_id": "15",
+    "employee_company_name": "Venkata Srinivas Surla",
+    "employee_date_of_joining": "7/14/04",
+    "employee_mail_id": "vsurla@evoketechnologies.com",
+    "personal_gender": "Male",
+    "employee_ou_name": "Project - Multiple",
+    "employee_grade_name": "C1",
+    "employee_designation_name": "Project Manager",
+    "master3": "Delivery",
+    "employee_functional_reporting_to": "Ramesh Madala",
+    "employee_department_name": "CSC",
+    "employee_reporting_to": "Ramesh Madala"
+}​​​​​​​]
+
   constructor(private router: Router, public service: WebRequestService, public matDialog: MatDialog) {}
   ngOnInit() {
     this.service.getAccountGraphData().then((res) => {
-      console.log(res);
+      console.log('getAccountGraphData',res);
       if (res['statusCode'] === 200) {
         this.chartData['idName'] = 'overAllChart3';
         this.chartData['title'] = 'Accounts Wise Resource Utilization';
@@ -56,7 +106,7 @@ export class DashboardContainerComponent implements OnInit {
       }
     });
     this.service.getSummeryCount().then((res) => {
-      console.log(res);
+      console.log('getSummeryCount', res);
       if (res['statusCode'] === 200) {
         // this.chartData['idName'] = 'overAllChart3';
         // this.chartData['title'] = 'Accounts Wise Resource Utilization';
@@ -73,7 +123,7 @@ export class DashboardContainerComponent implements OnInit {
       }
     });
     this.service.getPracticeGraphData().then((res) => {
-      console.log(res);
+      console.log('getPracticeGraphData', res);
       if (res['statusCode'] === 200) {
         this.chartData2['idName'] = 'overAllChart4';
         this.chartData2['title'] = 'Resource Engagement';
@@ -141,126 +191,19 @@ export class DashboardContainerComponent implements OnInit {
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       });
     }
-
-    // this.chartData = {
-    //   idName: 'overAllChart3',
-    //   title: 'Overall attendence',
-    //   data: [
-    //     {
-    //       country: 'CSC',
-    //       marketing: 250,
-    //       sales: 199,
-    //     },
-    //     {
-    //       country: 'CSC_BPO',
-
-    //       marketing: 222,
-    //       sales: 251,
-    //     },
-    //     {
-    //       country: 'Caring Transistions',
-
-    //       marketing: 170,
-    //       sales: 199,
-    //     },
-    //     {
-    //       country: 'Clopay',
-
-    //       marketing: 122,
-    //       sales: 90,
-    //     },
-    //     {
-    //       country: 'Kaakateeya',
-
-    //       marketing: 99,
-    //       sales: 252,
-    //     },
-    //     {
-    //       country: 'Crisil',
-
-    //       marketing: 85,
-    //       sales: 84,
-    //     },
-    //     {
-    //       country: 'Dominion',
-
-    //       marketing: 93,
-    //       sales: 142,
-    //     },
-    //     {
-    //       country: 'Dorman',
-
-    //       marketing: 50,
-    //       sales: 55,
-    //     },
-    //     {
-    //       country: 'Inside Sales',
-
-    //       marketing: 42,
-    //       sales: 25,
-    //     },
-    //     {
-    //       country: 'PMO',
-
-    //       marketing: 99,
-    //       sales: 252,
-    //     },
-    //     {
-    //       country: 'Prime',
-
-    //       marketing: 85,
-    //       sales: 84,
-    //     },
-    //     {
-    //       country: 'Ritas',
-
-    //       marketing: 93,
-    //       sales: 142,
-    //     },
-    //     {
-    //       country: 'SVD',
-
-    //       marketing: 50,
-    //       sales: 55,
-    //     },
-    //     {
-    //       country: 'TracyLocke',
-
-    //       marketing: 42,
-    //       sales: 25,
-    //     },
-    //     {
-    //       country: 'Wright',
-
-    //       marketing: 93,
-    //       sales: 142,
-    //     },
-    //     {
-    //       country: 'Red',
-
-    //       marketing: 50,
-    //       sales: 55,
-    //     },
-    //     {
-    //       country: 'QA',
-
-    //       marketing: 42,
-    //       sales: 25,
-    //     },
-    //   ],
-    // };
   }
-
   openLogoutModal() {
-    const modalId = "modal01";
     const dialogConfig = new MatDialogConfig();
+    const modalId = "modal01";
+    const employeeData = this.AccountWiseEmpData;
     // The user can't close the dialog by clicking outside its body
     dialogConfig.disableClose = true;
     // dialogConfig.id = "modal-component";
     dialogConfig.height = "100%";
     dialogConfig.width = "100% ";
     dialogConfig.data = {
-      modalId: modalId
+      modalId: modalId,
+      employeeData:employeeData 
       // name: "logout",
       // title: "Are you sure you want to logout?",
       // description: "Pretend this is a convincing argument on why you shouldn't logout :)",

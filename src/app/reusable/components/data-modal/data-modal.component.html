@@ -50,37 +50,21 @@
         </div>
         <div class="account-detail-table">
           <ag-grid-angular
-            style="width: 600px; height: 300px"
+            style="width: 99%; height: 194px"
             class="ag-theme-alpine"
             [rowData]="rowData"
             [columnDefs]="columnDefs"
-          >
+            [pagination]="true">
           </ag-grid-angular>
         </div>
         <div class="desktop-hidden">
-          <div class="employee-detail">
+          <div class="employee-detail" *ngFor="let data of rowData">
             <p>
-              <b>Emp ID:</b> 1547
-              <span class="emp-name">Jithendar Goud Vanga</span>
+              <b>Emp ID:</b>{{data.employee_employee_id}}
+              <span class="emp-name">{{data.employee_company_name}}</span>
             </p>
-            <p>Java Practice <span>Manager - HR</span></p>
-            <p><b>Reporting to:</b> Ramesh Mantra</p>
-          </div>
-          <div class="employee-detail">
-            <p>
-              <b>Emp ID:</b> 1547
-              <span class="emp-name">Jithendar Goud Vanga</span>
-            </p>
-            <p>Java Practice <span>Manager - HR</span></p>
-            <p><b>Reporting to:</b> Ramesh Mantra</p>
-          </div>
-          <div class="employee-detail">
-            <p>
-              <b>Emp ID:</b> 1547
-              <span class="emp-name">Jithendar Goud Vanga</span>
-            </p>
-            <p>Java Practice <span>Manager - HR</span></p>
-            <p><b>Reporting to:</b> Ramesh Mantra</p>
+            <p>{{data.employee_designation_name}} <span>{{data.master3}}</span></p>
+            <p><b>Reporting to:</b>{{data.employee_reporting_to}}</p>
           </div>
         </div>
       </div>

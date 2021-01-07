@@ -30,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/shared/material.module';
 import { DataModalComponent } from './reusable/components/data-modal/data-modal.component';
 import {AutoCompleteModule} from 'primeng/autocomplete';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,7 @@ import {AutoCompleteModule} from 'primeng/autocomplete';
     { provide: HTTP_INTERCEPTORS, useClass: WebReqInterceptor, multi: true },
     Data,
     CookieService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy},
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

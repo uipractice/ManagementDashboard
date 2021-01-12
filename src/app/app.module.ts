@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { AgGridModule } from 'ag-grid-angular';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +30,7 @@ import { MaterialModule } from './modules/shared/material.module';
 import { DataModalComponent } from './reusable/components/data-modal/data-modal.component';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { AgGridModule } from 'ag-grid-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +58,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     SharedModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
-    AgGridModule.withComponents(null),
+    AgGridModule.withComponents([]),
     BrowserAnimationsModule,
     // MatMenuModule,
     // MatIconModule,

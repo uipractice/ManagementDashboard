@@ -1,5 +1,5 @@
 <!-- <p>header-hr works!</p> -->
-<div class="FlxContainer">
+<!-- <div class="FlxContainer">
     <div class="card">
       <div class="ThisMonth"><span>This Month</span></div>
       <div class="CardCount">
@@ -39,6 +39,20 @@
         <h3>Non Billable </h3>
       </div>
       <div class="CardImg"><img src="..\..\assets\images\main\non-billable.svg"></div>
+    </div>
+  </div> -->
+
+
+  <!--Dynamic content-->
+  <div class="FlxContainer">
+    <div class="card" *ngFor="let summery of summeryData">
+      <div class="ThisMonth"><span>This Month</span></div>
+      <div class="CardCount">
+        <h2>{{summery.count}}</h2>
+        <h3>{{summery.title}}<span *ngIf="summery.staticAvailable">(10%) <img
+              src="..\..\assets\images\main\arrow_up.svg"></span></h3>
+      </div>
+      <div class="CardImg"><img src="..\..\assets\images\main\{{summery.icon}}"></div>
     </div>
   </div>
   

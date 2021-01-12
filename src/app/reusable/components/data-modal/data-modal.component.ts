@@ -28,8 +28,8 @@ export class DataModalComponent implements OnInit {
     // this.classHeight= "small-height";
   }
   columnDefs = [
-    {  headerName: "SL.No", field: 'SLNo', width: 90},
-    {  headerName: 'EMP Id',field: 'employee_employee_id', sortable: true, filter: true, width: 90 },
+    {  headerName: "SL.No", field: 'SLNo', width: 86},
+    {  headerName: 'EMP Id',field: 'employee_employee_id', sortable: true, filter: true, width: 100 },
     {  headerName: 'NAME',field: 'employee_company_name', sortable: true, filter: true, width: 190 },
     {  headerName: 'DESIGNATION',field: 'employee_designation_name', sortable: true, filter: true,width: 190 },
     {  headerName: 'PRACTICE',field: 'master3', sortable: true, filter: true},

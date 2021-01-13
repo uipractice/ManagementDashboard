@@ -49,7 +49,9 @@ export class DataGraphComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    console.log('newsdata',this.newsData)
+    console.log('chartData',this.chartData)
+    console.log('chartType',this.chartType)
+    console.log('dataLoaded',this.dataLoaded)
   }
   clickedItem(content){
     const dialogConfig = new MatDialogConfig();

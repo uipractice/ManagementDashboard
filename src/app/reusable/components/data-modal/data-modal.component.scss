@@ -159,13 +159,19 @@
     }
    .account-rleft{
      width: 17%;
-     select{
+     select.accout-select{
       border: none;
       background: transparent;
       font-weight: bold;
       font-size: 28px;
       line-height: 32px;
       color: #0088D1;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      position: relative;
+      background:url(src/assets/images/main/select-arrow.svg) no-repeat 35% 13px !important;
+      width: 100%;
+      outline: none !important;
       option{
         font-size: 16px;
       }
@@ -282,8 +288,6 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         position: relative;
-      }
-      select.desktop-hidden{
         background:url(src/assets/images/main/select-arrow.svg) no-repeat 96% 17px !important;
       }
     }

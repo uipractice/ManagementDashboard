@@ -303,7 +303,7 @@ export class GraphHrComponent implements OnInit {
               this.chartData.idName,
               am4core.Container
             );
-            container.width = am4core.percent(70);
+            container.width = am4core.percent(80);
             container.height = am4core.percent(80);
             container.layout = 'horizontal';
 
@@ -325,7 +325,7 @@ export class GraphHrComponent implements OnInit {
 
             let chart2 = container.createChild(am4charts.PieChart);
             chart2.width = am4core.percent(30);
-            chart2.radius = am4core.percent(50);
+            chart2.radius = am4core.percent(80);
 
             // Add and configure Series
             let pieSeries2 = chart2.series.push(new am4charts.PieSeries());
@@ -425,7 +425,7 @@ export class GraphHrComponent implements OnInit {
             chart.events.on('datavalidated', function () {
               setTimeout(function () {
                 selectSlice(pieSeries.dataItems.getIndex(0));
-              }, 1000);
+              },1000);
             });
 
             break;

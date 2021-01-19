@@ -641,16 +641,6 @@ export class DashboardHrComponent implements OnInit {
         legendName1: 'Practices',
         type: 'extended',
         label: true,
-        labelData1: {
-          name: 'Present',
-          count: 686,
-          calss: 'positive',
-        },
-        labelData2: {
-          name: 'Absent',
-          count: 23,
-          calss: 'positive',
-        },
         colorCode: '#797FC8',
         data: [
           { "sector": "Onsite Opportunity", "size": 20 },

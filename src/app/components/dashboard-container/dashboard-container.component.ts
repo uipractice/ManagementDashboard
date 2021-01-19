@@ -74,7 +74,6 @@ export class DashboardContainerComponent implements OnInit {
   constructor(private router: Router, public service: WebRequestService, public matDialog: MatDialog) {}
   ngOnInit() {
     this.service.getAccountGraphData().then((res) => {
-      console.log('getAccountGraphData',res);
       if (res['statusCode'] === 200) {
         this.chartData['idName'] = 'overAllChart3';
         this.chartData['title'] = 'Accounts Wise Resource Utilization';
@@ -106,7 +105,6 @@ export class DashboardContainerComponent implements OnInit {
       }
     });
     this.service.getSummeryCount().then((res) => {
-      console.log('getSummeryCount', res);
       if (res['statusCode'] === 200) {
         // this.chartData['idName'] = 'overAllChart3';
         // this.chartData['title'] = 'Accounts Wise Resource Utilization';

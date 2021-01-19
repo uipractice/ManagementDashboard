@@ -1,1 +1,21 @@
-<dir>Graph is working</dir>
+<div *ngIf="!isNoGraphShown">
+    <div class="graphContainer mt-3 mr-2 ">
+      <ev-graph-header [title]="chartData.title"></ev-graph-header>
+  
+      <div id="{{chartData.idName}}" style="width: 100%; height:400px"
+        [class]="chartData.type === 'normal' ? 'fullHeight' :'notmalHeight'">
+  
+      </div>
+    </div>
+  </div>
+
+  <!--News and Event-->
+  <div class="GraphBody  mt-3 mr-2 news-mobile " *ngIf="isNoGraphShown">
+    <ev-graph-header [title]="titleCommon"></ev-graph-header>
+    <div class="GraphLast">
+      <ul>
+        <li *ngFor="let news of newsData; let i= index;"><a (click)="clickedItem(news)">{{news.title}}</a></li>
+      </ul>
+    </div>
+  </div>
+

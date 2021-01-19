@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   userInfo: any;
   currentUser = sessionStorage.getItem('user');
   hoursCount: any;
+  newsLetterData: any = [];
   toggleDropdown() {
     // $event.stopPropagation();
     this.isShow = !this.isShow;
@@ -95,6 +96,12 @@ export class HeaderComponent implements OnInit {
     //     return 'class1';
     //   }
     // }
+    for (var i = 0; i < 10; i++) {
+      this.newsLetterData.push({
+        title:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      });
+    }
   }
   logout() {
     sessionStorage.clear();

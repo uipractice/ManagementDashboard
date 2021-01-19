@@ -204,19 +204,10 @@
                 data-dismiss="modal">&times;</button>
             </div>
             <ul>
-              <li class="news-border">
+              <li class="news-border" *ngFor="let news of newsLetterData; let i= index;">
                 <a href="javascript:void(0)">
-                  <div class="news-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Quisquam at doloremque
-                  </div>
-                </a></li>
-                <li class="news-border">
-                  <a href="javascript:void(0)">
-                    <div class="news-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                      Quisquam at doloremque
-                    </div>
-                  </a></li>
-             
+                  <div class="news-content">{{news.title}}</div>
+                </a></li>             
             </ul>
           </div>
         </mat-menu> 

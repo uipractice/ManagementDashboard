@@ -7,11 +7,12 @@ import { HeaderHrComponent } from './header-hr/header-hr.component';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../shared/material.module';
 import { DashboardHrComponent } from './dashboard-hr/dashboard-hr.component';
+import { GraphHeaderComponent } from './graph-header/graph-header.component';
 
 
 
 @NgModule({
-  declarations: [GraphHrComponent, HeaderHrComponent, DashboardHrComponent],
+  declarations: [GraphHrComponent, HeaderHrComponent, DashboardHrComponent, GraphHeaderComponent],
   imports: [
     CommonModule,
     ModuleHrRoutingModule,

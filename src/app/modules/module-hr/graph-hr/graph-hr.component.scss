@@ -1,0 +1,199 @@
+.graphContainer {
+    background-color: white !important;
+    box-shadow:0px 0px 2px 1px rgba(0,0,0,0.12);
+  }
+  .DashboardGraph {
+    margin-top: 15px;
+    display: flex;
+  }
+  .Graph {
+    width: 100%;
+    border: 0;
+    box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
+    // margin-right: 13px;
+    background-color: #fff;
+  }
+  .GraphLast {
+    width: 100% !important;
+    margin-right: 0 !important;
+    ul{
+      overflow-y: scroll;
+      margin: 10px 5px 10px 0 !important;
+    height: 390px !important;
+    scrollbar-width: thin;
+    scrollbar-color: #afaeae #e3e1e1;
+    }
+  }
+  .GraphHead {
+    display: flex;
+    background: #f8f8fb;
+    padding: 9px 15px 9px;
+    width: 100%;
+    align-items: baseline;
+    box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
+    h5 {
+      color: #57565c;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19px;
+    }
+  }
+  .ls {
+    letter-spacing: -0.2px;
+  }
+  .SelectType {
+    width: 120px;
+    height: 30px;
+    font-size: 14px;
+    padding: 5px 10px 7px;
+    color: #7b7b7b;
+    justify-self: auto;
+    margin-left: auto;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    border: 0;
+    // background-position: right 10% top 45%;
+    // background-size: 12px;
+    -webkit-appearance: none;
+    background: url(src/assets/images/main/down-arrow-user.svg) no-repeat right
+      #fff;
+    background-position: right;
+    background-size: 12px;
+    background-blend-mode: difference;
+    background-origin: content-box;
+    background-position-y: center;
+  }
+  .SelectType:focus,
+  .SelectType:active {
+    outline: none;
+  }
+  .graphPointsHeading {
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 2%;
+    line-height: 0;
+    position: absolute;
+    // display: none;
+    .positive {
+      color: #92b7f2;
+      font-weight: 600;
+    }
+    .negetive {
+      color: #ee5873;
+      font-weight: 600;
+    }
+  }
+  .WidSelect {
+    width: 85px !important;
+  }
+  .fullHeight {
+    height: 700px !important;
+  }
+  .notmalHeight {
+    height: 400px !important;
+  }
+  .GraphBody {
+    // padding: 0px 15px;
+    background-color: white;
+    font-size: 14px;
+    color: #57565c;
+    height: 461px;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.12);
+    // overflow: overlay;
+    // overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #afaeae #e3e1e1;
+    // margin: 10px 10px 10px 0px;
+    ul {
+      padding: 0px;
+      margin: 0px;
+      // margin-top: -10px !important;
+      padding: 0px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #afaeae #e3e1e1;
+      li {
+        list-style: none;
+        height: 57px;
+        border-bottom: 1px solid #c4c4c4;
+        padding:8px 10px 10px 15px;
+        overflow: hidden;
+        position: relative;
+        a {
+          color: #7b7b7b;
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 400;
+        }
+      }
+      li:before{
+        content: "...";
+        position: absolute;
+        bottom: 5.5px;
+        right: 5px;
+        font-size: 18px;
+        color: #7b7b7b;
+      }
+      li:last-child {
+        border: 0px;
+        padding-bottom: 0px;
+      }
+      li:hover{
+        background: #F2F6FA;
+      }
+    }
+  }
+  .GraphLast ul::-webkit-scrollbar  {
+    width: 5px;
+    margin-right: 10px !important;
+  }
+  .GraphLast ul::-webkit-scrollbar-track  {
+    background: #e3e1e1;
+    border-radius: 15px;
+  }
+   .GraphLast ul::-webkit-scrollbar-thumb  {
+    background: #afaeae;
+    border-radius: 15px;
+    height: 5%;
+  }
+  .GraphLast ul::-webkit-scrollbar-thumb:hover  {
+    background: #afaeae;
+  }
+  .GraphBody::-webkit-scrollbar  {
+    width: 5px;
+  }
+  .GraphBody::-webkit-scrollbar-track  {
+    background: #e3e1e1 !important;
+    border-radius: 15px;
+  }
+  .GraphBody::-webkit-scrollbar-thumb  {
+    background: #afaeae;
+    border-radius: 15px;
+    height: 5%;
+  }
+  .GraphBody::-webkit-scrollbar-thumb:hover, .GraphLast::-webkit-scrollbar-thumb:hover  {
+    background: #afaeae;
+  }
+  .GraphAccounts {
+    width: 68%;
+    margin-right: 0 !important;
+  }
+  
+  @media only screen and (max-width: 425px) and (min-width: 320px) {
+    .DashboardGraph {
+      display: block;
+    }
+    .Graph {
+      width: 100% !important;
+      margin-bottom: 15px;
+      // height: 370px;
+    }
+    .GraphLast {
+      // width: 22% !important;
+      margin-right: 0 !important;
+    }
+  }
+  @media(max-width:440px){
+    .news-mobile{
+      display:none;
+    }
+  }

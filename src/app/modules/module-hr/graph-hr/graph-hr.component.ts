@@ -146,8 +146,7 @@ export class GraphHrComponent implements OnInit {
             this.pieChart.responsive.enabled = true;
             this.pieChart.data = this.chartData.data;
 
-            this.pieChart.legend = new am4charts.Legend();
-
+            // this.pieChart.legend = new am4charts.Legend();
             // Add and configure Series
             this.pieSeries = this.pieChart.series.push(
               new am4charts.PieSeries()
@@ -162,7 +161,7 @@ export class GraphHrComponent implements OnInit {
             label.text = '2020';
             label.horizontalCenter = 'middle';
             label.verticalCenter = 'middle';
-            label.fontSize = 50;
+            label.fontSize = 30;
             break;
           case 'barChart':
             am4core.useTheme(am4themes_animated);
@@ -202,8 +201,8 @@ export class GraphHrComponent implements OnInit {
 
               return series;
             }
-            createSeries('first', 'Onboarded');
-            createSeries('second', 'Seperated');
+            createSeries('onboarded', 'Onboarded');
+            createSeries('Seperated', 'Seperated');
             function arrangeColumns() {
               let series = this.chart.series.getIndex(0);
 

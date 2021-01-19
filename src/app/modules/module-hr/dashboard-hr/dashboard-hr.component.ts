@@ -607,30 +607,30 @@ export class DashboardHrComponent implements OnInit {
       this.chartData2 = {
         idName: 'overAllChart2',
         title: 'Onboarded and Seperated',
-        series1: 'count',
-        legendName1: 'Practices',
+        // series1: 'count',
+        // legendName1: 'Practices',
         type: 'extended',
         label: true,
         data:[
           {
               category: 'Jan',
-              first: 40,
-              second: 55        
+              onboarded: 40,
+              Seperated: 55        
           },
           {
               category: 'Feb',
-              first: 30,
-              second: 78
+              onboarded: 30,
+              Seperated: 78
           },
           {
               category: 'March',
-              first: 27,
-              second: 40
+              onboarded: 27,
+              Seperated: 40
           },
           {
               category: 'April',
-              first: 50,
-              second: 33
+              onboarded: 50,
+              Seperated: 33
           }
       ],
       };

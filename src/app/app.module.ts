@@ -31,6 +31,8 @@ import { DataModalComponent } from './reusable/components/data-modal/data-modal.
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { AgGridModule } from 'ag-grid-angular';
+import { AuthGuard } from './guards/auth.guard';
+import { LoginGuard } from './guards/login.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +71,8 @@ import { AgGridModule } from 'ag-grid-angular';
     { provide: HTTP_INTERCEPTORS, useClass: WebReqInterceptor, multi: true },
     Data,
     CookieService,
+    AuthGuard,
+    LoginGuard,
     { provide: LocationStrategy, useClass: HashLocationStrategy},
   ],
   bootstrap: [AppComponent],

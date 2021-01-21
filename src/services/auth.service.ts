@@ -48,7 +48,7 @@ export class AuthService {
           .toPromise()
           .then((res) => {
             // Success
-            console.log(res);
+            console.log('auth res', res);
             resolve(res);
 
             // //console.log(res['result']['custID'])
@@ -61,6 +61,7 @@ export class AuthService {
       });
     }
   }
+
   async login(data) {
     //console.log(`${this.ROOT_URL}${this._urls.USER_LOGIN}`);
     let cors = 'https://cors-anywhere.herokuapp.com/';
@@ -88,10 +89,6 @@ export class AuthService {
             resolve(res);
           } else {
           }
-
-          // //console.log(res['result']['custID'])
-
-          //console.log('LOGGED IN!');
         })
         .catch((err) => {
           reject(err);
@@ -99,7 +96,15 @@ export class AuthService {
     });
     return promise;
   }
-
+  public isAuthenticate(): boolean {
+    // method return true or false based on login credential
+    const userData = localStorage.getItem('userInfo');
+    if (userData) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   async registrationLogin(data: any) {
     //console.log(`${this.ROOT_URL}${this._urls.REGISTER_USER}`);
     const cors = 'https://cors-anywhere.herokuapp.com/';

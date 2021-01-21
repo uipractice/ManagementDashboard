@@ -91,11 +91,6 @@ export class HeaderComponent implements OnInit {
       }
     );
 
-    //   getcustomcss(){
-    //     if(this.arrHours[i]== this.arrHours[this.arrHours.length-1]){
-    //     return 'class1';
-    //   }
-    // }
     for (var i = 0; i < 10; i++) {
       this.newsLetterData.push({
         title:
@@ -104,7 +99,7 @@ export class HeaderComponent implements OnInit {
     }
   }
   logout() {
-    sessionStorage.clear();
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 }

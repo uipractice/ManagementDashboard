@@ -36,7 +36,6 @@ export class AuthService {
   }
   async authenticate() {
     if (this.cookieService.check('x-access-token')) {
-      // //console.log(this._commonHeader);
 
       const promise = await new Promise((resolve, reject) => {
         this.http
@@ -48,12 +47,7 @@ export class AuthService {
           .toPromise()
           .then((res) => {
             // Success
-            console.log('auth res', res);
             resolve(res);
-
-            // //console.log(res['result']['custID'])
-
-            //console.log('LOGGED IN!');
           })
           .catch((err) => {
             reject(err);
@@ -63,7 +57,6 @@ export class AuthService {
   }
 
   async login(data) {
-    //console.log(`${this.ROOT_URL}${this._urls.USER_LOGIN}`);
     let cors = 'https://cors-anywhere.herokuapp.com/';
     // if (this.cookieService.check('ka-notification-token')) {
     //   data.browserToken = this.cookieService.get('ka-notification-token');
@@ -83,7 +76,6 @@ export class AuthService {
         .toPromise()
         .then((res) => {
           // Success
-          console.log(res);
           if (res['statusCode'] === 200) {
             this.setSession('login', res['token'], res['refreshToken']);
             resolve(res);
@@ -98,7 +90,7 @@ export class AuthService {
   }
   public isAuthenticate(): boolean {
     // method return true or false based on login credential
-    const userData = localStorage.getItem('userInfo');
+    const userData = sessionStorage.getItem('userInfo');
     if (userData) {
       return true;
     } else {
@@ -106,7 +98,6 @@ export class AuthService {
     }
   }
   async registrationLogin(data: any) {
-    //console.log(`${this.ROOT_URL}${this._urls.REGISTER_USER}`);
     const cors = 'https://cors-anywhere.herokuapp.com/';
 
     const headers = new HttpHeaders({
@@ -125,13 +116,11 @@ export class AuthService {
         .then((res) => {
           // Success
           resolve(res);
-          // //console.log(res['result']['custID'])
           this.setSession(
             'login',
             res['result']['token'],
             res['result']['refreshToken']
           );
-          //console.log('LOGGED IN!');
         })
         .catch((err) => {
           reject(err);
@@ -171,11 +160,10 @@ export class AuthService {
     this.cookieService.set('x-refresh-token', refreshToken);
   }
   async setSession(userId: string, accessToken: string, refreshToken: string) {
-    //console.log(userId, accessToken, refreshToken);
+  
     // sessionStorage.setItem('user-id', userId);
     // sessionStorage.setItem('x-access-token', accessToken);
     // sessionStorage.setItem('x-refresh-token', refreshToken);
-    console.log(accessToken);
     this.cookieService.set('user-id', userId);
     this.cookieService.set('x-access-token', accessToken);
     this.cookieService.set('x-refresh-token', refreshToken);
@@ -192,8 +180,6 @@ export class AuthService {
   }
 
   getNewAccessToken() {
-    //console.log('aclling new refresh token');
-    //console.log(`${this.ROOT_URL}${this._urls.REFRESH_ACCESS_TOKEN}`);
     let cors = 'https://cors-anywhere.herokuapp.com/';
     const headData = 'bearer ' + sessionStorage.getItem('x-access-token');
     const headers = new HttpHeaders({
@@ -221,18 +207,13 @@ export class AuthService {
       )
       .pipe(
         tap((res: HttpResponse<any>) => {
-          //console.log(res);
           if (res['body']['result']) {
             this.setAccessToken(res['body']['result']['accessToken']);
             this.setRefreshToken(res['body']['result']['refreshToken']);
-            //console.log(res['body']['result']['accessToken']);
-            //console.log(res['body']['result']['refreshToken']);
           } else {
             if (res['body']['statusCode'] === 400) {
-              //console.log('login again');
             }
           }
-          //console.log(res.body);
           if (res.body.statusCode === 500) {
             this.router.navigateByUrl('/');
           }
@@ -243,7 +224,6 @@ export class AuthService {
   // FORGOT PASSWORD API Added by lakshmi
 
   async forgotPassword(userName) {
-    //console.log(`${this.ROOT_URL}${this._urls.FORGOT_PASSWORD}`);
     const cors = 'https://cors-anywhere.herokuapp.com/';
 
     const headers = new HttpHeaders({

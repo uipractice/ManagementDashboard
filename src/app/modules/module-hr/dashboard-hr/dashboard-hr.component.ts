@@ -12,6 +12,7 @@ export class DashboardHrComponent implements OnInit {
   chartData1: any = {};
   chartData4: any = {};
   chartData5: any = {};
+  chartData6: any = {}
   isDataLoadedPractice: any = true;
   isOtherNavSelected: any = false;
   newsLetterData: any = [];
@@ -604,35 +605,32 @@ export class DashboardHrComponent implements OnInit {
           "value": 81
         }],
       };
+     
       this.chartData2 = {
         idName: 'overAllChart2',
         title: 'Onboarded and Seperated',
-        // series1: 'count',
-        // legendName1: 'Practices',
-        type: 'extended',
+        series1: 'litres',
+        legendName1: 'Practices',
+        // type: 'extended',
         label: true,
-        data:[
-          {
-              category: 'Jan',
-              onboarded: 40,
-              Seperated: 55        
+        // colorCode: '#797FC8',
+        data :[
+          { 
+          category: 'Jan',
+          Onboarded: 40,
+          Seperated: 55
           },
           {
-              category: 'Feb',
-              onboarded: 30,
-              Seperated: 78
-          },
+           category: 'Feb',
+           Onboarded: 30,
+           Seperated: 78
+           },
           {
-              category: 'March',
-              onboarded: 27,
-              Seperated: 40
-          },
-          {
-              category: 'April',
-              onboarded: 50,
-              Seperated: 33
-          }
-      ],
+           category: 'March',
+           Onboarded: 50,
+           Seperated: 40
+           }
+        ]
       };
       this.chartData3 = {
         idName: 'overAllChart5',
@@ -703,6 +701,15 @@ export class DashboardHrComponent implements OnInit {
           "subData": [{ name: "A", value: 110 }, { name: "B", value: 60 }, { name: "C", value: 30 }]
         }],
       }
+      this.chartData6 = {
+        idName: 'overAllChart3',
+        title: 'Employee Attrition',
+        series1: 'litres',
+        legendName1: 'Practices',
+        type: 'extended',
+        label: true,
+        colorCode: '#797FC8',
+      };
   }
 
 }

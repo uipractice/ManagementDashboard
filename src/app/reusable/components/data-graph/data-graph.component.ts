@@ -49,9 +49,7 @@ export class DataGraphComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    console.log('chartData',this.chartData)
-    console.log('chartType',this.chartType)
-    console.log('dataLoaded',this.dataLoaded)
+   
   }
   clickedItem(content){
     const dialogConfig = new MatDialogConfig();
@@ -184,26 +182,6 @@ export class DataGraphComponent implements OnInit {
             this.categoryAxis.renderer.grid.template.disabled = true;
             this.valueAxis.renderer.grid.template.disabled = true;
             this.series2.strokeWidth = 3;
-
-            // this.series3 = this.chart.series.push(new am4charts.ColumnSeries());
-            // this.series3.columns.template.width = am4core.percent(80);
-            // this.series3.columns.template.tooltipText =
-            //   "{name}: {valueY.totalPercent.formatNumber('#.00')}%";
-            // this.series3.name = 'Series 3';
-            // this.series3.dataFields.categoryX = 'category';
-            // this.series3.dataFields.valueY = 'value3';
-            // this.series3.dataFields.valueYShow = 'totalPercent';
-            // this.series3.dataItems.template.locations.categoryX = 0.5;
-            // this.series3.stacked = true;
-            // this.series3.tooltip.pointerOrientation = 'vertical';
-
-            // this.bullet3 = this.series3.bullets.push(new am4charts.LabelBullet());
-            // this.bullet3.label.text =
-            //   "{valueY.totalPercent.formatNumber('#.00')}";
-            // this.bullet3.locationY = 0.5;
-            // this.bullet3.label.fill = am4core.color('#ffffff');
-
-            // this.chart.scrollbarX = new am4core.Scrollbar();
             break;
 
           case 'multiColorBarChartMultiLevel':

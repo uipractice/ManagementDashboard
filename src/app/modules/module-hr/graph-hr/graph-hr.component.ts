@@ -29,6 +29,9 @@ export class GraphHrComponent implements OnInit {
   @Input() newsData: any;
   @Input() isNoGraphShown: any;
   @Input() titleCommon: any;
+  xAxis: any;
+  yAxis: any;
+  dateAxis: any;
   categoryAxis: any;
   valueAxis: any;
   series: any;
@@ -54,22 +57,23 @@ export class GraphHrComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    console.log('this.chartData', this.chartData);
+    // console.log('this.chartData', this.chartData);
+    // console.log('this.dataLoaded', this.dataLoaded);
   }
 
-  clickedItem(content){
+  clickedItem(content) {
     const dialogConfig = new MatDialogConfig();
-    const modalId = "modal02";
+    const modalId = 'modal02';
     const modalData = content.title;
     const allNewsData = this.newsData;
     dialogConfig.disableClose = false;
-    dialogConfig.height = "42%";
-    dialogConfig.width = "44% ";
+    dialogConfig.height = '42%';
+    dialogConfig.width = '44% ';
     dialogConfig.data = {
       modalId: modalId,
       modalData: modalData,
-      allNewsData:allNewsData
-    }
+      allNewsData: allNewsData,
+    };
     const modalDialog = this.matDialog.open(DataModalComponent, dialogConfig);
   }
 
@@ -137,6 +141,99 @@ export class GraphHrComponent implements OnInit {
             dateAxis.start = 0.79;
             dateAxis.keepSelection = true;
             break;
+          case 'barChart':
+            am4core.useTheme(am4themes_animated);
+            // this.chart = am4core.create(
+            //   this.chartData.idName,
+            //   am4charts.XYChart
+            // );
+            let newchart = am4core.create(
+              this.chartData.idName,
+              am4charts.XYChart
+            );
+            newchart.colors.step = 2;
+            newchart.data = this.chartData.data;
+            newchart.legend = new am4charts.Legend();
+            newchart.legend.position = 'top';
+            newchart.legend.paddingBottom = 20;
+            // newchart.legend.labels.template.maxWidth = 95
+
+            let xAxis = newchart.xAxes.push(new am4charts.CategoryAxis());
+            xAxis.dataFields.category = 'category';
+            xAxis.renderer.cellStartLocation = 0.1;
+            xAxis.renderer.cellEndLocation = 0.5;
+            xAxis.renderer.grid.template.location = 0;
+
+            let yAxis = newchart.yAxes.push(new am4charts.ValueAxis());
+            yAxis.min = 0;
+
+            function createSeries(value, name) {
+              let series = newchart.series.push(new am4charts.ColumnSeries());
+              series.dataFields.valueY = value;
+              series.dataFields.categoryX = 'category';
+              series.name = name;
+              let bullet = series.bullets.push(new am4charts.LabelBullet());
+              bullet.interactionsEnabled = false;
+              bullet.dy = 30;
+              bullet.label.text = '{valueY}';
+              bullet.label.fill = am4core.color('#ffffff');
+              return series;
+            }
+            createSeries('Onboarded', 'Onboarded');
+            createSeries('Seperated', 'Seperated');
+
+            break;
+          case 'lineChart2':
+            am4core.useTheme(am4themes_animated);
+            this.chart = am4core.create(
+              this.chartData.idName,
+              am4charts.XYChart
+            );
+            break;
+          case 'barChart2':
+            am4core.useTheme(am4themes_animated);
+            this.chart = am4core.create(
+              this.chartData.idName,
+              am4charts.XYChart
+            );
+            this.chart.data = this.chartData.data;
+            this.chart.padding(40, 40, 40, 40);
+            let categoryAxis = this.chart.xAxes.push(
+              new am4charts.CategoryAxis()
+            );
+            categoryAxis.renderer.grid.template.location = 0;
+            categoryAxis.dataFields.category = 'Account';
+            categoryAxis.renderer.minGridDistance = 60;
+            categoryAxis.renderer.labels.template.rotation = 270;
+            categoryAxis.renderer.inversed = true;
+            categoryAxis.renderer.grid.template.disabled = true;
+
+            this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
+            this.valueAxis.min = 0;
+            this.valueAxis.extraMax = 0.1;
+
+            // this.valueAxis.strictMinMax = true;
+            // this.valueAxis.calculateTotals = true;
+            // this.valueAxis.renderer.minWidth = 50;
+
+            this.series = this.chart.series.push(new am4charts.ColumnSeries());
+            this.series.dataFields.categoryX = 'Account';
+            this.series.dataFields.valueY = 'attrition';
+            this.series.tooltipText = '{valueY.value}';
+            this.series.columns.template.strokeOpacity = 0;
+            this.series.columns.template.column.cornerRadiusTopRight = 10;
+            this.series.columns.template.column.cornerRadiusTopLeft = 10;
+
+            let labelBullet = this.series.bullets.push(
+              new am4charts.LabelBullet()
+            );
+            labelBullet.label.verticalCenter = 'bottom';
+            labelBullet.label.dy = -10;
+            labelBullet.label.text =
+              "{values.valueY.workingValue.formatNumber('#.')}";
+            this.chart.zoomOutButton.disabled = true;
+            categoryAxis.sortBySeries = this.series;
+            break;
           case 'donutChart':
             am4core.useTheme(am4themes_animated);
             this.pieChart = am4core.create(
@@ -163,139 +260,6 @@ export class GraphHrComponent implements OnInit {
             label.verticalCenter = 'middle';
             label.fontSize = 30;
             break;
-          case 'barChart':
-            am4core.useTheme(am4themes_animated);
-            this.chart = am4core.create(
-              this.chartData.idName,
-              am4charts.XYChart
-            );
-            this.chart.data = this.chartData.data;
-            this.chart.colors.step = 2;
-
-            this.chart.legend = new am4charts.Legend();
-            this.chart.legend.position = 'top';
-            this.chart.legend.paddingBottom = 20;
-            this.chart.legend.labels.template.maxWidth = 95;
-
-            let xAxis = this.chart.xAxes.push(new am4charts.CategoryAxis());
-            xAxis.dataFields.category = 'category';
-            xAxis.renderer.cellStartLocation = 0.1;
-            xAxis.renderer.cellEndLocation = 0.9;
-            xAxis.renderer.grid.template.location = 0;
-
-            let yAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
-            yAxis.min = 0;
-            function createSeries(value, name) {
-              let series = this.chart.series.push(new am4charts.ColumnSeries());
-              series.dataFields.valueY = value;
-              series.dataFields.categoryX = 'category';
-              series.name = name;
-              // series.events.on('hidden', arrangeColumns);
-              // series.events.on('shown', arrangeColumns);
-
-              let bullet = series.bullets.push(new am4charts.LabelBullet());
-              bullet.interactionsEnabled = false;
-              bullet.dy = 30;
-              bullet.label.text = '{valueY}';
-              // bullet.label.fill = am4core.color('#ffffff');
-
-              return series;
-            }
-            createSeries('onboarded', 'Onboarded');
-            createSeries('Seperated', 'Seperated');
-            function arrangeColumns() {
-              let series = this.chart.series.getIndex(0);
-
-              let w =
-                1 -
-                xAxis.renderer.cellStartLocation -
-                (1 - xAxis.renderer.cellEndLocation);
-              if (series.dataItems.length > 1) {
-                let x0 = xAxis.getX(series.dataItems.getIndex(0), 'categoryX');
-                let x1 = xAxis.getX(series.dataItems.getIndex(1), 'categoryX');
-                let delta = ((x1 - x0) / this.chart.series.length) * w;
-                if (am4core.isNumber(delta)) {
-                  let middle = this.chart.series.length / 2;
-
-                  let newIndex = 0;
-                  this.chart.series.each(function (series) {
-                    if (!series.isHidden && !series.isHiding) {
-                      series.dummyData = newIndex;
-                      newIndex++;
-                    } else {
-                      series.dummyData = this.chart.series.indexOf(series);
-                    }
-                  });
-                  let visibleCount = newIndex;
-                  let newMiddle = visibleCount / 2;
-
-                  this.chart.series.each(function (series) {
-                    let trueIndex = this.chart.series.indexOf(series);
-                    let newIndex = series.dummyData;
-
-                    let dx =
-                      (newIndex - trueIndex + middle - newMiddle) * delta;
-
-                    series.animate(
-                      { property: 'dx', to: dx },
-                      series.interpolationDuration,
-                      series.interpolationEasing
-                    );
-                    series.bulletsContainer.animate(
-                      { property: 'dx', to: dx },
-                      series.interpolationDuration,
-                      series.interpolationEasing
-                    );
-                  });
-                }
-              }
-            }
-            break;
-          case 'barChart2':
-            am4core.useTheme(am4themes_animated);
-            this.chart = am4core.create(
-              this.chartData.idName,
-              am4charts.XYChart
-            );
-            this.chart.data = this.chartData.data;
-            this.chart.padding(40, 40, 40, 40);
-
-            let categoryAxis = this.chart.xAxes.push(
-              new am4charts.CategoryAxis()
-            );
-            categoryAxis.renderer.grid.template.location = 0;
-            categoryAxis.dataFields.category = 'Account';
-            categoryAxis.renderer.minGridDistance = 60;
-            categoryAxis.renderer.inversed = true;
-            categoryAxis.renderer.grid.template.disabled = true;
-
-            this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
-            this.valueAxis.min = 0;
-            this.valueAxis.extraMax = 0.1;
-
-            this.series = this.chart.series.push(new am4charts.ColumnSeries());
-            this.series.dataFields.categoryX = 'Account';
-            this.series.dataFields.valueY = 'attrition';
-            this.series.tooltipText = '{valueY.value}';
-            this.series.columns.template.strokeOpacity = 0;
-            this.series.columns.template.column.cornerRadiusTopRight = 10;
-            this.series.columns.template.column.cornerRadiusTopLeft = 10;
-
-            let labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.verticalCenter = 'bottom';
-            labelBullet.label.dy = -10;
-            labelBullet.label.text =
-              "{values.valueY.workingValue.formatNumber('#.')}";
-
-            this.chart.zoomOutButton.disabled = true;
-            this.series.columns.template.adapter.add(
-              'fill',
-              function (fill, target) {
-                return this.chart.colors.getIndex(target.dataItem.index);
-              }
-            );
-            categoryAxis.sortBySeries = this.series;
-            break;
           case 'pieChart':
             am4core.useTheme(am4themes_animated);
             let container = am4core.create(
@@ -311,8 +275,8 @@ export class GraphHrComponent implements OnInit {
 
             // Add and configure Series
             let pieSeries = chart.series.push(new am4charts.PieSeries());
-            pieSeries.dataFields.value = "value";
-            pieSeries.dataFields.category = "Resion";
+            pieSeries.dataFields.value = 'value';
+            pieSeries.dataFields.category = 'Resion';
             pieSeries.slices.template.states.getKey(
               'active'
             ).properties.shiftRadius = 0;
@@ -328,16 +292,18 @@ export class GraphHrComponent implements OnInit {
 
             // Add and configure Series
             let pieSeries2 = chart2.series.push(new am4charts.PieSeries());
-            pieSeries2.dataFields.value = "value";
-            pieSeries2.dataFields.category = "name";
-            pieSeries2.slices.template.states.getKey("active").properties.shiftRadius = 0;
+            pieSeries2.dataFields.value = 'value';
+            pieSeries2.dataFields.category = 'name';
+            pieSeries2.slices.template.states.getKey(
+              'active'
+            ).properties.shiftRadius = 0;
             //pieSeries2.labels.template.radius = am4core.percent(50);
             //pieSeries2.labels.template.inside = true;
             //pieSeries2.labels.template.fill = am4core.color("#ffffff");
             pieSeries2.labels.template.disabled = true;
             pieSeries2.ticks.template.disabled = true;
             pieSeries2.alignLabels = false;
-            pieSeries2.events.on("positionchanged", updateLines);
+            pieSeries2.events.on('positionchanged', updateLines);
 
             let interfaceColors = new am4core.InterfaceColorSet();
 
@@ -371,10 +337,17 @@ export class GraphHrComponent implements OnInit {
 
               let middleAngle = selectedSlice.middleAngle;
               let firstAngle = pieSeries.slices.getIndex(0).startAngle;
-              let animation = pieSeries.animate([{ property: "startAngle", to: firstAngle - middleAngle }, { property: "endAngle", to: firstAngle - middleAngle + 360 }], 600, am4core.ease.sinOut);
-              animation.events.on("animationprogress", updateLines);
+              let animation = pieSeries.animate(
+                [
+                  { property: 'startAngle', to: firstAngle - middleAngle },
+                  { property: 'endAngle', to: firstAngle - middleAngle + 360 },
+                ],
+                600,
+                am4core.ease.sinOut
+              );
+              animation.events.on('animationprogress', updateLines);
 
-              selectedSlice.events.on("transformed", updateLines);
+              selectedSlice.events.on('transformed', updateLines);
             }
 
             function updateLines() {
@@ -424,7 +397,7 @@ export class GraphHrComponent implements OnInit {
             chart.events.on('datavalidated', function () {
               setTimeout(function () {
                 selectSlice(pieSeries.dataItems.getIndex(0));
-              },1000);
+              }, 1000);
             });
 
             break;

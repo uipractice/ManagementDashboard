@@ -19,7 +19,6 @@ export class HeaderComponent implements OnInit {
   isparentSearch: any;
   notificationCount: any;
   userInfo: any;
-  currentUser = sessionStorage.getItem('user');
   hoursCount: any;
   newsLetterData: any = [];
   toggleDropdown() {
@@ -57,15 +56,13 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getSummeryCount().then((res) => {
-      console.log(res);
       if (res['statusCode'] === 200) {
         this.headerCount = res['data']['result'];
-        console.log(this.headerCount);
         this.headerCountLoaded = true;
       }
     });
-    if (localStorage.getItem('userInfo')) {
-      this.userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    if (sessionStorage.getItem('userInfo')) {
+      this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
     }
 
     this.httpService.get('assets/header_count.json').subscribe(
@@ -84,10 +81,8 @@ export class HeaderComponent implements OnInit {
           // this.hoursCount = element.hoursCount;
           // console.log(this.hoursCount);
         });
-        console.log(this.hoursCount);
       },
       (err: HttpErrorResponse) => {
-        console.log(err.message);
       }
     );
 
@@ -99,7 +94,7 @@ export class HeaderComponent implements OnInit {
     }
   }
   logout() {
-    localStorage.clear();
+    sessionStorage.clear();
     this.router.navigate(['/login']);
   }
 }

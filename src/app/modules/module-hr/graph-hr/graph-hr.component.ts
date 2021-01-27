@@ -198,8 +198,8 @@ export class GraphHrComponent implements OnInit {
             this.categoryAxis.renderer.labels.template.fontWeight = '600';
             // Create value axis
             this.valueAxis = newchart3.yAxes.push(new am4charts.ValueAxis());
-            this.valueAxis.renderer.grid.template.disabled = true;
             this.valueAxis.renderer.inversed = false;
+            this.valueAxis.renderer.grid.template.disabled = true;
             // this.valueAxis.title.text = 'Place taken';
             this.valueAxis.renderer.minLabelPosition = 0.01;
 
@@ -250,25 +250,6 @@ export class GraphHrComponent implements OnInit {
 
             // Add legend
             newchart3.legend = new am4charts.Legend();
-            newchart3.legend.itemContainers.template.events.on(
-              'over',
-              function (event) {
-                let segments1 = event.target.dataItem.dataContext.segments;
-                segments1.each(function (segment) {
-                  segment.isHover = true;
-                });
-              }
-            );
-
-            newchart3.legend.itemContainers.template.events.on(
-              'out',
-              function (event) {
-                let segments2 = event.target.dataItem.dataContext.segments;
-                segments2.each(function (segment) {
-                  segment.isHover = false;
-                });
-              }
-            );
 
             break;
           case 'barChart2':

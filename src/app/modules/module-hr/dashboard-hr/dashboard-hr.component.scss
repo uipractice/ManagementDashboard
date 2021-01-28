@@ -3,7 +3,7 @@
     display: flex;
   }
   .Graph{
-    width: 41%;
+    width: 100%;
     border: 0;
     box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.12);
     margin-right: 13px;
@@ -62,8 +62,8 @@
     background-color: white;
     font-size: 14px;
     color: #57565c;
-    height: 330px;
-    overflow: overlay;
+    height: 410px;
+    // overflow: overlay;
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #afaeae #e3e1e1;
@@ -109,7 +109,168 @@
     width: 100%;
     margin-right: 0 !important;
   }
+  #dropdown-tab{
+    .tab-wrap{
+      input{
+        display:none;
+      }
+      label{
+        box-sizing: border-box;  
+        width: 160px;
+        height: 32px;
+        text-align: left;
+        font-family: Lato;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 30px;
+        letter-spacing: 0.01em;
+        color: #B3C1C8;
+        cursor: pointer;
+      }
+      
+    }
+  }
+  .tab:checked+label{
+    background: transparent !important;
+      color:#239EC5 !important;
+  }
+  .tab-wrap {
+    position: relative;
+    list-style: none;
+    background-color: #fff;
+    
+  }
+  .tab:checked:nth-of-type(1)~.tab__content:nth-of-type(1) {
+    opacity: 1;
+    -webkit-transition: .5s opacity ease-in, .8s -webkit-transform ease;
+    transition: .5s opacity ease-in, .8s -webkit-transform ease;
+    transition: .5s opacity ease-in, .8s transform ease;
+    transition: .5s opacity ease-in, .8s transform ease, .8s -webkit-transform ease;
+    position: relative;
+    top: 0;
+    z-index: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    text-shadow: 0 0 0
+  }
   
+  .tab:checked:nth-of-type(2)~.tab__content:nth-of-type(2) {
+    opacity: 1;
+    -webkit-transition: .5s opacity ease-in, .8s -webkit-transform ease;
+    transition: .5s opacity ease-in, .8s -webkit-transform ease;
+    transition: .5s opacity ease-in, .8s transform ease;
+    transition: .5s opacity ease-in, .8s transform ease, .8s -webkit-transform ease;
+    position: relative;
+    top: 0;
+    z-index: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    text-shadow: 0 0 0
+  }
+  
+  .tab__content {
+    padding: 10px 0;
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    left: 0;
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+    border-radius: 6px;
+    height:0;
+  }
+  .rounded-circles{
+    .single-circle{
+      width: 50%;
+      margin: auto;
+      float: left;
+      text-align: center;
+      .cicle-num {
+        width: 84px;
+        height: 84px;
+        background: #CCF3FF;
+        text-align: center;
+        margin: auto;
+        line-height: 84px;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: 24px;
+        color: #239EC5;
+     }
+     h5{
+      font-size: 16px;
+      line-height: 19px;
+      color: #239EC5;
+      margin-top: 15px;
+     }
+    }
+    .single-circle.rose{
+      .cicle-num {
+        background: #FADEF0;
+        color: #E76DBD;
+      }
+      h5{
+        color: #E76DBD;
+      }
+    }
+    .circle-width{
+      width: 30%;
+    }
+  }  
+  .head-class{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #239EC5;
+    margin-top:10px;
+  }
+  .content-block{
+    display: inline-block;
+    padding-left: 15px;
+    h5{
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #239EC5;
+      margin-top:15px;
+      text-shadow: none;
+    }
+    ul{
+      li{
+        border: 0;
+        padding: 0;
+        height: auto;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        color: #7B7B7B;
+        position:relative;
+        background: url("../../../../assets/images/main/arrow-left.svg") no-repeat 0 8px;
+        padding-left: 12px;
+        text-shadow: none;
+      }
+    }
+    p{
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      color: #7B7B7B;
+      text-shadow: none;
+    }
+    h6{
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #57565C;
+      margin-top: 15px;
+    }
+  }
+  .right-block{
+    width:70%;
+    padding-left:0;
+  }
   @media only screen and (max-width:425px) and (min-width:320px){
     .DashboardGraph{
         display: block;

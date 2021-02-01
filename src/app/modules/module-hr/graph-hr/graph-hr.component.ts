@@ -90,10 +90,11 @@ export class GraphHrComponent implements OnInit {
             );
             this.chart.data = this.chartData.data;
             // Set input format for the dates
-            this.chart.dateFormatter.inputDateFormat = 'yyyy-MM-dd';
+            // this.chart.dateFormatter.inputDateFormat = 'date';
 
             // Create axes
             let dateAxis = this.chart.xAxes.push(new am4charts.DateAxis());
+            // dateAxis.dataFields.dateX = 'date';
             dateAxis.renderer.minGridDistance = 25;
             dateAxis.renderer.labels.template.rotation = 270;
             dateAxis.renderer.labels.template.verticalCenter = 'middle';
@@ -181,6 +182,12 @@ export class GraphHrComponent implements OnInit {
               am4charts.XYChart
             );
             newchart3.data = this.chartData.data;
+            newchart3.colors.list = [
+              am4core.color("#CF6684"),
+              am4core.color("#6771DC"),
+              am4core.color("#000000"),
+              am4core.color("#67B7DC"),             
+            ];
             this.categoryAxis = newchart3.xAxes.push(
               new am4charts.CategoryAxis()
             );
@@ -199,39 +206,41 @@ export class GraphHrComponent implements OnInit {
             // Create value axis
             this.valueAxis = newchart3.yAxes.push(new am4charts.ValueAxis());
             this.valueAxis.renderer.inversed = false;
-            this.valueAxis.renderer.grid.template.disabled = true;
+            this.valueAxis.renderer.grid.template.disabled = false;
             // this.valueAxis.title.text = 'Place taken';
             this.valueAxis.renderer.minLabelPosition = 0.01;
 
             // Create series
             let series1 = newchart3.series.push(new am4charts.LineSeries());
-            series1.dataFields.valueY = 'allEmpAttrition';
+            series1.dataFields.valueY = 'All';
             series1.dataFields.categoryX = 'date';
-            series1.name = 'allEmpAttrition';
+            series1.name = 'All';
             series1.bullets.push(new am4charts.CircleBullet());
-            series1.tooltipText =
-              'Place taken by {name} in {categoryX}: {valueY}';
-            series1.legendSettings.valueText = '{valueY}';
+            series1.tooltipText ='{valueY}';
+            // series1.legendSettings.valueText = '{valueY}';
             series1.visible = false;
 
             let series2 = newchart3.series.push(new am4charts.LineSeries());
-            series2.dataFields.valueY = 'voluntaryEmpAttrition';
+            series2.dataFields.valueY = 'Voluntary';
             series2.dataFields.categoryX = 'date';
-            series2.name = 'voluntaryEmpAttrition';
+            series2.name = 'Voluntary';
             series2.bullets.push(new am4charts.CircleBullet());
-            series2.tooltipText =
-              'Place taken by {name} in {categoryX}: {valueY}';
-            series2.legendSettings.valueText = '{valueY}';
+            series2.tooltipText ='{valueY}';
+            // series2.legendSettings.valueText = '{valueY}';
 
             let series3 = newchart3.series.push(new am4charts.LineSeries());
-            series3.dataFields.valueY = 'abscondEmpAttrition';
+            series3.dataFields.valueY = 'Involuntary';
             series3.dataFields.categoryX = 'date';
-            series3.name = 'abscondEmpAttrition';
+            series3.name = 'Involuntary';
             series3.bullets.push(new am4charts.CircleBullet());
-            series3.tooltipText =
-              'Place taken by {name} in {categoryX}: {valueY}';
-            series3.legendSettings.valueText = '{valueY}';
-
+            series3.tooltipText ='{valueY}';
+            // series3.legendSettings.valueText = '{valueY}';
+            let series4 = newchart3.series.push(new am4charts.LineSeries());
+            series4.dataFields.valueY = 'Abscond';
+            series4.dataFields.categoryX = 'date';
+            series4.name = 'Abscond';
+            series4.bullets.push(new am4charts.CircleBullet());
+            series4.tooltipText ='{valueY}';
             // Add chart cursor
             newchart3.cursor = new am4charts.XYCursor();
             newchart3.cursor.behavior = 'zoomY';
@@ -288,6 +297,7 @@ export class GraphHrComponent implements OnInit {
             this.series.dataFields.valueY = 'attrition';
             this.series.tooltipText = '{valueY.value}';
             this.series.columns.template.strokeOpacity = 0;
+            // this.series1.columns.template.width = am4core.percent(50);
             // this.series.columns.template.column.cornerRadiusTopRight = 10;
             // this.series.columns.template.column.cornerRadiusTopLeft = 10;
             //series.interpolationDuration = 1500;
@@ -319,14 +329,19 @@ export class GraphHrComponent implements OnInit {
             );
             this.pieChart.responsive.enabled = true;
             this.pieChart.data = this.chartData.data;
-
             // this.pieChart.legend = new am4charts.Legend();
             // Add and configure Series
             this.pieSeries = this.pieChart.series.push(
               new am4charts.PieSeries()
             );
+            this.pieSeries.colors.list = [
+              am4core.color("#8067DC"),
+              am4core.color("#E76DBD"),            
+              am4core.color("#67B7DC"),
+            ];
             this.pieSeries.dataFields.value = 'size';
             this.pieSeries.dataFields.category = 'sector';
+            this.pieSeries.slices.template.tooltipText = " {value.percent.formatNumber('#.#')}% ({value.value})";
             // Add label
             this.pieChart.innerRadius = 60;
             this.pieChart.height = 270;
@@ -358,6 +373,12 @@ export class GraphHrComponent implements OnInit {
             pieSeries.slices.template.states.getKey(
               'active'
             ).properties.shiftRadius = 0;
+            pieSeries.colors.list = [
+              am4core.color("#E76DBD"),            
+              am4core.color("#67B7DC"),
+              am4core.color("#9865A4"),
+            ];
+            pieSeries.slices.template.tooltipText = "{value.percent.formatNumber('#.#')}% ({value.value})";
             //pieSeries.labels.template.text = "{category}\n{value.percent.formatNumber('#.#')}%";
 
             pieSeries.slices.template.events.on('hit', function (event) {
@@ -375,6 +396,7 @@ export class GraphHrComponent implements OnInit {
             pieSeries2.slices.template.states.getKey(
               'active'
             ).properties.shiftRadius = 0;
+            pieSeries2.slices.template.tooltipText = " {value.percent.formatNumber('#.#')}% ({value.value})";
             //pieSeries2.labels.template.radius = am4core.percent(50);
             //pieSeries2.labels.template.inside = true;
             //pieSeries2.labels.template.fill = am4core.color("#ffffff");

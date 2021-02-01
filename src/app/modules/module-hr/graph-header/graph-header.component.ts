@@ -13,7 +13,9 @@ export class GraphHeaderComponent implements OnInit {
   ngOnInit(): void {
     if(this.title == 'News and Events') {
       this.isDesiable = false
-    }else {this.isDesiable = true}
+    }else {
+      // this.isDesiable = true
+    }
   }
 
 }

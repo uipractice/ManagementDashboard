@@ -20,7 +20,8 @@ import { DataModalComponent } from '../data-modal/data-modal.component';
   styleUrls: ['./data-graph.component.scss'],
 })
 export class DataGraphComponent implements OnInit {
-  private chart: am4charts.XYChart;
+  // private chart: am4charts.XYChart;
+  chart: any;
   private pieChart: am4charts.PieChart;
   @Input() chartData: any;
   @Input() chartType: any;
@@ -39,6 +40,55 @@ export class DataGraphComponent implements OnInit {
   series3: any;
   bullet3: any;
   pieSeries: any;
+  AccountWiseEmpData = [
+    {​​​​​​​
+    "id": "5f841caa03356a95d0aeeff4",
+    "master1": "Billable",
+    "employee_employee_id": "2",
+    "employee_company_name": "Hari Babu Madduluri",
+    "employee_date_of_joining": "11/17/03",
+    "employee_mail_id": "hmadduluri@evoketechnologies.com",
+    "personal_gender": "Male",
+    "employee_ou_name": "Alliance",
+    "employee_grade_name": "C2",
+    "employee_designation_name": "Delivery Manager",
+    "master3": "Delivery",
+    "employee_functional_reporting_to": "Ramesh Madala",
+    "employee_department_name": "CSC",
+    "employee_reporting_to": "Ramesh Madala"
+}​​​​​​​,
+{​​​​​​​
+    "id": "5f841caa03356a95d0aeeff5",
+    "master1": "Billable",
+    "employee_employee_id": "12",
+    "employee_company_name": "Dayanand Lingampally",
+    "employee_date_of_joining": "3/20/04",
+    "employee_mail_id": "dlingampally@evoketechnologies.com",
+    "personal_gender": "Male",
+    "employee_ou_name": "Clopay Support",
+    "employee_grade_name": "C2",
+    "employee_designation_name": "Delivery Manager",
+    "master3": "Oracle Practice",
+    "employee_functional_reporting_to": "Prasad Kotikalapudi",
+    "employee_department_name": "Clopay",
+    "employee_reporting_to": "Venkat Naidu"
+}​​​​​​​,
+{​​​​​​​
+    "id": "5f841caa03356a95d0aeeff6",
+    "master1": "Billable",
+    "employee_employee_id": "15",
+    "employee_company_name": "Venkata Srinivas Surla",
+    "employee_date_of_joining": "7/14/04",
+    "employee_mail_id": "vsurla@evoketechnologies.com",
+    "personal_gender": "Male",
+    "employee_ou_name": "Project - Multiple",
+    "employee_grade_name": "C1",
+    "employee_designation_name": "Project Manager",
+    "master3": "Delivery",
+    "employee_functional_reporting_to": "Ramesh Madala",
+    "employee_department_name": "CSC",
+    "employee_reporting_to": "Ramesh Madala"
+}​​​​​​​]
   constructor(@Inject(PLATFORM_ID) private platformId, private zone: NgZone, 
   public matDialog: MatDialog) {}
   browserOnly(f: () => void) {
@@ -187,6 +237,7 @@ export class DataGraphComponent implements OnInit {
           case 'multiColorBarChartMultiLevel':
             console.log(this.chartData);
             this.chartData.data[3] = {};
+            
             // alert(this.chartData.data.findIndex((el) => el._id === 'CSC'));
             // this.chartData.data.splice(
             //   this.chartData.data.findIndex((el) => el._id === 'CSC'),
@@ -217,7 +268,7 @@ export class DataGraphComponent implements OnInit {
 
             // Add data
             this.chart.data = this.chartData.data;
-
+console.log('this.chartData.data', this.chartData.data)
             // Create axes
             this.categoryAxis = this.chart.xAxes.push(
               new am4charts.CategoryAxis()
@@ -229,12 +280,57 @@ export class DataGraphComponent implements OnInit {
             this.categoryAxis.renderer.labels.template.rotation = 270;
             this.categoryAxis.renderer.labels.template.verticalCenter =
               'middle';
-            this.categoryAxis.renderer.labels.template.horizontalCenter =
+              this.categoryAxis.renderer.labels.template.horizontalCenter =
               'right';
-            this.categoryAxis.renderer.labels.template.fontSize = '11.5px';
-            this.categoryAxis.renderer.labels.template.fontWeight = '600';
-            this.categoryAxis.renderer.labels.template.fontWeight = '600';
+              this.categoryAxis.renderer.labels.template.fontSize = '11.5px';
+              this.categoryAxis.renderer.labels.template.fontWeight = '600';
+              this.categoryAxis.renderer.labels.template.fontWeight = '600';
+              this.categoryAxis.renderer.labels.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;
+              this.categoryAxis.renderer.labels.template.events.on("hit", function(ev){
+                console.log(ev.target.dataItem.category);
+                console.log(this.matDialog);
+                openLabelModal(ev.target.dataItem.category);
+                // const dialogRef = matDialog.open(DataModalComponent, {
+                //   width: "100%",
+                //   height: "100%",
+                //   data: {
+                //     from: 'from test',
+                //     clickedLabel:ev.target.dataItem.category,
+                //     modalId :"modal01"
+                //   }
+                // });
+              });
+              function openLabelModal(clickedLabel) {
+                // const matDialog = MatDialog;
+                const dialogConfig = new MatDialogConfig();
+                const modalId = "modal01";
+                // const employeeData = this.AccountWiseEmpData;
+                // const clickedItem = clickedLabel;
+                // The user can't close the dialog by clicking outside its body
+                dialogConfig.disableClose = true;
+                // dialogConfig.id = "modal-component";
+                dialogConfig.height = "100%";
+                dialogConfig.width = "100% ";
+                dialogConfig.data = {
+                  modalId: modalId,
+                  // employeeData:employeeData,
+                  clickedLabel:clickedLabel
+                }
+                // matDialog.open(DataModalComponent, dialogConfig);
+              }
+              // function openLabelModal(clickedLabel){
+              //    let matDialog :MatDialog
 
+              //   const dialogRef = matDialog.open(DataModalComponent, {
+              //     width: "100%",
+              //     height: "100%",
+              //     data: {
+              //       from: 'from test',
+              //       clickedLabel:clickedLabel,
+              //       modalId :"modal01"
+              //     }
+              //   });
+              // }
             // this.categoryAxis.renderer.labels.template.fontColor = am4core.color(
             //   '#7b7b7b'
             // );
@@ -244,6 +340,22 @@ export class DataGraphComponent implements OnInit {
             this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
             this.valueAxis.renderer.labels.template.fontSize = '9px';
 
+            // function clickedXaxisValue(ev) {
+            //   console.log('this.chart', this.chart)
+            //   this.chart.series.each(function(series) {
+            //     if (series instanceof am4charts.ColumnSeries) {
+            //       series.columns.each(function(column) {
+            //     console.log(column);
+            //     console.log(ev.target.dataItem.category);
+            //       //  if (column.dataItem.categoryX == ev.target.dataItem.category) {
+            //       //     column.isActive = true;
+            //       // console.log(column.dataItem.categoryX)
+            //       //   }
+            //       })
+            //     }
+            //   })
+            // }
+
             this.valueAxis.title.text = '';
             // this.valueAxis.min = this.valueAxis.minZoomed;
             // this.valueAxis.max = this.valueAxis.maxZoomed;
@@ -252,14 +364,6 @@ export class DataGraphComponent implements OnInit {
             this.valueAxis.renderer.minGridDistance = 10;
             this.valueAxis.strictMinMax = true;
 
-            // Create series
-            // this.series = this.chart.series.push(new am4charts.ColumnSeries());
-            // this.series.dataFields.valueY = 'research';
-            // this.series.dataFields.categoryX = 'country';
-            // this.series.name = 'Research';
-            // this.series.tooltipText = '{name}: [bold]{valueY}[/]';
-            // This has no effect
-            // series.stacked = true;
             this.series2 = this.chart.series.push(new am4charts.ColumnSeries());
             this.series2.dataFields.valueY = this.chartData.series1;
             this.series2.dataFields.categoryX = '_id';
@@ -278,14 +382,7 @@ export class DataGraphComponent implements OnInit {
               // max: am4core.color('#1946a2'),
               dataField: 'valueY',
             });
-            // this.series2.columns.template.adapter.add('fill', function (
-            //   fill,
-            //   target
-            // ) {
-            //   return this.chart.colors.getIndex(target.dataItem.index);
-            // });
-            // Do not try to stack on top of previous series
-            // series2.stacked = true;
+            
             this.series2.columns.template.strokeWidth = 0;
             this.series2.columns.template.fontSize = '11.5px';
             this.series2.tooltip.pointerOrientation = 'vertical';

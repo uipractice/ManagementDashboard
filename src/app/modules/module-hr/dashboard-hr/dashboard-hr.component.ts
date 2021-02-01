@@ -77,7 +77,6 @@ export class DashboardHrComponent implements OnInit {
           "value": 18
         }],
       };
-     
       this.chartData2 = {
         idName: 'overAllChart2',
         title: 'Onboarded and Seperated',

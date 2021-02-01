@@ -14,6 +14,7 @@ export class DataModalComponent implements OnInit {
   allNewData: any;
   employeeList: any;
   rowData: any;
+  selectedLabel: any;
   constructor( public dialogRef: MatDialogRef<DataModalComponent>,
     @Inject(MAT_DIALOG_DATA) private modalData: any,
     private modalService: ModalActionsService) { }
@@ -24,7 +25,8 @@ export class DataModalComponent implements OnInit {
     this.allNewData = this.modalData.allNewsData
     this.rowData =  this.modalData.employeeData
     this.rowData.forEach((row, i) => row['SLNo'] = i + 1)
-    console.log('this.data', this.rowData)
+    console.log('this.data', this.rowData);
+    console.log('Label', this.selectedLabel);
     // this.classHeight= "small-height";
   }
   columnDefs = [

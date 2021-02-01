@@ -94,8 +94,12 @@ export class GraphHrComponent implements OnInit {
 
             // Create axes
             let dateAxis = this.chart.xAxes.push(new am4charts.DateAxis());
+            dateAxis.renderer.minGridDistance = 25;
+            dateAxis.renderer.labels.template.rotation = 270;
+            dateAxis.renderer.labels.template.verticalCenter = 'middle';
+            dateAxis.renderer.grid.template.disabled = true;
             let valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
-
+            valueAxis.renderer.grid.template.disabled = true;
             // Create series
             let series = this.chart.series.push(new am4charts.LineSeries());
             series.dataFields.valueY = 'value';
@@ -111,7 +115,7 @@ export class GraphHrComponent implements OnInit {
             series.tooltip.label.minWidth = 40;
             series.tooltip.label.minHeight = 40;
             series.tooltip.label.textAlign = 'middle';
-            series.tooltip.label.textValign = 'middle';
+            // series.tooltip.label.textValign = 'middle';
 
             // Make bullets grow on hover
             let bullet = series.bullets.push(new am4charts.CircleBullet());
@@ -128,25 +132,9 @@ export class GraphHrComponent implements OnInit {
             this.chart.cursor.xAxis = dateAxis;
             this.chart.cursor.snapToSeries = series;
 
-            // Create vertical scrollbar and place it before the value axis
-            this.chart.scrollbarY = new am4core.Scrollbar();
-            this.chart.scrollbarY.parent = this.chart.leftAxesContainer;
-            this.chart.scrollbarY.toBack();
-
-            // Create a horizontal scrollbar with previe and place it underneath the date axis
-            this.chart.scrollbarX = new am4charts.XYChartScrollbar();
-            // this.chart.scrollbarX.series.push(series);
-            this.chart.scrollbarX.parent = this.chart.bottomAxesContainer;
-
-            dateAxis.start = 0.79;
-            dateAxis.keepSelection = true;
             break;
           case 'barChart':
             am4core.useTheme(am4themes_animated);
-            // this.chart = am4core.create(
-            //   this.chartData.idName,
-            //   am4charts.XYChart
-            // );
             let newchart = am4core.create(
               this.chartData.idName,
               am4charts.XYChart
@@ -161,11 +149,14 @@ export class GraphHrComponent implements OnInit {
             let xAxis = newchart.xAxes.push(new am4charts.CategoryAxis());
             xAxis.dataFields.category = 'category';
             xAxis.renderer.cellStartLocation = 0.1;
-            xAxis.renderer.cellEndLocation = 0.5;
+            xAxis.renderer.cellEndLocation = 0.8;
+            xAxis.renderer.labels.template.rotation = 270;
             xAxis.renderer.grid.template.location = 0;
+            xAxis.renderer.grid.template.disabled = true;
 
             let yAxis = newchart.yAxes.push(new am4charts.ValueAxis());
             yAxis.min = 0;
+            yAxis.renderer.grid.template.disabled = true;
 
             function createSeries(value, name) {
               let series = newchart.series.push(new am4charts.ColumnSeries());
@@ -185,45 +176,122 @@ export class GraphHrComponent implements OnInit {
             break;
           case 'lineChart2':
             am4core.useTheme(am4themes_animated);
-            this.chart = am4core.create(
+            let newchart3 = am4core.create(
               this.chartData.idName,
               am4charts.XYChart
             );
+            newchart3.data = this.chartData.data;
+            this.categoryAxis = newchart3.xAxes.push(
+              new am4charts.CategoryAxis()
+            );
+            this.categoryAxis.dataFields.category = 'date';
+            this.categoryAxis.renderer.opposite = false;
+            this.categoryAxis.renderer.minGridDistance = 30;
+            this.categoryAxis.renderer.labels.template.rotation = 270;
+            this.categoryAxis.renderer.grid.template.disabled = true;
+            this.categoryAxis.renderer.labels.template.verticalCenter =
+              'middle';
+              this.categoryAxis.renderer.labels.template.horizontalCenter =
+              'right';
+            this.categoryAxis.renderer.labels.template.fontSize = '11.5px';
+            this.categoryAxis.renderer.labels.template.fontWeight = '600';
+            this.categoryAxis.renderer.labels.template.fontWeight = '600';
+            // Create value axis
+            this.valueAxis = newchart3.yAxes.push(new am4charts.ValueAxis());
+            this.valueAxis.renderer.inversed = false;
+            this.valueAxis.renderer.grid.template.disabled = true;
+            // this.valueAxis.title.text = 'Place taken';
+            this.valueAxis.renderer.minLabelPosition = 0.01;
+
+            // Create series
+            let series1 = newchart3.series.push(new am4charts.LineSeries());
+            series1.dataFields.valueY = 'allEmpAttrition';
+            series1.dataFields.categoryX = 'date';
+            series1.name = 'allEmpAttrition';
+            series1.bullets.push(new am4charts.CircleBullet());
+            series1.tooltipText =
+              'Place taken by {name} in {categoryX}: {valueY}';
+            series1.legendSettings.valueText = '{valueY}';
+            series1.visible = false;
+
+            let series2 = newchart3.series.push(new am4charts.LineSeries());
+            series2.dataFields.valueY = 'voluntaryEmpAttrition';
+            series2.dataFields.categoryX = 'date';
+            series2.name = 'voluntaryEmpAttrition';
+            series2.bullets.push(new am4charts.CircleBullet());
+            series2.tooltipText =
+              'Place taken by {name} in {categoryX}: {valueY}';
+            series2.legendSettings.valueText = '{valueY}';
+
+            let series3 = newchart3.series.push(new am4charts.LineSeries());
+            series3.dataFields.valueY = 'abscondEmpAttrition';
+            series3.dataFields.categoryX = 'date';
+            series3.name = 'abscondEmpAttrition';
+            series3.bullets.push(new am4charts.CircleBullet());
+            series3.tooltipText =
+              'Place taken by {name} in {categoryX}: {valueY}';
+            series3.legendSettings.valueText = '{valueY}';
+
+            // Add chart cursor
+            newchart3.cursor = new am4charts.XYCursor();
+            newchart3.cursor.behavior = 'zoomY';
+
+            let hs1 = series1.segments.template.states.create('hover');
+            hs1.properties.strokeWidth = 5;
+            series1.segments.template.strokeWidth = 1;
+
+            let hs2 = series2.segments.template.states.create('hover');
+            hs2.properties.strokeWidth = 5;
+            series2.segments.template.strokeWidth = 1;
+
+            let hs3 = series3.segments.template.states.create('hover');
+            hs3.properties.strokeWidth = 5;
+            series3.segments.template.strokeWidth = 1;
+
+            // Add legend
+            newchart3.legend = new am4charts.Legend();
+
             break;
           case 'barChart2':
             am4core.useTheme(am4themes_animated);
-            this.chart = am4core.create(
+            // this.chart = am4core.create(
+            //   this.chartData.idName,
+            //   am4charts.XYChart
+            // );
+            let newChart2 = am4core.create(
               this.chartData.idName,
               am4charts.XYChart
             );
-            this.chart.data = this.chartData.data;
-            this.chart.padding(40, 40, 40, 40);
-            let categoryAxis = this.chart.xAxes.push(
+            newChart2.data = this.chartData.data;
+            newChart2.padding(20, 20, 20, 20);
+
+            let categoryAxis = newChart2.xAxes.push(
               new am4charts.CategoryAxis()
             );
             categoryAxis.renderer.grid.template.location = 0;
             categoryAxis.dataFields.category = 'Account';
-            categoryAxis.renderer.minGridDistance = 60;
+            categoryAxis.renderer.minGridDistance = 40;
             categoryAxis.renderer.labels.template.rotation = 270;
             categoryAxis.renderer.inversed = true;
             categoryAxis.renderer.grid.template.disabled = true;
+            categoryAxis.renderer.labels.template.verticalCenter = 'middle';
 
-            this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
+            this.valueAxis = newChart2.yAxes.push(new am4charts.ValueAxis());
             this.valueAxis.min = 0;
             this.valueAxis.extraMax = 0.1;
+            this.valueAxis.renderer.grid.template.disabled = true;
+            //valueAxis.rangeChangeEasing = am4core.ease.linear;
+            //valueAxis.rangeChangeDuration = 1500;
 
-            // this.valueAxis.strictMinMax = true;
-            // this.valueAxis.calculateTotals = true;
-            // this.valueAxis.renderer.minWidth = 50;
-
-            this.series = this.chart.series.push(new am4charts.ColumnSeries());
+            this.series = newChart2.series.push(new am4charts.ColumnSeries());
             this.series.dataFields.categoryX = 'Account';
             this.series.dataFields.valueY = 'attrition';
             this.series.tooltipText = '{valueY.value}';
             this.series.columns.template.strokeOpacity = 0;
-            this.series.columns.template.column.cornerRadiusTopRight = 10;
-            this.series.columns.template.column.cornerRadiusTopLeft = 10;
-
+            // this.series.columns.template.column.cornerRadiusTopRight = 10;
+            // this.series.columns.template.column.cornerRadiusTopLeft = 10;
+            //series.interpolationDuration = 1500;
+            //series.interpolationEasing = am4core.ease.linear;
             let labelBullet = this.series.bullets.push(
               new am4charts.LabelBullet()
             );
@@ -231,8 +299,17 @@ export class GraphHrComponent implements OnInit {
             labelBullet.label.dy = -10;
             labelBullet.label.text =
               "{values.valueY.workingValue.formatNumber('#.')}";
-            this.chart.zoomOutButton.disabled = true;
+
+            // newChart2.zoomOutButton.disabled = true;
+            // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
+            this.series.columns.template.adapter.add(
+              'fill',
+              function (fill, target) {
+                return newChart2.colors.getIndex(target.dataItem.index);
+              }
+            );
             categoryAxis.sortBySeries = this.series;
+
             break;
           case 'donutChart':
             am4core.useTheme(am4themes_animated);
@@ -251,7 +328,8 @@ export class GraphHrComponent implements OnInit {
             this.pieSeries.dataFields.value = 'size';
             this.pieSeries.dataFields.category = 'sector';
             // Add label
-            this.pieChart.innerRadius = 100;
+            this.pieChart.innerRadius = 60;
+            this.pieChart.height = 270;
             let label = this.pieChart.seriesContainer.createChild(
               am4core.Label
             );
@@ -300,8 +378,8 @@ export class GraphHrComponent implements OnInit {
             //pieSeries2.labels.template.radius = am4core.percent(50);
             //pieSeries2.labels.template.inside = true;
             //pieSeries2.labels.template.fill = am4core.color("#ffffff");
-            pieSeries2.labels.template.disabled = true;
-            pieSeries2.ticks.template.disabled = true;
+            pieSeries2.labels.template.disabled = false;
+            pieSeries2.ticks.template.disabled = false;
             pieSeries2.alignLabels = false;
             pieSeries2.events.on('positionchanged', updateLines);
 

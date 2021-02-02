@@ -8,6 +8,7 @@
     box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.12);
     margin-right: 13px;
     background-color: #fff;
+    padding-bottom:1px;
   }
   .GraphLast{
     width: 25% !important;
@@ -126,6 +127,8 @@
         letter-spacing: 0.01em;
         color: #B3C1C8;
         cursor: pointer;
+        text-transform: uppercase;
+        text-align: center;
       }
       
     }
@@ -133,6 +136,7 @@
   .tab:checked+label{
     background: transparent !important;
       color:#239EC5 !important;
+      border-bottom: 1px solid #239EC5;
   }
   .tab-wrap {
     position: relative;
@@ -225,6 +229,7 @@
     line-height: 17px;
     color: #239EC5;
     margin-top:10px;
+    text-transform: uppercase;
   }
   .content-block{
     display: inline-block;
@@ -289,6 +294,23 @@
     }
     .header-hr{
       display: none;
+    }
+    .rounded-circles.box-height{
+      height:auto;
+    }
+    #dropdown-tab{
+      .tab-wrap{
+        label{
+          width: 145px;
+        }
+      }
+    }
+    .rounded-circles{
+      .single-circle{
+        h5{
+          font-size: 14px;
+        }
+      }
     }
   }
   

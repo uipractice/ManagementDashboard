@@ -10,7 +10,7 @@ export class UrlConstants {
     // DEV_URL: 'http://localhost',
     // DEV_URL: 'http://65.0.17.4',
     // DEV_URL: 'http://15.206.69.241',
-    DEV_URL: 'http://15.206.91.50',
+    DEV_URL: 'http://13.127.213.80',
     ADD_USER: 'api/emp/emp',
     GET_USERS: 'api/emp/getAllEmp',
     DELETE_EMP: 'api/emp/deleteEmp',

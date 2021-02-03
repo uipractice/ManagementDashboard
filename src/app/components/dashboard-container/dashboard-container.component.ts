@@ -123,6 +123,7 @@ export class DashboardContainerComponent implements OnInit {
     this.service.getPracticeGraphData().then((res) => {
       console.log('getPracticeGraphData', res);
       if (res['statusCode'] === 200) {
+        console.log('chartData2', res)
         this.chartData2['idName'] = 'overAllChart4';
         this.chartData2['title'] = 'Resource Engagement';
         this.chartData2['series1'] = 'count';

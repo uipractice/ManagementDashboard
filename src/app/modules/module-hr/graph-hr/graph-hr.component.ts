@@ -57,7 +57,7 @@ export class GraphHrComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    // console.log('this.chartData', this.chartData);
+    console.log('this.chartData', this.chartData);
     // console.log('this.dataLoaded', this.dataLoaded);
   }
 
@@ -93,21 +93,36 @@ export class GraphHrComponent implements OnInit {
             // this.chart.dateFormatter.inputDateFormat = 'date';
 
             // Create axes
-            let dateAxis = this.chart.xAxes.push(new am4charts.DateAxis());
+            let dateAxis = this.chart.xAxes.push(new am4charts.CategoryAxis());
             // dateAxis.dataFields.dateX = 'date';
-            dateAxis.renderer.minGridDistance = 25;
+            // dateAxis.renderer.minGridDistance = 25;
+            // dateAxis.renderer.labels.template.rotation = 270;
+            // dateAxis.renderer.labels.template.verticalCenter = 'middle';
+            // dateAxis.renderer.grid.template.disabled = true;
+            dateAxis.dataFields.category = 'month';
+            dateAxis.renderer.opposite = false;
+            dateAxis.renderer.minGridDistance = 30;
             dateAxis.renderer.labels.template.rotation = 270;
-            dateAxis.renderer.labels.template.verticalCenter = 'middle';
             dateAxis.renderer.grid.template.disabled = true;
+            dateAxis.renderer.labels.template.verticalCenter =
+              'middle';
+              dateAxis.renderer.labels.template.horizontalCenter =
+              'right';
+              dateAxis.renderer.labels.template.fontSize = '11.5px';
+              dateAxis.renderer.labels.template.fontWeight = '600';
+              dateAxis.renderer.labels.template.fontWeight = '600';
             let valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
             valueAxis.renderer.grid.template.disabled = true;
+            // valueAxis.renderer.minLabelPosition = 150;
             // Create series
             let series = this.chart.series.push(new am4charts.LineSeries());
-            series.dataFields.valueY = 'value';
-            series.dataFields.dateX = 'date';
+            series.dataFields.valueY = 'closingbalance';
+            series.dataFields.categoryX = 'month';
+            // series.bullets.push(new am4charts.CircleBullet());
             series.tooltipText = '{value}';
             series.strokeWidth = 2;
             series.minBulletDistance = 15;
+            // series.visible = false;
 
             // Drop-shaped tooltips
             series.tooltip.background.cornerRadius = 20;
@@ -129,9 +144,10 @@ export class GraphHrComponent implements OnInit {
 
             // Make a panning cursor
             this.chart.cursor = new am4charts.XYCursor();
-            this.chart.cursor.behavior = 'panXY';
+            // this.chart.cursor.behavior = 'panXY';
             this.chart.cursor.xAxis = dateAxis;
             this.chart.cursor.snapToSeries = series;
+            this.chart.legend = new am4charts.Legend();
 
             break;
           case 'barChart':
@@ -148,13 +164,14 @@ export class GraphHrComponent implements OnInit {
             // newchart.legend.labels.template.maxWidth = 95
 
             let xAxis = newchart.xAxes.push(new am4charts.CategoryAxis());
-            xAxis.dataFields.category = 'category';
+            xAxis.dataFields.category = 'month';
             xAxis.renderer.cellStartLocation = 0.1;
             xAxis.renderer.cellEndLocation = 0.8;
             xAxis.renderer.labels.template.rotation = 270;
             xAxis.renderer.grid.template.location = 0;
             xAxis.renderer.grid.template.disabled = true;
-
+            xAxis.renderer.minGridDistance = 30;
+            xAxis.renderer.labels.template.verticalCenter = 'middle';
             let yAxis = newchart.yAxes.push(new am4charts.ValueAxis());
             yAxis.min = 0;
             yAxis.renderer.grid.template.disabled = true;
@@ -162,7 +179,7 @@ export class GraphHrComponent implements OnInit {
             function createSeries(value, name) {
               let series = newchart.series.push(new am4charts.ColumnSeries());
               series.dataFields.valueY = value;
-              series.dataFields.categoryX = 'category';
+              series.dataFields.categoryX = 'month';
               series.name = name;
               let bullet = series.bullets.push(new am4charts.LabelBullet());
               bullet.interactionsEnabled = false;
@@ -278,7 +295,7 @@ export class GraphHrComponent implements OnInit {
               new am4charts.CategoryAxis()
             );
             categoryAxis.renderer.grid.template.location = 0;
-            categoryAxis.dataFields.category = 'Account';
+            categoryAxis.dataFields.category = 'account';
             categoryAxis.renderer.minGridDistance = 40;
             categoryAxis.renderer.labels.template.rotation = 270;
             categoryAxis.renderer.inversed = true;
@@ -293,7 +310,7 @@ export class GraphHrComponent implements OnInit {
             //valueAxis.rangeChangeDuration = 1500;
 
             this.series = newChart2.series.push(new am4charts.ColumnSeries());
-            this.series.dataFields.categoryX = 'Account';
+            this.series.dataFields.categoryX = 'account';
             this.series.dataFields.valueY = 'attrition';
             this.series.tooltipText = '{valueY.value}';
             this.series.columns.template.strokeOpacity = 0;

@@ -3,14 +3,14 @@
     <ev-side-nav></ev-side-nav>
     <div class="DashboardHeader">
         <h3 class="header-hr">HR Dashboard</h3>
-        <ev-header-hr [summeryData]="summeryData"></ev-header-hr>
+        <ev-header-hr [summeryData]="summeryData" *ngIf="headerDataLoaded"></ev-header-hr>
         <div class="row ml-0">
             <div  class="col-md-4 p-0 pr-2">
-                <ev-graph-hr [chartData]="chartData1" chartType="lineChart"
+                <ev-graph-hr [chartData]="chartData1" chartType="lineChart" *ngIf="isDataLoadedPractice && headerDataLoaded"
                       [dataLoaded]="isDataLoadedPractice" [isNoGraphShown]="false">
                     </ev-graph-hr>
             </div>
-                <div class="col-md-5 p-0 pr-2">
+                <div class="col-md-5 p-0 pr-2" *ngIf="isDataLoadedPractice && headerDataLoaded">
                     <ev-graph-hr [chartData]="chartData2" chartType="barChart" 
                     [dataLoaded]="isDataLoadedPractice" [isNoGraphShown]="false">
                     </ev-graph-hr>
@@ -25,7 +25,7 @@
                       [dataLoaded]="isDataLoadedPractice" [isNoGraphShown]="false">
                     </ev-graph-hr>
             </div>
-            <div class="col-md-6 p-0 pr-2">
+            <div class="col-md-6 p-0 pr-2" *ngIf="isDataLoadedPractice && headerDataLoaded">
                 <ev-graph-hr [chartData]="chartData4" chartType="barChart2" [dataLoaded]="isDataLoadedPractice"
                     [isNoGraphShown]="false">
                     </ev-graph-hr>
@@ -166,3 +166,6 @@
         </div>
     </div>
 </div>
+<div class="loader" *ngIf="!headerDataLoaded">
+    <ev-css-loader></ev-css-loader>
+  </div>

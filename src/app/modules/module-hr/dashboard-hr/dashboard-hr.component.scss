@@ -2,6 +2,13 @@
     margin-top: 15px;
     display: flex;
   }
+  .loader {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+}
   .Graph{
     width: 100%;
     border: 0;

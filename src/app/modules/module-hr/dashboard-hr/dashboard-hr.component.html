@@ -16,11 +16,11 @@
                     </ev-graph-hr>
                 </div>
             
-            <div class="col-md-3 p-0">
+            <div class="col-md-3 p-0" *ngIf="isDataLoadedPractice && headerDataLoaded">
                 <ev-graph-hr [isNoGraphShown]="true" [newsData]="newsLetterData" titleCommon="News and Events">
                 </ev-graph-hr>
             </div>
-            <div class="col-md-12 p-0">
+            <div class="col-md-12 p-0" *ngIf="isDataLoadedPractice && headerDataLoaded">
                 <ev-graph-hr chartType="lineChart2" [chartData] = "chartData6"
                       [dataLoaded]="isDataLoadedPractice" [isNoGraphShown]="false">
                     </ev-graph-hr>
@@ -30,17 +30,17 @@
                     [isNoGraphShown]="false">
                     </ev-graph-hr>
             </div>
-            <div class="col-md-6 p-0">
+            <div class="col-md-6 p-0" *ngIf="isDataLoadedPractice && headerDataLoaded">
                 <ev-graph-hr [chartData]="chartData3" chartType="donutChart" [dataLoaded]="isDataLoadedPractice"
                     [isNoGraphShown]="false">
                     </ev-graph-hr>
             </div>
-            <div class="col-md-12 p-0">
+            <div class="col-md-12 p-0" *ngIf="isDataLoadedPractice && headerDataLoaded">
                 <ev-graph-hr [chartData]="chartData5" chartType="pieChart" [dataLoaded]="isDataLoadedPractice"
                     [isNoGraphShown]="false">
                     </ev-graph-hr>
             </div>
-            <div class="col-md-6 p-0 pr-2">
+            <div class="col-md-6 p-0 pr-2" *ngIf="isDataLoadedPractice && headerDataLoaded">
                 <div class="graphContainer mt-3 mr-2">
                     <div class="Graph">
                         <div class="GraphHead">
@@ -108,7 +108,7 @@
                 </div>
                 
             </div>
-            <div class="col-md-6 p-0">
+            <div class="col-md-6 p-0" *ngIf="isDataLoadedPractice && headerDataLoaded">
                 <div class="graphContainer mt-3 mr-2">
                     <div class="Graph">
                         <div class="GraphHead">

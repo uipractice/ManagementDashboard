@@ -108,18 +108,20 @@ export class GraphHrComponent implements OnInit {
               'middle';
               dateAxis.renderer.labels.template.horizontalCenter =
               'right';
+
               dateAxis.renderer.labels.template.fontSize = '11.5px';
               dateAxis.renderer.labels.template.fontWeight = '600';
               dateAxis.renderer.labels.template.fontWeight = '600';
             let valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.renderer.grid.template.disabled = true;
-            // valueAxis.renderer.minLabelPosition = 150;
+            valueAxis.renderer.grid.template.disabled = false;
+            // valueAxis.renderer.minLabelPosition = 0.02;
+            valueAxis.min = 100;
             // Create series
             let series = this.chart.series.push(new am4charts.LineSeries());
             series.dataFields.valueY = 'closingbalance';
             series.dataFields.categoryX = 'month';
             // series.bullets.push(new am4charts.CircleBullet());
-            series.tooltipText = '{value}';
+            series.tooltipText = '{valueY}';
             series.strokeWidth = 2;
             series.minBulletDistance = 15;
             // series.visible = false;
@@ -146,8 +148,8 @@ export class GraphHrComponent implements OnInit {
             this.chart.cursor = new am4charts.XYCursor();
             // this.chart.cursor.behavior = 'panXY';
             this.chart.cursor.xAxis = dateAxis;
-            this.chart.cursor.snapToSeries = series;
-            this.chart.legend = new am4charts.Legend();
+            // this.chart.cursor.snapToSeries = series;
+            // this.chart.legend = new am4charts.Legend();
 
             break;
           case 'barChart':
@@ -159,8 +161,10 @@ export class GraphHrComponent implements OnInit {
             newchart.colors.step = 2;
             newchart.data = this.chartData.data;
             newchart.legend = new am4charts.Legend();
-            newchart.legend.position = 'top';
+            newchart.legend.position = 'bottom';
             newchart.legend.paddingBottom = 20;
+            newchart.legend.fontSize = '11.5px';
+            newchart.legend.fontWeight = '400';
             // newchart.legend.labels.template.maxWidth = 95
 
             let xAxis = newchart.xAxes.push(new am4charts.CategoryAxis());
@@ -225,6 +229,7 @@ export class GraphHrComponent implements OnInit {
             this.valueAxis.renderer.inversed = false;
             this.valueAxis.renderer.grid.template.disabled = false;
             // this.valueAxis.title.text = 'Place taken';
+            // this.valueAxis.min = 10;
             this.valueAxis.renderer.minLabelPosition = 0.01;
 
             // Create series
@@ -304,7 +309,8 @@ export class GraphHrComponent implements OnInit {
 
             this.valueAxis = newChart2.yAxes.push(new am4charts.ValueAxis());
             this.valueAxis.min = 0;
-            this.valueAxis.extraMax = 0.1;
+            // this.valueAxis.max = 100; 
+            // this.valueAxis.extraMax = 0.1;
             this.valueAxis.renderer.grid.template.disabled = true;
             //valueAxis.rangeChangeEasing = am4core.ease.linear;
             //valueAxis.rangeChangeDuration = 1500;
@@ -360,15 +366,16 @@ export class GraphHrComponent implements OnInit {
             this.pieSeries.dataFields.category = 'sector';
             this.pieSeries.slices.template.tooltipText = " {value.percent.formatNumber('#.#')}% ({value.value})";
             // Add label
-            this.pieChart.innerRadius = 60;
-            this.pieChart.height = 270;
+            this.pieChart.innerRadius = 70;
+            this.pieChart.height = 300;
+            this.pieChart.paddingTop = 50;
             let label = this.pieChart.seriesContainer.createChild(
               am4core.Label
             );
-            label.text = '2020';
-            label.horizontalCenter = 'middle';
-            label.verticalCenter = 'middle';
-            label.fontSize = 30;
+            // label.text = '2020';
+            // label.horizontalCenter = 'middle';
+            // label.verticalCenter = 'middle';
+            // label.fontSize = 30;
             break;
           case 'pieChart':
             am4core.useTheme(am4themes_animated);
@@ -376,13 +383,13 @@ export class GraphHrComponent implements OnInit {
               this.chartData.idName,
               am4core.Container
             );
-            container.width = am4core.percent(80);
-            container.height = am4core.percent(80);
+            container.width = am4core.percent(90);
+            container.height = am4core.percent(100);
             container.layout = 'horizontal';
 
             let chart = container.createChild(am4charts.PieChart);
             chart.data = this.chartData.data;
-
+            chart.paddingTop = 40;
             // Add and configure Series
             let pieSeries = chart.series.push(new am4charts.PieSeries());
             pieSeries.dataFields.value = 'value';
@@ -405,7 +412,7 @@ export class GraphHrComponent implements OnInit {
             let chart2 = container.createChild(am4charts.PieChart);
             chart2.width = am4core.percent(30);
             chart2.radius = am4core.percent(80);
-
+            chart2.paddingTop = 50;
             // Add and configure Series
             let pieSeries2 = chart2.series.push(new am4charts.PieSeries());
             pieSeries2.dataFields.value = 'value';
@@ -514,7 +521,7 @@ export class GraphHrComponent implements OnInit {
             chart.events.on('datavalidated', function () {
               setTimeout(function () {
                 selectSlice(pieSeries.dataItems.getIndex(0));
-              }, 1000);
+              }, 800);
             });
 
             break;

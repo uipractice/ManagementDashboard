@@ -15,7 +15,7 @@ export class DashboardHrComponent implements OnInit {
   chartData4: any = {};
   chartData5: any = {};
   chartData6: any = {};
-  isDataLoadedPractice: any = true;
+  isDataLoadedPractice: any = false;
   isOtherNavSelected: any = false;
   newsLetterData: any = [];
   constructor(public service: WebRequestService) {}

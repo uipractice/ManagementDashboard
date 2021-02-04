@@ -16,7 +16,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CharLimitpipe } from './components/pipes/char-limit.pipe';
 import { DataGraphComponent } from './reusable/components/data-graph/data-graph.component';
 import { DataFilterComponent } from './reusable/components/data-filter/data-filter.component';
-import { CssLoaderComponent } from './reusable/components/css-loader/css-loader.component';
+// import { CssLoaderComponent } from './reusable/components/css-loader/css-loader.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { WebReqInterceptor } from '../services/web-req.interceptor';
 import { Data } from './helper/datastore';
@@ -45,7 +45,7 @@ import { LoginGuard } from './guards/login.guard';
     // CharLimitpipe,
     DataGraphComponent,
     DataFilterComponent,
-    CssLoaderComponent,
+    // CssLoaderComponent,
     // PlaceHolderComponent,
     DataModalComponent
     // DashboardComponent,

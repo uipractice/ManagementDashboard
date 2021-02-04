@@ -369,9 +369,9 @@ export class GraphHrComponent implements OnInit {
             this.pieChart.innerRadius = 70;
             this.pieChart.height = 300;
             this.pieChart.paddingTop = 50;
-            let label = this.pieChart.seriesContainer.createChild(
-              am4core.Label
-            );
+            // let label = this.pieChart.seriesContainer.createChild(
+            //   am4core.Label
+            // );
             // label.text = '2020';
             // label.horizontalCenter = 'middle';
             // label.verticalCenter = 'middle';

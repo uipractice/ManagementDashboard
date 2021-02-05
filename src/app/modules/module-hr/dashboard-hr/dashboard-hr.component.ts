@@ -315,6 +315,15 @@ export class DashboardHrComponent implements OnInit {
       return obj;
     });
 }
+handleAccountWisData = (list, prop) => {
+  return list.map(item => {
+    const obj = Object.assign({}, item);
+    const modifyObj = Number(obj[prop]) * 100
+    // obj[prop] =  `${modifyObj}%`
+    obj[prop] =  modifyObj
+    return obj;
+  });
+}
   getHrHeaderData = () => {
     this.service.getHrHeaderData().then((res: any) => {
       this.summeryData = res;
@@ -347,10 +356,11 @@ export class DashboardHrComponent implements OnInit {
         this.chartData4['legendName1'] ='Practices';
         this.chartData4['type'] ='extended';
         this.chartData4['label'] = true;
-        this.chartData4['data'] = res[0];
+        this.chartData4['data'] = this.handleAccountWisData(res[0], 'attrition')
         this.isDataLoadedPractice = true;
       }
     });
+    console.log('this.chartData4', this.chartData4)
   };
   getHeadcountDemographicsData = () => {
     this.service.getHeadcountData().then((res: any) => {

@@ -294,8 +294,9 @@ export class GraphHrComponent implements OnInit {
               am4charts.XYChart
             );
             newChart2.data = this.chartData.data;
-            newChart2.padding(20, 20, 20, 20);
-
+            // newChart2.padding(20, 20, 20, 20);
+            newChart2.paddingTop = 10;
+            newChart2.responsive.enabled = true;
             let categoryAxis = newChart2.xAxes.push(
               new am4charts.CategoryAxis()
             );
@@ -331,7 +332,7 @@ export class GraphHrComponent implements OnInit {
             labelBullet.label.verticalCenter = 'bottom';
             labelBullet.label.dy = -10;
             labelBullet.label.text =
-              "{values.valueY.workingValue.formatNumber('#.')}";
+              "{values.valueY.workingValue.formatNumber('#.')}%";
 
             // newChart2.zoomOutButton.disabled = true;
             // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set

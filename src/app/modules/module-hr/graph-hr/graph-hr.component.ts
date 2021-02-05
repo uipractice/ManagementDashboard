@@ -89,16 +89,9 @@ export class GraphHrComponent implements OnInit {
               am4charts.XYChart
             );
             this.chart.data = this.chartData.data;
-            // Set input format for the dates
-            // this.chart.dateFormatter.inputDateFormat = 'date';
-
-            // Create axes
+           
             let dateAxis = this.chart.xAxes.push(new am4charts.CategoryAxis());
-            // dateAxis.dataFields.dateX = 'date';
-            // dateAxis.renderer.minGridDistance = 25;
-            // dateAxis.renderer.labels.template.rotation = 270;
-            // dateAxis.renderer.labels.template.verticalCenter = 'middle';
-            // dateAxis.renderer.grid.template.disabled = true;
+            
             dateAxis.dataFields.category = 'month';
             dateAxis.renderer.opposite = false;
             dateAxis.renderer.minGridDistance = 30;
@@ -115,34 +108,37 @@ export class GraphHrComponent implements OnInit {
             let valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
             valueAxis.renderer.grid.template.disabled = false;
             // valueAxis.renderer.minLabelPosition = 0.02;
-            valueAxis.min = 100;
+            valueAxis.min = 500;
             // Create series
             let series = this.chart.series.push(new am4charts.LineSeries());
             series.dataFields.valueY = 'closingbalance';
             series.dataFields.categoryX = 'month';
-            // series.bullets.push(new am4charts.CircleBullet());
-            series.tooltipText = '{valueY}';
             series.strokeWidth = 2;
             series.minBulletDistance = 15;
+            // series.bullets.push(new am4charts.CircleBullet());
+            // series.tooltipText = '{valueY}';
             // series.visible = false;
 
             // Drop-shaped tooltips
-            series.tooltip.background.cornerRadius = 20;
-            series.tooltip.background.strokeOpacity = 0;
-            series.tooltip.pointerOrientation = 'vertical';
-            series.tooltip.label.minWidth = 40;
-            series.tooltip.label.minHeight = 40;
-            series.tooltip.label.textAlign = 'middle';
+            // series.tooltip.background.cornerRadius = 20;
+            // series.tooltip.background.strokeOpacity = 0;
+            // series.tooltip.pointerOrientation = 'vertical';
+            // series.tooltip.label.minWidth = 40;
+            // series.tooltip.label.minHeight = 40;
+            // series.tooltip.label.textAlign = 'middle';
             // series.tooltip.label.textValign = 'middle';
 
             // Make bullets grow on hover
             let bullet = series.bullets.push(new am4charts.CircleBullet());
-            bullet.circle.strokeWidth = 2;
+            bullet.tooltipText ='{valueY}';
+            // bullet.showTooltipOn = "always";
+            // bullet.propertyFields.showTooltipOn = "always"
+            // bullet.circle.strokeWidth = 2;
             bullet.circle.radius = 4;
             bullet.circle.fill = am4core.color('#fff');
 
-            let bullethover = bullet.states.create('hover');
-            bullethover.properties.scale = 1.3;
+            // let bullethover = bullet.states.create('hover');
+            // bullethover.properties.scale = 1.3;
 
             // Make a panning cursor
             this.chart.cursor = new am4charts.XYCursor();
@@ -237,8 +233,10 @@ export class GraphHrComponent implements OnInit {
             series1.dataFields.valueY = 'All';
             series1.dataFields.categoryX = 'date';
             series1.name = 'All';
-            series1.bullets.push(new am4charts.CircleBullet());
-            series1.tooltipText ='{valueY}';
+            // series1.tooltipText ='{valueY}';
+            this.bullet = series1.bullets.push(new am4charts.CircleBullet());
+            this.bullet.tooltipText = "{valueY}";
+            // this.bullet.showTooltipOn = "always";
             // series1.legendSettings.valueText = '{valueY}';
             series1.visible = false;
 
@@ -246,23 +244,32 @@ export class GraphHrComponent implements OnInit {
             series2.dataFields.valueY = 'Voluntary';
             series2.dataFields.categoryX = 'date';
             series2.name = 'Voluntary';
-            series2.bullets.push(new am4charts.CircleBullet());
-            series2.tooltipText ='{valueY}';
+            // series2.bullets.push(new am4charts.CircleBullet());
+            // series2.tooltipText ='{valueY}';
+            this.bullet = series2.bullets.push(new am4charts.CircleBullet());
+            this.bullet.tooltipText = "{valueY}";
+            // this.bullet.showTooltipOn = "always";
             // series2.legendSettings.valueText = '{valueY}';
 
             let series3 = newchart3.series.push(new am4charts.LineSeries());
             series3.dataFields.valueY = 'Involuntary';
             series3.dataFields.categoryX = 'date';
             series3.name = 'Involuntary';
-            series3.bullets.push(new am4charts.CircleBullet());
-            series3.tooltipText ='{valueY}';
+            // series3.bullets.push(new am4charts.CircleBullet());
+            // series3.tooltipText ='{valueY}';
+            this.bullet = series3.bullets.push(new am4charts.CircleBullet());
+            this.bullet.tooltipText = "{valueY}";
+            // this.bullet.showTooltipOn = "always";
             // series3.legendSettings.valueText = '{valueY}';
             let series4 = newchart3.series.push(new am4charts.LineSeries());
             series4.dataFields.valueY = 'Abscond';
             series4.dataFields.categoryX = 'date';
             series4.name = 'Abscond';
-            series4.bullets.push(new am4charts.CircleBullet());
-            series4.tooltipText ='{valueY}';
+            // series4.bullets.push(new am4charts.CircleBullet());
+            // series4.tooltipText ='{valueY}';
+            this.bullet = series4.bullets.push(new am4charts.CircleBullet());
+            this.bullet.tooltipText = "{valueY}";
+            // this.bullet.showTooltipOn = "always";
             // Add chart cursor
             newchart3.cursor = new am4charts.XYCursor();
             newchart3.cursor.behavior = 'zoomY';
@@ -294,8 +301,8 @@ export class GraphHrComponent implements OnInit {
               am4charts.XYChart
             );
             newChart2.data = this.chartData.data;
-            // newChart2.padding(20, 20, 20, 20);
-            newChart2.paddingTop = 20;
+            newChart2.padding(20, 30, 20, 20);
+            // newChart2.paddingTop = 20;
             newChart2.responsive.enabled = true;
             let categoryAxis = newChart2.xAxes.push(
               new am4charts.CategoryAxis()
@@ -353,30 +360,50 @@ export class GraphHrComponent implements OnInit {
             );
             this.pieChart.responsive.enabled = true;
             this.pieChart.data = this.chartData.data;
-            // this.pieChart.legend = new am4charts.Legend();
-            // Add and configure Series
-            this.pieSeries = this.pieChart.series.push(
-              new am4charts.PieSeries()
-            );
-            this.pieSeries.colors.list = [
-              am4core.color("#8067DC"),
-              am4core.color("#E76DBD"),            
-              am4core.color("#67B7DC"),
-            ];
-            this.pieSeries.dataFields.value = 'size';
-            this.pieSeries.dataFields.category = 'sector';
-            this.pieSeries.slices.template.tooltipText = " {value.percent.formatNumber('#.#')}% ({value.value})";
-            // Add label
-            this.pieChart.innerRadius = 60;
-            this.pieChart.height = 250;
-            this.pieChart.paddingTop = 50;
-            // let label = this.pieChart.seriesContainer.createChild(
-            //   am4core.Label
-            // );
-            // label.text = '2020';
-            // label.horizontalCenter = 'middle';
-            // label.verticalCenter = 'middle';
-            // label.fontSize = 30;
+            
+            this.pieSeries = this.pieChart.series.push(new am4charts.PieSeries());
+            this.pieSeries.dataFields.value = "size";
+            this.pieSeries.dataFields.category = "sector";
+            
+            // Let's cut a hole in our Pie chart the size of 30% the radius
+            this.pieChart.innerRadius = am4core.percent(45);
+            
+            // Put a thick white border around each Slice
+            this.pieSeries.slices.template.stroke = am4core.color("#fff");
+            this.pieSeries.slices.template.strokeWidth = 2;
+            this.pieSeries.slices.template.strokeOpacity = 1;
+            this.pieSeries.slices.template
+              // change the cursor on hover to make it apparent the object can be interacted with
+              .cursorOverStyle = [
+                {
+                  "property": "cursor",
+                  "value": "pointer"
+                }
+              ];
+              this.pieSeries.colors.list = [
+                am4core.color("#8067DC"),
+                am4core.color("#E76DBD"),            
+                am4core.color("#67B7DC"),
+              ];
+            
+              this.pieSeries.alignLabels = false;
+              this.pieSeries.labels.template.bent = true;
+              this.pieSeries.labels.template.radius = 3;
+              this.pieSeries.labels.template.padding(0,0,0,0);
+              this.pieSeries.slices.template.tooltipText = "{value.percent.formatNumber('#.#')}% ({value.value})"
+              this.pieSeries.ticks.template.disabled = true;
+
+            var shadow = this.pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+            shadow.opacity = 0;
+            
+            // Create hover state
+            var hoverState = this.pieSeries.slices.template.states.getKey("hover"); // normally we have to create the hover state, in this case it already exists
+            
+            // Slightly shift the shadow and make it more prominent on hover
+            var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+            hoverShadow.opacity = 0.7;
+            hoverShadow.blur = 5;
+
             break;
           case 'pieChart':
             am4core.useTheme(am4themes_animated);

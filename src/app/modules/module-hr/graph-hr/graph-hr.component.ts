@@ -366,8 +366,8 @@ export class GraphHrComponent implements OnInit {
             this.pieSeries.dataFields.category = 'sector';
             this.pieSeries.slices.template.tooltipText = " {value.percent.formatNumber('#.#')}% ({value.value})";
             // Add label
-            this.pieChart.innerRadius = 70;
-            this.pieChart.height = 300;
+            this.pieChart.innerRadius = 60;
+            this.pieChart.height = 250;
             this.pieChart.paddingTop = 50;
             // let label = this.pieChart.seriesContainer.createChild(
             //   am4core.Label

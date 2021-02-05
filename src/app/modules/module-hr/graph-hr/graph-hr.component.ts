@@ -295,7 +295,7 @@ export class GraphHrComponent implements OnInit {
             );
             newChart2.data = this.chartData.data;
             // newChart2.padding(20, 20, 20, 20);
-            newChart2.paddingTop = 10;
+            newChart2.paddingTop = 20;
             newChart2.responsive.enabled = true;
             let categoryAxis = newChart2.xAxes.push(
               new am4charts.CategoryAxis()

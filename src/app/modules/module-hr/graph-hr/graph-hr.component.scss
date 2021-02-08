@@ -113,7 +113,7 @@
       scrollbar-color: #afaeae #e3e1e1;
       li {
         list-style: none;
-        height: 57px;
+        // height: 57px;
         border-bottom: 1px solid #c4c4c4;
         padding:8px 10px 10px 15px;
         overflow: hidden;
@@ -125,14 +125,14 @@
           font-weight: 400;
         }
       }
-      li:before{
-        content: "...";
-        position: absolute;
-        bottom: 5.5px;
-        right: 5px;
-        font-size: 18px;
-        color: #7b7b7b;
-      }
+      // li:before{
+      //   content: "...";
+      //   position: absolute;
+      //   bottom: 5.5px;
+      //   right: 5px;
+      //   font-size: 18px;
+      //   color: #7b7b7b;
+      // }
       li:last-child {
         border: 0px;
         padding-bottom: 0px;

@@ -228,6 +228,7 @@ span {
   font-weight: normal;
   line-height: 18px;
   color: #7B7B7B !important;
+  letter-spacing: normal;
 }
 
 // .text.ellipsis::after {
@@ -973,6 +974,15 @@ input:checked + .slider:before {
   .SearchDropdown {
     .SearchDropdownTopbtn {
       flex-wrap: wrap;
+    }
+  }
+  .DropdownContent{
+    ul{
+      li{
+        a{
+          line-height: 20px;
+        }
+      }
     }
   }
 }

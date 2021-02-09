@@ -2,7 +2,7 @@
   <div class="ds-con">
     <div class="ColAlign">
       <img class="navbar-brand logo" src="../../../../assets/images/main/logo.svg" alt="">
-      <div class="VerLine" *ngIf="headerCount">
+      <div class="VerLine" *ngIf="headerCountLoaded">
         <span class="HoursDetails">Total Working Hours: {{headerCount['workingHour']}} </span>
         <!-- <span class="HoursPerc">({{hours.value}}% ) </span> -->
         <!-- <span class="HoursImg" *ngIf="hours.arrowFlag===true; else elseBlock"><img
@@ -11,13 +11,13 @@
           <span class="hours-img"><img src="..\..\..\assets\images\main\arrow_down.svg"></span>
         </ng-template> -->
       </div>
-      <div class="VerLine">
+      <div class="VerLine" *ngIf="headerCountLoaded">
         <span class="HoursDetails">Average Hours: 08 </span>
         <!-- <span class="HoursPerc">({{hours.value}}% ) </span> -->
         <!-- <span class="HoursImg" ><img src="..\..\..\assets\images\main\arrow_up.svg"></span>-->
       </div>
     </div>
-    <div class="VerLine2">
+    <div class="VerLine2" *ngIf="headerCountLoaded">
       <!-- <ev-dashboard-search [isShow]="isShow" [isOpen]="isOpen" (myOutput) ="GetChildData($event)"></ev-dashboard-search> -->
 
       <div class="">
@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-    <div class="VerLine2 Notification">
+    <div class="VerLine2 Notification" *ngIf="headerCountLoaded">
       <a *ngIf="notificationCount" class="dropbtn" [matMenuTriggerFor]="notificationMenu"><img class="HeaderIcons"
           src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge"
           *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
@@ -84,7 +84,7 @@
             </div>
           </mat-menu> -->
     </div>
-    <div class="dropdown VerLine2 pdr-0">
+    <div class="dropdown VerLine2 pdr-0" *ngIf="headerCountLoaded">
       <a class="dropbtn" (click)="toggleDropdown()" [matMenuTriggerFor]="profileMenu"><img class="HeaderIcons"
           src="..\..\..\assets\images\main\user.svg"></a>
           

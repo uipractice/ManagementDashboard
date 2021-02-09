@@ -89,26 +89,24 @@ export class GraphHrComponent implements OnInit {
               am4charts.XYChart
             );
             this.chart.data = this.chartData.data;
-           
+
             let dateAxis = this.chart.xAxes.push(new am4charts.CategoryAxis());
-            
+
             dateAxis.dataFields.category = 'month';
             dateAxis.renderer.opposite = false;
             dateAxis.renderer.minGridDistance = 30;
             dateAxis.renderer.labels.template.rotation = 270;
             dateAxis.renderer.grid.template.disabled = true;
-            dateAxis.renderer.labels.template.verticalCenter =
-              'middle';
-              dateAxis.renderer.labels.template.horizontalCenter =
-              'right';
+            dateAxis.renderer.labels.template.verticalCenter = 'middle';
+            dateAxis.renderer.labels.template.horizontalCenter = 'right';
 
-              dateAxis.renderer.labels.template.fontSize = '11.5px';
-              dateAxis.renderer.labels.template.fontWeight = '600';
-              dateAxis.renderer.labels.template.fontWeight = '600';
+            dateAxis.renderer.labels.template.fontSize = '11.5px';
+            dateAxis.renderer.labels.template.fontWeight = '600';
+            dateAxis.renderer.labels.template.fontWeight = '600';
             let valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
             valueAxis.renderer.grid.template.disabled = false;
             // valueAxis.renderer.minLabelPosition = 0.02;
-            valueAxis.min = 500;
+            valueAxis.min = 550;
             // Create series
             let series = this.chart.series.push(new am4charts.LineSeries());
             series.dataFields.valueY = 'closingbalance';
@@ -120,22 +118,25 @@ export class GraphHrComponent implements OnInit {
             // series.visible = false;
 
             // Drop-shaped tooltips
-            // series.tooltip.background.cornerRadius = 20;
+            // series.tooltip.background.cornerRadius = 60;
+            series.tooltip.background.strokeOpacity = 0;
+            series.tooltip.background.cornerRadius = 0;
             // series.tooltip.background.strokeOpacity = 0;
-            // series.tooltip.pointerOrientation = 'vertical';
-            // series.tooltip.label.minWidth = 40;
-            // series.tooltip.label.minHeight = 40;
-            // series.tooltip.label.textAlign = 'middle';
-            // series.tooltip.label.textValign = 'middle';
-
+            series.tooltip.getFillFromObject = false;
+            series.tooltip.pointerOrientation = 'vertical';
+            series.tooltip.label.minWidth = 40;
+            series.tooltip.label.minHeight = 20;
+            series.tooltip.label.textAlign = 'middle';
+            series.tooltip.background.fill = am4core.color('#00000000');
+            series.tooltip.autoTextColor = false;
+            series.tooltip.label.fill = am4core.color('#000000');
             // Make bullets grow on hover
             let bullet = series.bullets.push(new am4charts.CircleBullet());
-            bullet.tooltipText ='{valueY}';
-            // bullet.showTooltipOn = "always";
-            // bullet.propertyFields.showTooltipOn = "always"
+            bullet.tooltipText = '{valueY}';
+            bullet.showTooltipOn = 'always';
             // bullet.circle.strokeWidth = 2;
             bullet.circle.radius = 4;
-            bullet.circle.fill = am4core.color('#fff');
+            // bullet.circle.fill = am4core.color('#fff');
 
             // let bullethover = bullet.states.create('hover');
             // bullethover.properties.scale = 1.3;
@@ -200,10 +201,10 @@ export class GraphHrComponent implements OnInit {
             );
             newchart3.data = this.chartData.data;
             newchart3.colors.list = [
-              am4core.color("#CF6684"),
-              am4core.color("#6771DC"),
-              am4core.color("#000000"),
-              am4core.color("#67B7DC"),             
+              am4core.color('#CF6684'),
+              am4core.color('#6771DC'),
+              am4core.color('#000000'),
+              am4core.color('#E07C24'),
             ];
             this.categoryAxis = newchart3.xAxes.push(
               new am4charts.CategoryAxis()
@@ -215,7 +216,7 @@ export class GraphHrComponent implements OnInit {
             this.categoryAxis.renderer.grid.template.disabled = true;
             this.categoryAxis.renderer.labels.template.verticalCenter =
               'middle';
-              this.categoryAxis.renderer.labels.template.horizontalCenter =
+            this.categoryAxis.renderer.labels.template.horizontalCenter =
               'right';
             this.categoryAxis.renderer.labels.template.fontSize = '11.5px';
             this.categoryAxis.renderer.labels.template.fontWeight = '600';
@@ -235,7 +236,7 @@ export class GraphHrComponent implements OnInit {
             series1.name = 'All';
             // series1.tooltipText ='{valueY}';
             this.bullet = series1.bullets.push(new am4charts.CircleBullet());
-            this.bullet.tooltipText = "{valueY}";
+            this.bullet.tooltipText = '{valueY}';
             // this.bullet.showTooltipOn = "always";
             // series1.legendSettings.valueText = '{valueY}';
             series1.visible = false;
@@ -247,7 +248,7 @@ export class GraphHrComponent implements OnInit {
             // series2.bullets.push(new am4charts.CircleBullet());
             // series2.tooltipText ='{valueY}';
             this.bullet = series2.bullets.push(new am4charts.CircleBullet());
-            this.bullet.tooltipText = "{valueY}";
+            this.bullet.tooltipText = '{valueY}';
             // this.bullet.showTooltipOn = "always";
             // series2.legendSettings.valueText = '{valueY}';
 
@@ -258,7 +259,7 @@ export class GraphHrComponent implements OnInit {
             // series3.bullets.push(new am4charts.CircleBullet());
             // series3.tooltipText ='{valueY}';
             this.bullet = series3.bullets.push(new am4charts.CircleBullet());
-            this.bullet.tooltipText = "{valueY}";
+            this.bullet.tooltipText = '{valueY}';
             // this.bullet.showTooltipOn = "always";
             // series3.legendSettings.valueText = '{valueY}';
             let series4 = newchart3.series.push(new am4charts.LineSeries());
@@ -268,7 +269,7 @@ export class GraphHrComponent implements OnInit {
             // series4.bullets.push(new am4charts.CircleBullet());
             // series4.tooltipText ='{valueY}';
             this.bullet = series4.bullets.push(new am4charts.CircleBullet());
-            this.bullet.tooltipText = "{valueY}";
+            this.bullet.tooltipText = '{valueY}';
             // this.bullet.showTooltipOn = "always";
             // Add chart cursor
             newchart3.cursor = new am4charts.XYCursor();
@@ -301,7 +302,7 @@ export class GraphHrComponent implements OnInit {
               am4charts.XYChart
             );
             newChart2.data = this.chartData.data;
-            newChart2.padding(20, 30, 20, 20);
+            newChart2.padding(30, 20, 20, 30);
             // newChart2.paddingTop = 20;
             newChart2.responsive.enabled = true;
             let categoryAxis = newChart2.xAxes.push(
@@ -317,7 +318,7 @@ export class GraphHrComponent implements OnInit {
 
             this.valueAxis = newChart2.yAxes.push(new am4charts.ValueAxis());
             this.valueAxis.min = 0;
-            // this.valueAxis.max = 100; 
+            // this.valueAxis.max = 100;
             // this.valueAxis.extraMax = 0.1;
             this.valueAxis.renderer.grid.template.disabled = true;
             //valueAxis.rangeChangeEasing = am4core.ease.linear;
@@ -337,7 +338,7 @@ export class GraphHrComponent implements OnInit {
               new am4charts.LabelBullet()
             );
             labelBullet.label.verticalCenter = 'bottom';
-            labelBullet.label.dy = -10;
+            labelBullet.label.dy = -5;
             labelBullet.label.text =
               "{values.valueY.workingValue.formatNumber('#.')}%";
 
@@ -360,47 +361,55 @@ export class GraphHrComponent implements OnInit {
             );
             this.pieChart.responsive.enabled = true;
             this.pieChart.data = this.chartData.data;
-            
-            this.pieSeries = this.pieChart.series.push(new am4charts.PieSeries());
-            this.pieSeries.dataFields.value = "size";
-            this.pieSeries.dataFields.category = "sector";
-            
+
+            this.pieSeries = this.pieChart.series.push(
+              new am4charts.PieSeries()
+            );
+            this.pieSeries.dataFields.value = 'size';
+            this.pieSeries.dataFields.category = 'sector';
+
             // Let's cut a hole in our Pie chart the size of 30% the radius
             this.pieChart.innerRadius = am4core.percent(45);
-            
+
             // Put a thick white border around each Slice
-            this.pieSeries.slices.template.stroke = am4core.color("#fff");
+            this.pieSeries.slices.template.stroke = am4core.color('#fff');
             this.pieSeries.slices.template.strokeWidth = 2;
             this.pieSeries.slices.template.strokeOpacity = 1;
-            this.pieSeries.slices.template
-              // change the cursor on hover to make it apparent the object can be interacted with
-              .cursorOverStyle = [
-                {
-                  "property": "cursor",
-                  "value": "pointer"
-                }
-              ];
-              this.pieSeries.colors.list = [
-                am4core.color("#8067DC"),
-                am4core.color("#E76DBD"),            
-                am4core.color("#67B7DC"),
-              ];
-            
-              this.pieSeries.alignLabels = false;
-              this.pieSeries.labels.template.bent = true;
-              this.pieSeries.labels.template.radius = 3;
-              this.pieSeries.labels.template.padding(0,0,0,0);
-              this.pieSeries.slices.template.tooltipText = "{value.percent.formatNumber('#.#')}% ({value.value})"
-              this.pieSeries.ticks.template.disabled = true;
+            // change the cursor on hover to make it apparent the object can be interacted with
+            this.pieSeries.slices.template.cursorOverStyle = [
+              {
+                property: 'cursor',
+                value: 'pointer',
+              },
+            ];
+            this.pieSeries.colors.list = [
+              am4core.color('#8067DC'),
+              am4core.color('#E76DBD'),
+              am4core.color('#67B7DC'),
+            ];
 
-            var shadow = this.pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+            this.pieSeries.alignLabels = false;
+            this.pieSeries.labels.template.bent = true;
+            this.pieSeries.labels.template.radius = 3;
+            this.pieSeries.labels.template.padding(0, 0, 0, 0);
+            this.pieSeries.slices.template.tooltipText =
+              "{value.percent.formatNumber('#.#')}% ({value.value})";
+            this.pieSeries.ticks.template.disabled = true;
+
+            var shadow = this.pieSeries.slices.template.filters.push(
+              new am4core.DropShadowFilter()
+            );
             shadow.opacity = 0;
-            
+
             // Create hover state
-            var hoverState = this.pieSeries.slices.template.states.getKey("hover"); // normally we have to create the hover state, in this case it already exists
-            
+            var hoverState = this.pieSeries.slices.template.states.getKey(
+              'hover'
+            ); // normally we have to create the hover state, in this case it already exists
+
             // Slightly shift the shadow and make it more prominent on hover
-            var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+            var hoverShadow = hoverState.filters.push(
+              new am4core.DropShadowFilter()
+            );
             hoverShadow.opacity = 0.7;
             hoverShadow.blur = 5;
 
@@ -426,11 +435,12 @@ export class GraphHrComponent implements OnInit {
               'active'
             ).properties.shiftRadius = 0;
             pieSeries.colors.list = [
-              am4core.color("#E76DBD"),            
-              am4core.color("#67B7DC"),
-              am4core.color("#9865A4"),
+              am4core.color('#E76DBD'),
+              am4core.color('#67B7DC'),
+              am4core.color('#9865A4'),
             ];
-            pieSeries.slices.template.tooltipText = "{value.percent.formatNumber('#.#')}% ({value.value})";
+            pieSeries.slices.template.tooltipText =
+              "{value.percent.formatNumber('#.#')}% ({value.value})";
             //pieSeries.labels.template.text = "{category}\n{value.percent.formatNumber('#.#')}%";
 
             pieSeries.slices.template.events.on('hit', function (event) {
@@ -448,7 +458,8 @@ export class GraphHrComponent implements OnInit {
             pieSeries2.slices.template.states.getKey(
               'active'
             ).properties.shiftRadius = 0;
-            pieSeries2.slices.template.tooltipText = " {value.percent.formatNumber('#.#')}% ({value.value})";
+            pieSeries2.slices.template.tooltipText =
+              " {value.percent.formatNumber('#.#')}% ({value.value})";
             //pieSeries2.labels.template.radius = am4core.percent(50);
             //pieSeries2.labels.template.inside = true;
             //pieSeries2.labels.template.fill = am4core.color("#ffffff");

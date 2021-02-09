@@ -73,7 +73,7 @@ export class DashboardContainerComponent implements OnInit {
 
   constructor(private router: Router, public service: WebRequestService, public matDialog: MatDialog) {}
   ngOnInit() {
-    this.service.getAccountGraphData().then((res) => {
+    this.service.getAccountGraphData().then((res:any) => {
       if (res['statusCode'] === 200) {
         this.chartData['idName'] = 'overAllChart3';
         this.chartData['title'] = 'Accounts Wise Resource Utilization';
@@ -83,14 +83,16 @@ export class DashboardContainerComponent implements OnInit {
         this.chartData['legendName2'] = 'Non Billable';
         this.chartData['colorCode'] = '#92b7f2';
         this.chartData['label'] = true;
+        // this.chartData['labelData1'] = res.reduce((prev, cur) => prev + cur.billableCount, 0);
+        // this.chartData['labelData2'] = res.reduce((prev, cur) => prev + cur.nonBillableCount, 0);
         this.chartData['labelData1'] = {
           name: 'Billable',
-          count: '---',
+          count: 730,
           calss: 'positive',
         };
         this.chartData['labelData2'] = {
           name: 'Non Billable',
-          count: '---',
+          count: 23,
           calss: 'positive',
         };
         this.chartData['isLegend'] = true;

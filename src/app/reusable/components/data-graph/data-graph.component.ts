@@ -161,78 +161,78 @@ export class DataGraphComponent implements OnInit {
             this.chart = this.chart;
 
             break;
-          case 'multiDataChart':
-            am4core.useTheme(am4themes_animated);
+          // case 'multiDataChart':
+          //   am4core.useTheme(am4themes_animated);
 
-            this.chart = am4core.create(
-              this.chartData.idName,
-              am4charts.XYChart
-            );
-            this.chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+          //   this.chart = am4core.create(
+          //     this.chartData.idName,
+          //     am4charts.XYChart
+          //   );
+          //   this.chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
-            this.chart.data = this.chartData.data;
+          //   this.chart.data = this.chartData.data;
 
-            this.chart.colors.step = 2;
-            this.chart.padding(30, 30, 10, 30);
-            this.chart.legend = new am4charts.Legend();
+          //   this.chart.colors.step = 2;
+          //   this.chart.padding(30, 30, 10, 30);
+          //   this.chart.legend = new am4charts.Legend();
 
-            this.categoryAxis = this.chart.xAxes.push(
-              new am4charts.CategoryAxis()
-            );
-            this.categoryAxis.dataFields.category = 'category';
-            this.categoryAxis.renderer.grid.template.location = 0;
+          //   this.categoryAxis = this.chart.xAxes.push(
+          //     new am4charts.CategoryAxis()
+          //   );
+          //   this.categoryAxis.dataFields.category = 'category';
+          //   this.categoryAxis.renderer.grid.template.location = 0;
 
-            this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
-            this.valueAxis.min = 0;
-            // this.valueAxis.max = 100;
-            this.valueAxis.strictMinMax = true;
-            this.valueAxis.calculateTotals = true;
-            this.valueAxis.renderer.minWidth = 50;
+          //   this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
+          //   this.valueAxis.min = 0;
+          //   // this.valueAxis.max = 100;
+          //   this.valueAxis.strictMinMax = true;
+          //   this.valueAxis.calculateTotals = true;
+          //   this.valueAxis.renderer.minWidth = 50;
 
-            this.series = this.chart.series.push(new am4charts.ColumnSeries());
-            this.series.columns.template.width = am4core.percent(80);
-            this.series.columns.template.tooltipText =
-              "{name}: {valueY.totalPercent.formatNumber('#.00')}";
-            this.series.name = 'Series 1';
-            this.series.dataFields.categoryX = 'category';
-            this.series.dataFields.valueY = 'value1';
-            // #ce0c0c
-            this.series.dataFields.valueYShow = 'totalPercent';
-            this.series.dataItems.template.locations.categoryX = 0.5;
-            this.series.stacked = true;
-            this.series.tooltip.pointerOrientation = 'vertical';
+          //   this.series = this.chart.series.push(new am4charts.ColumnSeries());
+          //   this.series.columns.template.width = am4core.percent(80);
+          //   this.series.columns.template.tooltipText =
+          //     "{name}: {valueY.totalPercent.formatNumber('#.00')}";
+          //   this.series.name = 'Series 1';
+          //   this.series.dataFields.categoryX = 'category';
+          //   this.series.dataFields.valueY = 'value1';
+          //   // #ce0c0c
+          //   this.series.dataFields.valueYShow = 'totalPercent';
+          //   this.series.dataItems.template.locations.categoryX = 0.5;
+          //   this.series.stacked = true;
+          //   this.series.tooltip.pointerOrientation = 'vertical';
 
-            this.bullet1 = this.series.bullets.push(
-              new am4charts.LabelBullet()
-            );
-            this.bullet1.label.text =
-              "{valueY.totalPercent.formatNumber('#.00')}";
-            this.bullet1.label.fill = am4core.color('#ffffff');
-            this.bullet1.locationY = 0.5;
+          //   this.bullet1 = this.series.bullets.push(
+          //     new am4charts.LabelBullet()
+          //   );
+          //   this.bullet1.label.text =
+          //     "{valueY.totalPercent.formatNumber('#.00')}";
+          //   this.bullet1.label.fill = am4core.color('#ffffff');
+          //   this.bullet1.locationY = 0.5;
 
-            this.series2 = this.chart.series.push(new am4charts.ColumnSeries());
-            this.series2.columns.template.width = am4core.percent(80);
-            this.series2.columns.template.tooltipText =
-              "{name}: {valueY.totalPercent.formatNumber('#.00')}";
-            this.series2.name = 'Series 2';
-            this.series2.dataFields.categoryX = 'category';
-            this.series2.dataFields.valueY = 'value2';
-            this.series2.dataFields.valueYShow = 'totalPercent';
-            this.series2.dataItems.template.locations.categoryX = 0.5;
-            this.series2.stacked = true;
-            this.series2.tooltip.pointerOrientation = 'vertical';
+          //   this.series2 = this.chart.series.push(new am4charts.ColumnSeries());
+          //   this.series2.columns.template.width = am4core.percent(80);
+          //   this.series2.columns.template.tooltipText =
+          //     "{name}: {valueY.totalPercent.formatNumber('#.00')}";
+          //   this.series2.name = 'Series 2';
+          //   this.series2.dataFields.categoryX = 'category';
+          //   this.series2.dataFields.valueY = 'value2';
+          //   this.series2.dataFields.valueYShow = 'totalPercent';
+          //   this.series2.dataItems.template.locations.categoryX = 0.5;
+          //   this.series2.stacked = true;
+          //   this.series2.tooltip.pointerOrientation = 'vertical';
 
-            this.bullet2 = this.series2.bullets.push(
-              new am4charts.LabelBullet()
-            );
-            this.bullet2.label.text =
-              "{valueY.totalPercent.formatNumber('#.00')}";
-            this.bullet2.locationY = 0.5;
-            this.bullet2.label.fill = am4core.color('#ffffff');
-            this.categoryAxis.renderer.grid.template.disabled = true;
-            this.valueAxis.renderer.grid.template.disabled = true;
-            this.series2.strokeWidth = 3;
-            break;
+          //   this.bullet2 = this.series2.bullets.push(
+          //     new am4charts.LabelBullet()
+          //   );
+          //   this.bullet2.label.text =
+          //     "{valueY.totalPercent.formatNumber('#.00')}";
+          //   this.bullet2.locationY = 0.5;
+          //   this.bullet2.label.fill = am4core.color('#ffffff');
+          //   this.categoryAxis.renderer.grid.template.disabled = true;
+          //   this.valueAxis.renderer.grid.template.disabled = true;
+          //   this.series2.strokeWidth = 3;
+          //   break;
 
           case 'multiColorBarChartMultiLevel':
             console.log(this.chartData);
@@ -268,7 +268,7 @@ export class DataGraphComponent implements OnInit {
 
             // Add data
             this.chart.data = this.chartData.data;
-console.log('this.chartData.data', this.chartData.data)
+           console.log('this.chartData.data', this.chartData.data)
             // Create axes
             this.categoryAxis = this.chart.xAxes.push(
               new am4charts.CategoryAxis()
@@ -288,7 +288,6 @@ console.log('this.chartData.data', this.chartData.data)
               this.categoryAxis.renderer.labels.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;
               this.categoryAxis.renderer.labels.template.events.on("hit", function(ev){
                 console.log(ev.target.dataItem.category);
-                console.log(this.matDialog);
                 openLabelModal(ev.target.dataItem.category);
                 // const dialogRef = matDialog.open(DataModalComponent, {
                 //   width: "100%",
@@ -391,7 +390,6 @@ console.log('this.chartData.data', this.chartData.data)
             // this.series2.columns.template.column.cornerRadiusTopLeft = 10;
             // this.series2.columns.template.column.cornerRadiusTopRight = 10;
             this.series2.columns.template.column.fillOpacity = 0.8;
-
             if (this.chartData.series2) {
               // this.chart.legend.markers.template.disabled = true;
               this.series3 = this.chart.series.push(
@@ -419,12 +417,24 @@ console.log('this.chartData.data', this.chartData.data)
             this.valueAxis.renderer.grid.template.disabled = true;
             if (this.chartData.isLegend) {
               this.chart.legend = new am4charts.Legend();
-
-              this.series3.strokeWidth = 3;
+              // this.chart.legend.valueLabels.template.text = "({value.value})";
+              this.series3.strokeWidth = 2;
               this.chart.legend.position = 'bottom';
               this.chart.legend.fontSize = '11.5px';
               this.chart.legend.fontWeight = '400';
+              this.series2.name = `Billable (${this.chartData.labelData1.count})`
+              this.series3.name = `Non Billable  (${this.chartData.labelData2.count})`
               // this.chart.legend.disabled = true;
+              // this.chart.legend.valueLabels.template.text = "({value})";
+              // this.chart.legend.data = [{
+              //   "name": `Billable`,
+              //   "fill": "#92b7f2",
+              //   "value": this.chartData.labelData1.count
+              // },{
+              //   "name": "Non Billable",
+              //   "fill": "#ee5873",
+              //   "value": this.chartData.labelData2.count
+              // }]
             }
 
             // this.chartData.series2
@@ -481,6 +491,7 @@ console.log('this.chartData.data', this.chartData.data)
             this.pieChart.legend.fontSize = '11.5px';
             this.pieChart.legend.fontWeight = '400';
             this.pieChart.legend.marginBottom = 15;
+            this.pieChart.legend.valueLabels.template.text = "({value.value}) {value.percent.formatNumber('#.#')}%";
 
             this.pieChart.innerRadius = am4core.percent(70);
             // this.pieChart.legend.disabled = true;

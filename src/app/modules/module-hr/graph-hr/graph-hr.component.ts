@@ -66,8 +66,8 @@ export class GraphHrComponent implements OnInit {
     const modalData = content.title;
     const allNewsData = this.newsData;
     dialogConfig.disableClose = false;
-    dialogConfig.height = '42%';
-    dialogConfig.width = '44% ';
+    dialogConfig.height = "222px";
+    dialogConfig.width = "598px";
     dialogConfig.data = {
       modalId: modalId,
       modalData: modalData,

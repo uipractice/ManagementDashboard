@@ -286,21 +286,20 @@ export class DataGraphComponent implements OnInit {
               this.categoryAxis.renderer.labels.template.fontWeight = '600';
               this.categoryAxis.renderer.labels.template.fontWeight = '600';
               this.categoryAxis.renderer.labels.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;
-              this.categoryAxis.renderer.labels.template.events.on("hit", function(ev){
+              this.categoryAxis.renderer.labels.template.events.on("hit", function(ev, dialog: MatDialog){
                 console.log(ev.target.dataItem.category);
-                openLabelModal(ev.target.dataItem.category);
-                // const dialogRef = matDialog.open(DataModalComponent, {
-                //   width: "100%",
-                //   height: "100%",
-                //   data: {
-                //     from: 'from test',
-                //     clickedLabel:ev.target.dataItem.category,
-                //     modalId :"modal01"
-                //   }
-                // });
+                // openLabelModal(ev.target.dataItem.category);
+                const dialogRef = dialog.open(DataModalComponent, {
+                  width: "100%",
+                  height: "100%",
+                  data: {
+                    from: 'from test',
+                    clickedLabel:ev.target.dataItem.category,
+                    modalId :"modal01"
+                  }
+                });
               });
-              function openLabelModal(clickedLabel) {
-                // const matDialog = MatDialog;
+              function openLabelModal(clickedLabel, matDialog) {
                 const dialogConfig = new MatDialogConfig();
                 const modalId = "modal01";
                 // const employeeData = this.AccountWiseEmpData;
@@ -315,24 +314,8 @@ export class DataGraphComponent implements OnInit {
                   // employeeData:employeeData,
                   clickedLabel:clickedLabel
                 }
-                // matDialog.open(DataModalComponent, dialogConfig);
+                matDialog.open(DataModalComponent, dialogConfig);
               }
-              // function openLabelModal(clickedLabel){
-              //    let matDialog :MatDialog
-
-              //   const dialogRef = matDialog.open(DataModalComponent, {
-              //     width: "100%",
-              //     height: "100%",
-              //     data: {
-              //       from: 'from test',
-              //       clickedLabel:clickedLabel,
-              //       modalId :"modal01"
-              //     }
-              //   });
-              // }
-            // this.categoryAxis.renderer.labels.template.fontColor = am4core.color(
-            //   '#7b7b7b'
-            // );
 
             this.categoryAxis.renderer.cellStartLocation = 0.2;
             this.categoryAxis.renderer.cellEndLocation = 0.8;

@@ -120,6 +120,7 @@ export class GraphHrComponent implements OnInit {
             series.tooltip.pointerOrientation = 'vertical';
             series.tooltip.label.minWidth = 40;
             series.tooltip.label.minHeight = 20;
+            series.tooltip.label.fontSize = 12;
             series.tooltip.label.textAlign = 'middle';
             series.tooltip.background.fill = am4core.color('#00000000');
             series.tooltip.autoTextColor = false;
@@ -358,7 +359,7 @@ export class GraphHrComponent implements OnInit {
             );
             this.pieSeries.dataFields.value = 'size';
             this.pieSeries.dataFields.category = 'sector';
-
+            this.pieSeries.labels.template.text = "{category}: {value.percent.formatNumber('#.#')}%({value})";
             // Let's cut a hole in our Pie chart the size of 30% the radius
             this.pieChart.innerRadius = am4core.percent(45);
 
@@ -430,6 +431,7 @@ export class GraphHrComponent implements OnInit {
               am4core.color('#67B7DC'),
               am4core.color('#9865A4'),
             ];
+            pieSeries.labels.template.text = "{category}: {value.percent.formatNumber('#.#')}%({value})";
             pieSeries.slices.template.tooltipText =
               "{value.percent.formatNumber('#.#')}% ({value.value})";
             //pieSeries.labels.template.text = "{category}\n{value.percent.formatNumber('#.#')}%";
@@ -449,6 +451,8 @@ export class GraphHrComponent implements OnInit {
             pieSeries2.slices.template.states.getKey(
               'active'
             ).properties.shiftRadius = 0;
+            pieSeries2.labels.template.text = 
+            "{category}: {value.percent.formatNumber('#.#')}%({value})";
             pieSeries2.slices.template.tooltipText =
               " {value.percent.formatNumber('#.#')}% ({value.value})";
             //pieSeries2.labels.template.radius = am4core.percent(50);

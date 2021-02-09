@@ -162,6 +162,7 @@ export class DashboardHrComponent implements OnInit {
     this.chartData3 = {
       idName: 'overAllChart5',
       title: ' Voluntary Attrition : Top 3 Reason',
+      month: 'January',
       series1: 'litres',
       legendName1: 'Practices',
       type: 'extended',
@@ -177,6 +178,7 @@ export class DashboardHrComponent implements OnInit {
     this.chartData5 = {
       idName: 'overAllChart7',
       title: 'Voluntary Attrition Analysis',
+      month: 'January',
       series1: 'litres',
       legendName1: 'Practices',
       type: 'extended',
@@ -352,6 +354,7 @@ handleAccountWisData = (list, prop) => {
       if(res) {
         this.chartData4['idName'] ='overAllChart6';
         this.chartData4['title'] ='Account wise Employee Attrition';
+        this.chartData4['month'] ='January';
         this.chartData4['series1'] ='litres';
         this.chartData4['legendName1'] ='Practices';
         this.chartData4['type'] ='extended';

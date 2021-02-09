@@ -1,6 +1,7 @@
 <div class="Graph">
     <div class="GraphHead">
       <h5>{{title}}</h5>
+      <h5 *ngIf="!desiableMonth">({{month}})</h5>
       
       <button mat-icon-button class="kebabMenu-icon" *ngIf="isDesiable">
        

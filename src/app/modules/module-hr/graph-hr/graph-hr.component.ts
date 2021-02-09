@@ -58,7 +58,6 @@ export class GraphHrComponent implements OnInit {
   }
   ngOnInit(): void {
     console.log('this.chartData', this.chartData);
-    // console.log('this.dataLoaded', this.dataLoaded);
   }
 
   clickedItem(content) {
@@ -113,12 +112,7 @@ export class GraphHrComponent implements OnInit {
             series.dataFields.categoryX = 'month';
             series.strokeWidth = 2;
             series.minBulletDistance = 15;
-            // series.bullets.push(new am4charts.CircleBullet());
-            // series.tooltipText = '{valueY}';
-            // series.visible = false;
-
             // Drop-shaped tooltips
-            // series.tooltip.background.cornerRadius = 60;
             series.tooltip.background.strokeOpacity = 0;
             series.tooltip.background.cornerRadius = 0;
             // series.tooltip.background.strokeOpacity = 0;
@@ -143,10 +137,7 @@ export class GraphHrComponent implements OnInit {
 
             // Make a panning cursor
             this.chart.cursor = new am4charts.XYCursor();
-            // this.chart.cursor.behavior = 'panXY';
             this.chart.cursor.xAxis = dateAxis;
-            // this.chart.cursor.snapToSeries = series;
-            // this.chart.legend = new am4charts.Legend();
 
             break;
           case 'barChart':

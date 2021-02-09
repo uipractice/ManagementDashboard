@@ -359,7 +359,8 @@ export class GraphHrComponent implements OnInit {
             );
             this.pieSeries.dataFields.value = 'size';
             this.pieSeries.dataFields.category = 'sector';
-            this.pieSeries.labels.template.text = "{category}: {value.percent.formatNumber('#.#')}%({value})";
+            this.pieSeries.labels.template.text = 
+            "{category}: {value.percent.formatNumber('#.#')}%  ({value})";
             // Let's cut a hole in our Pie chart the size of 30% the radius
             this.pieChart.innerRadius = am4core.percent(45);
 
@@ -377,7 +378,7 @@ export class GraphHrComponent implements OnInit {
             this.pieSeries.colors.list = [
               am4core.color('#8067DC'),
               am4core.color('#E76DBD'),
-              am4core.color('#67B7DC'),
+              am4core.color('#67B7DC')
             ];
 
             this.pieSeries.alignLabels = false;
@@ -431,7 +432,8 @@ export class GraphHrComponent implements OnInit {
               am4core.color('#67B7DC'),
               am4core.color('#9865A4'),
             ];
-            pieSeries.labels.template.text = "{category}: {value.percent.formatNumber('#.#')}%({value})";
+            pieSeries.labels.template.text = 
+            "{category}: {value.percent.formatNumber('#.#')}% ({value})";
             pieSeries.slices.template.tooltipText =
               "{value.percent.formatNumber('#.#')}% ({value.value})";
             //pieSeries.labels.template.text = "{category}\n{value.percent.formatNumber('#.#')}%";
@@ -452,7 +454,7 @@ export class GraphHrComponent implements OnInit {
               'active'
             ).properties.shiftRadius = 0;
             pieSeries2.labels.template.text = 
-            "{category}: {value.percent.formatNumber('#.#')}%({value})";
+            "{category}: {value.percent.formatNumber('#.#')}% ({value})";
             pieSeries2.slices.template.tooltipText =
               " {value.percent.formatNumber('#.#')}% ({value.value})";
             //pieSeries2.labels.template.radius = am4core.percent(50);

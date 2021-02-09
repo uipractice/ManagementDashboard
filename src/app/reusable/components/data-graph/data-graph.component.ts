@@ -161,78 +161,78 @@ export class DataGraphComponent implements OnInit {
             this.chart = this.chart;
 
             break;
-          // case 'multiDataChart':
-          //   am4core.useTheme(am4themes_animated);
+          case 'multiDataChart':
+            // am4core.useTheme(am4themes_animated);
 
-          //   this.chart = am4core.create(
-          //     this.chartData.idName,
-          //     am4charts.XYChart
-          //   );
-          //   this.chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+            // this.chart = am4core.create(
+            //   this.chartData.idName,
+            //   am4charts.XYChart
+            // );
+            // this.chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
-          //   this.chart.data = this.chartData.data;
+            // this.chart.data = this.chartData.data;
 
-          //   this.chart.colors.step = 2;
-          //   this.chart.padding(30, 30, 10, 30);
-          //   this.chart.legend = new am4charts.Legend();
+            // this.chart.colors.step = 2;
+            // this.chart.padding(30, 30, 10, 30);
+            // this.chart.legend = new am4charts.Legend();
 
-          //   this.categoryAxis = this.chart.xAxes.push(
-          //     new am4charts.CategoryAxis()
-          //   );
-          //   this.categoryAxis.dataFields.category = 'category';
-          //   this.categoryAxis.renderer.grid.template.location = 0;
+            // this.categoryAxis = this.chart.xAxes.push(
+            //   new am4charts.CategoryAxis()
+            // );
+            // this.categoryAxis.dataFields.category = 'category';
+            // this.categoryAxis.renderer.grid.template.location = 0;
 
-          //   this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
-          //   this.valueAxis.min = 0;
-          //   // this.valueAxis.max = 100;
-          //   this.valueAxis.strictMinMax = true;
-          //   this.valueAxis.calculateTotals = true;
-          //   this.valueAxis.renderer.minWidth = 50;
+            // this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
+            // this.valueAxis.min = 0;
+            // // this.valueAxis.max = 100;
+            // this.valueAxis.strictMinMax = true;
+            // this.valueAxis.calculateTotals = true;
+            // this.valueAxis.renderer.minWidth = 50;
 
-          //   this.series = this.chart.series.push(new am4charts.ColumnSeries());
-          //   this.series.columns.template.width = am4core.percent(80);
-          //   this.series.columns.template.tooltipText =
-          //     "{name}: {valueY.totalPercent.formatNumber('#.00')}";
-          //   this.series.name = 'Series 1';
-          //   this.series.dataFields.categoryX = 'category';
-          //   this.series.dataFields.valueY = 'value1';
-          //   // #ce0c0c
-          //   this.series.dataFields.valueYShow = 'totalPercent';
-          //   this.series.dataItems.template.locations.categoryX = 0.5;
-          //   this.series.stacked = true;
-          //   this.series.tooltip.pointerOrientation = 'vertical';
+            // this.series = this.chart.series.push(new am4charts.ColumnSeries());
+            // this.series.columns.template.width = am4core.percent(80);
+            // this.series.columns.template.tooltipText =
+            //   "{name}: {valueY.totalPercent.formatNumber('#.00')}";
+            // this.series.name = 'Series 1';
+            // this.series.dataFields.categoryX = 'category';
+            // this.series.dataFields.valueY = 'value1';
+            // // #ce0c0c
+            // this.series.dataFields.valueYShow = 'totalPercent';
+            // this.series.dataItems.template.locations.categoryX = 0.5;
+            // this.series.stacked = true;
+            // this.series.tooltip.pointerOrientation = 'vertical';
 
-          //   this.bullet1 = this.series.bullets.push(
-          //     new am4charts.LabelBullet()
-          //   );
-          //   this.bullet1.label.text =
-          //     "{valueY.totalPercent.formatNumber('#.00')}";
-          //   this.bullet1.label.fill = am4core.color('#ffffff');
-          //   this.bullet1.locationY = 0.5;
+            // this.bullet1 = this.series.bullets.push(
+            //   new am4charts.LabelBullet()
+            // );
+            // this.bullet1.label.text =
+            //   "{valueY.totalPercent.formatNumber('#.00')}";
+            // this.bullet1.label.fill = am4core.color('#ffffff');
+            // this.bullet1.locationY = 0.5;
 
-          //   this.series2 = this.chart.series.push(new am4charts.ColumnSeries());
-          //   this.series2.columns.template.width = am4core.percent(80);
-          //   this.series2.columns.template.tooltipText =
-          //     "{name}: {valueY.totalPercent.formatNumber('#.00')}";
-          //   this.series2.name = 'Series 2';
-          //   this.series2.dataFields.categoryX = 'category';
-          //   this.series2.dataFields.valueY = 'value2';
-          //   this.series2.dataFields.valueYShow = 'totalPercent';
-          //   this.series2.dataItems.template.locations.categoryX = 0.5;
-          //   this.series2.stacked = true;
-          //   this.series2.tooltip.pointerOrientation = 'vertical';
+            // this.series2 = this.chart.series.push(new am4charts.ColumnSeries());
+            // this.series2.columns.template.width = am4core.percent(80);
+            // this.series2.columns.template.tooltipText =
+            //   "{name}: {valueY.totalPercent.formatNumber('#.00')}";
+            // this.series2.name = 'Series 2';
+            // this.series2.dataFields.categoryX = 'category';
+            // this.series2.dataFields.valueY = 'value2';
+            // this.series2.dataFields.valueYShow = 'totalPercent';
+            // this.series2.dataItems.template.locations.categoryX = 0.5;
+            // this.series2.stacked = true;
+            // this.series2.tooltip.pointerOrientation = 'vertical';
 
-          //   this.bullet2 = this.series2.bullets.push(
-          //     new am4charts.LabelBullet()
-          //   );
-          //   this.bullet2.label.text =
-          //     "{valueY.totalPercent.formatNumber('#.00')}";
-          //   this.bullet2.locationY = 0.5;
-          //   this.bullet2.label.fill = am4core.color('#ffffff');
-          //   this.categoryAxis.renderer.grid.template.disabled = true;
-          //   this.valueAxis.renderer.grid.template.disabled = true;
-          //   this.series2.strokeWidth = 3;
-          //   break;
+            // this.bullet2 = this.series2.bullets.push(
+            //   new am4charts.LabelBullet()
+            // );
+            // this.bullet2.label.text =
+            //   "{valueY.totalPercent.formatNumber('#.00')}";
+            // this.bullet2.locationY = 0.5;
+            // this.bullet2.label.fill = am4core.color('#ffffff');
+            // this.categoryAxis.renderer.grid.template.disabled = true;
+            // this.valueAxis.renderer.grid.template.disabled = true;
+            // this.series2.strokeWidth = 3;
+            break;
 
           case 'multiColorBarChartMultiLevel':
             console.log(this.chartData);
@@ -403,7 +403,7 @@ export class DataGraphComponent implements OnInit {
               // this.chart.legend.valueLabels.template.text = "({value.value})";
               this.series3.strokeWidth = 2;
               this.chart.legend.position = 'bottom';
-              this.chart.legend.fontSize = '11.5px';
+              this.chart.legend.fontSize = '13px';
               this.chart.legend.fontWeight = '400';
               this.series2.name = `Billable (${this.chartData.labelData1.count})`
               this.series3.name = `Non Billable  (${this.chartData.labelData2.count})`
@@ -436,59 +436,52 @@ export class DataGraphComponent implements OnInit {
             );
             this.pieChart.responsive.enabled = true;
             this.pieChart.data = this.chartData.data;
-            // // this.pieSeries.labels.template.disabled = true;
-            // // this.pieSeries.ticks.template.disabled = true;
-            // this.pieSeries = this.pieChart.series.push(
-            //   new am4charts.PieSeries()
-            // );
-            // this.pieSeries.dataFields.value = 'count';
-            // this.pieSeries.dataFields.category = '_id';
-            // this.pieSeries.dataFields.fontSize = '9px';
-            // this.pieSeries.slices.template.propertyFields.fill = 'color';
-            // // Let's cut a hole in our Pie chart the size of 40% the radius
-            // this.pieChart.innerRadius = am4core.percent(70);
-
-            // // Set up fills
-            // this.pieSeries.slices.template.fillOpacity = 1;
-
-            // var hs = this.pieSeries.slices.template.states.getKey('hover');
-            // hs.properties.scale = 1;
-            // hs.properties.fillOpacity = 0.5;
-            // this.pieChart.legend = new am4charts.Legend();
-            // this.pieChart.legend.position = 'top';
-            // this.pieChart.legend.fontSize = '10px';
             this.pieSeries = this.pieChart.series.push(
               new am4charts.PieSeries()
             );
-            this.pieChart.numberFormatter.numberFormat = '#.';
+            // this.pieChart.numberFormatter.numberFormat = '#.';
             this.pieSeries.dataFields.value = 'count';
             this.pieSeries.dataFields.category = '_id';
-            this.pieSeries.labels.template.disabled = true;
+            this.pieSeries.labels.template.text = 
+            "{category}: {value.percent.formatNumber('#.#')}% ({value})";
+            this.pieChart.innerRadius = am4core.percent(45);
+            this.pieSeries.slices.template.stroke = am4core.color('#fff');
+            this.pieSeries.slices.template.strokeWidth = 2;
+            this.pieSeries.slices.template.strokeOpacity = 1;
+
+            this.pieSeries.slices.template.cursorOverStyle = [
+              {
+                property: 'cursor',
+                value: 'pointer',
+              },
+            ];
+            this.pieSeries.colors.list = [
+              am4core.color('#92b7f2'),
+              am4core.color('#ee5873'),
+            ];
+            this.pieSeries.alignLabels = false;
+            this.pieSeries.labels.template.bent = true;
+            this.pieSeries.labels.template.radius = 3;
+            this.pieSeries.labels.template.padding(0, 0, 0, 0);
+            this.pieSeries.slices.template.tooltipText =
+              "{value.percent.formatNumber('#.#')}% ({value.value})";
             this.pieSeries.ticks.template.disabled = true;
-            this.pieSeries.slices.template.propertyFields.fill = 'color';
-            this.pieChart.seriesContainer.zIndex = -1;
 
-            this.pieChart.legend = new am4charts.Legend();
-            // this.pieChart.legend.position = 'center';
-            this.pieChart.legend.position = 'bottom';
-            this.pieChart.legend.fontSize = '11.5px';
-            this.pieChart.legend.fontWeight = '400';
-            this.pieChart.legend.marginBottom = 15;
-            this.pieChart.legend.valueLabels.template.text = "({value.value}) {value.percent.formatNumber('#.#')}%";
-
-            this.pieChart.innerRadius = am4core.percent(70);
-            // this.pieChart.legend.disabled = true;
+            var shadow = this.pieSeries.slices.template.filters.push(
+              new am4core.DropShadowFilter()
+            );
+            shadow.opacity = 0;
+            // Create hover state
+            var hoverState = this.pieSeries.slices.template.states.getKey('hover'); 
+            var hoverShadow = hoverState.filters.push(
+              new am4core.DropShadowFilter()
+            );
+            hoverShadow.opacity = 0.7;
+            hoverShadow.blur = 5;
             var container = new am4core.Container();
             container.parent = this.pieSeries;
             container.horizontalCenter = 'middle';
             container.verticalCenter = 'middle';
-
-            // var label = new am4core.Label();
-            // label.parent = container;
-            // // label.text = 'SUM: ${values.value.sum}';
-            // label.horizontalCenter = 'middle';
-            // label.verticalCenter = 'middle';
-            // label.fontSize = 30;
 
             break;
         }

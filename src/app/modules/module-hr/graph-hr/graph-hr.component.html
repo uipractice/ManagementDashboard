@@ -16,6 +16,7 @@
       <ul>
         <li *ngFor="let news of newsData; let i= index;"><a (click)="clickedItem(news)">{{news.title | charlimitpipe: 80}}</a></li>
       </ul>
+      <div class="view-all-btn"><a>View All</a></div>
     </div>
   </div>
 

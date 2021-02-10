@@ -73,7 +73,23 @@ export class GraphHrComponent implements OnInit {
       modalData: modalData,
       allNewsData: allNewsData,
     };
-    const modalDialog = this.matDialog.open(DataModalComponent, dialogConfig);
+   this.matDialog.open(DataModalComponent, dialogConfig);
+  }
+  viewAllNews(){
+    const dialogConfig = new MatDialogConfig();
+    const modalId = "modal02";
+    // const modalData = content.title;
+    const modalExpand = true
+    const allNewsData = this.newsData;
+    dialogConfig.disableClose = false;
+    dialogConfig.height = "222px";
+    dialogConfig.width = "598px";
+    dialogConfig.data = {
+      modalId: modalId,
+      modalExpand: modalExpand,
+      allNewsData:allNewsData
+    }
+    this.matDialog.open(DataModalComponent, dialogConfig);
   }
 
   ngAfterViewInit() {

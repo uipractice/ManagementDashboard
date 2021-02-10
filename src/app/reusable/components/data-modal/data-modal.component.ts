@@ -25,9 +25,15 @@ export class DataModalComponent implements OnInit {
     this.allNewData = this.modalData.allNewsData
     this.rowData =  this.modalData.employeeData
     this.selectedLabel =  this.modalData.clickedLeabel
-    this.rowData.forEach((row, i) => row['SLNo'] = i + 1)
+    this.isExpand = this.modalData.modalExpand
+    if(this.rowData){
+      this.rowData.forEach((row, i) => row['SLNo'] = i + 1)
+    }
     console.log('this.data', this.rowData);
     // this.classHeight= "small-height";
+    if(this.isExpand){
+      this.dialogRef.updateSize('42%','80%')
+    }
   }
   columnDefs = [
     {  headerName: "SL.No", field: 'SLNo', width: 86},

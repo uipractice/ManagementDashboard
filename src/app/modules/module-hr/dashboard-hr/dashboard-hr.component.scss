@@ -298,6 +298,21 @@
     height:345px;
     padding-top:21px;
   }
+  .pink-head{
+    color: #E76DBD;
+  }
+  .pink-block{
+    h5{
+      color: #E76DBD !important;
+    }
+    .cicle-num{
+      background: #FADEF0 !important;
+      color: #E76DBD !important;
+    }
+    li{
+      background: url("../../../../assets/images/main/pink_arrow.svg") no-repeat 0 8px !important;
+    }
+  }
   .month-data{
     padding-left: 5px;
     color: #808080 !important;

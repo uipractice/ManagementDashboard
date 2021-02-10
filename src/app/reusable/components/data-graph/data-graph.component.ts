@@ -235,6 +235,8 @@ export class DataGraphComponent implements OnInit {
             break;
 
           case 'multiColorBarChartMultiLevel':
+            let matDialog = this.matDialog
+            let employeeData = this.AccountWiseEmpData;
             console.log(this.chartData);
             this.chartData.data[3] = {};
             
@@ -243,19 +245,14 @@ export class DataGraphComponent implements OnInit {
             //   this.chartData.data.findIndex((el) => el._id === 'CSC'),
             //   1
             // );
-            console.log(
-              this.chartData.data.sort((a, b) => {
-                console.log(a, b);
-                return a._id > b._id;
-              })
-            );
-            this, this.chartData.data.sort();
-            let color = ['#9c66cf', '#d669a9', '#cfc666', '#7d85ce'];
-            // this.chartData.data.map((val, index) => {
-            //   console.log(color[Math.floor(Math.random() * 4)]);
-            //   this.chartData.data[index]['color'];
-            // });
-
+            // console.log(
+            //   this.chartData.data.sort((a, b) => {
+            //     console.log(a, b);
+            //     return a._id > b._id;
+            //   })
+            // );
+            this.chartData.data.sort();
+            
             am4core.useTheme(am4themes_animated);
             am4core.useTheme(am4themes_kelly);
 
@@ -286,36 +283,33 @@ export class DataGraphComponent implements OnInit {
               this.categoryAxis.renderer.labels.template.fontWeight = '600';
               this.categoryAxis.renderer.labels.template.fontWeight = '600';
               this.categoryAxis.renderer.labels.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;
-              this.categoryAxis.renderer.labels.template.events.on("hit", function(ev, dialog: MatDialog){
+              this.categoryAxis.renderer.labels.template.events.on("hit", function(ev){
                 console.log(ev.target.dataItem.category);
-                // openLabelModal(ev.target.dataItem.category);
-                const dialogRef = dialog.open(DataModalComponent, {
+                const dialogRef = matDialog.open(DataModalComponent, {
                   width: "100%",
                   height: "100%",
                   data: {
-                    from: 'from test',
-                    clickedLabel:ev.target.dataItem.category,
-                    modalId :"modal01"
+                    clickedLeabel:ev.target.dataItem.category,
+                    modalId :"modal01",
+                    employeeData: employeeData
                   }
                 });
               });
-              function openLabelModal(clickedLabel, matDialog) {
-                const dialogConfig = new MatDialogConfig();
-                const modalId = "modal01";
-                // const employeeData = this.AccountWiseEmpData;
-                // const clickedItem = clickedLabel;
-                // The user can't close the dialog by clicking outside its body
-                dialogConfig.disableClose = true;
-                // dialogConfig.id = "modal-component";
-                dialogConfig.height = "100%";
-                dialogConfig.width = "100% ";
-                dialogConfig.data = {
-                  modalId: modalId,
-                  // employeeData:employeeData,
-                  clickedLabel:clickedLabel
-                }
-                matDialog.open(DataModalComponent, dialogConfig);
-              }
+              // function openLabelModal(clickedLabel) {
+              //   const dialogConfig = new MatDialogConfig();
+              //   const modalId = "modal01";
+              //   // const empData = employeeData
+              //   dialogConfig.disableClose = true;
+              //   // dialogConfig.id = "modal-component";
+              //   dialogConfig.height = "100%";
+              //   dialogConfig.width = "100% ";
+              //   dialogConfig.data = {
+              //     modalId: modalId,
+              //     employeeData:employeeData,
+              //     clickedLabel:clickedLabel
+              //   }
+              //   matDialog.open(DataModalComponent, dialogConfig);
+              // }
 
             this.categoryAxis.renderer.cellStartLocation = 0.2;
             this.categoryAxis.renderer.cellEndLocation = 0.8;
@@ -339,10 +333,7 @@ export class DataGraphComponent implements OnInit {
             // }
 
             this.valueAxis.title.text = '';
-            // this.valueAxis.min = this.valueAxis.minZoomed;
-            // this.valueAxis.max = this.valueAxis.maxZoomed;
-            // this.valueAxis.max = 'auto';
-            // this.valueAxis.min = 0.1;
+            
             this.valueAxis.renderer.minGridDistance = 10;
             this.valueAxis.strictMinMax = true;
 
@@ -360,8 +351,6 @@ export class DataGraphComponent implements OnInit {
             this.series2.heatRules.push({
               target: this.series2.columns.template,
               property: 'fill',
-              // min: am4core.color('#a657e6'),
-              // max: am4core.color('#1946a2'),
               dataField: 'valueY',
             });
             
@@ -392,6 +381,7 @@ export class DataGraphComponent implements OnInit {
               this.series3.tooltip.pointerOrientation = 'vertical';
             }
 
+
             // Add cursor
             this.chart.cursor = new am4charts.XYCursor();
 
@@ -419,12 +409,8 @@ export class DataGraphComponent implements OnInit {
               //   "value": this.chartData.labelData2.count
               // }]
             }
+           
 
-            // this.chartData.series2
-            //   ? (this.chart.legend.disabled = true)
-            //   : (this.chart.legend.disabled = false);
-            // this.chart.scrollbarX = new am4core.Scrollbar();
-            // this.series3
             break;
 
           case 'donutChart':
@@ -444,7 +430,7 @@ export class DataGraphComponent implements OnInit {
             this.pieSeries.dataFields.category = '_id';
             this.pieSeries.labels.template.text = 
             "{category}: {value.percent.formatNumber('#.#')}% ({value})";
-            this.pieChart.innerRadius = am4core.percent(45);
+            this.pieChart.innerRadius = am4core.percent(50);
             this.pieSeries.slices.template.stroke = am4core.color('#fff');
             this.pieSeries.slices.template.strokeWidth = 2;
             this.pieSeries.slices.template.strokeOpacity = 1;
@@ -456,8 +442,8 @@ export class DataGraphComponent implements OnInit {
               },
             ];
             this.pieSeries.colors.list = [
-              am4core.color('#92b7f2'),
-              am4core.color('#ee5873'),
+              am4core.color('#6FC1D3'),
+              am4core.color('#EE5873'),
             ];
             this.pieSeries.alignLabels = false;
             this.pieSeries.labels.template.bent = true;

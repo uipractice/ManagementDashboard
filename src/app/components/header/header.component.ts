@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { WebRequestService } from 'src/services/web-request.service';
+import { CommonService } from 'src/services/common.service';
 
 @Component({
   selector: 'ev-header',
@@ -51,16 +52,14 @@ export class HeaderComponent implements OnInit {
   constructor(
     private httpService: HttpClient,
     private router: Router,
-    public service: WebRequestService
+    public service: WebRequestService, public commonService: CommonService
   ) {}
 
   ngOnInit(): void {
-    this.service.getSummeryCount().then((res) => {
-      if (res['statusCode'] === 200) {
-        this.headerCount = res['data']['result'];
-        this.headerCountLoaded = true;
-      }
-    });
+    this.commonService.gettingData.subscribe(res =>{
+      this.headerCount = res;
+      this.headerCountLoaded = true;
+    })
     if (sessionStorage.getItem('userInfo')) {
       this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
     }
@@ -78,8 +77,7 @@ export class HeaderComponent implements OnInit {
           if (e.notification) {
             this.notificationCount = e.notification;
           }
-          // this.hoursCount = element.hoursCount;
-          // console.log(this.hoursCount);
+         
         });
       },
       (err: HttpErrorResponse) => {

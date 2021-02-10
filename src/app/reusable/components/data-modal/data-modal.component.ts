@@ -24,9 +24,9 @@ export class DataModalComponent implements OnInit {
     this.data = this.modalData.modalData
     this.allNewData = this.modalData.allNewsData
     this.rowData =  this.modalData.employeeData
+    this.selectedLabel =  this.modalData.clickedLeabel
     this.rowData.forEach((row, i) => row['SLNo'] = i + 1)
     console.log('this.data', this.rowData);
-    console.log('Label', this.selectedLabel);
     // this.classHeight= "small-height";
   }
   columnDefs = [

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { WebRequestService } from 'src/services/web-request.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DataModalComponent } from 'src/app/reusable/components/data-modal/data-modal.component';
+import { CommonService } from 'src/services/common.service';
 
 @Component({
   selector: 'ev-dashboard-container',
@@ -71,7 +72,8 @@ export class DashboardContainerComponent implements OnInit {
     "employee_reporting_to": "Ramesh Madala"
 }​​​​​​​]
 
-  constructor(private router: Router, public service: WebRequestService, public matDialog: MatDialog) {}
+  constructor(private router: Router, public service: WebRequestService,
+     public matDialog: MatDialog, public commonService: CommonService) {}
   ngOnInit() {
     this.service.getAccountGraphData().then((res:any) => {
       if (res['statusCode'] === 200) {
@@ -118,7 +120,7 @@ export class DashboardContainerComponent implements OnInit {
         this.chartData.labelData1.count = res['data']['result']['billingCount'];
         this.chartData.labelData2.count =
           res['data']['result']['nonBillingCount'];
-        console.log(this.summeryData);
+        this.commonService.transferData(res['data']['result']);
         this.summeryDataLoaded = true;
       }
     });
@@ -193,24 +195,19 @@ export class DashboardContainerComponent implements OnInit {
       });
     }
   }
-  openLogoutModal() {
-    const dialogConfig = new MatDialogConfig();
-    const modalId = "modal01";
-    const employeeData = this.AccountWiseEmpData;
-    // The user can't close the dialog by clicking outside its body
-    dialogConfig.disableClose = true;
-    // dialogConfig.id = "modal-component";
-    dialogConfig.height = "100%";
-    dialogConfig.width = "100% ";
-    dialogConfig.data = {
-      modalId: modalId,
-      employeeData:employeeData 
-      // name: "logout",
-      // title: "Are you sure you want to logout?",
-      // description: "Pretend this is a convincing argument on why you shouldn't logout :)",
-      // actionButtonText: "Logout",
-    }
-    // https://material.angular.io/components/dialog/overview
-    const modalDialog = this.matDialog.open(DataModalComponent, dialogConfig);
-  }
+  // openLogoutModal() {
+  //   const dialogConfig = new MatDialogConfig();
+  //   const modalId = "modal01";
+  //   const employeeData = this.AccountWiseEmpData;
+  //   // The user can't close the dialog by clicking outside its body
+  //   dialogConfig.disableClose = true;
+  //   // dialogConfig.id = "modal-component";
+  //   dialogConfig.height = "100%";
+  //   dialogConfig.width = "100% ";
+  //   dialogConfig.data = {
+  //     modalId: modalId,
+  //     employeeData:employeeData 
+  //   }
+  //   const modalDialog = this.matDialog.open(DataModalComponent, dialogConfig);
+  // }
 }

@@ -278,10 +278,8 @@ export class DataGraphComponent implements OnInit {
               am4charts.XYChart
             );
             this.chart.responsive.enabled = true;
-
             // Add data
             this.chart.data = this.chartData.data;
-           console.log('this.chartData.data', this.chartData.data)
             // Create axes
             this.categoryAxis = this.chart.xAxes.push(
               new am4charts.CategoryAxis()
@@ -299,9 +297,9 @@ export class DataGraphComponent implements OnInit {
               this.categoryAxis.renderer.labels.template.fontWeight = '600';
               this.categoryAxis.renderer.labels.template.fontWeight = '600';
               this.categoryAxis.renderer.labels.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;
+              if(this.chartData.title == 'Accounts Wise Resource Utilization'){
               this.categoryAxis.renderer.labels.template.events.on("hit", function(ev){
-                console.log(ev.target.dataItem.category);
-                const dialogRef = matDialog.open(DataModalComponent, {
+                matDialog.open(DataModalComponent, {
                   width: "100%",
                   height: "100%",
                   data: {
@@ -309,8 +307,9 @@ export class DataGraphComponent implements OnInit {
                     modalId :"modal01",
                     employeeData: employeeData
                   }
-                });
+                })
               });
+            }
               // function openLabelModal(clickedLabel) {
               //   const dialogConfig = new MatDialogConfig();
               //   const modalId = "modal01";
@@ -446,7 +445,7 @@ export class DataGraphComponent implements OnInit {
             this.pieSeries.dataFields.category = '_id';
             this.pieSeries.labels.template.text = 
             "{category}: {value.percent.formatNumber('#.#')}% ({value})";
-            this.pieChart.innerRadius = am4core.percent(50);
+            this.pieChart.innerRadius = am4core.percent(65);
             this.pieSeries.slices.template.stroke = am4core.color('#fff');
             this.pieSeries.slices.template.strokeWidth = 2;
             this.pieSeries.slices.template.strokeOpacity = 1;

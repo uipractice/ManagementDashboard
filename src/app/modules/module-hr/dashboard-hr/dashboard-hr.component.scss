@@ -247,6 +247,7 @@
     color: #239EC5;
     margin-top:7px;
     text-transform: uppercase;
+    margin-bottom:33px;
   }
   .content-block{
     display: inline-block;
@@ -280,7 +281,6 @@
       line-height: 20px;
       color: #7B7B7B;
       text-shadow: none;
-      margin-bottom: 0;
     }
     h6{
       font-weight: 500;
@@ -295,8 +295,10 @@
     padding-left:0;
   }
   .rounded-circles.box-height{
-    height:345px;
-    padding-top:21px;
+    // height:345px;
+    padding-bottom:40px;
+    display:block;
+    min-height:210px;
   }
   .pink-head{
     color: #E76DBD;

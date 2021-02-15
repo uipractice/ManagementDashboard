@@ -41,56 +41,86 @@ export class DataGraphComponent implements OnInit {
   bullet3: any;
   pieSeries: any;
   AccountWiseEmpData = [
-    {​​​​​​​
-    "id": "5f841caa03356a95d0aeeff4",
-    "master1": "Billable",
-    "employee_employee_id": "2",
-    "employee_company_name": "Hari Babu Madduluri",
-    "employee_date_of_joining": "11/17/03",
-    "employee_mail_id": "hmadduluri@evoketechnologies.com",
-    "personal_gender": "Male",
-    "employee_ou_name": "Alliance",
-    "employee_grade_name": "C2",
-    "employee_designation_name": "Delivery Manager",
-    "master3": "Delivery",
-    "employee_functional_reporting_to": "Ramesh Madala",
-    "employee_department_name": "CSC",
-    "employee_reporting_to": "Ramesh Madala"
-}​​​​​​​,
-{​​​​​​​
-    "id": "5f841caa03356a95d0aeeff5",
-    "master1": "Billable",
-    "employee_employee_id": "12",
-    "employee_company_name": "Dayanand Lingampally",
-    "employee_date_of_joining": "3/20/04",
-    "employee_mail_id": "dlingampally@evoketechnologies.com",
-    "personal_gender": "Male",
-    "employee_ou_name": "Clopay Support",
-    "employee_grade_name": "C2",
-    "employee_designation_name": "Delivery Manager",
-    "master3": "Oracle Practice",
-    "employee_functional_reporting_to": "Prasad Kotikalapudi",
-    "employee_department_name": "Clopay",
-    "employee_reporting_to": "Venkat Naidu"
-}​​​​​​​,
-{​​​​​​​
-    "id": "5f841caa03356a95d0aeeff6",
-    "master1": "Billable",
-    "employee_employee_id": "15",
-    "employee_company_name": "Venkata Srinivas Surla",
-    "employee_date_of_joining": "7/14/04",
-    "employee_mail_id": "vsurla@evoketechnologies.com",
-    "personal_gender": "Male",
-    "employee_ou_name": "Project - Multiple",
-    "employee_grade_name": "C1",
-    "employee_designation_name": "Project Manager",
-    "master3": "Delivery",
-    "employee_functional_reporting_to": "Ramesh Madala",
-    "employee_department_name": "CSC",
-    "employee_reporting_to": "Ramesh Madala"
-}​​​​​​​]
-  constructor(@Inject(PLATFORM_ID) private platformId, private zone: NgZone, 
-  public matDialog: MatDialog) {}
+    {
+      id: '5f841caa03356a95d0aeeff4',
+      master1: 'Billable',
+      employee_employee_id: '2',
+      employee_company_name: 'Hari Babu Madduluri',
+      employee_date_of_joining: '11/17/03',
+      employee_mail_id: 'hmadduluri@evoketechnologies.com',
+      personal_gender: 'Male',
+      employee_ou_name: 'Alliance',
+      employee_grade_name: 'C2',
+      employee_designation_name: 'Delivery Manager',
+      master3: 'Delivery',
+      employee_functional_reporting_to: 'Ramesh Madala',
+      employee_department_name: 'CSC',
+      employee_reporting_to: 'Ramesh Madala',
+    },
+    {
+      id: '5f841caa03356a95d0aeeff5',
+      master1: 'Billable',
+      employee_employee_id: '12',
+      employee_company_name: 'Dayanand Lingampally',
+      employee_date_of_joining: '3/20/04',
+      employee_mail_id: 'dlingampally@evoketechnologies.com',
+      personal_gender: 'Male',
+      employee_ou_name: 'Clopay Support',
+      employee_grade_name: 'C2',
+      employee_designation_name: 'Delivery Manager',
+      master3: 'Oracle Practice',
+      employee_functional_reporting_to: 'Prasad Kotikalapudi',
+      employee_department_name: 'Clopay',
+      employee_reporting_to: 'Venkat Naidu',
+    },
+    {
+      id: '5f841caa03356a95d0aeeff6',
+      master1: 'Billable',
+      employee_employee_id: '15',
+      employee_company_name: 'Venkata Srinivas Surla',
+      employee_date_of_joining: '7/14/04',
+      employee_mail_id: 'vsurla@evoketechnologies.com',
+      personal_gender: 'Male',
+      employee_ou_name: 'Project - Multiple',
+      employee_grade_name: 'C1',
+      employee_designation_name: 'Project Manager',
+      master3: 'Delivery',
+      employee_functional_reporting_to: 'Ramesh Madala',
+      employee_department_name: 'CSC',
+      employee_reporting_to: 'Ramesh Madala',
+    },
+  ];
+  accountWiseProject = [
+    {
+      _id: 'Valaris',
+      projects: [
+        { projectName: 'Matter Management' },
+        { projectName: 'Datawarehousing' },
+        { projectName: 'Entity Management' },
+        { projectName: 'Alliance' },
+        { projectName: 'RIM' },
+        { projectName: 'Datamasters' },
+        { projectName: 'Financials' },
+      ],
+    },
+    {
+      _id: 'CSC',
+      projects: [
+        { projectName: 'CSC-Pega Support' },
+        { projectName: 'Fraud Analysis' },
+        { projectName: 'Entity Management' },
+        { projectName: 'NetNames' },
+        { projectName: 'RIM' },
+        { projectName: 'Datamasters' },
+        { projectName: 'Financials' },
+      ],
+    },
+  ];
+  constructor(
+    @Inject(PLATFORM_ID) private platformId,
+    private zone: NgZone,
+    public matDialog: MatDialog
+  ) {}
   browserOnly(f: () => void) {
     if (isPlatformBrowser(this.platformId)) {
       this.zone.runOutsideAngular(() => {
@@ -98,41 +128,39 @@ export class DataGraphComponent implements OnInit {
       });
     }
   }
-  ngOnInit(): void {
-   
-  }
-  clickedItem(content){
+  ngOnInit(): void {}
+  clickedItem(content) {
     const dialogConfig = new MatDialogConfig();
-    const modalId = "modal02";
+    const modalId = 'modal02';
     const modalData = content.title;
     const allNewsData = this.newsData;
     dialogConfig.disableClose = false;
-    dialogConfig.height = "222px";
-    dialogConfig.width = "598px";
+    dialogConfig.height = '222px';
+    dialogConfig.width = '598px';
     dialogConfig.data = {
       modalId: modalId,
       modalData: modalData,
-      allNewsData:allNewsData
-    }
-   this.matDialog.open(DataModalComponent, dialogConfig);
+      allNewsData: allNewsData,
+    };
+    this.matDialog.open(DataModalComponent, dialogConfig);
   }
-  viewAllNews(){
+  viewAllNews() {
     const dialogConfig = new MatDialogConfig();
-    const modalId = "modal02";
+    const modalId = 'modal02';
     // const modalData = content.title;
-    const modalExpand = true
+    const modalExpand = true;
     const allNewsData = this.newsData;
     dialogConfig.disableClose = false;
-    dialogConfig.height = "222px";
-    dialogConfig.width = "598px";
+    dialogConfig.height = '222px';
+    dialogConfig.width = '598px';
     dialogConfig.data = {
       modalId: modalId,
       modalExpand: modalExpand,
-      allNewsData:allNewsData
-    }
+      allNewsData: allNewsData,
+    };
     this.matDialog.open(DataModalComponent, dialogConfig);
   }
-  
+
   ngAfterViewInit() {
     // Chart code goes in here
     if (this.dataLoaded)
@@ -251,11 +279,12 @@ export class DataGraphComponent implements OnInit {
             break;
 
           case 'multiColorBarChartMultiLevel':
-            let matDialog = this.matDialog
+            let matDialog = this.matDialog;
             let employeeData = this.AccountWiseEmpData;
+            let projectList = this.accountWiseProject;
             console.log(this.chartData);
             this.chartData.data[3] = {};
-            
+
             // alert(this.chartData.data.findIndex((el) => el._id === 'CSC'));
             // this.chartData.data.splice(
             //   this.chartData.data.findIndex((el) => el._id === 'CSC'),
@@ -268,7 +297,7 @@ export class DataGraphComponent implements OnInit {
             //   })
             // );
             this.chartData.data.sort();
-            
+
             am4core.useTheme(am4themes_animated);
             am4core.useTheme(am4themes_kelly);
 
@@ -291,40 +320,48 @@ export class DataGraphComponent implements OnInit {
             this.categoryAxis.renderer.labels.template.rotation = 270;
             this.categoryAxis.renderer.labels.template.verticalCenter =
               'middle';
-              this.categoryAxis.renderer.labels.template.horizontalCenter =
+            this.categoryAxis.renderer.labels.template.horizontalCenter =
               'right';
-              this.categoryAxis.renderer.labels.template.fontSize = '11.5px';
-              this.categoryAxis.renderer.labels.template.fontWeight = '600';
-              this.categoryAxis.renderer.labels.template.fontWeight = '600';
-              this.categoryAxis.renderer.labels.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;
-              if(this.chartData.title == 'Accounts Wise Resource Utilization'){
-              this.categoryAxis.renderer.labels.template.events.on("hit", function(ev){
-                matDialog.open(DataModalComponent, {
-                  width: "100%",
-                  height: "100%",
-                  data: {
-                    clickedLeabel:ev.target.dataItem.category,
-                    modalId :"modal01",
-                    employeeData: employeeData
-                  }
-                })
-              });
+            this.categoryAxis.renderer.labels.template.fontSize = '11.5px';
+            this.categoryAxis.renderer.labels.template.fontWeight = '600';
+            this.categoryAxis.renderer.labels.template.fontWeight = '600';
+            this.categoryAxis.renderer.labels.template.cursorOverStyle =
+              am4core.MouseCursorStyle.pointer;
+            if (this.chartData.title == 'Accounts Wise Resource Utilization') {
+              console.log('this.chart.data', this.chartData.data);
+              let accountList = this.chartData.data;
+              this.categoryAxis.renderer.labels.template.events.on(
+                'hit',
+                function (ev) {
+                  matDialog.open(DataModalComponent, {
+                    width: '100%',
+                    height: '100%',
+                    data: {
+                      clickedLeabel: ev.target.dataItem.category,
+                      modalId: 'modal01',
+                      employeeData: employeeData,
+                      accountList: accountList,
+                      projectList: projectList,
+                    },
+                  });
+                }
+              );
             }
-              // function openLabelModal(clickedLabel) {
-              //   const dialogConfig = new MatDialogConfig();
-              //   const modalId = "modal01";
-              //   // const empData = employeeData
-              //   dialogConfig.disableClose = true;
-              //   // dialogConfig.id = "modal-component";
-              //   dialogConfig.height = "100%";
-              //   dialogConfig.width = "100% ";
-              //   dialogConfig.data = {
-              //     modalId: modalId,
-              //     employeeData:employeeData,
-              //     clickedLabel:clickedLabel
-              //   }
-              //   matDialog.open(DataModalComponent, dialogConfig);
-              // }
+            // function openLabelModal(clickedLabel) {
+            //   const dialogConfig = new MatDialogConfig();
+            //   const modalId = "modal01";
+            //   // const empData = employeeData
+            //   dialogConfig.disableClose = true;
+            //   // dialogConfig.id = "modal-component";
+            //   dialogConfig.height = "100%";
+            //   dialogConfig.width = "100% ";
+            //   dialogConfig.data = {
+            //     modalId: modalId,
+            //     employeeData:employeeData,
+            //     clickedLabel:clickedLabel
+            //   }
+            //   matDialog.open(DataModalComponent, dialogConfig);
+            // }
 
             this.categoryAxis.renderer.cellStartLocation = 0.2;
             this.categoryAxis.renderer.cellEndLocation = 0.8;
@@ -348,7 +385,7 @@ export class DataGraphComponent implements OnInit {
             // }
 
             this.valueAxis.title.text = '';
-            
+
             this.valueAxis.renderer.minGridDistance = 10;
             this.valueAxis.strictMinMax = true;
 
@@ -368,7 +405,7 @@ export class DataGraphComponent implements OnInit {
               property: 'fill',
               dataField: 'valueY',
             });
-            
+
             this.series2.columns.template.strokeWidth = 0;
             this.series2.columns.template.fontSize = '11.5px';
             this.series2.tooltip.pointerOrientation = 'vertical';
@@ -396,7 +433,6 @@ export class DataGraphComponent implements OnInit {
               this.series3.tooltip.pointerOrientation = 'vertical';
             }
 
-
             // Add cursor
             this.chart.cursor = new am4charts.XYCursor();
 
@@ -410,21 +446,15 @@ export class DataGraphComponent implements OnInit {
               this.chart.legend.position = 'bottom';
               this.chart.legend.fontSize = '13px';
               this.chart.legend.fontWeight = '400';
-              this.series2.name = `Billable (${this.chartData.labelData1.count})`
-              this.series3.name = `Non Billable  (${this.chartData.labelData2.count})`
-              // this.chart.legend.disabled = true;
-              // this.chart.legend.valueLabels.template.text = "({value})";
-              // this.chart.legend.data = [{
-              //   "name": `Billable`,
-              //   "fill": "#92b7f2",
-              //   "value": this.chartData.labelData1.count
-              // },{
-              //   "name": "Non Billable",
-              //   "fill": "#ee5873",
-              //   "value": this.chartData.labelData2.count
-              // }]
+              this.series2.name = `Billable (${this.chartData.labelData1.count})`;
+              this.series3.name = `Non Billable  (${this.chartData.labelData2.count})`;
+
+              // this.chart.scrollbarX = new am4core.Scrollbar();
+              // this.chart.dragGrip.autoHideDelay = 5000;
+              this.chart.tapToActivate = true;
+              // this.chart.responsive.useDefault = false
+              this.chart.responsive.enabled = true;
             }
-           
 
             break;
 
@@ -443,8 +473,8 @@ export class DataGraphComponent implements OnInit {
             // this.pieChart.numberFormatter.numberFormat = '#.';
             this.pieSeries.dataFields.value = 'count';
             this.pieSeries.dataFields.category = '_id';
-            this.pieSeries.labels.template.text = 
-            "{category}: {value.percent.formatNumber('#.#')}% ({value})";
+            this.pieSeries.labels.template.text =
+              "{category}: {value.percent.formatNumber('#.#')}% ({value})";
             this.pieChart.innerRadius = am4core.percent(65);
             this.pieSeries.slices.template.stroke = am4core.color('#fff');
             this.pieSeries.slices.template.strokeWidth = 2;
@@ -473,7 +503,9 @@ export class DataGraphComponent implements OnInit {
             );
             shadow.opacity = 0;
             // Create hover state
-            var hoverState = this.pieSeries.slices.template.states.getKey('hover'); 
+            var hoverState = this.pieSeries.slices.template.states.getKey(
+              'hover'
+            );
             var hoverShadow = hoverState.filters.push(
               new am4core.DropShadowFilter()
             );

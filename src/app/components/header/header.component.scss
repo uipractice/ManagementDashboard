@@ -112,7 +112,7 @@ span {
   top: 10px;
 }
 .NotificationContent-new {
-  right: 0px !important;
+  right: -30px !important;
 }
 .DropdownContent::after,
 .NotificationContent-new:after {
@@ -151,10 +151,12 @@ span {
   overflow: hidden;
   padding: 8px 15px 0px 20px;
   letter-spacing: 0.7px;
+  margin-right:7px;
 }
 .NotificationContent-new a {
   display: flex !important;
   padding: 0px !important;
+  cursor: default;
 }
 .NotificationContent {
   top: 153% !important;
@@ -226,6 +228,7 @@ span {
   font-weight: normal;
   line-height: 18px;
   color: #7B7B7B !important;
+  letter-spacing: normal;
 }
 
 // .text.ellipsis::after {
@@ -592,8 +595,8 @@ input:checked + .slider:before {
     padding: 3px 10px 27px 0;
   }
   .CloseNotify {
-    padding: 28px;
-    padding-bottom: 10px;
+    padding: 10px 28px;
+    padding-bottom: 0;
   }
   .CloseNotify h4,
   .CloseNotify h4 span {
@@ -603,6 +606,7 @@ input:checked + .slider:before {
     font-size: 18px;
     line-height: 32px;
     color: #0088d1;
+    margin:0;
   }
   .More {
     float: right;
@@ -616,7 +620,7 @@ input:checked + .slider:before {
     font-weight: lighter;
     font-size: 30px;
     position: absolute;
-    top: 27px;
+    top: 10px;
     right: 20px;
   }
   .NavOption {
@@ -970,6 +974,15 @@ input:checked + .slider:before {
   .SearchDropdown {
     .SearchDropdownTopbtn {
       flex-wrap: wrap;
+    }
+  }
+  .DropdownContent{
+    ul{
+      li{
+        a{
+          line-height: 20px;
+        }
+      }
     }
   }
 }

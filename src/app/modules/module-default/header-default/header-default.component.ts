@@ -10,6 +10,6 @@ export class HeaderDefaultComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.summeryData);
+    
   }
 }

@@ -5,11 +5,11 @@ import { Subject } from 'rxjs/internal/Subject';
   providedIn: 'root'
 })
 export class CommonService {
-  selectedRoute = new Subject();
+  gettingData = new Subject();
 
   constructor() { }
 
-  setSelectedRout(value: any){
-    this.selectedRoute.next(value);
+  transferData(value: any){
+    this.gettingData.next(value);
    }
 }

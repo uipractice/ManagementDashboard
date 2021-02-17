@@ -13,12 +13,16 @@
   <section id="modal-body">
     <div class="account-resource">
       <div class="account-rleft">
-        <select>
-          <option seleced>CSC</option>
+        <select class="accout-select" (change)="onChangrDropdownData($event)">
+          <option seleced>{{selectedLabel}}</option>
+          <option *ngFor="let list of accountList">{{list._id}}</option>
         </select>
         <p>(40 Projects/200 People)</p>
-        <ul>
-          <li class="active">Matter Management</li>
+        <ul class="mobile-hidden">
+          <li *ngFor="let projectList of accountwiseProjects" 
+          [class.active]="projectList === selectedproject"
+          (click)="onSelect(projectList)">{{projectList.projectName}}</li>
+          <!-- <li class="active">Matter Management</li>
           <li>Datawarehousing</li>
           <li>Entity Management</li>
           <li>Alliance</li>
@@ -30,12 +34,24 @@
           <li>CSC-Pega Support</li>
           <li>Fraud Analysis</li>
           <li>NetNames</li>
-          <li>CSC-Pega Support</li>
+          <li>CSC-Pega Support</li> -->
         </ul>
+        <select class="desktop-hidden">
+          <option seleced>Matter Management</option>
+          <option >Entity Management</option>
+          <option >Datawarehousing</option>
+          <option >Alliance</option>
+          <option >RIM</option>
+          <option >Financials</option>
+          <option >CSC-Pega Support</option>
+          <option >Fraud Analysis</option>
+        </select>
+        <p class="desktop-hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, at id
+          bibendum in urna mi quam.Gravida sed imperdiet aenean...</p>
       </div>
       <div class="account-right">
-        <h4>Matter Management (24 People)</h4>
-        <p>
+        <h4 class="mobile-hidden">Matter Management (24 People)</h4>
+        <p class="mobile-hidden">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, at id
           bibendum in urna mi quam. Gravida sed imperdiet aenean suspendisse
           sit. Semper diam leo porttitor orci viverra sodales. Eget porta nunc
@@ -44,43 +60,27 @@
         </p>
         <div class="tech-stack">
           <p>
-            Tech Stack: <span>.net</span> <span>sql server</span>
+            <label>Tech Stack:</label>  <span>.net</span> <span>sql server</span>
             <span>Mongo DB</span> <span>Javascript</span>
           </p>
         </div>
         <div class="account-detail-table">
           <ag-grid-angular
-            style="width: 600px; height: 300px"
+            style="width: 100%; height: 394px"
             class="ag-theme-alpine"
             [rowData]="rowData"
             [columnDefs]="columnDefs"
-          >
+            [pagination]="true">
           </ag-grid-angular>
         </div>
         <div class="desktop-hidden">
-          <div class="employee-detail">
+          <div class="employee-detail" *ngFor="let data of rowData">
             <p>
-              <b>Emp ID:</b> 1547
-              <span class="emp-name">Jithendar Goud Vanga</span>
+              <b>Emp ID:</b>{{data.employee_employee_id}}
+              <span class="emp-name">{{data.employee_company_name}}</span>
             </p>
-            <p>Java Practice <span>Manager - HR</span></p>
-            <p><b>Reporting to:</b> Ramesh Mantra</p>
-          </div>
-          <div class="employee-detail">
-            <p>
-              <b>Emp ID:</b> 1547
-              <span class="emp-name">Jithendar Goud Vanga</span>
-            </p>
-            <p>Java Practice <span>Manager - HR</span></p>
-            <p><b>Reporting to:</b> Ramesh Mantra</p>
-          </div>
-          <div class="employee-detail">
-            <p>
-              <b>Emp ID:</b> 1547
-              <span class="emp-name">Jithendar Goud Vanga</span>
-            </p>
-            <p>Java Practice <span>Manager - HR</span></p>
-            <p><b>Reporting to:</b> Ramesh Mantra</p>
+            <p>{{data.employee_designation_name}} <span>{{data.master3}}</span></p>
+            <p><b>Reporting to:</b>{{data.employee_reporting_to}}</p>
           </div>
         </div>
       </div>
@@ -109,9 +109,18 @@
     </button>
   </header>
   <section id="modal-body">
-    <h4>This is the section of news title</h4>
-  <p>{{data}}</p>
-  <div class="date">07 Oct - Wednesday</div>
-  <a (click)="isListExpanded()" class="view-btn">View All</a>
+    <div *ngIf="!isExpand">
+      <h4>This is the section of news title</h4>
+      <p>{{data}}</p>
+     <div class="date">07 Oct - Wednesday</div>
+    </div>
+  <a (click)="isListExpanded()" class="view-btn">{{isExpand ? '': 'View All'}}</a>
+  <div *ngIf="isExpand">
+    <div *ngFor="let news of allNewData; let i= index;" class="expand-data">
+      <h4>This is the section of news title</h4>
+      <p>{{news.title}}</p>
+      <div class="date">07 Oct - Wednesday</div>
+    </div>
+  </div>
   </section>
 </div>

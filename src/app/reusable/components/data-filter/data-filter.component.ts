@@ -17,27 +17,49 @@ export class DataFilterComponent implements OnInit {
   consolidatedForm: FormGroup;
   accountwiseForm: FormGroup;
   submitted = false;
+  selectedCountryAdvanced: any[];
+  filteredCountries: any[];
+  countries :any[];
 
   streets: string[] = ['2019', '2020', '2021'];
-  filteredStreets: Observable<string[]>;
+ 
   constructor(private formBuilder: FormBuilder) {}
-
+  
   ngOnInit(): void {
-
     this.consolidatedForm = this.formBuilder.group({
       yearList: ['', Validators.required],
       selectFormat: ['yearly',Validators.required]
-  });
+    });
   this.accountwiseForm = this.formBuilder.group({
     accountList: ['', Validators.required],
     yearList: ['', Validators.required],
     selectFormat: ['yearly',Validators.required]
-});
+    });
 
     if(this.title == 'News and Events') {
       this.isDesiable = false
     }else {this.isDesiable = true}
+    this.countries = [
+      {"name": "Honduras", "code": "HN"}, 
+      {"name": "Hong Kong", "code": "HK"}, 
+      {"name": "Hungary", "code": "HU"}, 
+      {"name": "Iceland", "code": "IS"}, 
+      {"name": "India", "code": "IN"}, 
+    ];
   }
+  filterCountry(event) {
+    //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
+    let filtered : any[] = [];
+    let query = event.query;
+    for(let i = 0; i < this.countries.length; i++) {
+        let country = this.countries[i];
+        if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+            filtered.push(country);
+        }
+    }
+    
+    this.filteredCountries = filtered;
+}
 
   onSubmit() {
     this.submitted = true;

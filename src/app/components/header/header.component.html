@@ -2,7 +2,7 @@
   <div class="ds-con">
     <div class="ColAlign">
       <img class="navbar-brand logo" src="../../../../assets/images/main/logo.svg" alt="">
-      <div class="VerLine" *ngIf="headerCount">
+      <div class="VerLine" *ngIf="headerCountLoaded">
         <span class="HoursDetails">Total Working Hours: {{headerCount['workingHour']}} </span>
         <!-- <span class="HoursPerc">({{hours.value}}% ) </span> -->
         <!-- <span class="HoursImg" *ngIf="hours.arrowFlag===true; else elseBlock"><img
@@ -11,13 +11,13 @@
           <span class="hours-img"><img src="..\..\..\assets\images\main\arrow_down.svg"></span>
         </ng-template> -->
       </div>
-      <div class="VerLine">
+      <div class="VerLine" *ngIf="headerCountLoaded">
         <span class="HoursDetails">Average Hours: 08 </span>
         <!-- <span class="HoursPerc">({{hours.value}}% ) </span> -->
         <!-- <span class="HoursImg" ><img src="..\..\..\assets\images\main\arrow_up.svg"></span>-->
       </div>
     </div>
-    <div class="VerLine2">
+    <div class="VerLine2" *ngIf="headerCountLoaded">
       <!-- <ev-dashboard-search [isShow]="isShow" [isOpen]="isOpen" (myOutput) ="GetChildData($event)"></ev-dashboard-search> -->
 
       <div class="">
@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-    <div class="VerLine2 Notification">
+    <div class="VerLine2 Notification" *ngIf="headerCountLoaded">
       <a *ngIf="notificationCount" class="dropbtn" [matMenuTriggerFor]="notificationMenu"><img class="HeaderIcons"
           src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge"
           *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
@@ -84,7 +84,7 @@
             </div>
           </mat-menu> -->
     </div>
-    <div class="dropdown VerLine2 pdr-0">
+    <div class="dropdown VerLine2 pdr-0" *ngIf="headerCountLoaded">
       <a class="dropbtn" (click)="toggleDropdown()" [matMenuTriggerFor]="profileMenu"><img class="HeaderIcons"
           src="..\..\..\assets\images\main\user.svg"></a>
           
@@ -122,14 +122,14 @@
     <div class="DropdownContent mobile-usermenu" *ngIf="!isShow">
       <button type="button" class="close" data-dismiss="modal">&times;</button>
       <ul>
-        <li class="UserIcon"> <a href="#" class="UserDropdown">
+        <li class="UserIcon"> <a href="javascript:void(0)" class="UserDropdown">
            
             <div class="user">User Name<br><span>Designation</span></div>
           </a></li>
-        <li class="ProfileBg"><a href="#"> My Profile</a></li>
+        <li class="ProfileBg"><a href="javascript:void(0)"> My Profile</a></li>
         <li class="FeedbackBg"><a class="">Provide Feedback</a></li>
        
-        <li class="Darkbg dark-theme"><a href="#"> Dark
+        <li class="Darkbg dark-theme"><a href="javascript:void(0)"> Dark
             Theme</a><label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
@@ -161,7 +161,7 @@
             </div>
             <div class="SearchDropdownData">
               <ul>
-                <li class="disabled"><a href="#">Try Searching for</a></li>
+                <li class="disabled"><a href="javascript:void(0)">Try Searching for</a></li>
                 <li><a class="">People </a></li>
                 <li><a>Account</a></li>
                 <li><a>Practice</a></li>
@@ -184,7 +184,7 @@
         </div>
         <ul>
           <li *ngFor="let data of notificationCount;" class="notication-border">
-            <a href="#" class="NotifyIcon">
+            <a href="javascript:void(0)" class="NotifyIcon">
              
               <div class="text ellipsis NotifyText">{{data.desc | charlimitpipe: 40}}
                 <span class="NotifyDate">10-09-2020</span>
@@ -204,19 +204,10 @@
                 data-dismiss="modal">&times;</button>
             </div>
             <ul>
-              <li class="news-border">
-                <a href="#">
-                  <div class="news-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Quisquam at doloremque
-                  </div>
-                </a></li>
-                <li class="news-border">
-                  <a href="#">
-                    <div class="news-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                      Quisquam at doloremque
-                    </div>
-                  </a></li>
-             
+              <li class="news-border" *ngFor="let news of newsLetterData; let i= index;">
+                <a href="javascript:void(0)">
+                  <div class="news-content">{{news.title}}</div>
+                </a></li>             
             </ul>
           </div>
         </mat-menu> 

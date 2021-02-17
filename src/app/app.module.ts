@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { AgGridModule } from 'ag-grid-angular';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +16,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CharLimitpipe } from './components/pipes/char-limit.pipe';
 import { DataGraphComponent } from './reusable/components/data-graph/data-graph.component';
 import { DataFilterComponent } from './reusable/components/data-filter/data-filter.component';
-import { CssLoaderComponent } from './reusable/components/css-loader/css-loader.component';
+// import { CssLoaderComponent } from './reusable/components/css-loader/css-loader.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { WebReqInterceptor } from '../services/web-req.interceptor';
 import { Data } from './helper/datastore';
@@ -29,7 +28,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import {MatIconModule} from '@angular/material/icon';
 import { MaterialModule } from './modules/shared/material.module';
 import { DataModalComponent } from './reusable/components/data-modal/data-modal.component';
-
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { AgGridModule } from 'ag-grid-angular';
+import { AuthGuard } from './guards/auth.guard';
+import { LoginGuard } from './guards/login.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +45,9 @@ import { DataModalComponent } from './reusable/components/data-modal/data-modal.
     // CharLimitpipe,
     DataGraphComponent,
     DataFilterComponent,
-    CssLoaderComponent,
+    // CssLoaderComponent,
     // PlaceHolderComponent,
-    DataModalComponent,
+    DataModalComponent
     // DashboardComponent,
   ],
   imports: [
@@ -57,16 +60,20 @@ import { DataModalComponent } from './reusable/components/data-modal/data-modal.
     SharedModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
-    AgGridModule.withComponents(null),
+    AgGridModule.withComponents([]),
     BrowserAnimationsModule,
     // MatMenuModule,
     // MatIconModule,
-    MaterialModule
+    MaterialModule,
+    AutoCompleteModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: WebReqInterceptor, multi: true },
     Data,
     CookieService,
+    AuthGuard,
+    LoginGuard,
+    { provide: LocationStrategy, useClass: HashLocationStrategy},
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

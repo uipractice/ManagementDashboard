@@ -1,0 +1,140 @@
+// div{ border:1px solid ;width:100%; height:calc(100vh - 66px); overflow-y: scroll;}
+// div{border:1px solid blue; width:100%; height:calc(100vh - 76px); overflow-y: scroll;}
+
+.FlxContainer {display: flex; margin-top: 18px;flex-wrap: nowrap;border-radius: 6px;}
+.card{
+  width: 100%;
+  height: 108px;
+  // padding: 6px 15px 12px;
+  border-radius: 0px;
+  margin-right: 13px;
+  box-shadow: -1px 2px 1px rgba(0, 0, 0, 0.08);
+  h2{
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 38px;
+      color: #023047;
+      margin-bottom: 0;
+  }
+  h3{
+      font-size: 14px;
+      font-weight: 400;
+      color: #7b7b7b;
+  }
+  .CardCount{
+    padding:8px 15px 0px;
+  }
+  .ThisMonth{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #A7A5A5;
+    padding: 8px 15px 5px;
+    box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
+    height: 28px;
+    }
+.CardImg img{
+  position: absolute;
+  right: 15px;
+  top: 40px;
+  width: 43px;
+  height: 40px;
+}
+}
+.card:last-child{
+  margin-right: -8px !important;
+}
+@media only screen and (min-width: 600px) and (max-width:768px){
+  .FlxContainer{
+    display: inline-flex;
+    margin-top: 18px;
+    flex-wrap: nowrap;
+    width: 700px;
+    overflow: auto;
+    border-radius: 0px;
+}
+.card{
+    width: 200px;
+    border-radius: 0px;
+    margin-right: 10px;
+    min-width: 200px;
+    h2{
+        font-size: 24px;
+        font-weight: bold;
+    }
+    h3{
+        font-size: 12px;
+        color: #7b7b7b;
+        font-weight: 500 !important;
+    }
+}
+}
+@media only screen and (min-width: 426px) and (max-width:1440px){
+  .AvgHours{
+    display: none;
+  }
+}
+
+@media only screen and (min-width:320px) and (max-width:425px){
+  .AvgHours{
+    display: flex;
+    margin-top: 16px;
+  }
+  .WorkHrs{
+    margin-right: 11px;
+  }
+  .VerLine{
+    font-family: "Lato", sans-serif !important;
+    span{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 0.875rem;
+      line-height: 19.2px;
+      color: #023047;
+    }
+  }
+  .HoursDetail{
+    color: #023047;
+  }
+  .HoursPerc{
+    color: #929292;
+  }
+  .VerLine:last-of-type{
+    border-right: none;
+  }
+  .FlxContainer{
+      display: inline-flex;
+      margin-top: 18px;
+      flex-wrap: nowrap;
+      width: 360px;
+      overflow: auto;
+      border-radius: 0px;
+  }
+  .card{
+      width: 200px;
+      border-radius: 0px;
+      margin-right: 10px;
+      min-width: 200px;
+      h2{
+          font-size: 24px;
+          font-weight: bold;
+      }
+      h3{
+          font-size: 12px;
+          color: #7b7b7b;
+          font-weight: 500 !important;
+      }
+  }
+}
+@media only screen and (min-width:376px) and (max-width:425px){
+  .FlxContainer{
+    width: 400px;
+    height:120px;
+  }
+}
+@media only screen and (max-width:375px) and (min-width: 320px){
+  .AvgHours{
+    display: block;
+  }
+}

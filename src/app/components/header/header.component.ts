@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { WebRequestService } from 'src/services/web-request.service';
+import { CommonService } from 'src/services/common.service';
 
 @Component({
   selector: 'ev-header',
@@ -19,25 +20,24 @@ export class HeaderComponent implements OnInit {
   isparentSearch: any;
   notificationCount: any;
   userInfo: any;
-  currentUser = sessionStorage.getItem('user');
   hoursCount: any;
-  toggleDropdown($event) {
-    $event.stopPropagation();
+  newsLetterData: any = [];
+  toggleDropdown() {
+    // $event.stopPropagation();
     this.isShow = !this.isShow;
-    this.isOpen = true;
-    this.isSearch = true;
+    // this.isOpen = true;
+    // this.isSearch = true;
   }
-  toggleDowncontent($event) {
-    $event.stopPropagation();
+  toggleDowncontent() {
     this.isOpen = !this.isOpen;
-    this.isShow = true;
-    this.isSearch = true;
+    // this.isShow = true;
+    // this.isSearch = true;
   }
   toggledownSearch(e) {
     e.stopPropagation();
     this.isSearch = !this.isSearch;
-    this.isShow = true;
-    this.isOpen = true;
+    // this.isShow = true;
+    // this.isOpen = true;
   }
   //   GetChildData(data){
   //     console.log(data);
@@ -45,27 +45,23 @@ export class HeaderComponent implements OnInit {
   //  }
 
   onClick() {
-    this.isShow = true;
-    this.isOpen = true;
+    // this.isShow = true;
+    // this.isOpen = true;
     this.isSearch = true;
   }
   constructor(
     private httpService: HttpClient,
     private router: Router,
-    public service: WebRequestService
+    public service: WebRequestService, public commonService: CommonService
   ) {}
 
   ngOnInit(): void {
-    this.service.getSummeryCount().then((res) => {
-      console.log(res);
-      if (res['statusCode'] === 200) {
-        this.headerCount = res['data']['result'];
-        console.log(this.headerCount);
-        this.headerCountLoaded = true;
-      }
-    });
-    if (localStorage.getItem('userInfo')) {
-      this.userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    this.commonService.gettingData.subscribe(res =>{
+      this.headerCount = res;
+      this.headerCountLoaded = true;
+    })
+    if (sessionStorage.getItem('userInfo')) {
+      this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
     }
 
     this.httpService.get('assets/header_count.json').subscribe(
@@ -81,21 +77,19 @@ export class HeaderComponent implements OnInit {
           if (e.notification) {
             this.notificationCount = e.notification;
           }
-          // this.hoursCount = element.hoursCount;
-          // console.log(this.hoursCount);
+         
         });
-        console.log(this.hoursCount);
       },
       (err: HttpErrorResponse) => {
-        console.log(err.message);
       }
     );
 
-    //   getcustomcss(){
-    //     if(this.arrHours[i]== this.arrHours[this.arrHours.length-1]){
-    //     return 'class1';
-    //   }
-    // }
+    for (var i = 0; i < 10; i++) {
+      this.newsLetterData.push({
+        title:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      });
+    }
   }
   logout() {
     sessionStorage.clear();

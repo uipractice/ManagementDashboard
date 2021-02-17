@@ -2,7 +2,7 @@
   <div class="ds-con">
     <div class="ColAlign">
       <img class="navbar-brand logo" src="../../../../assets/images/main/logo.svg" alt="">
-      <div class="VerLine" *ngIf="headerCount">
+      <div class="VerLine" *ngIf="headerCountLoaded">
         <span class="HoursDetails">Total Working Hours: {{headerCount['workingHour']}} </span>
         <!-- <span class="HoursPerc">({{hours.value}}% ) </span> -->
         <!-- <span class="HoursImg" *ngIf="hours.arrowFlag===true; else elseBlock"><img
@@ -11,13 +11,13 @@
           <span class="hours-img"><img src="..\..\..\assets\images\main\arrow_down.svg"></span>
         </ng-template> -->
       </div>
-      <div class="VerLine">
+      <div class="VerLine" *ngIf="headerCountLoaded">
         <span class="HoursDetails">Average Hours: 08 </span>
         <!-- <span class="HoursPerc">({{hours.value}}% ) </span> -->
         <!-- <span class="HoursImg" ><img src="..\..\..\assets\images\main\arrow_up.svg"></span>-->
       </div>
     </div>
-    <div class="VerLine2">
+    <div class="VerLine2" *ngIf="headerCountLoaded">
       <!-- <ev-dashboard-search [isShow]="isShow" [isOpen]="isOpen" (myOutput) ="GetChildData($event)"></ev-dashboard-search> -->
 
       <div class="">
@@ -27,122 +27,145 @@
           <div class="SearchDropdown" *ngIf="!isSearch">
             <div class="SearchDropdownTopbtn">
               <ul>
-                <li><a href="#"><button>Mgmt. Dashboard</button></a></li>
-                <li><a href="#" class=""><button>HR</button></a></li>
-                <li><a href="#"><button>IT</button></a></li>
-                <li><a href="#"><button>Admin</button></a></li>
+                <li><a><button>Mgmt. Dashboard</button></a></li>
+                <li><a  class=""><button>HR</button></a></li>
+                <li><a><button>IT</button></a></li>
+                <li><a><button>Admin</button></a></li>
               </ul>
             </div>
             <div class="SearchDropdownData">
               <ul>
                 <li class="disabled"><a href="#">Try Searching for</a></li>
-                <li><a href="#" class="">People </a></li>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Practice</a></li>
-                <li><a href="#">Department</a></li>
+                <li><a class="">People </a></li>
+                <li><a>Account</a></li>
+                <li><a>Practice</a></li>
+                <li><a>Department</a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="VerLine2 Notification">
-      <a *ngIf="notificationCount" class="dropbtn" (click)="toggleDowncontent($event)"><img class="HeaderIcons"
+    <div class="VerLine2 Notification" *ngIf="headerCountLoaded">
+      <a *ngIf="notificationCount" class="dropbtn" [matMenuTriggerFor]="notificationMenu"><img class="HeaderIcons"
           src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge"
           *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
-      <div class="DropdownContent NotificationContent" *ngIf="!isOpen && notificationCount.length > 0">
-        <!-- <ul><li *ngFor="let data of notificationCount;" ><a href="#" class="" data-toggle="modal" data-target="#myModal">{{data.desc | charlimitpipe: 40}} </a></li>
-        </ul> -->
-        <h6 class="NotifyHeader">Notifications</h6>
-        <ul>
-          <li *ngFor="let _nt of notificationCount">
-            <a class="NotifyIcon">
-              <div class="text ellipsis NotifyText">
-                <span class="text-concat">{{_nt.desc}}</span>
-                <span class="NotifyDate">10-09-2020</span>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
+
+          <mat-menu #notificationMenu="matMenu" xPosition="before">
+            <div class="NotificationContent-new" (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()">
+              <h6 class="NotifyHeader">Notifications</h6>
+              <ul>
+                <li *ngFor="let _nt of notificationCount">
+                  <a class="NotifyIcon">
+                    <div class="text ellipsis NotifyText">
+                      <span class="text-concat">{{_nt.desc}}</span>
+                      <span class="NotifyDate">10-09-2020</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </mat-menu>
+
+          <!-- <mat-menu #menu="matMenu"  xPosition="before">
+            <div class="NotificationContent" (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()"
+            *ngIf="!isOpen && notificationCount.length > 0">
+              <h6 class="NotifyHeader">Notifications</h6>
+              <ul>
+                <li *ngFor="let _nt of notificationCount">
+                  <a class="NotifyIcon">
+                    <div class="text ellipsis NotifyText">
+                      <span class="text-concat">{{_nt.desc}}</span>
+                      <span class="NotifyDate">10-09-2020</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </mat-menu> -->
     </div>
-    <div class="dropdown VerLine2 pdr-0">
-      <a class="dropbtn" (click)="toggleDropdown($event)"><img class="HeaderIcons"
+    <div class="dropdown VerLine2 pdr-0" *ngIf="headerCountLoaded">
+      <a class="dropbtn" (click)="toggleDropdown()" [matMenuTriggerFor]="profileMenu"><img class="HeaderIcons"
           src="..\..\..\assets\images\main\user.svg"></a>
-      <div class="DropdownContent" *ngIf="!isShow">
-        <ul>
-          <li class="UserIcon"> <a href="#" class="UserDropdown">
-              <!-- <img src="..\..\..\assets\images\main\user.svg"> -->
-              <div class="user">{{userInfo.name}}<br><span>{{userInfo.designation}}</span></div>
-            </a></li>
-          <li class="ProfileBg"><a href="#" class=""> My Profile</a></li>
-          <li class="FeedbackBg"><a href="#" class=""> Provide Feedback</a></li>
-          <li class="Darkbg dark-theme"><span class="ml-40"> Dark
-              Theme</span><label class="switch">
-              <input type="checkbox">
-              <span class="slider round"></span>
-            </label></li>
-          <li class="LogoutBg"><a class="" (click)="logout()"> Logout</a></li>
-        </ul>
-      </div>
+          
+          <mat-menu #profileMenu="matMenu">
+            <div  class="DropdownContent" (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()">
+              <ul>
+                <li class="UserIcon"> <a class="UserDropdown">
+                   
+                    <div class="user">{{userInfo.name}}<br><span>{{userInfo.designation}}</span></div>
+                  </a></li>
+                <li class="ProfileBg"><a  class=""> My Profile</a></li>
+                <li class="FeedbackBg"><a class=""> Provide Feedback</a></li>
+                <li class="Darkbg dark-theme"><span class="ml-40"> Dark
+                    Theme</span><label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label></li>
+                <li class="LogoutBg"><a class="" (click)="logout()"> Logout</a></li>
+              </ul>
+            </div>
+          </mat-menu>   
+      
     </div>
   </div>
 </nav>
 
 
-
-
+<!--Mobile view-->
 
 <nav class="navbar NavMobileHeader">
   <div class="NavWidth">
-    <a class="dropbtn hamburger-mobile" (click)="toggleDropdown($event)"><img
+    <a class="dropbtn hamburger-mobile" (click)="toggleDropdown()" [matMenuTriggerFor]="profileMenumobile"><img
         src="..\..\..\assets\images\main\Hamburger.svg"></a>
+        <mat-menu #profileMenumobile="matMenu">
     <div class="DropdownContent mobile-usermenu" *ngIf="!isShow">
       <button type="button" class="close" data-dismiss="modal">&times;</button>
       <ul>
-        <li class="UserIcon"> <a href="#" class="UserDropdown">
-            <!-- <img src="..\..\..\assets\images\main\user.svg"> -->
+        <li class="UserIcon"> <a href="javascript:void(0)" class="UserDropdown">
+           
             <div class="user">User Name<br><span>Designation</span></div>
           </a></li>
-        <li class="ProfileBg"><a href="#"><!--<img class="UserImg" src="..\..\..\assets\images\main\myprofile.svg">--> My Profile</a></li>
-        <li class="FeedbackBg"><a class=""><!--<img class="UserImg" src="..\..\..\assets\images\main\feedback.svg">--> Provide Feedback</a></li>
-        <!-- <li><a href="#">Update Password</a></li> -->
-        <li class="Darkbg dark-theme"><a href="#"><!--<img class="UserImg" src="..\..\..\assets\images\main\theme_icon.svg">--> Dark
+        <li class="ProfileBg"><a href="javascript:void(0)"> My Profile</a></li>
+        <li class="FeedbackBg"><a class="">Provide Feedback</a></li>
+       
+        <li class="Darkbg dark-theme"><a href="javascript:void(0)"> Dark
             Theme</a><label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
           </label></li>
-        <li class="LogoutBg logout-link"><a class="Logout" (click)="logout()"><!--<img class="UserImg"
-              src="..\..\..\assets\images\main\Logout_icon.svg">--> Logout</a></li>
+        <li class="LogoutBg logout-link"><a class="Logout" (click)="logout()">
+              Logout</a></li>
       </ul>
     </div>
+  </mat-menu>   
     <a><img src="..\..\..\assets\images\main\logo.svg"></a>
   </div>
   <div class="NavOption">
     <div class="MobileSearch">
-      <!-- <ev-dashboard-search></ev-dashboard-search> -->
+    
       <div class="">
         <input type="search" class="search SearchMob" on-click="toggledownSearch($event)" placeholder="">
-        <!-- <img class="SearchImg" src="..\..\..\assets\images\main\search.svg"> -->
+       
         <div class="DropdownMain" *ngIf="!isSearch">
           <div class="CloseBtn"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
           <input type="search" class="SearchDrop SearchMob" placeholder="Search">
           <div class="SearchDropdown">
             <div class="SearchDropdownTopbtn">
               <ul>
-                <li><a href="#"><button>Mgmt. Dashboard</button></a></li>
-                <li><a href="#" class=""><button>HR</button></a></li>
-                <li><a href="#"><button>IT</button></a></li>
-                <li><a href="#"><button>Admin</button></a></li>
+                <li><a><button>Mgmt. Dashboard</button></a></li>
+                <li><a class=""><button>HR</button></a></li>
+                <li><a><button>IT</button></a></li>
+                <li><a><button>Admin</button></a></li>
               </ul>
             </div>
             <div class="SearchDropdownData">
               <ul>
-                <li class="disabled"><a href="#">Try Searching for</a></li>
-                <li><a href="#" class="">People </a></li>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Practice</a></li>
-                <li><a href="#">Department</a></li>
+                <li class="disabled"><a href="javascript:void(0)">Try Searching for</a></li>
+                <li><a class="">People </a></li>
+                <li><a>Account</a></li>
+                <li><a>Practice</a></li>
+                <li><a>Department</a></li>
               </ul>
             </div>
           </div>
@@ -150,28 +173,19 @@
       </div>
     </div>
     <div class="Notification">
-      <a *ngIf="notificationCount" class="dropbtn" (click)="toggleDowncontent($event)"><img class="HeaderIcons"
+      <a *ngIf="notificationCount" class="dropbtn" (click)="toggleDowncontent()" [matMenuTriggerFor]="notificationMenumobile"><img class="HeaderIcons"
           src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge"
           *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
-      <!-- <div class="DropdownContent NotificationContent" *ngIf="!isOpen">
-          <div class="CloseBtn"><button type="button" class="close" data-dismiss="modal">&times;</button></div>
-          <ul>
-            <li><a href="#" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            In in interdum eros.  </a></li>
-          <li><a href="#">Lorem ipsum dolor sit amet, . </a></li>
-        <li><a href="#">Lorem ipsum  </a></li>
-        </ul>
-
-          </div> -->
-      <div class="DropdownContent NotificationContent" *ngIf="!isOpen && notificationCount.length > 0">
+      <mat-menu #notificationMenumobile="matMenu" class="menu-screen">
+      <div class="DropdownContent NotificationContent">
         <div class="CloseNotify">
           <h4>Notifications <span>(20)</span></h4><button type="button" class="close"
             data-dismiss="modal">&times;</button>
         </div>
         <ul>
           <li *ngFor="let data of notificationCount;" class="notication-border">
-            <a href="#" class="NotifyIcon">
-              <!-- <img class="" src="..\..\..\assets\images\main\Notification_bell.svg"> -->
+            <a href="javascript:void(0)" class="NotifyIcon">
+             
               <div class="text ellipsis NotifyText">{{data.desc | charlimitpipe: 40}}
                 <span class="NotifyDate">10-09-2020</span>
               </div>
@@ -179,30 +193,24 @@
           <li><a class="More">MORE</a></li>
         </ul>
       </div>
+    </mat-menu>  
     </div>
-    <div class=" VerLine2 pdr-0"><a class="dropbtn"><img class="NewsImg"
+    <div class=" VerLine2 pdr-0"><a class="dropbtn" [matMenuTriggerFor]="newsEventsmobile"><img class="NewsImg"
           src="..\..\..\assets\images\main\news.svg"></a>
+          <mat-menu #newsEventsmobile="matMenu">
           <div class="DropdownContent">
             <div class="CloseNotify">
               <h4>News and Events</h4><button type="button" class="close"
                 data-dismiss="modal">&times;</button>
             </div>
             <ul>
-              <li class="news-border">
-                <a href="#">
-                  <div class="news-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Quisquam at doloremque
-                  </div>
-                </a></li>
-                <li class="news-border">
-                  <a href="#">
-                    <div class="news-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                      Quisquam at doloremque
-                    </div>
-                  </a></li>
-              <!-- <li><a class="More">MORE</a></li> -->
+              <li class="news-border" *ngFor="let news of newsLetterData; let i= index;">
+                <a href="javascript:void(0)">
+                  <div class="news-content">{{news.title}}</div>
+                </a></li>             
             </ul>
           </div>
+        </mat-menu> 
     </div>
   </div>
 </nav>

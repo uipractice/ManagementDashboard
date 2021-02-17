@@ -126,7 +126,11 @@
     margin-right: 0 !important;
   }
 }
-
+.disabled {
+  cursor: not-allowed !important;
+  opacity:0.6;
+  pointer-events: auto !important; 
+}
 .kebabMenu-icon{
   height:31px;
   width:31px;
@@ -145,12 +149,12 @@
   position: absolute;
     background-color: #fff;
     min-width: 190px;
-    width:253px;
+    width:253px !important;
     border-radius: 0 0 4px 4px;
     box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
-    right: 17px;
-    top: 60px;
+    right: 0;
+    top: 8px;
     padding:10px;
     font-size:14px;
 }
@@ -177,7 +181,6 @@
     label{
       border: 1px solid #239EC5;
       box-sizing: border-box;  
-      border-radius: 0px 2px 2px 0px;
       width: 116px;
       height: 32px;
       text-align: center;
@@ -194,7 +197,6 @@
 }
 .tab:checked+label{
   background: #239EC5 !important;
-  border-radius: 2px 0px 0px 2px !important;
     color:#fff !important;
 }
 .tab__content label.select-label{
@@ -296,6 +298,35 @@
   height: 32px;
   width:30px;
   background:#ddd;
+}
+button:focus{
+  outline: none;
+}
+.button-row{
+  text-align: right;
+  margin-top: 10px;
+  button{
+    border: 1px solid #239EC5;
+    box-sizing: border-box;
+    border-radius: 2px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #fff;
+    background:#239EC5;
+    margin-left: 10px;
+    width: 87px;
+    text-transform: uppercase;
+    height: 32px;
+  }
+  .cancel-btn{
+    background: #F8F8FB;
+    border:1px solid #BDBDBD;
+    border-radius: 2px;
+    color: #57565C;
+  }
 }
 @media only screen and (max-width: 768px) and (min-width: 600px){
   #dropdown-tab{

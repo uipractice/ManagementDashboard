@@ -1,0 +1,346 @@
+.DashboardGraph {
+    margin-top: 15px;
+    display: flex;
+  }
+  .Graph {
+    width: 100%;
+    border: 0;
+    // box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
+    margin-right: 13px;
+    background-color: #fff;
+  }
+  .GraphLast {
+    width: 22% !important;
+    margin-right: 0 !important;
+  }
+  .GraphHead {
+    display: flex;
+    background: #f8f8fb;
+    padding: 15px;
+    width: 100%;
+    align-items: baseline;
+    box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
+    h5 {
+      color: #57565c;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 19px;
+      margin-bottom:0;
+    }
+  }
+  .ls {
+    letter-spacing: -0.2px;
+  }
+  .SelectType {
+    width: 120px;
+    height: 30px;
+    font-size: 14px;
+    padding: 5px 10px 7px;
+    color: #7b7b7b;
+    justify-self: auto;
+    margin-left: auto;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    border: 0;
+    // background-position: right 10% top 45%;
+    // background-size: 12px;
+    -webkit-appearance: none;
+    background: url(src/assets/images/main/down-arrow-user.svg) no-repeat right
+      #fff;
+    background-position: right;
+    background-size: 12px;
+    background-blend-mode: difference;
+    background-origin: content-box;
+    background-position-y: center;
+  }
+  .SelectType:focus,
+  .SelectType:active {
+    outline: none;
+  }
+  
+  .WidSelect {
+    width: 85px !important;
+  }
+  .GraphBody {
+    padding: 0px 15px;
+    background-color: white;
+    font-size: 14px;
+    color: #57565c;
+    // height: 330px;
+    overflow: overlay;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #afaeae #e3e1e1;
+    margin: 1px 10px 10px 0px;
+    ul {
+      padding: 0px;
+      margin: 0px;
+      li {
+        list-style: none;
+        height: 57px;
+        border-bottom: 1px solid #c4c4c4;
+        padding: 10px 0px;
+        overflow: hidden;
+        a {
+          color: #7b7b7b;
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+      li:last-child {
+        border: 0px;
+        padding-bottom: 0px;
+      }
+    }
+  }
+  .GraphBody::-webkit-scrollbar {
+    width: 5px;
+  }
+  .GraphBody::-webkit-scrollbar-track {
+    background: #e3e1e1;
+    border-radius: 15px;
+  }
+  .GraphBody::-webkit-scrollbar-thumb {
+    background: #afaeae;
+    border-radius: 15px;
+    height: 5%;
+  }
+  .GraphBody::-webkit-scrollbar-thumb:hover {
+    background: #afaeae;
+  }
+  .GraphAccounts {
+    width: 68%;
+    margin-right: 0 !important;
+  }
+  .month-data{
+    padding-left: 5px;
+    color: #808080 !important;
+  }
+  @media only screen and (max-width: 425px) and (min-width: 320px) {
+    .DashboardGraph {
+      display: block;
+    }
+    .Graph {
+      width: 100% !important;
+      margin-bottom: 15px;
+      // height: 370px;
+    }
+    .GraphLast {
+      // width: 22% !important;
+      margin-right: 0 !important;
+    }
+  }
+  .disabled {
+    cursor: not-allowed !important;
+    opacity:0.6;
+    pointer-events: auto !important; 
+  }
+  .kebabMenu-icon{
+    height:31px;
+    width:31px;
+    background: url(src/assets/images/main/kebab_menu.svg) no-repeat center;
+    background-size: 12%;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    cursor: pointer;
+  }
+  .kebabMenu-icon:hover{
+    background-color:#E8EFF5;
+    border-radius: 50%;
+  }
+  .DropdownContent{
+    position: absolute;
+      background-color: #fff;
+      min-width: 190px;
+      width:253px !important;
+      border-radius: 0 0 4px 4px;
+      box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      right: 0;
+      top: 8px;
+      padding:10px;
+      font-size:14px;
+  }
+  .DropdownContent:after{
+    content: "";
+      position: absolute;
+      top: -26px;
+      left: 70%;
+      margin-left: 43px;
+      border-width: 10px;
+      border-bottom: 16px solid #f8f8fb;
+      border-style: solid;
+      border-color: transparent transparent #f8f8fb transparent;
+  }
+  #dropdown-tab .tab-content {
+    color : white;
+    padding : 5px 0;
+  }
+  #dropdown-tab{
+    .tab-wrap{
+      input{
+        display:none;
+      }
+      label{
+        border: 1px solid #239EC5;
+        box-sizing: border-box;  
+        width: 116px;
+        height: 32px;
+        text-align: center;
+        font-family: Lato;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 30px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: #239EC5;
+      }
+      
+    }
+  }
+  .tab:checked+label{
+    background: #239EC5 !important;
+      color:#fff !important;
+  }
+  .tab__content label.select-label{
+    width: 100% !important;
+    font-weight: normal !important;
+    font-size: 12px !important;
+    line-height: 14px !important;
+    letter-spacing: 0.01em !important;
+    color: #BDBDBD !important;
+    border:0 !important;
+    height: auto !important;
+    text-align: left !important;
+  }
+  .tab__content select{
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    border-radius: 2px;
+    width: 100%;
+    height: 32px;
+    font-family: Lato;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: #BDBDBD;
+    margin-bottom: 10px;
+    background: transparent;
+  }
+  .tab__content select:focus, .tab__content select:active{
+    border: 1px solid #BDBDBD;
+    outline: none;
+  }
+  .tab-wrap {
+    position: relative;
+    list-style: none;
+    background-color: #fff;
+    
+  }
+  .tab:checked:nth-of-type(1)~.tab__content:nth-of-type(1) {
+      opacity: 1;
+      -webkit-transition: .5s opacity ease-in, .8s -webkit-transform ease;
+      transition: .5s opacity ease-in, .8s -webkit-transform ease;
+      transition: .5s opacity ease-in, .8s transform ease;
+      transition: .5s opacity ease-in, .8s transform ease, .8s -webkit-transform ease;
+      position: relative;
+      top: 0;
+      z-index: 100;
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+      text-shadow: 0 0 0
+  }
+  
+  .tab:checked:nth-of-type(2)~.tab__content:nth-of-type(2) {
+      opacity: 1;
+      -webkit-transition: .5s opacity ease-in, .8s -webkit-transform ease;
+      transition: .5s opacity ease-in, .8s -webkit-transform ease;
+      transition: .5s opacity ease-in, .8s transform ease;
+      transition: .5s opacity ease-in, .8s transform ease, .8s -webkit-transform ease;
+      position: relative;
+      top: 0;
+      z-index: 100;
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+      text-shadow: 0 0 0
+  }
+  
+  .tab__content {
+    padding: 10px 0;
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    left: 0;
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+    border-radius: 6px;
+  }  
+  .radio-btn{
+    display: inline !important;
+  }
+  .year-label{
+    font-style: normal;
+    font-weight: normal !important;
+    font-size: 12px !important;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: #BDBDBD !important;
+    border: 0 !important;
+    display: inline;
+    margin: 0px 7px 0 4px;
+  }
+  .select-account{
+    position: relative;
+  }
+  .select-account:before{
+    content: "";
+    position: absolute;
+    height: 32px;
+    width:30px;
+    background:#ddd;
+  }
+  button:focus{
+    outline: none;
+  }
+  .button-row{
+    text-align: right;
+    margin-top: 10px;
+    button{
+      border: 1px solid #239EC5;
+      box-sizing: border-box;
+      border-radius: 2px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      letter-spacing: 0.01em;
+      color: #fff;
+      background:#239EC5;
+      margin-left: 10px;
+      width: 87px;
+      text-transform: uppercase;
+      height: 32px;
+    }
+    .cancel-btn{
+      background: #F8F8FB;
+      border:1px solid #BDBDBD;
+      border-radius: 2px;
+      color: #57565C;
+    }
+  }
+  @media only screen and (max-width: 768px) and (min-width: 600px){
+    #dropdown-tab{
+      .tab-wrap{
+        label{
+          width: auto;
+          padding: 0 5px;
+        }
+      }
+    }
+    .DropdownContent{
+      width: 215px;
+    }
+  }

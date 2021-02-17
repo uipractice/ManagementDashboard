@@ -101,21 +101,21 @@ span {
 }
 
 .DropdownContent,
-.NotificationContent {
+.NotificationContent-new {
   position: absolute;
   background-color: #fff;
   min-width: 190px;
   border-radius: 0 0 4px 4px;
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
-  right: -11px;
-  top: 60px;
+  right: 6px;
+  top: 10px;
 }
-.NotificationContent {
-  right: 0px !important;
+.NotificationContent-new {
+  right: -30px !important;
 }
 .DropdownContent::after,
-.NotificationContent::after {
+.NotificationContent-new:after {
   content: "";
   position: absolute;
   top: -11%;
@@ -126,7 +126,7 @@ span {
   border-style: solid;
   border-color: transparent transparent #f8f8fb transparent;
 }
-.NotificationContent::after {
+.NotificationContent-new::after {
   content: "";
   position: absolute;
   top: -9%;
@@ -135,6 +135,28 @@ span {
   border-bottom: 18px solid #f8f8fb;
   border-style: solid;
   border-color: transparent transparent #f8f8fb transparent;
+}
+.NotificationContent-new ul{
+  list-style: none;
+    margin: 0px;
+    overflow-y: auto;
+    margin: 10px 5px 10px 0 !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: #afaeae #e3e1e1 !important;
+    height: 235px;
+    padding:0;
+}
+.NotificationContent-new li {
+  border-bottom: 0.5px solid #c4c4c4;
+  overflow: hidden;
+  padding: 8px 15px 0px 20px;
+  letter-spacing: 0.7px;
+  margin-right:7px;
+}
+.NotificationContent-new a {
+  display: flex !important;
+  padding: 0px !important;
+  cursor: default;
 }
 .NotificationContent {
   top: 153% !important;
@@ -206,6 +228,7 @@ span {
   font-weight: normal;
   line-height: 18px;
   color: #7B7B7B !important;
+  letter-spacing: normal;
 }
 
 // .text.ellipsis::after {
@@ -233,25 +256,25 @@ span {
   width: 15px;
   height: 15px;
 }
-.NotificationContent {
+.NotificationContent-new {
   ul::-webkit-scrollbar {
     width: 5px;
   }
 }
-.NotificationContent {
+.NotificationContent-new {
   ul::-webkit-scrollbar-track {
     background: #e3e1e1;
     border-radius: 15px;
   }
 }
-.NotificationContent {
+.NotificationContent-new {
   ul::-webkit-scrollbar-thumb {
     background: #afaeae;
     border-radius: 15px;
     height: 5px !important;
   }
 }
-.NotificationContent {
+.NotificationContent-new {
   ul::-webkit-scrollbar-thumb:hover {
     background: #afaeae;
   }
@@ -440,9 +463,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(17px);
+  -ms-transform: translateX(17px);
+  transform: translateX(17px);
 }
 /* Rounded sliders */
 .slider.round {
@@ -521,8 +544,8 @@ input:checked + .slider:before {
     border-radius: 0 0 4px 4px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     right: 0;
-    top: 0 !important;
-    width: 100% !important;
+    top: -43px !important;
+    width: 100vw !important;
     height: auto;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -572,8 +595,8 @@ input:checked + .slider:before {
     padding: 3px 10px 27px 0;
   }
   .CloseNotify {
-    padding: 28px;
-    padding-bottom: 10px;
+    padding: 10px 28px;
+    padding-bottom: 0;
   }
   .CloseNotify h4,
   .CloseNotify h4 span {
@@ -583,6 +606,7 @@ input:checked + .slider:before {
     font-size: 18px;
     line-height: 32px;
     color: #0088d1;
+    margin:0;
   }
   .More {
     float: right;
@@ -596,7 +620,7 @@ input:checked + .slider:before {
     font-weight: lighter;
     font-size: 30px;
     position: absolute;
-    top: 27px;
+    top: 10px;
     right: 20px;
   }
   .NavOption {
@@ -648,6 +672,7 @@ input:checked + .slider:before {
     width: 70% !important;
     height: 100vh;
     left: 0;
+    top:0 !important;
     border-radius: 0;
     position:fixed;
     -webkit-transition: all .3s ease;
@@ -914,9 +939,32 @@ input:checked + .slider:before {
     }
   }
 }
+
 @media only screen and (max-width: 900px) and (min-width: 426px) {
   .SearchMob {
     display: none;
+  }
+}
+@media only screen and (max-width: 991px) and (min-width: 768px){
+  .VerLine{
+    padding-right: 15px;
+    margin-right: 15px;
+  }
+  .ColAlign{
+    width: 55%;
+  }
+  .SearchMob{
+    display: block;
+    width:155px;
+  }
+  .SearchDropdown{
+    position: absolute;
+    right: 0;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 992px){
+  .VerLine{
+    padding-right: 24px;
   }
 }
 ::-webkit-search-cancel-button {
@@ -926,6 +974,15 @@ input:checked + .slider:before {
   .SearchDropdown {
     .SearchDropdownTopbtn {
       flex-wrap: wrap;
+    }
+  }
+  .DropdownContent{
+    ul{
+      li{
+        a{
+          line-height: 20px;
+        }
+      }
     }
   }
 }
@@ -947,4 +1004,3 @@ input:checked + .slider:before {
     }
   }
 }
-

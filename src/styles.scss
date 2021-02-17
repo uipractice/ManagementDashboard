@@ -9,8 +9,8 @@
 .indigo {
   background-color: #023047 !important;
 }
-* {
-  // font-family: 'Lato', sans-serif !important;
+.ag-theme-alpine .ag-icon{
+  font-family: "agGridAlpine" !important;
 }
 body {
   background-color: #ecedf1;
@@ -39,10 +39,10 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
   background: #afaeae;
 }
-:root {
-  scrollbar-color: #afaeae #e3e1e1 !important;
-  scrollbar-width: thin !important;
-}
+// :root {
+//   scrollbar-color: #afaeae #e3e1e1 !important;
+//   scrollbar-width: thin !important;
+// }
 * {
   font-family: "Lato", sans-serif !important;
 }
@@ -100,5 +100,71 @@ body::-webkit-scrollbar-thumb:hover {
     font-weight: bold;
     color: #57565c;
     line-height: 29px;
+  }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-menu-panel {
+  background: transparent;
+  box-shadow: 0 0 0 0;
+  min-width: 0 !important;
+    max-width: 0 !important;
+}
+// .cdk-overlay-pane{
+//   max-width: 100vw !important;
+//   width: 100% !important;
+// }
+button:focus{
+  outline: none;
+}
+.desktop-hidden{
+  display:none;
+}
+// .myapp-no-padding-dialog .mat-dialog-container {
+//   padding: 0;
+//   pointer-events: auto;
+//   position: static;
+// }
+.cdk-overlay-pane {
+  max-width: 100% !important;
+}
+.account-detail-table{
+  .ag-theme-alpine .ag-row-odd{
+    background: rgba(242, 242, 242, 0.5) !important;
+  }
+  .ag-paging-panel{
+    justify-content: center;  
+  }
+  .ag-theme-alpine .ag-header{
+    background: rgba(32, 158, 197, 0.08);
+  }
+  .ag-header-cell-text{
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #239EC5;
+  }
+  .ag-center-cols-container{
+    width:100% !important;
+  }
+  .ag-paging-row-summary-panel{display:none;}
+}
+.mat-dialog-container{
+  border-radius: 0 !important;
+}
+@media only screen and (min-width:1200px) and (max-width:1280px){
+  .DashboardHeader{
+    width: 94.5%;
+  }
+}
+@media(max-width:425px){
+  .DashboardHeader{
+    margin: 0px;
+    padding: 0px 0px 30px 15px;
+    top: 130px;
+    z-index: 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 96%;
   }
 }

@@ -403,7 +403,7 @@
    }
   @media only screen and(max-width:320px){
     .tab{
-      padding: 10px 0 0 10px !important;
+      padding: 10px 0 0 5px !important;
     }
     .NavImg{
       width: 70px;
@@ -557,8 +557,68 @@
   .HoursImg{
     padding-right: 5px;
   }
+.mobile-text-nav{
+  display:none;
+}
   @media(max-width:414px){
     .ColAlign{
       top:133px;
     }
+    .mobile-text-nav{
+      display:block;
+      position:absolute;
+      color: #fff;
+      bottom: 6px;
+      left: 55px;
+    }
+    .mobile-hr{
+      left:162px;
+    }
+    .mobile-it{
+      left: auto;
+      right: 160px;
+    }
+    .mobile-admin{
+      left: auto;
+      right: 65px;
+    }
   }
+@media(max-width:376px){
+  .mobile-text-nav{
+    left:37px;
+  }
+  .mobile-hr{
+    left:142px;
+  }
+  .mobile-it{
+    left: auto;
+    right: 138px;
+  }
+  .mobile-admin{
+    left: auto;
+    right: 46px;
+  }
+}
+@media(max-width:321px){
+  .tab{
+    top: 37px;
+  }
+  .mobile-text-nav{
+    left:12px;
+    bottom:8px;
+  }
+  .mobile-hr{
+    left:118px;
+  }
+  .mobile-it{
+    left: auto;
+    right: 108px;
+  }
+  .mobile-admin{
+    left: auto;
+    right: 18px;
+  }
+  .ColAlign{
+    top: 126px !important;
+  }
+}

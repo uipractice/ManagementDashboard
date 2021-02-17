@@ -112,7 +112,8 @@
         top:-7%;
         .card{
             background-color: #fff;
-            width: 315px;
+            width: 500px;
+            padding:20px;
             p{
                 font-size: 12px;
             }
@@ -128,5 +129,11 @@
 @media(max-width:420px){
     .right-loginpart{
         top:-17%;
+    }
+    .right-loginpart{
+        .card{
+            width: 315px;
+            padding:0;
+        }
     }
 }

@@ -35,6 +35,8 @@ export class DashboardHrComponent implements OnInit {
     // this.getOnboardAndSeperateData();
     this.getAccountWiseEmployeeAttrition();
     this.getHeadcountDemographicsData();
+    this.getTopThreeReasonData();
+    this.getEmpAttrationData();
 
     this.chartData2 = {
       idName: 'overAllChart2',
@@ -62,21 +64,21 @@ export class DashboardHrComponent implements OnInit {
         },
       ],
     };
-    this.chartData3 = {
-      idName: 'overAllChart5',
-      title: ' Voluntary Attrition : Top 3 Reason',
-      month: 'January',
-      series1: 'litres',
-      legendName1: 'Practices',
-      type: 'extended',
-      label: true,
-      colorCode: '#797FC8',
-      data: [
-        { sector: 'Onsite Opportunity', size: 20 },
-        { sector: 'Technology Exposure', size: 15 },
-        { sector: 'Better Compensation', size: 30 },
-      ],
-    };
+    // this.chartData3 = {
+    //   idName: 'overAllChart5',
+    //   title: ' Voluntary Attrition : Top 3 Reason',
+    //   month: 'January',
+    //   series1: 'litres',
+    //   legendName1: 'Practices',
+    //   type: 'extended',
+    //   label: true,
+    //   colorCode: '#797FC8',
+    //   data: [
+    //     { sector: 'Onsite Opportunity', size: 20 },
+    //     { sector: 'Technology Exposure', size: 15 },
+    //     { sector: 'Better Compensation', size: 30 },
+    //   ],
+    // };
     this.chartData5 = {
       idName: 'overAllChart7',
       title: 'Voluntary Attrition Analysis',
@@ -116,110 +118,16 @@ export class DashboardHrComponent implements OnInit {
         },
       ],
     };
-    this.chartData6 = {
-      idName: 'overAllChart3',
-      title: 'Employee Attrition',
-      series1: 'litres',
-      legendName1: 'Practices',
-      type: 'extended',
-      label: true,
-      colorCode: '#797FC8',
-      data: [
-        {
-          date: 'Jan',
-          All: 19,
-          Voluntary: 12,
-          Involuntary: 5,
-          Abscond: 2,
-        },
-        {
-          date: 'Feb',
-          All: 17,
-          Voluntary: 12,
-          Involuntary: 4,
-          Abscond: 1,
-        },
-        {
-          date: 'March',
-          All: 6,
-          Voluntary: 6,
-          Involuntary: 0,
-          Abscond: 0,
-        },
-        {
-          date: 'April',
-          All: 11,
-          Voluntary: 10,
-          Involuntary: 0,
-          Abscond: 1,
-        },
-        {
-          date: 'May',
-          All: 6,
-          Voluntary: 3,
-          Involuntary: 2,
-          Abscond: 1,
-        },
-        {
-          date: 'June',
-          All: 11,
-          Voluntary: 5,
-          Involuntary: 4,
-          Abscond: 2,
-        },
-        {
-          date: 'July',
-          All: 13,
-          Voluntary: 5,
-          Involuntary: 5,
-          Abscond: 3,
-        },
-        {
-          date: 'August',
-          All: 5,
-          Voluntary: 2,
-          Involuntary: 3,
-          Abscond: 0,
-        },
-        {
-          date: 'Sept',
-          All: 7,
-          Voluntary: 3,
-          Involuntary: 3,
-          Abscond: 1,
-        },
-        {
-          date: 'Oct',
-          All: 5,
-          Voluntary: 5,
-          Involuntary: 0,
-          Abscond: 0,
-        },
-        {
-          date: 'Nove',
-          All: 20,
-          Voluntary: 10,
-          Involuntary: 6,
-          Abscond: 4,
-        },
-        {
-          date: 'Dec',
-          All: 10,
-          Voluntary: 5,
-          Involuntary: 4,
-          Abscond: 1,
-        },
-      ],
-    };
   }
-  handleDates = (list, prop) => {
+  handleDates = (list, prop)=>{
     return list.map((item) => {
       const obj = Object.assign({}, item);
       obj[prop] = obj[prop].slice(0, -3);
       return obj;
     });
   };
-  handleAccountWisData = (list, prop) => {
+
+  handleAccountWisData = (list, prop)=>{
     return list.map((item) => {
       const obj = Object.assign({}, item);
       const modifyObj = Number(obj[prop]) * 100;
@@ -228,21 +136,27 @@ export class DashboardHrComponent implements OnInit {
       return obj;
     });
   };
-  totalWorkingAndAverageData = () => {
+  
+  displayThreeReason = (items)=>{
+    return items.filter(function(e) {
+      return ["Better Compensation","Technology exposure","Better role"].includes(e.secondaryreason)
+    });
+  }
+
+  totalWorkingAndAverageData = ()=>{
     this.service.getSummeryCount().then((res) => {
       this.commonService.transferData(res['data']['result']);
       this.getHrHeaderData();
       this.headerDataLoaded = true;
     });
   };
-  getHrHeaderData = () => {
+  getHrHeaderData = ()=>{
     this.service.getHrHeaderData().then((res: any) => {
       this.summeryData = res;
       console.log('Header response', this.summeryData);
     });
   };
-
-  getOnboardAndSeperateData = () => {
+  getOnboardAndSeperateData = ()=>{
     this.service.getOnboardAndSeperateData().then((res: any) => {
       console.log('OnboardAndSeperateData', res[0]);
       if (res) {
@@ -257,7 +171,7 @@ export class DashboardHrComponent implements OnInit {
       console.log('response', this.chartData2);
     });
   };
-  getAccountWiseEmployeeAttrition = () => {
+  getAccountWiseEmployeeAttrition = ()=>{
     this.service.getAccountWiseEmployeeData().then((res: any) => {
       console.log('AccountWiseEmployeeData', res[0]);
       if (res) {
@@ -277,7 +191,7 @@ export class DashboardHrComponent implements OnInit {
     });
     console.log('this.chartData4', this.chartData4);
   };
-  getHeadcountDemographicsData = () => {
+  getHeadcountDemographicsData = ()=>{
     this.service.getHeadcountData().then((res: any) => {
       console.log('HeadcountDemographicsData', res);
       if (res) {
@@ -292,4 +206,34 @@ export class DashboardHrComponent implements OnInit {
       }
     });
   };
+  getTopThreeReasonData = ()=>{
+    this.service.getTopThreeReasonData().then((res: any)=>{
+      console.log('getTopThreeReasonData',res)
+      if (res) {
+          this.chartData3['idName'] = 'overAllChart5';
+          this.chartData3['title'] = 'Voluntary Attrition : Top 3 Reason';
+          this.chartData3['month'] = 'January';
+          this.chartData3['series1'] = 'count';
+          this.chartData3['legendName1'] = 'Practices';
+          this.chartData3['type'] = 'extended';
+          this.chartData3['label'] = true;
+          this.chartData3['data'] = this.displayThreeReason(res)
+          this.isDataLoadedPractice = true;
+        }
+    })
+  }
+  getEmpAttrationData = ()=>{
+    this.service.getEmployeeAttritionData().then((res: any)=>{
+      if (res) {
+          this.chartData6['idName'] = 'overAllChart3';
+          this.chartData6['title'] = 'Employee Attrition';
+          this.chartData6['series1'] = 'litres';
+          this.chartData6['legendName1'] = 'Practices';
+          this.chartData6['type'] = 'extended';
+          this.chartData6['label'] = true;
+          this.chartData6['data'] = this.handleDates(res,'month');
+          this.isDataLoadedPractice = true;
+        }
+    })
+  }
 }

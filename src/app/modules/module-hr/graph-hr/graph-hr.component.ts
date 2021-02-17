@@ -217,7 +217,7 @@ export class GraphHrComponent implements OnInit {
             this.categoryAxis = newchart3.xAxes.push(
               new am4charts.CategoryAxis()
             );
-            this.categoryAxis.dataFields.category = 'date';
+            this.categoryAxis.dataFields.category = 'month';
             this.categoryAxis.renderer.opposite = false;
             this.categoryAxis.renderer.minGridDistance = 30;
             this.categoryAxis.renderer.labels.template.rotation = 270;
@@ -239,8 +239,8 @@ export class GraphHrComponent implements OnInit {
 
             // Create series
             let series1 = newchart3.series.push(new am4charts.LineSeries());
-            series1.dataFields.valueY = 'All';
-            series1.dataFields.categoryX = 'date';
+            series1.dataFields.valueY = 'Seperated';
+            series1.dataFields.categoryX = 'month';
             series1.name = 'All';
             // series1.tooltipText ='{valueY}';
             this.bullet = series1.bullets.push(new am4charts.CircleBullet());
@@ -250,8 +250,8 @@ export class GraphHrComponent implements OnInit {
             series1.visible = false;
 
             let series2 = newchart3.series.push(new am4charts.LineSeries());
-            series2.dataFields.valueY = 'Voluntary';
-            series2.dataFields.categoryX = 'date';
+            series2.dataFields.valueY = 'voluntary';
+            series2.dataFields.categoryX = 'month';
             series2.name = 'Voluntary';
             // series2.bullets.push(new am4charts.CircleBullet());
             // series2.tooltipText ='{valueY}';
@@ -261,8 +261,8 @@ export class GraphHrComponent implements OnInit {
             // series2.legendSettings.valueText = '{valueY}';
 
             let series3 = newchart3.series.push(new am4charts.LineSeries());
-            series3.dataFields.valueY = 'Involuntary';
-            series3.dataFields.categoryX = 'date';
+            series3.dataFields.valueY = 'involuntary';
+            series3.dataFields.categoryX = 'month';
             series3.name = 'Involuntary';
             // series3.bullets.push(new am4charts.CircleBullet());
             // series3.tooltipText ='{valueY}';
@@ -271,8 +271,8 @@ export class GraphHrComponent implements OnInit {
             // this.bullet.showTooltipOn = "always";
             // series3.legendSettings.valueText = '{valueY}';
             let series4 = newchart3.series.push(new am4charts.LineSeries());
-            series4.dataFields.valueY = 'Abscond';
-            series4.dataFields.categoryX = 'date';
+            series4.dataFields.valueY = 'absconding';
+            series4.dataFields.categoryX = 'month';
             series4.name = 'Abscond';
             // series4.bullets.push(new am4charts.CircleBullet());
             // series4.tooltipText ='{valueY}';
@@ -373,8 +373,8 @@ export class GraphHrComponent implements OnInit {
             this.pieSeries = this.pieChart.series.push(
               new am4charts.PieSeries()
             );
-            this.pieSeries.dataFields.value = 'size';
-            this.pieSeries.dataFields.category = 'sector';
+            this.pieSeries.dataFields.value = 'voluntaryattrition';
+            this.pieSeries.dataFields.category = 'secondaryreason';
             this.pieSeries.labels.template.text = 
             "{category}: {value.percent.formatNumber('#.#')}%  ({value})";
             // Let's cut a hole in our Pie chart the size of 30% the radius

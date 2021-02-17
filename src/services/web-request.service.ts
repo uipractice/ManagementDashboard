@@ -224,6 +224,29 @@ export class WebRequestService {
         });
     }).catch((err) => console.error(err));
   }
+  async getTopThreeReasonData() {
+    return new Promise((resolve, reject) => {
+      this.http
+        .get(`${this.ROOT_URL}${this._urls.GET_TOP_THREE_REASON_Data}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+
+  async getEmployeeAttritionData() {
+    return new Promise((resolve, reject) => {
+      this.http
+        .get(`${this.ROOT_URL}${this._urls.GET_EMPLOYEE_ATTRITION_Data}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
 
 }
 // payment

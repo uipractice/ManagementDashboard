@@ -124,3 +124,47 @@
   </div>
   </section>
 </div>
+
+<div class="create-news-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal03'">
+  <header id="modal-header">
+    <h1 id="modal-title">Create Notification/News & events</h1>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="closeModal()"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  </header>
+  <section id="modal-body">
+    <div class="row">
+      <div class="col-md-6">
+        <label>Select</label>
+        <input type="text">
+      </div>
+      <div class="col-md-4">
+        <label>Date & Time to publish</label>
+        <input type="date">
+      </div>
+    </div>
+   <div class="row">
+    <div class="col-md-12">
+      <label>Content (Max 500 Charactor)</label>
+      <textarea name="content" id="content" cols="30" rows="10"></textarea>
+    </div>
+   </div>
+    
+  </section>
+  <footer id="modal-footer">
+    <button mat-raised-button class="reset">
+      Reset
+   </button>
+    <button mat-raised-button class="save">
+       Save
+    </button>
+    <button mat-raised-button class="save" id="modal-cancel-button" (click)="closeModal()">
+      Save & Publish
+    </button>
+</footer>
+</div>

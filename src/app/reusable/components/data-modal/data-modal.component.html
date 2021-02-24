@@ -13,9 +13,9 @@
   <section id="modal-body">
     <div class="account-resource">
       <div class="account-rleft">
-        <select class="accout-select" (change)="onChangrDropdownData($event)">
-          <option seleced>{{selectedLabel}}</option>
-          <option *ngFor="let list of accountList">{{list._id}}</option>
+        <select class="accout-select" (change)="onChangrDropdownData($event)" title="{{selectedLabel}}">
+          <option seleced title="{{selectedLabel}}">{{selectedLabel | charlimitpipe: 13}}</option>
+          <option *ngFor="let list of accountList" title="{{list._id}}">{{list._id | charlimitpipe: 13}}</option>
         </select>
         <p>(40 Projects/200 People)</p>
         <ul class="mobile-hidden">
@@ -51,22 +51,22 @@
       </div>
       <div class="account-right">
         <h4 class="mobile-hidden">Matter Management (24 People)</h4>
-        <p class="mobile-hidden">
+        <!-- <p class="mobile-hidden">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, at id
           bibendum in urna mi quam. Gravida sed imperdiet aenean suspendisse
           sit. Semper diam leo porttitor orci viverra sodales. Eget porta nunc
           urna, porta tincidunt tortor. Diam vitae ac ut interdum. Mi parturient
           mi et eget tortor eu. Odio auctor
-        </p>
-        <div class="tech-stack">
+        </p> -->
+        <!-- <div class="tech-stack">
           <p>
             <label>Tech Stack:</label>  <span>.net</span> <span>sql server</span>
             <span>Mongo DB</span> <span>Javascript</span>
           </p>
-        </div>
+        </div> -->
         <div class="account-detail-table">
           <ag-grid-angular
-            style="width: 100%; height: 394px"
+            style="width: 100%; height: 450px"
             class="ag-theme-alpine"
             [rowData]="rowData"
             [columnDefs]="columnDefs"

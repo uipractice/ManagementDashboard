@@ -20,6 +20,21 @@
     line-height: 29px;
   }
 }
+.create-btn{
+  background: #209EC5;
+  border: 1px solid #209EC5;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #fff !important;
+  height: 46px;
+  display: block;
+  width: 270px;
+  line-height: 46px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right:0;
+}
 .loader {
   position: fixed;
   top: 0;

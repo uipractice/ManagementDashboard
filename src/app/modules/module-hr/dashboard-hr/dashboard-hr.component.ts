@@ -37,6 +37,9 @@ export class DashboardHrComponent implements OnInit {
     this.getHeadcountDemographicsData();
     this.getTopThreeReasonData();
     this.getEmpAttrationData();
+    this.getVoluntaryAnalysisInfo();
+    this.getEmpEngagementData();
+    this.getPostEngagementData();
 
     this.chartData2 = {
       idName: 'overAllChart2',
@@ -236,4 +239,23 @@ export class DashboardHrComponent implements OnInit {
         }
     })
   }
+  getVoluntaryAnalysisInfo = ()=>{
+    this.service.getVoluntaryAnalysisData().then((res: any)=>{
+     console.log('VoluntaryAnalysisData', res)
+          this.isDataLoadedPractice = true;
+    })
+  }
+  getEmpEngagementData = ()=>{
+    this.service.getEmployeeEngagementData().then((res: any)=>{
+     console.log('getEmployeeEngagementData', res)
+          this.isDataLoadedPractice = true;
+    })
+  }
+  getPostEngagementData = ()=>{
+    this.service.getPostEngagementData().then((res: any)=>{
+     console.log('PostEngagementData', res)
+          this.isDataLoadedPractice = true;
+    })
+  }
+  
 }

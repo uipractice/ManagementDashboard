@@ -24,5 +24,8 @@ export class UrlConstants {
     GET_HR_HEADCOUNT_DEMOGRAPHIC_Data: '/api/hr/getDemographicsgraphData',
     GET_TOP_THREE_REASON_Data: '/api/hr/getTopThreeReason',
     GET_EMPLOYEE_ATTRITION_Data: '/api/hr/getEmployeeAttrition',
+    GET_VOLUNTARY_ANALYSIS_Data: '/api/hr/getVoluntaryAttritionData',
+    GET_EMPLOYEE_ENGAGEMENT_Data: 'api/hr/getEmployeeEngagement',
+    GET_POST_ENGAGEMENT_Data: 'api/hr/getPostEngagement',
   };
 }

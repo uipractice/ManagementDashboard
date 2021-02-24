@@ -17,8 +17,8 @@ export class CreateNewsNotificationsComponent {
     const dialogConfig = new MatDialogConfig();
     const modalId = 'modal03';   
     dialogConfig.disableClose = false;
-    dialogConfig.height = "400px";
-    dialogConfig.width = "598px";
+    // dialogConfig.height = "470px";
+    dialogConfig.width = "620px";
     dialogConfig.data = {
       modalId: modalId,
     };

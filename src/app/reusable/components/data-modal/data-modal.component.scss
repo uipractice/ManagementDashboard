@@ -164,7 +164,7 @@
       border: none;
       background: transparent;
       font-weight: bold;
-      font-size: 28px;
+      font-size: 25px;
       line-height: 32px;
       color: #0088D1;
       -webkit-appearance: none;
@@ -173,6 +173,7 @@
       background:url(src/assets/images/main/select-arrow.svg) no-repeat 90% 15px !important;
       width: 100%;
       outline: none !important;
+      padding:0 10px;
       option{
         font-size: 16px;
       }
@@ -181,13 +182,14 @@
       font-size: 14px;
       line-height: 32px;
       color: #023047;
+      padding: 0 10px;
      }
      ul{
        list-style:none;
-       padding-left:0;
+       padding-left:10px;
        max-height:450px;
        overflow-y: auto;
-      scrollbar-width: thin;
+       scrollbar-width: thin;
         scrollbar-color: #afaeae #e3e1e1;
        li{
          padding: 5px;

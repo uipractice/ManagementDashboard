@@ -96,7 +96,9 @@
                     <div class="user">{{userInfo.name}}<br><span>{{userInfo.designation}}</span></div>
                   </a></li>
                 <li class="ProfileBg"><a  class=""> My Profile</a></li>
-                <li class="NewsNote"><a class=""> News & Notification</a></li>
+                <li class="NewsNote" *ngIf="isDisplayNotification"(click)="createNewAndEvents()">
+                <a class=""> News & Notification</a>
+               </li>
                 <li class="FeedbackBg"><a class=""> Provide Feedback</a></li>
                 <li class="Darkbg dark-theme"><span class="ml-40"> Dark
                     Theme</span><label class="switch">

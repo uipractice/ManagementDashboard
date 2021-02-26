@@ -250,8 +250,8 @@ export class WebRequestService {
   async getVoluntaryAnalysisData() { 
     return new Promise((resolve, reject) => {
       this.http
-        .get(`http://localhost:80/api/hr/getVoluntaryAttritionData`)
-        // .get(`${this.ROOT_URL}${this._urls.GET_VOLUNTARY_ANALYSIS_Data}`)
+        // .get(`http://localhost:80/api/hr/getVoluntaryAttritionData`)
+        .get(`${this.ROOT_URL}${this._urls.GET_VOLUNTARY_ANALYSIS_Data}`)
         .toPromise()
         .then((response) => {
           // //console.log(response);
@@ -262,8 +262,8 @@ export class WebRequestService {
   async getEmployeeEngagementData() {
     return new Promise((resolve, reject) => {
       this.http
-        .get(`http://localhost:80/api/hr/getEmployeeEngagement`)
-        // .get(`${this.ROOT_URL}${this._urls.GET_EMPLOYEE_ENGAGEMENT_Data}`)
+        // .get(`http://localhost:80/api/hr/getEmployeeEngagement`)
+        .get(`${this.ROOT_URL}${this._urls.GET_EMPLOYEE_ENGAGEMENT_Data}`)
         .toPromise()
         .then((response) => {
           // //console.log(response);
@@ -274,8 +274,8 @@ export class WebRequestService {
   async getPostEngagementData() {
     return new Promise((resolve, reject) => {
       this.http
-        .get(`http://localhost:80/api/hr/getPostEngagement`)
-        // .get(`${this.ROOT_URL}${this._urls.GET_POST_ENGAGEMENT_Data}`)
+        // .get(`http://localhost:80/api/hr/getPostEngagement`)
+        .get(`${this.ROOT_URL}${this._urls.GET_POST_ENGAGEMENT_Data}`)
         .toPromise()
         .then((response) => {
           // //console.log(response);

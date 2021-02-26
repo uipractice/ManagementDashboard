@@ -1,3 +1,5 @@
+import { WebRequestService } from './../../services/web-request.service';
+import { CommonService } from './../../services/common.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DataModalComponent } from '../reusable/components/data-modal/data-modal.component';
@@ -8,10 +10,15 @@ import { DataModalComponent } from '../reusable/components/data-modal/data-modal
   styleUrls: ['./create-news-notifications.component.scss']
 })
 export class CreateNewsNotificationsComponent {
+  headerDataLoaded: any = false;
+  constructor(public matDialog: MatDialog, 
+     public commonService: CommonService, public service: WebRequestService,) { }
 
-  constructor(public matDialog: MatDialog) { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {    
+      this.service.getSummeryCount().then((res) => {
+        this.commonService.transferData(res['data']['result']);
+        this.headerDataLoaded = true;
+      });
   }
   createNews() {
     const dialogConfig = new MatDialogConfig();

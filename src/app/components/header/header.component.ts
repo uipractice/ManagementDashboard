@@ -39,16 +39,13 @@ export class HeaderComponent implements OnInit {
     // this.isShow = true;
     // this.isOpen = true;
   }
-  //   GetChildData(data){
-  //     console.log(data);
-  //     this.isparentSearch = data;
-  //  }
-
+ 
   onClick() {
     // this.isShow = true;
     // this.isOpen = true;
     this.isSearch = true;
   }
+  isDisplayNotification: Boolean;
   constructor(
     private httpService: HttpClient,
     private router: Router,
@@ -57,13 +54,18 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.commonService.gettingData.subscribe(res =>{
+      console.log('res..',res)
       this.headerCount = res;
       this.headerCountLoaded = true;
     })
     if (sessionStorage.getItem('userInfo')) {
       this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
     }
-
+    if(this.userInfo['designation'] == 'Admin'){
+      this.isDisplayNotification = true
+    }else{
+      this.isDisplayNotification = false
+    }
     this.httpService.get('assets/header_count.json').subscribe(
       (res) => {
         // this.arrHours = data; // FILL THE ARRAY WITH DATA.
@@ -90,6 +92,9 @@ export class HeaderComponent implements OnInit {
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       });
     }
+  }
+  createNewAndEvents(){
+    this.router.navigate(['/create_news_notification'])
   }
   logout() {
     sessionStorage.clear();

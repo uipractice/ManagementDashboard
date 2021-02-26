@@ -438,8 +438,8 @@ export class GraphHrComponent implements OnInit {
             chart.paddingTop = 40;
             // Add and configure Series
             let pieSeries = chart.series.push(new am4charts.PieSeries());
-            pieSeries.dataFields.value = 'value';
-            pieSeries.dataFields.category = 'Resion';
+            pieSeries.dataFields.value = 'totalcount';
+            pieSeries.dataFields.category = 'resion';
             pieSeries.slices.template.states.getKey(
               'active'
             ).properties.shiftRadius = 0;
@@ -502,13 +502,13 @@ export class GraphHrComponent implements OnInit {
 
               let fill = selectedSlice.fill;
 
-              let count = dataItem.dataContext.subData.length;
+              let count = dataItem.dataContext.subdata.length;
               pieSeries2.colors.list = [];
               for (var i = 0; i < count; i++) {
                 pieSeries2.colors.list.push(fill.brighten((i * 2) / count));
               }
 
-              chart2.data = dataItem.dataContext.subData;
+              chart2.data = dataItem.dataContext.subdata;
               pieSeries2.appear();
 
               let middleAngle = selectedSlice.middleAngle;

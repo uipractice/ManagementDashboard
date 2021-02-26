@@ -71,16 +71,11 @@ export class DashboardContainerComponent implements OnInit {
     "employee_department_name": "CSC",
     "employee_reporting_to": "Ramesh Madala"
 }​​​​​​​]
-  userInfo: any;
-  isDisplayNotification: Boolean;
 
   constructor(private router: Router, public service: WebRequestService,
      public matDialog: MatDialog, public commonService: CommonService) {}
   ngOnInit() {
-    this.userInfo = JSON.parse(sessionStorage.getItem('userInfo'))
-    if(this.userInfo['designation'] == 'Admin'){
-      this.isDisplayNotification = true
-    }else{this.isDisplayNotification = false}
+   
     this.service.getAccountGraphData().then((res:any) => {
       if (res['statusCode'] === 200) {
         this.chartData['idName'] = 'overAllChart3';
@@ -200,10 +195,6 @@ export class DashboardContainerComponent implements OnInit {
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       });
     }
-    // this.userInfo['designation'] = 'Admin' ? this.isDisplayNotification: !this.isDisplayNotification;
-  }
-  createNewAndEvents(){
-    this.router.navigate(['/create_news_notification'])
   }
   // openLogoutModal() {
   //   const dialogConfig = new MatDialogConfig();

@@ -82,45 +82,45 @@ export class DashboardHrComponent implements OnInit {
     //     { sector: 'Better Compensation', size: 30 },
     //   ],
     // };
-    this.chartData5 = {
-      idName: 'overAllChart7',
-      title: 'Voluntary Attrition Analysis',
-      month: 'January',
-      series1: 'litres',
-      legendName1: 'Practices',
-      type: 'extended',
-      label: true,
-      data: [
-        {
-          Resion: 'Better Career Growth',
-          value: 37,
-          subData: [
-            { name: 'A', value: 200 },
-            { name: 'B', value: 150 },
-            { name: 'C', value: 100 },
-            { name: 'D', value: 50 },
-          ],
-        },
-        {
-          Resion: 'Personal Reasons',
-          value: 12,
-          subData: [
-            { name: 'A', value: 150 },
-            { name: 'B', value: 100 },
-            { name: 'C', value: 50 },
-          ],
-        },
-        {
-          Resion: 'Work Enviornment',
-          value: 10,
-          subData: [
-            { name: 'A', value: 110 },
-            { name: 'B', value: 60 },
-            { name: 'C', value: 30 },
-          ],
-        },
-      ],
-    };
+    // this.chartData5 = {
+    //   idName: 'overAllChart7',
+    //   title: 'Voluntary Attrition Analysis',
+    //   month: 'January',
+    //   series1: 'litres',
+    //   legendName1: 'Practices',
+    //   type: 'extended',
+    //   label: true,
+    //   data: [
+    //     {
+    //       Resion: 'Better Career Growth',
+    //       value: 37,
+    //       subData: [
+    //         { name: 'A', value: 200 },
+    //         { name: 'B', value: 150 },
+    //         { name: 'C', value: 100 },
+    //         { name: 'D', value: 50 },
+    //       ],
+    //     },
+    //     {
+    //       Resion: 'Personal Reasons',
+    //       value: 12,
+    //       subData: [
+    //         { name: 'A', value: 150 },
+    //         { name: 'B', value: 100 },
+    //         { name: 'C', value: 50 },
+    //       ],
+    //     },
+    //     {
+    //       Resion: 'Work Enviornment',
+    //       value: 10,
+    //       subData: [
+    //         { name: 'A', value: 110 },
+    //         { name: 'B', value: 60 },
+    //         { name: 'C', value: 30 },
+    //       ],
+    //     },
+    //   ],
+    // };
   }
   handleDates = (list, prop)=>{
     return list.map((item) => {
@@ -241,8 +241,21 @@ export class DashboardHrComponent implements OnInit {
   }
   getVoluntaryAnalysisInfo = ()=>{
     this.service.getVoluntaryAnalysisData().then((res: any)=>{
-     console.log('VoluntaryAnalysisData', res)
-          this.isDataLoadedPractice = true;
+  let newResponse = res.map(item => {
+       let subdata = item.subdata.slice(0, item.subdata.length -1);
+       return{...item, subdata};
+     });
+     if (res) {
+      this.chartData5['idName'] = 'overAllChart7';
+      this.chartData5['title'] = 'Voluntary Attrition Analysis';
+      this.chartData5['month'] = 'January';
+      this.chartData5['series1'] = 'litres';
+      this.chartData5['legendName1'] = 'Practices';
+      this.chartData5['type'] = 'extended';
+      this.chartData5['label'] = true;
+      this.chartData5['data'] = newResponse;
+      this.isDataLoadedPractice = true;
+    }
     })
   }
   getEmpEngagementData = ()=>{

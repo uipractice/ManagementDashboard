@@ -3,8 +3,6 @@
   <ev-side-nav></ev-side-nav>
   <div class="DashboardHeader">
     <h3 class="MobileNone">{{pageHeader}}</h3>
-    <a class="MobileNone create-btn" (click)="createNewAndEvents()" *ngIf="isDisplayNotification">
-      ADD NOTIFICATION / NEWS</a>
     <div *ngIf="!isOtherNavSelected">
       <ev-header-default [summeryData]="summeryData" *ngIf="summeryDataLoaded"></ev-header-default>
       <div class="row ml-0">

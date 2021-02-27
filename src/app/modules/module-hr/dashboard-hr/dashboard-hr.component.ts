@@ -9,6 +9,8 @@ import { WebRequestService } from 'src/services/web-request.service';
 })
 export class DashboardHrComponent implements OnInit {
   summeryData: any;
+  PostEngagementData: any;
+  getEmployeeEngagementData: any;
   headerDataLoaded: any = false;
   chartData3: any = {};
   chartData2: any = {};
@@ -261,12 +263,14 @@ export class DashboardHrComponent implements OnInit {
   getEmpEngagementData = ()=>{
     this.service.getEmployeeEngagementData().then((res: any)=>{
      console.log('getEmployeeEngagementData', res)
+          this.getEmployeeEngagementData = res;
           this.isDataLoadedPractice = true;
     })
   }
   getPostEngagementData = ()=>{
     this.service.getPostEngagementData().then((res: any)=>{
      console.log('PostEngagementData', res)
+          this.PostEngagementData = res;
           this.isDataLoadedPractice = true;
     })
   }

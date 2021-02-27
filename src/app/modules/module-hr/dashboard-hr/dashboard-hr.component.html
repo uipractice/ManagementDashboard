@@ -59,7 +59,7 @@
                                   <label for="tab2">90 Days Connect</label>
                                   <div class="tab__content">
                                     <div class="rounded-circles">
-                                        <div class="single-circle">
+                                        <div class="single-circle" >
                                             <div class="cicle-num">18</div>
                                             <h5>Total Employee Count</h5>
                                         </div>
@@ -119,20 +119,20 @@
                         </div>
                         <div class="GraphBody">
                             
-                            <div class="rounded-circles box-height">
-                                <h5 class="head-class">One-on-One Connect</h5>
+                            <div class="rounded-circles box-height" *ngFor="let employee of getEmployeeEngagementData">
+                                <h5 class="head-class">{{employee.activities}}</h5>
                                 <div class="single-circle circle-width">
-                                    <div class="cicle-num">60</div>
+                                    <div class="cicle-num">{{employee.count}}</div>
                                     <h5>Total Count</h5>
                                 </div>
                                 <div class="content-block right-block">
                                     <!-- <h5 style="margin-top:5px;">Details & Outcome</h5> -->
-                                    <p>Connected with all Niche technologies in CSC to understand their experience and criticality in the project along with their individual plans and the same has been shared with delivery manager.</p>
+                                    <!-- <p>Connected with all Niche technologies in CSC to understand their experience and criticality in the project along with their individual plans and the same has been shared with delivery manager.</p> -->
                                     <ul>
-                                        <li>One on one discussion with the Valaris support team to understand their alignment.</li>
-                                        <li>Employees are happy about team involvement & collaboration</li>
+                                        <li>{{employee.eventheighlight}}</li>
+                                        <!-- <li>Employees are happy about team involvement & collaboration</li>
                                         <li>Employees feel DM’s interaction sessions are helping them in understanding the organization's course of action.</li>
-                                        <li>Job Insecurity due end of Valaris support project.</li>
+                                        <li>Job Insecurity due end of Valaris support project.</li> -->
                                     </ul>
                                     <!-- <h5>Suggestions</h5>
                                     <ul>
@@ -142,14 +142,13 @@
                                 </div>
                             </div>
                             
-                            <div class="rounded-circles box-height pink-block">
+                            <!-- <div class="rounded-circles box-height pink-block">
                                 <h5 class="head-class pink-head">Women work alignment  in CSC</h5>
                                 <div class="single-circle circle-width">
                                     <div class="cicle-num">10</div>
                                     <h5>Total Count</h5>
                                 </div>
                                 <div class="content-block right-block">
-                                    <!-- <h5>Details & Outcome</h5> -->
                                     <ul>
                                         <li>Discussed about challenges during WFH and communicated to be video available for all the meetings.</li>
                                     </ul>
@@ -163,7 +162,6 @@
                                     <h5>Total Count</h5>
                                 </div>
                                 <div class="content-block right-block">
-                                    <!-- <h5>Details & Outcome</h5> -->
                                     <ul>
                                         <li>Employees are happy as their work is being recognized through POB awards in   the delivery meetings.</li>
                                         <li>No major concerns</li>
@@ -179,7 +177,6 @@
                                     <h5>Total Count</h5>
                                 </div>
                                 <div class="content-block right-block">
-                                    <!-- <h5>Details & Outcome</h5> -->
                                     <ul>
                                         <li>Client requirement</li>
                                     </ul>
@@ -193,7 +190,6 @@
                                     <h5>Total Count</h5>
                                 </div>
                                 <div class="content-block right-block">
-                                    <!-- <h5>Details & Outcome</h5> -->
                                     <ul>
                                         <li>Managers, 1 hour connect with new hires in their first week of joining</li>
                                         <li>HRBP connect with new hires on their first day, 7th day and 30th day</li>
@@ -209,7 +205,6 @@
                                     <h5>Total Count</h5>
                                 </div>
                                 <div class="content-block right-block">
-                                    <!-- <h5>Details & Outcome</h5> -->
                                     <ul>
                                         <li>Employees requested more learning interventions.</li>
                                         <li>Benefits like mobile bill/internet bill reimbursement etc.</li>
@@ -225,12 +220,11 @@
                                     <h5>Total Count</h5>
                                 </div>
                                 <div class="content-block right-block">
-                                    <!-- <h5>Details & Outcome</h5> -->
                                     <ul>
                                         <li>Conducted Tambola Activity to All Evoke as a part of Dussehra Celebrations.</li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                       </div>
                 </div>

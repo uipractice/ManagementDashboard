@@ -8,7 +8,7 @@ export class UrlConstants {
       'http://ec2-35-154-46-177.ap-south-1.compute.amazonaws.com/swagger',
 
     // DEV_URL: 'http://localhost',
-    DEV_URL: 'http://65.0.104.251',
+    DEV_URL: 'http://15.206.146.61',
     ADD_USER: 'api/emp/emp',
     GET_USERS: 'api/emp/getAllEmp',
     DELETE_EMP: 'api/emp/deleteEmp',
@@ -25,7 +25,7 @@ export class UrlConstants {
     GET_TOP_THREE_REASON_Data: '/api/hr/getTopThreeReason',
     GET_EMPLOYEE_ATTRITION_Data: '/api/hr/getEmployeeAttrition',
     GET_VOLUNTARY_ANALYSIS_Data: '/api/hr/getVoluntaryAttritionData',
-    GET_EMPLOYEE_ENGAGEMENT_Data: 'api/hr/getEmployeeEngagement',
-    GET_POST_ENGAGEMENT_Data: 'api/hr/getPostEngagement',
+    GET_EMPLOYEE_ENGAGEMENT_Data: '/api/hr/getEmployeeEngagement',
+    GET_POST_ENGAGEMENT_Data: '/api/hr/getPostEngagement',
   };
 }

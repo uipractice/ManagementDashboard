@@ -188,13 +188,16 @@ export class DashboardContainerComponent implements OnInit {
         },
       ],
     };
+    this.service.getPublishNewsData().then((res:any) =>{
+      this.newsLetterData = res
+    })
 
-    for (var i = 0; i < 10; i++) {
-      this.newsLetterData.push({
-        title:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      });
-    }
+    // for (var i = 0; i < 10; i++) {
+    //   this.newsLetterData.push({
+    //     title:
+    //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    //   });
+    // }
   }
   // openLogoutModal() {
   //   const dialogConfig = new MatDialogConfig();

@@ -63,7 +63,7 @@ export class GraphHrComponent implements OnInit {
   clickedItem(content) {
     const dialogConfig = new MatDialogConfig();
     const modalId = 'modal02';
-    const modalData = content.title;
+    const modalData = content.messageDescription;
     const allNewsData = this.newsData;
     dialogConfig.disableClose = false;
     dialogConfig.height = "222px";
@@ -429,7 +429,7 @@ export class GraphHrComponent implements OnInit {
               this.chartData.idName,
               am4core.Container
             );
-            container.width = am4core.percent(90);
+            container.width = am4core.percent(80);
             container.height = am4core.percent(100);
             container.layout = 'horizontal';
 
@@ -459,7 +459,7 @@ export class GraphHrComponent implements OnInit {
             });
 
             let chart2 = container.createChild(am4charts.PieChart);
-            chart2.width = am4core.percent(30);
+            chart2.width = am4core.percent(50);
             chart2.radius = am4core.percent(80);
             chart2.paddingTop = 50;
             // Add and configure Series

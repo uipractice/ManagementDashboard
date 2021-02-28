@@ -11,6 +11,8 @@ import { DataModalComponent } from '../reusable/components/data-modal/data-modal
 })
 export class CreateNewsNotificationsComponent {
   headerDataLoaded: any = false;
+  allNewsAndNotification :any;
+  allNotificationInfo: any=[];
   constructor(public matDialog: MatDialog, 
      public commonService: CommonService, public service: WebRequestService,) { }
 
@@ -19,8 +21,23 @@ export class CreateNewsNotificationsComponent {
         this.commonService.transferData(res['data']['result']);
         this.headerDataLoaded = true;
       });
+
+      this.newsNotificationData();
   }
-  createNews() {
+
+  newsNotificationData = ()=>{
+      this.service.getNewsData().then((res:any)=>{
+        this.allNewsAndNotification = res
+      })
+      // this.service.getNotificationData().then((res:any)=>{
+      //   this.allNewsAndNotification = res 
+      // })
+      console.log(this.allNewsAndNotification)
+  }
+  
+  
+
+  createNewsPopup() {
     const dialogConfig = new MatDialogConfig();
     const modalId = 'modal03';   
     dialogConfig.disableClose = false;

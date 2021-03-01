@@ -51,7 +51,6 @@ export class WebRequestService {
     // //console.log(cookieExists);
     if (cookieExists) {
       this._accessToken = this.cookieService.get('x-access-token');
-
       this._commonHeader = this._accessToken;
       // //console.log(this._commonHeader);
       this._herderOption = new HttpHeaders({
@@ -276,6 +275,57 @@ export class WebRequestService {
       this.http
         // .get(`http://localhost:80/api/hr/getPostEngagement`)
         .get(`${this.ROOT_URL}${this._urls.GET_POST_ENGAGEMENT_Data}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+
+  // News and notification api integration
+
+  async getNewsData() {
+    return new Promise((resolve, reject) => {
+      this.http
+        // .get(`http://localhost:80/api/hr/getPostEngagement`)
+        .get(`${this.ROOT_URL}${this._urls.GET_ALL_NEWS_Data}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  async getNotificationData() {
+    return new Promise((resolve, reject) => {
+      this.http
+        // .get(`http://localhost:80/api/hr/getPostEngagement`)
+        .get(`${this.ROOT_URL}${this._urls.GET_ALL_NOTIFICATION_Data}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  async getPublishNotification() {
+    return new Promise((resolve, reject) => {
+      this.http
+        // .get(`http://localhost:80/api/hr/getPostEngagement`)
+        .get(`${this.ROOT_URL}${this._urls.GET_PUBLISH_NOTIFICATION_Data}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  async getPublishNewsData() {
+    return new Promise((resolve, reject) => {
+      this.http
+        // .get(`http://localhost:80/api/hr/getPostEngagement`)
+        .get(`${this.ROOT_URL}${this._urls.GET_ALL_PUBLISH_NEWS_Data}`)
         .toPromise()
         .then((response) => {
           // //console.log(response);

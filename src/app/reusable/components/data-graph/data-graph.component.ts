@@ -132,7 +132,7 @@ export class DataGraphComponent implements OnInit {
   clickedItem(content) {
     const dialogConfig = new MatDialogConfig();
     const modalId = 'modal02';
-    const modalData = content.title;
+    const modalData = content.messageDescription;
     const allNewsData = this.newsData;
     dialogConfig.disableClose = false;
     dialogConfig.height = '222px';

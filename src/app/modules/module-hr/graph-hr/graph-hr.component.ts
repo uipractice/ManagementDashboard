@@ -63,7 +63,7 @@ export class GraphHrComponent implements OnInit {
   clickedItem(content) {
     const dialogConfig = new MatDialogConfig();
     const modalId = 'modal02';
-    const modalData = content.title;
+    const modalData = content.messageDescription;
     const allNewsData = this.newsData;
     dialogConfig.disableClose = false;
     dialogConfig.height = "222px";
@@ -439,7 +439,7 @@ export class GraphHrComponent implements OnInit {
             // Add and configure Series
             let pieSeries = chart.series.push(new am4charts.PieSeries());
             pieSeries.dataFields.value = 'totalcount';
-            pieSeries.dataFields.category = 'resion';
+            pieSeries.dataFields.category = 'Resion';
             pieSeries.slices.template.states.getKey(
               'active'
             ).properties.shiftRadius = 0;

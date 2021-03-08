@@ -1,0 +1,74 @@
+ 
+  <div class="create-news-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal03'">
+    <header id="modal-header">
+      <h1 id="modal-title">Create Notification/News & events</h1>
+      <button
+        type="button"
+        class="close pull-right"
+        aria-label="Close"
+        (click)="closeModal()"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </header>
+    <section id="modal-body">
+      <div class="row">
+        <div class="col-md-6">
+          <label>Select</label>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-info select">Notification</button>
+            <button type="button" class="btn btn-secondary">News & Events</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label>Date & Time to publish</label>
+          <input type="date" placeholder="20-02-2020 2:00 PM">
+        </div>
+      </div>
+     <div class="row">
+      <div class="col-md-12">
+        <label>Content (Max 500 Charactor)</label>
+        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+      </div>
+     </div>
+      
+    </section>
+    <footer id="modal-footer">
+      <button mat-raised-button class="reset">
+        Reset
+     </button>
+      <button mat-raised-button class="save">
+         Save
+      </button>
+      <button mat-raised-button class="save" id="modal-cancel-button" (click)="closeModal()">
+        Save & Publish
+      </button>
+  </footer>
+  </div>
+  
+  <div class="delete-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal04'">
+    <header id="modal-header">
+      <!-- <h1 id="modal-title">Create Notification/News & events</h1> -->
+      <button
+        type="button"
+        class="close pull-right"
+        aria-label="Close"
+        (click)="closeModal()"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </header>
+    <section id="modal-body">
+      <div class="row">
+        <p>Do you really want to delete this item?</p>
+      </div>
+    </section>
+    <footer id="modal-footer">
+      <button mat-raised-button class="reset" (click)="closeModal()">
+        Cancel
+     </button>
+      <button mat-raised-button class="save" id="modal-cancel-button" (click)="deleteData()">
+        ok
+      </button>
+  </footer>
+  </div>

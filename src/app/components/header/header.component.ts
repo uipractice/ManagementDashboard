@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   notificationCount: any;
   userInfo: any;
   hoursCount: any;
+  PublishNotification: any;
   newsLetterData: any = [];
   toggleDropdown() {
     // $event.stopPropagation();
@@ -92,6 +93,7 @@ export class HeaderComponent implements OnInit {
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       });
     }
+    this.getPublishNotification();
   }
   createNewAndEvents(){
     this.router.navigate(['/create_news_notification'])
@@ -99,5 +101,12 @@ export class HeaderComponent implements OnInit {
   logout() {
     sessionStorage.clear();
     this.router.navigate(['/login']);
+  }
+
+  getPublishNotification = ()=>{
+    this.service.getPublishNotification().then((res: any)=>{
+      console.log('PublishNotification', res)
+      this.PublishNotification = res
+    })
   }
 }

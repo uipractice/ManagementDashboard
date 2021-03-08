@@ -47,19 +47,19 @@
       </div>
     </div>
     <div class="VerLine2 Notification" *ngIf="headerCountLoaded">
-      <a *ngIf="notificationCount" class="dropbtn" [matMenuTriggerFor]="notificationMenu"><img class="HeaderIcons"
+      <a *ngIf="PublishNotification" class="dropbtn" [matMenuTriggerFor]="notificationMenu"><img class="HeaderIcons"
           src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge"
-          *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
+          *ngIf="PublishNotification.length > 0">{{PublishNotification.length}}</span></a>
 
           <mat-menu #notificationMenu="matMenu" xPosition="before">
             <div class="NotificationContent-new" (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()">
               <h6 class="NotifyHeader">Notifications</h6>
               <ul>
-                <li *ngFor="let _nt of notificationCount">
+                <li *ngFor="let _nt of PublishNotification">
                   <a class="NotifyIcon">
                     <div class="text ellipsis NotifyText">
-                      <span class="text-concat">{{_nt.desc}}</span>
-                      <span class="NotifyDate">10-09-2020</span>
+                      <span class="text-concat">{{_nt.messageDescription}}</span>
+                      <span class="NotifyDate">{{_nt.date}}</span>
                     </div>
                   </a>
                 </li>
@@ -177,9 +177,9 @@
       </div>
     </div>
     <div class="Notification">
-      <a *ngIf="notificationCount" class="dropbtn" (click)="toggleDowncontent()" [matMenuTriggerFor]="notificationMenumobile"><img class="HeaderIcons"
+      <a *ngIf="PublishNotification" class="dropbtn" (click)="toggleDowncontent()" [matMenuTriggerFor]="notificationMenumobile"><img class="HeaderIcons"
           src="..\..\..\assets\images\main\Notifiction.svg"><span class="badge"
-          *ngIf="notificationCount.length > 0">{{notificationCount.length}}</span></a>
+          *ngIf="PublishNotification.length > 0">{{PublishNotification.length}}</span></a>
       <mat-menu #notificationMenumobile="matMenu" class="menu-screen">
       <div class="DropdownContent NotificationContent">
         <div class="CloseNotify">
@@ -187,11 +187,11 @@
             data-dismiss="modal">&times;</button>
         </div>
         <ul>
-          <li *ngFor="let data of notificationCount;" class="notication-border">
+          <li *ngFor="let data of PublishNotification;" class="notication-border">
             <a href="javascript:void(0)" class="NotifyIcon">
              
-              <div class="text ellipsis NotifyText">{{data.desc | charlimitpipe: 40}}
-                <span class="NotifyDate">10-09-2020</span>
+              <div class="text ellipsis NotifyText">{{data.messageDescription | charlimitpipe: 40}}
+                <span class="NotifyDate">{{data.date}}</span>
               </div>
             </a></li>
           <li><a class="More">MORE</a></li>

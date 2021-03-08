@@ -21,6 +21,7 @@ import { UrlConstants } from 'src/constants/url-constants';
 import { map, tap, last } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 import { Data } from '../app/helper/datastore';
+import { promise } from 'protractor';
 
 @Injectable({
   providedIn: 'root',
@@ -333,7 +334,28 @@ export class WebRequestService {
         });
     }).catch((err) => console.error(err));
   }
-
+  async updateNotification() {
+    return new Promise((resolve, reject) => {
+      this.http
+      .get(`${this.ROOT_URL}${this._urls.UPDATE_NOTIFICATION}`)
+      .toPromise()
+      .then((response) => {
+        // //console.log(response);
+        resolve(response);
+      })
+    })
+  }
+  async deleteNotification(id) {
+    return new Promise((resolve, reject) => {
+      this.http
+      .delete(`${this.ROOT_URL}${this._urls.DELETE_NOTIFICATION}${id}`)
+      .toPromise()
+      .then((response) => {
+        // //console.log(response);
+        resolve(response);
+      })
+    })
+  }
 }
 // payment
 

@@ -58,46 +58,51 @@
                                   <input type="radio" id="tab2" name="tabGroup1" class="tab" value="connect">
                                   <label for="tab2">90 Days Connect</label>
                                   <div class="tab__content">
-                                    <div class="rounded-circles">
-                                        <div class="single-circle" >
-                                            <div class="cicle-num">18</div>
-                                            <h5>Total Employee Count</h5>
+                                      <div *ngFor="let poe of PostEngagementData">
+                                        <div class="rounded-circles" >
+                                            <div class="single-circle" >
+                                                <div class="cicle-num">{{poe.employeecount30days}}</div>
+                                                <h5>Total Employee Count</h5>
+                                            </div>
+                                            <div class="single-circle rose">
+                                                <div class="cicle-num">{{poe.employeeconnected30days}}%</div>
+                                                <h5>Employee Connected</h5>
+                                            </div>
                                         </div>
-                                        <div class="single-circle rose">
-                                            <div class="cicle-num">100%</div>
-                                            <h5>Employee Connected</h5>
+                                        <div class="content-block">
+                                            <h5>What’s going good</h5>
+                                            <ul>
+                                                <li>{{poe.whatsgoinggood30days}}</li>
+                                                <!-- <li>Buddy Program</li>
+                                                <li>Regular interactions with all the team members.</li> -->
+                                            </ul>
+                                            <h5>Improvements :</h5>
+                                            <p>{{poe.scopeofimprovement30days}}</p>
                                         </div>
-                                    </div>
-                                    <div class="content-block">
-                                        <h5>What’s going good</h5>
-                                        <ul>
-                                            <li>Employee Recognition Programs</li>
-                                            <li>Buddy Program</li>
-                                            <li>Regular interactions with all the team members.</li>
-                                        </ul>
-                                        <h5>Improvements :</h5>
-                                        <p>New hires are expecting a better clarity on the  project and their role in the initial week of joining</p>
-                                    </div>
+                                      </div>
+                                    
                                   </div>
                                   <div class="tab__content">
+                                    <div *ngFor="let pec of PostEngagementDataConnected">
                                     <div class="rounded-circles">
                                         <div class="single-circle">
-                                            <div class="cicle-num">26</div>
+                                            <div class="cicle-num">{{pec.employeecount90days}}</div>
                                             <h5>Total Employee Count</h5>
                                         </div>
                                         <div class="single-circle rose">
-                                            <div class="cicle-num">100%</div>
+                                            <div class="cicle-num">{{pec.employeeconnected90days}}%</div>
                                             <h5>Employee Connected</h5>
                                         </div>
                                     </div>
                                     <div class="content-block">
                                         <h5>What’s going good</h5>
                                         <ul>
-                                            <li>Frequent connects with managers</li>
-                                            <li>Good support from team and managers</li>
+                                            <li>{{pec.whatsgoinggood90days}}</li>
+                                            <!-- <li>Good support from team and managers</li> -->
                                         </ul>
                                         <h5>Improvements :</h5>
-                                        <p>No major concerns</p>
+                                        <p>{{pec.scopeofimprovement90days}}</p>
+                                    </div>
                                     </div>
                                   </div>
                               </div>

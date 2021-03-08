@@ -10,6 +10,7 @@ import { WebRequestService } from 'src/services/web-request.service';
 export class DashboardHrComponent implements OnInit {
   summeryData: any;
   PostEngagementData: any;
+  PostEngagementDataConnected: any;
   getEmployeeEngagementData: any;
   headerDataLoaded: any = false;
   chartData3: any = {};
@@ -273,7 +274,8 @@ export class DashboardHrComponent implements OnInit {
   getPostEngagementData = ()=>{
     this.service.getPostEngagementData().then((res: any)=>{
      console.log('PostEngagementData', res)
-          this.PostEngagementData = res;
+          this.PostEngagementData = res[0].data;
+          this.PostEngagementDataConnected = res[1].data;
           this.isDataLoadedPractice = true;
     })
   }

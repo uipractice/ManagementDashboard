@@ -34,6 +34,7 @@ import { AgGridModule } from 'ag-grid-angular';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginGuard } from './guards/login.guard';
 import { CreateNewsNotificationsComponent } from './create-news-notifications/create-news-notifications.component';
+import { NewsNotificationModalComponent } from './reusable/components/news-notification-modal/news-notification-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { CreateNewsNotificationsComponent } from './create-news-notifications/cr
     // CssLoaderComponent,
     // PlaceHolderComponent,
     DataModalComponent,
-    CreateNewsNotificationsComponent
+    CreateNewsNotificationsComponent,
+    NewsNotificationModalComponent
     // DashboardComponent,
   ],
   imports: [

@@ -334,10 +334,10 @@ export class WebRequestService {
         });
     }).catch((err) => console.error(err));
   }
-  async updateNotification() {
+  async updateNotification(id, body) {
     return new Promise((resolve, reject) => {
       this.http
-      .get(`${this.ROOT_URL}${this._urls.UPDATE_NOTIFICATION}`)
+      .put(`${this.ROOT_URL}${this._urls.UPDATE_NOTIFICATION}${id}`, body)
       .toPromise()
       .then((response) => {
         // //console.log(response);
@@ -349,6 +349,39 @@ export class WebRequestService {
     return new Promise((resolve, reject) => {
       this.http
       .delete(`${this.ROOT_URL}${this._urls.DELETE_NOTIFICATION}${id}`)
+      .toPromise()
+      .then((response) => {
+        // //console.log(response);
+        resolve(response);
+      })
+    })
+  }
+  async createNotification(body) {
+    return new Promise((resolve, reject) => {
+      this.http
+      .post(`${this.ROOT_URL}${this._urls.CREATE_NOTIFICATION}`,body)
+      .toPromise()
+      .then((response) => {
+        // //console.log(response);
+        resolve(response);
+      })
+    })
+  }
+  async deleteNews(id) {
+    return new Promise((resolve, reject) => {
+      this.http
+      .delete(`${this.ROOT_URL}${this._urls.DELETE_NEWS}${id}`)
+      .toPromise()
+      .then((response) => {
+        // //console.log(response);
+        resolve(response);
+      })
+    })
+  }
+  async createNews(body) {
+    return new Promise((resolve, reject) => {
+      this.http
+      .post(`${this.ROOT_URL}${this._urls.CREATE_NEWS}`,body)
       .toPromise()
       .then((response) => {
         // //console.log(response);

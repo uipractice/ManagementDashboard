@@ -241,10 +241,12 @@
         border: 1px solid #BDBDBD;
         box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
         border-radius: 2px;
+        color:#626364;
       }
       input{
         height:40px;
         padding: 0 10px;
+        color:#626364;
       }
       label{
         display: block;
@@ -324,6 +326,35 @@
         color: #fff;
       }
     }
+    
+  }
+  .createpopup-table{
+    .content-center{
+      text-align: center;
+      padding-top: 20px;
+     button{
+      margin-right: 10px;
+      height: 40px;
+      background: rgba(189, 189, 189, 0.25);
+      border: 1px solid #BEBEBE;
+      border-radius: 2px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.1px;
+      color: #626364;
+      text-transform: uppercase;
+      box-shadow: 0 0 0 0;
+      min-width: 100px;
+    }
+    button.save{
+      background: rgba(32, 158, 197, 0.5);
+      color: #fff;
+    }
+    }
+    
   }
   @media(max-width:414px){
     .account-resource{
@@ -423,4 +454,19 @@
         }
       }
     }
-
+.createpopup-table{
+  width:100%;
+  .mat-radio-button{
+    background: #fff;
+    color:#626364;
+    height: 40px;
+    line-height: 38px;
+    border: 1px solid #BDBDBD;
+    min-width: 146px;
+    padding-left: 17px;
+  }
+  .mat-radio-button.mat-radio-checked{
+    background: #209EC5 url("../../../../assets/images/main/Shape.svg") no-repeat 8px center;
+    color:#fff;
+  }
+}

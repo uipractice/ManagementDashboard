@@ -15,6 +15,9 @@ export class CreateNewsNotificationsComponent {
   allNewsAndNotification :any;
   allNotification: any;
   totalNotification: any;
+  msgType: any;
+  Content: any;
+  toggleSwitch: boolean;
   allNotificationInfo: any=[];
   totalData = [];
   constructor(public matDialog: MatDialog, 
@@ -47,16 +50,9 @@ export class CreateNewsNotificationsComponent {
     console.log('totalData', this.totalData)
   }
   
-  // updateNotification = () =>{
-  //   this.service.updateNotification().then((res:any)=>{
-  //     console.log('updateNotification', res)
-  //     this.updateNotification = res
-  //   })
-  // }
-  
-  createNewsPopup() {
+  createNotificationPopup() {
     const dialogConfig = new MatDialogConfig();
-    const modalId = 'modal03';   
+    const modalId = 'modal03';  
     dialogConfig.disableClose = false;
     // dialogConfig.height = "470px";
     dialogConfig.width = "620px";
@@ -66,9 +62,45 @@ export class CreateNewsNotificationsComponent {
    this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
   }
 
-  deleteNewsPopup(id) {
+  updateNotificationPopup(id, data){
     const dialogConfig = new MatDialogConfig();
-    const index = 1;
+    const modalId = 'modal03';  
+    const selectedId = id;
+    const selectedItem = data
+    dialogConfig.disableClose = false;
+    // dialogConfig.height = "470px";
+    dialogConfig.width = "620px";
+    dialogConfig.data = {
+      modalId: modalId,
+      selectedItem: selectedItem,
+      selectedId: selectedId,
+      // formData: formData,
+    };
+    
+   const dialogref = this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
+   
+   dialogref.afterClosed().subscribe((confirmed: boolean) => {
+    this.newsNotificationData();
+    this.notificationData();
+   })
+  }
+  deleteNotificationPopup(id) {
+    const dialogConfig = new MatDialogConfig();
+    const modalId = 'modal04';   
+    const selectedId = id;   
+    dialogConfig.disableClose = false;
+    // dialogConfig.height = "470px";
+    dialogConfig.width = "400px";
+    dialogConfig.data = {
+      modalId: modalId,
+      selectedId: selectedId,
+    };
+   this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
+  //  this.deleteNotification(index);
+  //  console.log('delete:', id)
+  }
+  deleteNewsPopup(id){
+    const dialogConfig = new MatDialogConfig();
     const modalId = 'modal04';   
     const selectedId = id;   
     dialogConfig.disableClose = false;

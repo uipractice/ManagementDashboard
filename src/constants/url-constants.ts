@@ -33,12 +33,12 @@ export class UrlConstants {
     GET_ALL_NEWS_Data: '/api/news/getAllNews',
     GET_ALL_PUBLISH_NEWS_Data: '/api/news/getPublishNews',
     GET_PUBLISH_NEWS_BY_DEPT: '/api/news/getPublishNewsByDept/:id',
-    DELETE_NEWS: '/api/news/deletenews/:id',
+    DELETE_NEWS: '/api/news/deletenews/',
 
     GET_ALL_NOTIFICATION_Data: '/api/notification/getAllNotification',
     GET_PUBLISH_NOTIFICATION_Data: '/api/notification/getPublishNotification',
-    UPDATE_NOTIFICATION: '/api/notification/updatNotification/:id',
+    UPDATE_NOTIFICATION: '/api/notification/updatNotification/',
     DELETE_NOTIFICATION: '/api/notification/deletenotification/',
-
+    CREATE_NOTIFICATION: '/api/notification/createnotification',
   };
 }

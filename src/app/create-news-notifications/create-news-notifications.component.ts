@@ -77,12 +77,12 @@ export class CreateNewsNotificationsComponent {
       // formData: formData,
     };
     
-   const dialogref = this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
+   this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
    
-   dialogref.afterClosed().subscribe((confirmed: boolean) => {
-    this.newsNotificationData();
-    this.notificationData();
-   })
+  //  dialogref.afterClosed().subscribe((confirmed: boolean) => {
+  //   this.newsNotificationData();
+  //   this.notificationData();
+  //  })
   }
   deleteNotificationPopup(id) {
     const dialogConfig = new MatDialogConfig();
@@ -99,19 +99,5 @@ export class CreateNewsNotificationsComponent {
   //  this.deleteNotification(index);
   //  console.log('delete:', id)
   }
-  deleteNewsPopup(id){
-    const dialogConfig = new MatDialogConfig();
-    const modalId = 'modal04';   
-    const selectedId = id;   
-    dialogConfig.disableClose = false;
-    // dialogConfig.height = "470px";
-    dialogConfig.width = "400px";
-    dialogConfig.data = {
-      modalId: modalId,
-      selectedId: selectedId,
-    };
-   this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
-  //  this.deleteNotification(index);
-   console.log('delete:', id)
-  }
+ 
 }

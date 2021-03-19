@@ -24,8 +24,7 @@
     <td  [ngClass]="(data.messageType=='News')?'category-news':'category-notify'">{{data.messageType}}</td>
     <td *ngIf="data.messageType=='Notification'"><a (click)="updateNotificationPopup(data._id, data)"><img src="../../assets/images/main/edit-icon.svg"></a></td>
     <td *ngIf="data.messageType=='News'"><a><img src="../../assets/images/main/edit-icon.svg"></a></td>
-    <td *ngIf="data.messageType=='Notification'"><a (click)="deleteNotificationPopup(data._id)"><img src="../../assets/images/main/delete-icon.svg"></a></td>
-    <td *ngIf="data.messageType=='News'"><a (click)="deleteNewsPopup(data._id)"><img src="../../assets/images/main/delete-icon.svg"></a></td>
+    <td><a (click)="deleteNotificationPopup(data._id)"><img src="../../assets/images/main/delete-icon.svg"></a></td>
     <td *ngIf="data.publish==true"><label class="switch">
         <input type="checkbox" checked>
         <span class="slider round"></span>

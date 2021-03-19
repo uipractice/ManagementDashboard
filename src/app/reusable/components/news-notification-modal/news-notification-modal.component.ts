@@ -17,7 +17,6 @@ export class NewsNotificationModalComponent implements OnInit {
   selectedId: any;
   startDate : Date;
   createNews: any;
-  totalData = [];
   newNotification: any;
   newNotificationForm: any;
   notificationDetailsForm: FormGroup;
@@ -41,27 +40,8 @@ export class NewsNotificationModalComponent implements OnInit {
     this.selectedItem = this.modalData.selectedItem
     console.log('selectedItem', this.selectedItem, this.selectedId)
     this.updateNotificationData();
-    this.newsNotificationData();
-    this.notificationData();
   }
    
-  newsNotificationData = ()=>{
-    this.service.getNewsData().then((res:any)=>{
-      console.log('allNewsAndNotification', res)
-      // this.allNewsAndNotification = res
-      this.totalData.push(...res);
-    })
-    
-}
-
-notificationData = ()=>{
-  this.service.getNotificationData().then((res:any)=>{
-    console.log('allNotification', res )
-    this.totalData.push(...res);
-  })
-  console.log('totalData', this.totalData)
-}
-
   actionFunction() {
     // this.modalService.modalAction(this.modalData);
     this.closeModal();
@@ -76,9 +56,9 @@ notificationData = ()=>{
         console.log('deleteNotification', res)
       })
     }
-    else if(formData.messageType = 'News'){
+    if(formData.messageType = 'News'){
       this.service.deleteNews(this.selectedId).then((res:any)=>{
-        
+        console.log('deletenews', res)
       })
     }
     this.dialogRef.close();
@@ -90,14 +70,14 @@ notificationData = ()=>{
     if(type == 'save'){
       formData['publish'] = false,
       formData['isactive'] = false
-      if(formData.messageType = 'Notification'){
-        console.log("Form data", formData)
+      console.log("Form data", formData)
+      if(formData['messageType'] = "Notification"){
         this.service.createNotification(formData).then((res:any)=>{
           console.log('newNotification', res)
           this.newNotification= res
         })
       }
-      else if(formData.messageType = 'News'){
+      if(formData['messageType'] = "News"){
         console.log("Form data", formData)
         this.service.createNews(formData).then((res:any)=>{
           console.log('createNews', res)
@@ -106,17 +86,17 @@ notificationData = ()=>{
       }
      
     }
-    if(type == 'saveAndPublish') {
+    if(type == 'saveAndPublish'){
       formData['publish'] = true,
       formData['isactive'] = true
-      if(formData.messageType = 'Notification'){
-        console.log("Form data", formData)
+      console.log("Form data", formData)
+      if(formData['messageType'] = "Notification"){
         this.service.createNotification(formData).then((res:any)=>{
           console.log('newNotification', res)
           this.newNotification= res
         })
       }
-      else if(formData.messageType = 'News'){
+      if(formData['messageType'] = "News"){
         this.service.createNews(formData).then((res:any)=>{
           console.log('createNews', res)
           this.createNews= res
@@ -124,9 +104,6 @@ notificationData = ()=>{
       }
     }
     this.dialogRef.close();
-    this.service.getNotificationData().then((res:any)=>{
-      console.log('allNotification', res )
-    })
   }
   updateNotificationData(){
     this.notificationDetailsForm.patchValue({

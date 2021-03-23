@@ -1,9 +1,10 @@
 import { WebRequestService } from './../../services/web-request.service';
 import { CommonService } from './../../services/common.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DataModalComponent } from '../reusable/components/data-modal/data-modal.component';
 import { NewsNotificationModalComponent } from '../reusable/components/news-notification-modal/news-notification-modal.component';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'ev-create-news-notifications',
@@ -12,59 +13,63 @@ import { NewsNotificationModalComponent } from '../reusable/components/news-noti
 })
 export class CreateNewsNotificationsComponent {
   headerDataLoaded: any = false;
-  allNewsAndNotification :any;
   allNotification: any;
   totalNotification: any;
   msgType: any;
   Content: any;
   toggleSwitch: boolean;
-  allNotificationInfo: any=[];
+  allNotificationInfo: any = [];
   totalData = [];
-  constructor(public matDialog: MatDialog, 
-     public commonService: CommonService, public service: WebRequestService,) { }
+  constructor(public matDialog: MatDialog,
+    public commonService: CommonService, public service: WebRequestService,
+    @Inject(DOCUMENT) private _document: Document
+    ) { }
 
-  ngOnInit(): void {    
-      this.service.getSummeryCount().then((res) => {
-        this.commonService.transferData(res['data']['result']);
-        this.headerDataLoaded = true;
-      });
-
-      this.newsNotificationData();
-      this.notificationData();
+  ngOnInit(): void {
+    this.service.getSummeryCount().then((res) => {
+      this.commonService.transferData(res['data']['result']);
+      this.headerDataLoaded = true;
+    });
+    // this.newsNotificationData();
+    this.allNewsAndnotification();
   }
 
-  newsNotificationData = ()=>{
-      this.service.getNewsData().then((res:any)=>{
-        console.log('allNewsAndNotification', res)
-        // this.allNewsAndNotification = res
-        this.totalData.push(...res);
-      })
-      
-  }
-  
-  notificationData = ()=>{
-    this.service.getNotificationData().then((res:any)=>{
-      console.log('allNotification', res )
-      this.totalData.push(...res);
+  // newsNotificationData = () => {
+  //   this.service.getNewsData().then((res: any) => {
+  //     this.totalData =[]
+  //     console.log('allNewsAndNotification', res)
+  //     this.totalData.push(...res);
+  //   })
+  // }
+
+  allNewsAndnotification = () => {
+    this.service.getNotificationData().then((res: any) => {
+      this.totalData = res.flat();
+      console.log('total data',this.totalData)
     })
-    console.log('totalData', this.totalData)
   }
-  
-  createNotificationPopup() {
+
+  createNewsAndNotification() {
     const dialogConfig = new MatDialogConfig();
-    const modalId = 'modal03';  
+    const modalId = 'modal03';
     dialogConfig.disableClose = false;
     // dialogConfig.height = "470px";
     dialogConfig.width = "620px";
     dialogConfig.data = {
       modalId: modalId,
     };
-   this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
+    const dialogRef = this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(value => {
+      console.log(value)
+      setTimeout(() => {
+        this.allNewsAndnotification();
+      }, 2000);
+    });
   }
 
-  updateNotificationPopup(id, data){
+  updateSelectedData(id, data) {
     const dialogConfig = new MatDialogConfig();
-    const modalId = 'modal03';  
+    const modalId = 'modal05';
     const selectedId = id;
     const selectedItem = data
     dialogConfig.disableClose = false;
@@ -76,28 +81,34 @@ export class CreateNewsNotificationsComponent {
       selectedId: selectedId,
       // formData: formData,
     };
-    
-   this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
-   
-  //  dialogref.afterClosed().subscribe((confirmed: boolean) => {
-  //   this.newsNotificationData();
-  //   this.notificationData();
-  //  })
+    const dialogRef= this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(value => {
+      console.log(value)
+      setTimeout(() => {
+        this.allNewsAndnotification();
+      }, 2000);
+    });
   }
-  deleteNotificationPopup(id) {
+  deleteNotificationPopup(id, type) {
     const dialogConfig = new MatDialogConfig();
-    const modalId = 'modal04';   
-    const selectedId = id;   
+    const modalId = 'modal04';
+    const selectedId = id;
+    const selectedType = type;
     dialogConfig.disableClose = false;
     // dialogConfig.height = "470px";
     dialogConfig.width = "400px";
     dialogConfig.data = {
       modalId: modalId,
       selectedId: selectedId,
+      selectedType: selectedType
     };
-   this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
-  //  this.deleteNotification(index);
-  //  console.log('delete:', id)
+    const dialogRef = this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(value => {
+      console.log(value)
+      setTimeout(() => {
+        this.allNewsAndnotification();
+      }, 2000);
+    });
   }
- 
+
 }

@@ -301,8 +301,8 @@ export class WebRequestService {
   async getNotificationData() {
     return new Promise((resolve, reject) => {
       this.http
-        // .get(`http://localhost:80/api/hr/getPostEngagement`)
-        .get(`${this.ROOT_URL}${this._urls.GET_ALL_NOTIFICATION_Data}`)
+        // .get(`http://localhost:80/api/news/getAllData`)
+        .get(`${this.ROOT_URL}${this._urls.GET_ALL_DATA}`)
         .toPromise()
         .then((response) => {
           // //console.log(response);
@@ -338,6 +338,18 @@ export class WebRequestService {
     return new Promise((resolve, reject) => {
       this.http
       .put(`${this.ROOT_URL}${this._urls.UPDATE_NOTIFICATION}${id}`, body)
+      .toPromise()
+      .then((response) => {
+        // //console.log(response);
+        resolve(response);
+      })
+    })
+  }
+  async updateNews(id, body) {
+    return new Promise((resolve, reject) => {
+      this.http
+      .put(`http://localhost:80/api/news/updatNews/${id}`, body)
+      // .put(`${this.ROOT_URL}${this._urls.UPDATE_NOTIFICATION}${id}`, body)
       .toPromise()
       .then((response) => {
         // //console.log(response);

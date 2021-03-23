@@ -40,5 +40,6 @@ export class UrlConstants {
     UPDATE_NOTIFICATION: '/api/notification/updatNotification/',
     DELETE_NOTIFICATION: '/api/notification/deletenotification/',
     CREATE_NOTIFICATION: '/api/notification/createnotification',
+    GET_ALL_DATA: '/api/news/getAllData',
   };
 }

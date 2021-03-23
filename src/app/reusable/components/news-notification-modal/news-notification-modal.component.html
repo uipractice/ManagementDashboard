@@ -17,7 +17,6 @@
       <table class="createpopup-table">
         <tr>
           <td>
-            
               <mat-radio-group formControlName="messagetype">
                   <label>Select</label>
                   <mat-radio-button value="Notification">Notification &nbsp;</mat-radio-button>
@@ -67,11 +66,11 @@
                   <button mat-raised-button class="reset" (click)="closeModal()">
                     Reset
                 </button>
-                  <button mat-raised-button class="save" (click)="onFormSubmitNotificationDetails('save')">
+                  <button mat-raised-button class="save" (click)="onSave()">
                     Save
                   </button>
                   <button mat-raised-button class="save" id="modal-cancel-button" 
-                  (click)="onFormSubmitNotificationDetails('saveAndPublish')">
+                  (click)="onSaveAndPublish()">
                     Save & Publish
                   </button>
               </td>
@@ -81,7 +80,6 @@
           </tr>
       </table>
     </form>
-
 
     </section>
     
@@ -112,4 +110,91 @@
         ok
       </button>
   </footer>
+  </div>
+
+  
+  <div class="create-news-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal05'">
+    <header id="modal-header">
+      <h1 id="modal-title">Create Notification/News & events</h1>
+      <button
+        type="button"
+        class="close pull-right"
+        aria-label="Close"
+        (click)="closeModal()"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </header>
+    <section id="modal-body">
+     
+    <form [formGroup]="notificationDetailsForm"  *ngIf="isnotificationDetailsForm">
+      <table class="createpopup-table">
+        <tr>
+          <td>
+              <mat-radio-group formControlName="messagetype">
+                  <label>Select</label>
+                  <mat-radio-button value="Notification">Notification &nbsp;</mat-radio-button>
+                  <mat-radio-button value="News">News & Events</mat-radio-button>
+              </mat-radio-group>
+              <mat-error>
+                  <span *ngIf="!notificationDetailsForm.get('messagetype').valid && notificationDetailsForm.get('messagetype').touched">Message Type Required</span>
+              </mat-error>
+          </td>
+          <td>
+            <mat-form-field class="demo-full-width" >
+              <label>Date & Time to publish</label>
+              <input matInput [matDatepicker]="picker" placeholder="" formControlName="date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+            </mat-form-field>
+            
+        </td>
+        </tr>
+          <!-- <tr>
+              <td>
+                  <mat-form-field class="demo-full-width">
+                    <input matInput [matDatepicker]="picker" placeholder="mm/dd/yyyy">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+                  </mat-form-field>
+                  
+              </td>
+          </tr> -->
+          <tr>
+              <td colspan="2">
+                  <mat-form-field class="demo-full-width">
+                    <label>Content (Max 500 Charactor)</label>
+                    <textarea formControlName="messagedescription" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="10" matAutosizeMaxRows="100">Content</textarea>
+                      <mat-error>
+                              <span *ngIf="!notificationDetailsForm.get('messagedescription').valid && notificationDetailsForm.get('messagedescription').touched">Content Required</span>
+                          </mat-error>
+                  </mat-form-field>
+                  
+              </td>
+          </tr>
+        
+          
+          <tr>
+              <td colspan="2" class="content-center">
+                  <!-- <button mat-raised-button color="accent" [disabled]="!basicDetailsForm.valid">Next</button> -->
+                  <button mat-raised-button class="reset" (click)="closeModal()">
+                    Reset
+                </button>
+                  <button mat-raised-button class="save" (click)="onUpdateSave()">
+                    Save
+                  </button>
+                  <button mat-raised-button class="save" id="modal-cancel-button" 
+                  (click)="onUpdatePublish()">
+                    Save & Publish
+                  </button>
+              </td>
+          </tr>
+          <tr>
+              <td></td>
+          </tr>
+      </table>
+    </form>
+
+    </section>
+    
   </div>

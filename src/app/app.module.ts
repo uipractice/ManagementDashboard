@@ -33,6 +33,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { AgGridModule } from 'ag-grid-angular';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginGuard } from './guards/login.guard';
+import { CreateNewsNotificationsComponent } from './create-news-notifications/create-news-notifications.component';
+import { NewsNotificationModalComponent } from './reusable/components/news-notification-modal/news-notification-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,9 @@ import { LoginGuard } from './guards/login.guard';
     DataFilterComponent,
     // CssLoaderComponent,
     // PlaceHolderComponent,
-    DataModalComponent
+    DataModalComponent,
+    CreateNewsNotificationsComponent,
+    NewsNotificationModalComponent
     // DashboardComponent,
   ],
   imports: [

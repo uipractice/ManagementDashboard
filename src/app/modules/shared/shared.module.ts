@@ -7,17 +7,18 @@ import { CharLimitpipe } from 'src/app/components/pipes/char-limit.pipe';
 import { MaterialModule } from './material.module';
 import { PlaceHolderComponent } from 'src/app/reusable/components/place-holder/place-holder.component';
 import { CssLoaderComponent } from 'src/app/reusable/components/css-loader/css-loader.component';
+import { dateFormatPipe } from 'src/app/components/pipes/date-format.pipe';
 
 
 
 
 @NgModule({
   declarations: [HeaderComponent,SideNavComponent, DashboardComponent, 
-    CharLimitpipe, PlaceHolderComponent, CssLoaderComponent],
+    CharLimitpipe, PlaceHolderComponent, CssLoaderComponent, dateFormatPipe],
   imports: [
     CommonModule,MaterialModule
   ],
   exports:[ HeaderComponent,SideNavComponent,DashboardComponent, CharLimitpipe, PlaceHolderComponent,
-    CssLoaderComponent]
+    CssLoaderComponent, dateFormatPipe]
 })
 export class SharedModule { }

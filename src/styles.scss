@@ -151,6 +151,42 @@ button:focus{
 .mat-dialog-container{
   border-radius: 0 !important;
 }
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  height:0 !important;
+}
+.mat-radio-label-content{
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.01em;
+}
+.mat-form-field{
+  width:100%;
+}
+.createpopup-table{
+  .mat-radio-outer-circle{
+    border-color: transparent;
+  }
+  .mat-radio-label-content{
+    font-size: 16px;
+  }
+  .mat-radio-container{
+    display: none;
+  }
+  .mat-form-field-infix{
+    border-top: 0;
+  }
+  .mat-form-field-appearance-legacy .mat-form-field-wrapper{
+    padding-bottom: 0;
+  }
+  .mat-form-field-suffix{
+    position: absolute;
+    top: 50px;
+    right: 10px;
+  }
+  .mat-form-field.mat-focused .mat-form-field-ripple{
+    background-color: transparent;   
+  }
+}
 @media only screen and (min-width:1200px) and (max-width:1280px){
   .DashboardHeader{
     width: 94.5%;

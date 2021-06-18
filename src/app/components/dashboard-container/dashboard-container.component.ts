@@ -75,6 +75,7 @@ export class DashboardContainerComponent implements OnInit {
   constructor(private router: Router, public service: WebRequestService,
      public matDialog: MatDialog, public commonService: CommonService) {}
   ngOnInit() {
+   
     this.service.getAccountGraphData().then((res:any) => {
       if (res['statusCode'] === 200) {
         this.chartData['idName'] = 'overAllChart3';
@@ -125,9 +126,9 @@ export class DashboardContainerComponent implements OnInit {
       }
     });
     this.service.getPracticeGraphData().then((res) => {
-      console.log('getPracticeGraphData', res);
+      // console.log('getPracticeGraphData', res);
       if (res['statusCode'] === 200) {
-        console.log('chartData2', res)
+        // console.log('chartData2', res)
         this.chartData2['idName'] = 'overAllChart4';
         this.chartData2['title'] = 'Resource Engagement';
         this.chartData2['series1'] = 'count';
@@ -187,13 +188,16 @@ export class DashboardContainerComponent implements OnInit {
         },
       ],
     };
+    this.service.getPublishNewsData().then((res:any) =>{
+      this.newsLetterData = res
+    })
 
-    for (var i = 0; i < 10; i++) {
-      this.newsLetterData.push({
-        title:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      });
-    }
+    // for (var i = 0; i < 10; i++) {
+    //   this.newsLetterData.push({
+    //     title:
+    //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    //   });
+    // }
   }
   // openLogoutModal() {
   //   const dialogConfig = new MatDialogConfig();

@@ -55,7 +55,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.commonService.gettingData.subscribe(res =>{
-      console.log('res..',res)
+      // console.log('res..',res)
       this.headerCount = res;
       this.headerCountLoaded = true;
     })
@@ -105,7 +105,7 @@ export class HeaderComponent implements OnInit {
 
   getPublishNotification = ()=>{
     this.service.getPublishNotification().then((res: any)=>{
-      console.log('PublishNotification', res)
+      // console.log('PublishNotification', res)
       this.PublishNotification = res
     })
   }

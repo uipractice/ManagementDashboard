@@ -9,6 +9,9 @@ import { WebRequestService } from 'src/services/web-request.service';
 })
 export class DashboardHrComponent implements OnInit {
   summeryData: any;
+  PostEngagementData: any;
+  PostEngagementDataConnected: any;
+  getEmployeeEngagementData: any;
   headerDataLoaded: any = false;
   chartData3: any = {};
   chartData2: any = {};
@@ -25,18 +28,24 @@ export class DashboardHrComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    for (var i = 0; i < 10; i++) {
-      this.newsLetterData.push({
-        title:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      });
-    }
+    // for (var i = 0; i < 10; i++) {
+    //   this.newsLetterData.push({
+    //     title:
+    //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    //   });
+    // }
+    this.service.getPublishNewsData().then((res:any) =>{
+      this.newsLetterData = res
+    })
     this.totalWorkingAndAverageData();
     // this.getOnboardAndSeperateData();
     this.getAccountWiseEmployeeAttrition();
     this.getHeadcountDemographicsData();
     this.getTopThreeReasonData();
     this.getEmpAttrationData();
+    // this.getVoluntaryAnalysisInfo();
+    this.getEmpEngagementData();
+    this.getPostEngagementData();
 
     this.chartData2 = {
       idName: 'overAllChart2',
@@ -82,7 +91,7 @@ export class DashboardHrComponent implements OnInit {
     this.chartData5 = {
       idName: 'overAllChart7',
       title: 'Voluntary Attrition Analysis',
-      month: 'January',
+      month: 'Year to Date ',
       series1: 'litres',
       legendName1: 'Practices',
       type: 'extended',
@@ -90,8 +99,8 @@ export class DashboardHrComponent implements OnInit {
       data: [
         {
           Resion: 'Better Career Growth',
-          value: 37,
-          subData: [
+          totalcount: 37,
+          subdata: [
             { name: 'A', value: 200 },
             { name: 'B', value: 150 },
             { name: 'C', value: 100 },
@@ -100,8 +109,8 @@ export class DashboardHrComponent implements OnInit {
         },
         {
           Resion: 'Personal Reasons',
-          value: 12,
-          subData: [
+          totalcount: 12,
+          subdata: [
             { name: 'A', value: 150 },
             { name: 'B', value: 100 },
             { name: 'C', value: 50 },
@@ -109,8 +118,8 @@ export class DashboardHrComponent implements OnInit {
         },
         {
           Resion: 'Work Enviornment',
-          value: 10,
-          subData: [
+          totalcount: 10,
+          subdata: [
             { name: 'A', value: 110 },
             { name: 'B', value: 60 },
             { name: 'C', value: 30 },
@@ -177,7 +186,7 @@ export class DashboardHrComponent implements OnInit {
       if (res) {
         this.chartData4['idName'] = 'overAllChart6';
         this.chartData4['title'] = 'Account wise Employee Attrition';
-        this.chartData4['month'] = 'January';
+        this.chartData4['month'] = 'Year to Date ';
         this.chartData4['series1'] = 'litres';
         this.chartData4['legendName1'] = 'Practices';
         this.chartData4['type'] = 'extended';
@@ -212,7 +221,7 @@ export class DashboardHrComponent implements OnInit {
       if (res) {
           this.chartData3['idName'] = 'overAllChart5';
           this.chartData3['title'] = 'Voluntary Attrition : Top 3 Reason';
-          this.chartData3['month'] = 'January';
+          this.chartData3['month'] = 'Year to Date ';
           this.chartData3['series1'] = 'count';
           this.chartData3['legendName1'] = 'Practices';
           this.chartData3['type'] = 'extended';
@@ -236,4 +245,39 @@ export class DashboardHrComponent implements OnInit {
         }
     })
   }
+  getVoluntaryAnalysisInfo = ()=>{
+    this.service.getVoluntaryAnalysisData().then((res: any)=>{
+  let newResponse = res.map(item => {
+       let subdata = item.subdata.slice(0, item.subdata.length -1);
+       return{...item, subdata};
+     });
+     if (res) {
+      this.chartData5['idName'] = 'overAllChart7';
+      this.chartData5['title'] = 'Voluntary Attrition Analysis';
+      this.chartData5['month'] = 'Year to Date ';
+      this.chartData5['series1'] = 'litres';
+      this.chartData5['legendName1'] = 'Practices';
+      this.chartData5['type'] = 'extended';
+      this.chartData5['label'] = true;
+      this.chartData5['data'] = newResponse;
+      this.isDataLoadedPractice = true;
+    }
+    })
+  }
+  getEmpEngagementData = ()=>{
+    this.service.getEmployeeEngagementData().then((res: any)=>{
+     console.log('getEmployeeEngagementData', res)
+          this.getEmployeeEngagementData = res;
+          this.isDataLoadedPractice = true;
+    })
+  }
+  getPostEngagementData = ()=>{
+    this.service.getPostEngagementData().then((res: any)=>{
+     console.log('PostEngagementData', res)
+          this.PostEngagementData = res[0].data;
+          this.PostEngagementDataConnected = res[1].data;
+          this.isDataLoadedPractice = true;
+    })
+  }
+  
 }

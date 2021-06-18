@@ -21,6 +21,7 @@ import { UrlConstants } from 'src/constants/url-constants';
 import { map, tap, last } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 import { Data } from '../app/helper/datastore';
+import { promise } from 'protractor';
 
 @Injectable({
   providedIn: 'root',
@@ -51,7 +52,6 @@ export class WebRequestService {
     // //console.log(cookieExists);
     if (cookieExists) {
       this._accessToken = this.cookieService.get('x-access-token');
-
       this._commonHeader = this._accessToken;
       // //console.log(this._commonHeader);
       this._herderOption = new HttpHeaders({
@@ -247,7 +247,160 @@ export class WebRequestService {
         });
     }).catch((err) => console.error(err));
   }
+  async getVoluntaryAnalysisData() { 
+    return new Promise((resolve, reject) => {
+      this.http
+        // .get(`http://localhost:80/api/hr/getVoluntaryAttritionData`)
+        .get(`${this.ROOT_URL}${this._urls.GET_VOLUNTARY_ANALYSIS_Data}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  async getEmployeeEngagementData() {
+    return new Promise((resolve, reject) => {
+      this.http
+        // .get(`http://localhost:80/api/hr/getEmployeeEngagement`)
+        .get(`${this.ROOT_URL}${this._urls.GET_EMPLOYEE_ENGAGEMENT_Data}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  async getPostEngagementData() {
+    return new Promise((resolve, reject) => {
+      this.http
+        // .get(`http://localhost:80/api/hr/getPostEngagement`)
+        .get(`${this.ROOT_URL}${this._urls.GET_POST_ENGAGEMENT_Data}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
 
+  // News and notification api integration
+
+  async getNewsData() {
+    return new Promise((resolve, reject) => {
+      this.http
+        // .get(`http://localhost:80/api/hr/getPostEngagement`)
+        .get(`${this.ROOT_URL}${this._urls.GET_ALL_NEWS_Data}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  async getNotificationData() {
+    return new Promise((resolve, reject) => {
+      this.http
+        // .get(`http://localhost:80/api/news/getAllData`)
+        .get(`${this.ROOT_URL}${this._urls.GET_ALL_DATA}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  async getPublishNotification() {
+    return new Promise((resolve, reject) => {
+      this.http
+        // .get(`http://localhost:80/api/hr/getPostEngagement`)
+        .get(`${this.ROOT_URL}${this._urls.GET_PUBLISH_NOTIFICATION_Data}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  async getPublishNewsData() {
+    return new Promise((resolve, reject) => {
+      this.http
+        // .get(`http://localhost:80/api/hr/getPostEngagement`)
+        .get(`${this.ROOT_URL}${this._urls.GET_ALL_PUBLISH_NEWS_Data}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  async updateNotification(id, body) {
+    return new Promise((resolve, reject) => {
+      this.http
+      .put(`${this.ROOT_URL}${this._urls.UPDATE_NOTIFICATION}${id}`, body)
+      .toPromise()
+      .then((response) => {
+        // //console.log(response);
+        resolve(response);
+      })
+    })
+  }
+  async updateNews(id, body) {
+    return new Promise((resolve, reject) => {
+      this.http
+      .put(`http://localhost:80/api/news/updatNews/${id}`, body)
+      // .put(`${this.ROOT_URL}${this._urls.UPDATE_NOTIFICATION}${id}`, body)
+      .toPromise()
+      .then((response) => {
+        // //console.log(response);
+        resolve(response);
+      })
+    })
+  }
+  async deleteNotification(id) {
+    return new Promise((resolve, reject) => {
+      this.http
+      .delete(`${this.ROOT_URL}${this._urls.DELETE_NOTIFICATION}${id}`)
+      .toPromise()
+      .then((response) => {
+        // //console.log(response);
+        resolve(response);
+      })
+    })
+  }
+  async createNotification(body) {
+    return new Promise((resolve, reject) => {
+      this.http
+      .post(`${this.ROOT_URL}${this._urls.CREATE_NOTIFICATION}`,body)
+      .toPromise()
+      .then((response) => {
+        // //console.log(response);
+        resolve(response);
+      })
+    })
+  }
+  async deleteNews(id) {
+    return new Promise((resolve, reject) => {
+      this.http
+      .delete(`${this.ROOT_URL}${this._urls.DELETE_NEWS}${id}`)
+      .toPromise()
+      .then((response) => {
+        // //console.log(response);
+        resolve(response);
+      })
+    })
+  }
+  async createNews(body) {
+    return new Promise((resolve, reject) => {
+      this.http
+      .post(`${this.ROOT_URL}${this._urls.CREATE_NEWS}`,body)
+      .toPromise()
+      .then((response) => {
+        // //console.log(response);
+        resolve(response);
+      })
+    })
+  }
 }
 // payment
 

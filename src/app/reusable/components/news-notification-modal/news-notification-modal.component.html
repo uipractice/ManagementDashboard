@@ -17,13 +17,13 @@
       <table class="createpopup-table">
         <tr>
           <td>
-              <mat-radio-group formControlName="messagetype">
+              <mat-radio-group formControlName="messageType">
                   <label>Select</label>
                   <mat-radio-button value="Notification">Notification &nbsp;</mat-radio-button>
                   <mat-radio-button value="News">News & Events</mat-radio-button>
               </mat-radio-group>
               <mat-error>
-                  <span *ngIf="!notificationDetailsForm.get('messagetype').valid && notificationDetailsForm.get('messagetype').touched">Message Type Required</span>
+                  <span *ngIf="!notificationDetailsForm.get('messageType').valid && notificationDetailsForm.get('messageType').touched">Message Type Required</span>
               </mat-error>
           </td>
           <td>
@@ -50,9 +50,9 @@
               <td colspan="2">
                   <mat-form-field class="demo-full-width">
                     <label>Content (Max 500 Charactor)</label>
-                    <textarea formControlName="messagedescription" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="10" matAutosizeMaxRows="100">Content</textarea>
+                    <textarea formControlName="messageDescription" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="10" matAutosizeMaxRows="100">Content</textarea>
                       <mat-error>
-                              <span *ngIf="!notificationDetailsForm.get('messagedescription').valid && notificationDetailsForm.get('messagedescription').touched">Content Required</span>
+                              <span *ngIf="!notificationDetailsForm.get('messageDescription').valid && notificationDetailsForm.get('messageDescription').touched">Content Required</span>
                           </mat-error>
                   </mat-form-field>
                   
@@ -131,13 +131,13 @@
       <table class="createpopup-table">
         <tr>
           <td>
-              <mat-radio-group formControlName="messagetype">
+              <mat-radio-group formControlName="messageType">
                   <label>Select</label>
                   <mat-radio-button value="Notification">Notification &nbsp;</mat-radio-button>
                   <mat-radio-button value="News">News & Events</mat-radio-button>
               </mat-radio-group>
               <mat-error>
-                  <span *ngIf="!notificationDetailsForm.get('messagetype').valid && notificationDetailsForm.get('messagetype').touched">Message Type Required</span>
+                  <span *ngIf="!notificationDetailsForm.get('messageType').valid && notificationDetailsForm.get('messageType').touched">Message Type Required</span>
               </mat-error>
           </td>
           <td>
@@ -164,9 +164,9 @@
               <td colspan="2">
                   <mat-form-field class="demo-full-width">
                     <label>Content (Max 500 Charactor)</label>
-                    <textarea formControlName="messagedescription" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="10" matAutosizeMaxRows="100">Content</textarea>
+                    <textarea formControlName="messageDescription" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="10" matAutosizeMaxRows="100">Content</textarea>
                       <mat-error>
-                              <span *ngIf="!notificationDetailsForm.get('messagedescription').valid && notificationDetailsForm.get('messagedescription').touched">Content Required</span>
+                              <span *ngIf="!notificationDetailsForm.get('messageDescription').valid && notificationDetailsForm.get('messageDescription').touched">Content Required</span>
                           </mat-error>
                   </mat-form-field>
                   

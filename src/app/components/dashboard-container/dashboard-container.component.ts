@@ -117,6 +117,8 @@ export class DashboardContainerComponent implements OnInit {
         // this.chartData['height'] = '500px';
         // this.chartData['type'] = 'normal';
         // 797FC8
+        // console.log('emp summery data', res['data']['data'])
+        console.log('emp summery result', res['data']['result'])
         this.summeryData['data'] = res['data']['data'];
         this.chartData.labelData1.count = res['data']['result']['billingCount'];
         this.chartData.labelData2.count =
@@ -192,6 +194,9 @@ export class DashboardContainerComponent implements OnInit {
       this.newsLetterData = res
     })
 
+    this.service.getAllEmpCount().then((res:any) =>{
+      console.log('get all emp data',res)
+    })
     // for (var i = 0; i < 10; i++) {
     //   this.newsLetterData.push({
     //     title:

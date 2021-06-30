@@ -17,11 +17,11 @@
           <option seleced title="{{selectedLabel}}">{{selectedLabel | charlimitpipe: 13}}</option>
           <option *ngFor="let list of accountList" title="{{list._id}}">{{list._id | charlimitpipe: 13}}</option>
         </select>
-        <p>(40 Projects/200 People)</p>
+        <p>({{projectList.length}} Projects)</p>
         <ul class="mobile-hidden">
-          <li *ngFor="let projectList of accountwiseProjects" 
+          <li *ngFor="let projectList of projectList" 
           [class.active]="projectList === selectedproject"
-          (click)="onSelect(projectList)">{{projectList.projectName}}</li>
+          (click)="onSelect(projectList)">{{projectList}}</li>
           <!-- <li class="active">Matter Management</li>
           <li>Datawarehousing</li>
           <li>Entity Management</li>
@@ -75,6 +75,7 @@
         </div>
         <div class="desktop-hidden">
           <div class="employee-detail" *ngFor="let data of rowData">
+            {{data}}
             <p>
               <b>Emp ID:</b>{{data.employee_employee_id}}
               <span class="emp-name">{{data.employee_company_name}}</span>

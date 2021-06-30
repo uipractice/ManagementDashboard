@@ -141,7 +141,22 @@ export class WebRequestService {
     // console.log(this._header);
     return new Promise((resolve, reject) => {
       this.http
-        .get(`http://localhost:80/api/emp/getDeptWiseProject/${accountName}`, this._header)
+        .get(`http://localhost:8080/api/emp/getDeptWiseProject/${accountName}`, this._header)
+        // .get(`${this.ROOT_URL}${this._urls.GET_DEPT_PROJECT_COUNT}/${accountName}`, this._header)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  async getProjWiseEmployees(projName) {
+    console.log(projName);
+    this.setToken();
+    // console.log(this._header);
+    return new Promise((resolve, reject) => {
+      this.http
+        .get(`http://localhost:8080/api/emp/getProjWiseEmployees/${projName}`, this._header)
         // .get(`${this.ROOT_URL}${this._urls.GET_DEPT_PROJECT_COUNT}/${accountName}`, this._header)
         .toPromise()
         .then((response) => {

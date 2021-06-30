@@ -26,11 +26,11 @@
     <!-- <td><a><img src="../../assets/images/main/edit-icon.svg"></a></td> -->
     <td><a (click)="deleteNotificationPopup(data._id, data.messageType)"><img src="../../assets/images/main/delete-icon.svg"></a></td>
     <td *ngIf="data.publish==true"><label class="switch">
-        <input type="checkbox" checked>
+        <input type="checkbox" checked (change)="updateNotificationStatus(data._id,data)">
         <span class="slider round"></span>
       </label></td>
       <td *ngIf="data.publish==false"><label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" unchecked (change)="updateNotificationStatus(data._id,data)">
         <span class="slider round"></span>
       </label></td>
   </tr>

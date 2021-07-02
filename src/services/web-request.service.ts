@@ -142,7 +142,7 @@ export class WebRequestService {
     return new Promise((resolve, reject) => {
       this.http
         // .get(`http://localhost:8080/api/emp/getDeptWiseProject/${accountName}`, this._header)
-        .get(`${this.ROOT_URL}${this._urls.GET_DEPT_PROJECT}/${accountName}`, this._header)
+         .get(`${this.ROOT_URL}${this._urls.GET_DEPT_PROJECT}/${accountName}`, this._header)
         .toPromise()
         .then((response) => {
           // //console.log(response);

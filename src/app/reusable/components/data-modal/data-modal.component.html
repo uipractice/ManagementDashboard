@@ -50,7 +50,8 @@
           bibendum in urna mi quam.Gravida sed imperdiet aenean...</p>
       </div>
       <div class="account-right">
-        <h4 class="mobile-hidden">Matter Management (24 People)</h4>
+        <!-- <h4 class="mobile-hidden">Matter Management (24 People)</h4> -->
+        <h4 class="mobile-hidden">{{selectedproject}}({{rowData.length}}People)</h4>
         <!-- <p class="mobile-hidden">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, at id
           bibendum in urna mi quam. Gravida sed imperdiet aenean suspendisse
@@ -75,7 +76,7 @@
         </div>
         <div class="desktop-hidden">
           <div class="employee-detail" *ngFor="let data of rowData">
-            {{data}}
+            
             <p>
               <b>Emp ID:</b>{{data.employee_employee_id}}
               <span class="emp-name">{{data.employee_company_name}}</span>

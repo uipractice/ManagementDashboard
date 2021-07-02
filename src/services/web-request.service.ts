@@ -106,7 +106,7 @@ export class WebRequestService {
 
   async getAccountGraphData() {
     this.setToken();
-    console.log(this._header);
+    // console.log(this._header);
     return new Promise((resolve, reject) => {
       this.http
         .get(
@@ -121,10 +121,39 @@ export class WebRequestService {
     }).catch((err) => console.error(err));
   }
 
+  //GET TOTAL EMPLIST
+  async getAllEmpCount() {
+    this.setToken();
+    // console.log(this._header);
+    return new Promise((resolve, reject) => {
+      this.http
+        .get(`${this.ROOT_URL}${this._urls.GET_ALLEMP_COUNT}`, this._header)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  
+  async getDeptWiseProjectList(accountName) {
+    this.setToken();
+    // console.log(this._header);
+    return new Promise((resolve, reject) => {
+      this.http
+        .get(`http://localhost:80/api/emp/getDeptWiseProject/${accountName}`, this._header)
+        // .get(`${this.ROOT_URL}${this._urls.GET_DEPT_PROJECT_COUNT}/${accountName}`, this._header)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
   // GET_SUMMERY_COUNT
   async getSummeryCount() {
     this.setToken();
-    console.log(this._header);
+    // console.log(this._header);
     return new Promise((resolve, reject) => {
       this.http
         .get(`${this.ROOT_URL}${this._urls.GET_SUMMERY_COUNT}`, this._header)

@@ -282,7 +282,7 @@ export class DataGraphComponent implements OnInit {
             let matDialog = this.matDialog;
             let employeeData = this.AccountWiseEmpData;
             let projectList = this.accountWiseProject;
-            console.log(this.chartData);
+            // console.log(this.chartData);
             this.chartData.data[3] = {};
 
             // alert(this.chartData.data.findIndex((el) => el._id === 'CSC'));
@@ -328,7 +328,7 @@ export class DataGraphComponent implements OnInit {
             this.categoryAxis.renderer.labels.template.cursorOverStyle =
               am4core.MouseCursorStyle.pointer;
             if (this.chartData.title == 'Accounts Wise Resource Utilization') {
-              console.log('this.chart.data', this.chartData.data);
+              // console.log('this.chart.data', this.chartData.data);
               let accountList = this.chartData.data;
               this.categoryAxis.renderer.labels.template.events.on(
                 'hit',

@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ModalActionsService } from 'src/services/modal-actions.service';
+import { WebRequestService } from 'src/services/web-request.service';
 
 @Component({
   selector: 'ev-data-modal',
@@ -21,7 +22,7 @@ export class DataModalComponent implements OnInit {
   selectedproject: any;
   constructor( public dialogRef: MatDialogRef<DataModalComponent>,
     @Inject(MAT_DIALOG_DATA) private modalData: any,
-    private modalService: ModalActionsService) { }
+    private modalService: ModalActionsService ,public service: WebRequestService) { }
 
   ngOnInit(): void {
     this.modalId = this.modalData.modalId
@@ -43,6 +44,13 @@ export class DataModalComponent implements OnInit {
       this.dialogRef.updateSize('42%','80%')
     }
     this.getDefaultData(this.selectedLabel)
+    // this.getAccountWiseProjectList(this.selectedLabel)
+  }
+
+  getAccountWiseProjectList(accountName){
+    this.service.getDeptWiseProjectList(accountName).then((res:any) =>{
+      console.log('get account wise project list',res)
+    })
   }
 
   getDefaultData =(selectedItem)=>{

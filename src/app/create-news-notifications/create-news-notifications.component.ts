@@ -110,5 +110,19 @@ export class CreateNewsNotificationsComponent {
       }, 2000);
     });
   }
+  updateNotificationStatus(id,data) {
+    
+    console.log(data);
+    data.publish = !data.publish;
+    const selectedId = id;
+    if(data.messageType==="Notification"){
+      this.service.updateNotification(id,data);
+    }
+    if(data.messageType==="News"){
+      this.service.updateNews(id,data);
+    }
+    
+   
+  }
 
 }

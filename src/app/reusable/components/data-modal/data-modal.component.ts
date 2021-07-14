@@ -21,6 +21,7 @@ export class DataModalComponent implements OnInit {
   accountwiseProjects: any = [];
   projWiseEmployees: any = [];
   selectedproject: any;
+  accountWiseEmpList: any=[];
   constructor(public dialogRef: MatDialogRef<DataModalComponent>,
     @Inject(MAT_DIALOG_DATA) private modalData: any,
     private modalService: ModalActionsService, public service: WebRequestService) { }
@@ -38,20 +39,22 @@ export class DataModalComponent implements OnInit {
     if (this.rowData) {
       this.rowData.forEach((row, i) => row['SLNo'] = i + 1)
     }
-    console.log("rowData with Slno: ",this.rowData);
+    console.log("rowData with Slno: ", this.rowData);
     this.accountwiseProjects
     // this.classHeight= "small-height";
     if (this.isExpand) {
       this.dialogRef.updateSize('42%', '80%')
     }
     this.getAccountWiseProjectList(this.selectedLabel);
+    
+
   }
 
   getAccountWiseProjectList(accountName) {
     this.service.getDeptWiseProjectList(accountName).then((res: any) => {
       this.projectList = [];
       this.projectList = res;
-      console.log("latest", this.projectList);
+      // console.log("latest", this.projectList);
       this.selectedproject = this.projectList[0];
       this.onSelect(this.selectedproject);
     })
@@ -61,7 +64,17 @@ export class DataModalComponent implements OnInit {
     this.service.getProjWiseEmployees(projName).then((res: any) => {
 
       this.rowData = res;
-      console.log('get project wise emp list', this.rowData);
+      if (this.rowData) {
+        this.rowData.forEach((row, i) => row['SLNo'] = i + 1)
+      }
+      // console.log('get project wise emp list', this.rowData);
+    })
+  }
+
+  getAccountWiseEmpList(deptName){
+    this.service.getAccountWiseEmpList(deptName).then((res:any)=>{
+      this.accountWiseEmpList = res;
+      console.log(this.accountWiseEmpList);
     })
   }
 
@@ -74,7 +87,9 @@ export class DataModalComponent implements OnInit {
     //   if(item._id == selectedItem){
     //   this.accountwiseProjects = item.projects
     // }});
-    this.selectedproject = this.projectList[0]
+    this.selectedproject = this.projectList[0];
+    console.log("get Default project: ", this.selectedproject);
+    console.log("daf dept : " , this.selectedLabel);
 
   }
   columnDefs = [
@@ -87,22 +102,15 @@ export class DataModalComponent implements OnInit {
   ];
 
   onChangrDropdownData(event: any) {
+    // console.log(event.target.value);
     this.getAccountWiseProjectList(event.target.value);
-    // this.service.getDeptWiseProjectList(event.target.value).then((res:any) =>{
-    //   this.projectList =[];
-    //   this.projectList = res;
-    //   console.log("latest",this.projectList);
-    //   this.selectedproject = this.projectList[0];
-    //   this.onSelect(this.selectedproject);
-    // })
-
-
-
+    this.getAccountWiseEmpList(event.target.value);
   }
 
   onSelect(item): void {
     this.selectedproject = item;
     this.getProjectWiseEmployees(this.selectedproject);
+    
   }
 
   actionFunction() {

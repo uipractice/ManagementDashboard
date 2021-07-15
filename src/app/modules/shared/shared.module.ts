@@ -8,17 +8,18 @@ import { MaterialModule } from './material.module';
 import { PlaceHolderComponent } from 'src/app/reusable/components/place-holder/place-holder.component';
 import { CssLoaderComponent } from 'src/app/reusable/components/css-loader/css-loader.component';
 import { dateFormatPipe } from 'src/app/components/pipes/date-format.pipe';
+import { FooterComponent } from 'src/app/components/footer/footer.component';
 
 
 
 
 @NgModule({
   declarations: [HeaderComponent,SideNavComponent, DashboardComponent, 
-    CharLimitpipe, PlaceHolderComponent, CssLoaderComponent, dateFormatPipe],
+    CharLimitpipe, PlaceHolderComponent, CssLoaderComponent, dateFormatPipe, FooterComponent],
   imports: [
     CommonModule,MaterialModule
   ],
   exports:[ HeaderComponent,SideNavComponent,DashboardComponent, CharLimitpipe, PlaceHolderComponent,
-    CssLoaderComponent, dateFormatPipe]
+    CssLoaderComponent, dateFormatPipe, FooterComponent]
 })
 export class SharedModule { }

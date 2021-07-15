@@ -13,7 +13,7 @@
 .ColAlign {
   display: flex;
   place-items: center;
-  width: 65%;
+  width: 89%;
   p {
     padding-left: 20px;
     padding-right: 30px;
@@ -125,6 +125,10 @@ span {
   border-bottom: 16px solid #f8f8fb;
   border-style: solid;
   border-color: transparent transparent #f8f8fb transparent;
+}
+.DropdownContent::after{
+  top: -9%;
+  left:53%;
 }
 .NotificationContent-new::after {
   content: "";
@@ -240,6 +244,7 @@ span {
 // }
 .Notification {
   position: relative;
+  border-left:none;
 }
 
 .Notification .badge {

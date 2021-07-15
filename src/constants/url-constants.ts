@@ -18,7 +18,8 @@ export class UrlConstants {
     AUTHENTICATE_USER: '/api/auth/authenticate',
     GET_SUMMERY_COUNT: '/api/emp/getAllCounts',
     GET_ALLEMP_COUNT: '/api/emp/getAllEmployees',
-    GET_DEPT_PROJECT_COUNT: '/api/emp/getDeptWiseProject/',
+    GET_DEPT_PROJECT: '/api/emp/getDeptWiseProject/',
+    GET_PROJECT_EMPLOYEES: 'api/emp/getProjWiseEmployees/',
     // Hr Dashboadr url
     GET_HR_HEADER_DATA: '/api/hr/getHeaderData',
     GET_HR_ONBOARDED_SEPERATED_Data: '/api/hr/getOnboardedSeperatedgraphData',
@@ -43,5 +44,6 @@ export class UrlConstants {
     DELETE_NOTIFICATION: '/api/notification/deletenotification/',
     CREATE_NOTIFICATION: '/api/notification/createnotification',
     GET_ALL_DATA: '/api/news/getAllData',
+    
   };
 }

@@ -194,9 +194,9 @@ export class DashboardContainerComponent implements OnInit {
       this.newsLetterData = res
     })
 
-    this.service.getAllEmpCount().then((res:any) =>{
-      console.log('get all emp data',res)
-    })
+    // this.service.getAllEmpCount().then((res:any) =>{
+    //   console.log('get all emp data',res)
+    // })
     // for (var i = 0; i < 10; i++) {
     //   this.newsLetterData.push({
     //     title:

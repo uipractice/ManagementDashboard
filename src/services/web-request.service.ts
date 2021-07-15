@@ -135,14 +135,44 @@ export class WebRequestService {
         });
     }).catch((err) => console.error(err));
   }
-  
+
   async getDeptWiseProjectList(accountName) {
     this.setToken();
     // console.log(this._header);
     return new Promise((resolve, reject) => {
       this.http
-        .get(`http://localhost:80/api/emp/getDeptWiseProject/${accountName}`, this._header)
-        // .get(`${this.ROOT_URL}${this._urls.GET_DEPT_PROJECT_COUNT}/${accountName}`, this._header)
+        .get(`http://localhost:8080/api/emp/getDeptWiseProject/${accountName}`, this._header)
+        //  .get(`${this.ROOT_URL}${this._urls.GET_DEPT_PROJECT}/${accountName}`, this._header)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  async getProjWiseEmployees(projName) {
+    console.log(projName);
+    this.setToken();
+    // console.log(this._header);
+    return new Promise((resolve, reject) => {
+      this.http
+        .get(`http://localhost:8080/api/emp/getProjWiseEmployees/${projName}`, this._header)
+        //.get(`${this.ROOT_URL}${this._urls.GET_PROJECT_EMPLOYEES}/${projName}`, this._header)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        });
+    }).catch((err) => console.error(err));
+  }
+  async getAccountWiseEmpList(deptName) {
+    console.log(deptName);
+    this.setToken();
+    // console.log(this._header);
+    return new Promise((resolve, reject) => {
+      this.http
+        // .get(`http://localhost:8080/api/emp/getAccountWiseEmployees/${deptName}`, this._header)
+        .get(`${this.ROOT_URL}${this._urls.GET_PROJECT_EMPLOYEES}/${projName}`, this._header)
         .toPromise()
         .then((response) => {
           // //console.log(response);
@@ -276,7 +306,7 @@ export class WebRequestService {
         });
     }).catch((err) => console.error(err));
   }
-  async getVoluntaryAnalysisData() { 
+  async getVoluntaryAnalysisData() {
     return new Promise((resolve, reject) => {
       this.http
         // .get(`http://localhost:80/api/hr/getVoluntaryAttritionData`)
@@ -366,68 +396,68 @@ export class WebRequestService {
   async updateNotification(id, body) {
     return new Promise((resolve, reject) => {
       this.http
-      .put(`${this.ROOT_URL}${this._urls.UPDATE_NOTIFICATION}${id}`, body)
-      .toPromise()
-      .then((response) => {
-        // //console.log(response);
-        resolve(response);
-      })
+        .put(`${this.ROOT_URL}${this._urls.UPDATE_NOTIFICATION}${id}`, body)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        })
     })
   }
   async updateNews(id, body) {
     return new Promise((resolve, reject) => {
       this.http
-      .put(`http://localhost:80/api/news/updatNews/${id}`, body)
-      // .put(`${this.ROOT_URL}${this._urls.UPDATE_NOTIFICATION}${id}`, body)
-      .toPromise()
-      .then((response) => {
-        // //console.log(response);
-        resolve(response);
-      })
+        .put(`http://localhost:80/api/news/updatNews/${id}`, body)
+        // .put(`${this.ROOT_URL}${this._urls.UPDATE_NOTIFICATION}${id}`, body)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        })
     })
   }
   async deleteNotification(id) {
     return new Promise((resolve, reject) => {
       this.http
-      .delete(`${this.ROOT_URL}${this._urls.DELETE_NOTIFICATION}${id}`)
-      .toPromise()
-      .then((response) => {
-        // //console.log(response);
-        resolve(response);
-      })
+        .delete(`${this.ROOT_URL}${this._urls.DELETE_NOTIFICATION}${id}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        })
     })
   }
   async createNotification(body) {
     return new Promise((resolve, reject) => {
       this.http
-      .post(`${this.ROOT_URL}${this._urls.CREATE_NOTIFICATION}`,body)
-      .toPromise()
-      .then((response) => {
-        // //console.log(response);
-        resolve(response);
-      })
+        .post(`${this.ROOT_URL}${this._urls.CREATE_NOTIFICATION}`, body)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        })
     })
   }
   async deleteNews(id) {
     return new Promise((resolve, reject) => {
       this.http
-      .delete(`${this.ROOT_URL}${this._urls.DELETE_NEWS}${id}`)
-      .toPromise()
-      .then((response) => {
-        // //console.log(response);
-        resolve(response);
-      })
+        .delete(`${this.ROOT_URL}${this._urls.DELETE_NEWS}${id}`)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        })
     })
   }
   async createNews(body) {
     return new Promise((resolve, reject) => {
       this.http
-      .post(`${this.ROOT_URL}${this._urls.CREATE_NEWS}`,body)
-      .toPromise()
-      .then((response) => {
-        // //console.log(response);
-        resolve(response);
-      })
+        .post(`${this.ROOT_URL}${this._urls.CREATE_NEWS}`, body)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        })
     })
   }
 }

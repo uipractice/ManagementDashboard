@@ -128,7 +128,9 @@ export class DataGraphComponent implements OnInit {
       });
     }
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // console.log("chartData : ",this.chartData);
+  }
   clickedItem(content) {
     const dialogConfig = new MatDialogConfig();
     const modalId = 'modal02';
@@ -341,7 +343,7 @@ export class DataGraphComponent implements OnInit {
                       modalId: 'modal01',
                       employeeData: employeeData,
                       accountList: accountList,
-                      projectList: projectList,
+                      // projectList: projectList,
                     },
                   });
                 }

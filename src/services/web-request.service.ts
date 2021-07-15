@@ -141,8 +141,8 @@ export class WebRequestService {
     // console.log(this._header);
     return new Promise((resolve, reject) => {
       this.http
-        .get(`http://localhost:8080/api/emp/getDeptWiseProject/${accountName}`, this._header)
-        //  .get(`${this.ROOT_URL}${this._urls.GET_DEPT_PROJECT}/${accountName}`, this._header)
+        // .get(`http://localhost:8080/api/emp/getDeptWiseProject/${accountName}`, this._header)
+         .get(`${this.ROOT_URL}${this._urls.GET_DEPT_PROJECT}/${accountName}`, this._header)
         .toPromise()
         .then((response) => {
           // //console.log(response);
@@ -156,8 +156,8 @@ export class WebRequestService {
     // console.log(this._header);
     return new Promise((resolve, reject) => {
       this.http
-        .get(`http://localhost:8080/api/emp/getProjWiseEmployees/${projName}`, this._header)
-        //.get(`${this.ROOT_URL}${this._urls.GET_PROJECT_EMPLOYEES}/${projName}`, this._header)
+        // .get(`http://localhost:8080/api/emp/getProjWiseEmployees/${projName}`, this._header)
+        .get(`${this.ROOT_URL}${this._urls.GET_PROJECT_EMPLOYEES}/${projName}`, this._header)
         .toPromise()
         .then((response) => {
           // //console.log(response);
@@ -172,7 +172,7 @@ export class WebRequestService {
     return new Promise((resolve, reject) => {
       this.http
         // .get(`http://localhost:8080/api/emp/getAccountWiseEmployees/${deptName}`, this._header)
-        .get(`${this.ROOT_URL}${this._urls.GET_PROJECT_EMPLOYEES}/${projName}`, this._header)
+        .get(`${this.ROOT_URL}${this._urls.GET_ACCOUNT_EMPLOYEES}/${deptName}`, this._header)
         .toPromise()
         .then((response) => {
           // //console.log(response);

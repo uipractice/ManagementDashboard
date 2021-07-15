@@ -1,5 +1,5 @@
 export class UrlConstants {
-  constructor() {}
+  constructor() { }
   static URLS = {
     DEV_URL: 'https://mcapi-qa.kaakateeya.com',
   };
@@ -20,6 +20,7 @@ export class UrlConstants {
     GET_ALLEMP_COUNT: '/api/emp/getAllEmployees',
     GET_DEPT_PROJECT: '/api/emp/getDeptWiseProject/',
     GET_PROJECT_EMPLOYEES: 'api/emp/getProjWiseEmployees/',
+    GET_ACCOUNT_EMPLOYEES: 'api/emp/getAccountWiseEmployees/',
     // Hr Dashboadr url
     GET_HR_HEADER_DATA: '/api/hr/getHeaderData',
     GET_HR_ONBOARDED_SEPERATED_Data: '/api/hr/getOnboardedSeperatedgraphData',
@@ -32,7 +33,7 @@ export class UrlConstants {
     GET_POST_ENGAGEMENT_Data: '/api/hr/getPostEngagement',
 
     // News and notification url
-    CREATE_NEWS:'/api/news/createNews',
+    CREATE_NEWS: '/api/news/createNews',
     GET_ALL_NEWS_Data: '/api/news/getAllNews',
     GET_ALL_PUBLISH_NEWS_Data: '/api/news/getPublishNews',
     GET_PUBLISH_NEWS_BY_DEPT: '/api/news/getPublishNewsByDept/:id',
@@ -44,6 +45,6 @@ export class UrlConstants {
     DELETE_NOTIFICATION: '/api/notification/deletenotification/',
     CREATE_NOTIFICATION: '/api/notification/createnotification',
     GET_ALL_DATA: '/api/news/getAllData',
-    
+
   };
 }

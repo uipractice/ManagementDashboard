@@ -17,7 +17,7 @@
         <!-- <span class="HoursImg" ><img src="..\..\..\assets\images\main\arrow_up.svg"></span>-->
       </div>
     </div>
-    <div class="VerLine2" *ngIf="headerCountLoaded">
+    <div class="VerLine2" *ngIf="headerCountLoaded" style="display: none;">
       <!-- <ev-dashboard-search [isShow]="isShow" [isOpen]="isOpen" (myOutput) ="GetChildData($event)"></ev-dashboard-search> -->
 
       <div class="">
@@ -100,11 +100,11 @@
                 <a class=""> News & Notification</a>
                </li>
                 <li class="FeedbackBg"><a class=""> Provide Feedback</a></li>
-                <li class="Darkbg dark-theme"><span class="ml-40"> Dark
+                <!-- <li class="Darkbg dark-theme"><span class="ml-40"> Dark
                     Theme</span><label class="switch">
                     <input type="checkbox">
                     <span class="slider round"></span>
-                  </label></li>
+                  </label></li> -->
                 <li class="LogoutBg"><a class="" (click)="logout()"> Logout</a></li>
               </ul>
             </div>
@@ -133,11 +133,11 @@
         <li class="NewsNote"><a class=""> News & Notification</a></li>
         <li class="FeedbackBg"><a class="">Provide Feedback</a></li>
        
-        <li class="Darkbg dark-theme"><a href="javascript:void(0)"> Dark
+        <!-- <li class="Darkbg dark-theme"><a href="javascript:void(0)"> Dark
             Theme</a><label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
-          </label></li>
+          </label></li> -->
         <li class="LogoutBg logout-link"><a class="Logout" (click)="logout()">
               Logout</a></li>
       </ul>
@@ -146,7 +146,7 @@
     <a><img src="..\..\..\assets\images\main\logo.svg"></a>
   </div>
   <div class="NavOption">
-    <div class="MobileSearch">
+    <div class="MobileSearch" style="display: none;">
     
       <div class="">
         <input type="search" class="search SearchMob" on-click="toggledownSearch($event)" placeholder="">

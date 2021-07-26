@@ -67,10 +67,11 @@
         </div> -->
         <div class="account-detail-table">
           <ag-grid-angular
-            style="width: 100%; height: 450px"
+            style="width: 100%; height: 427px"
             class="ag-theme-alpine"
             [rowData]="rowData"
             [columnDefs]="columnDefs"
+            [paginationPageSize]=8
             [pagination]="true">
           </ag-grid-angular>
         </div>
@@ -197,6 +198,35 @@
    </button>
     <button mat-raised-button class="save" id="modal-cancel-button" (click)="closeModal()">
       ok
+    </button>
+</footer>
+</div>
+
+<div class="feedback-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal05'">
+  <header id="modal-header">
+    <h1 id="modal-title">Feedback</h1>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="closeModal()"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  </header>
+  <section id="modal-body">
+    <div>
+      <h3>Hello Friends</h3>
+      <p>Your review will help us go give you the better experience</p>
+      <textarea type="text">
+
+      </textarea>
+    </div>
+  </section>
+  <footer id="modal-footer">
+    
+    <button mat-raised-button class="save" id="modal-cancel-button" (click)="closeModal()">
+      Submit
     </button>
 </footer>
 </div>

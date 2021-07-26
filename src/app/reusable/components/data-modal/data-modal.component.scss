@@ -108,6 +108,60 @@
     background: #afaeae;
   }
 }
+#modal-content-wrapper.feedback-modal{
+  color: #000;
+  position: relative;
+  #modal-title{
+    display: block;
+    font-family: Lato;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 22px;
+    color: #209EC5;
+  }
+  p{
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #626364;
+  }
+  h3{
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    color: #626364;
+    font-family: Lato;
+    margin-bottom: 20px;
+  }
+  textarea{
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 73px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    color: #E0E0E0;
+  }
+  .close{
+    position: absolute;
+    top: -2px;
+    right: 10px;
+  }
+  #modal-footer{
+    text-align: center;
+    button{
+      margin-top: 20px;
+      border-radius: 2px;
+      background: #209EC5;
+      border: 1px solid #209EC5;
+      box-shadow: 0 0 0;
+    }
+  }
+}
 .account-detail-modal{
   .close{
     position:absolute;
@@ -164,7 +218,7 @@
       border: none;
       background: transparent;
       font-weight: bold;
-      font-size: 25px;
+      font-size: 21px;
       line-height: 32px;
       color: #0088D1;
       -webkit-appearance: none;

@@ -99,7 +99,7 @@
                 <li class="NewsNote" *ngIf="isDisplayNotification"(click)="createNewAndEvents()">
                 <a class=""> News & Notification</a>
                </li>
-                <li class="FeedbackBg"><a class=""> Provide Feedback</a></li>
+                <li class="FeedbackBg"><a class="" (click)="feedbackDialog()"> Provide Feedback</a></li>
                 <!-- <li class="Darkbg dark-theme"><span class="ml-40"> Dark
                     Theme</span><label class="switch">
                     <input type="checkbox">
@@ -131,7 +131,7 @@
           </a></li>
         <li class="ProfileBg"><a href="javascript:void(0)"> My Profile</a></li>
         <li class="NewsNote"><a class=""> News & Notification</a></li>
-        <li class="FeedbackBg"><a class="">Provide Feedback</a></li>
+        <li class="FeedbackBg"><a class="" (click)="feedbackDialog()">Provide Feedback</a></li>
        
         <!-- <li class="Darkbg dark-theme"><a href="javascript:void(0)"> Dark
             Theme</a><label class="switch">

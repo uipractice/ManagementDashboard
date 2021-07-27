@@ -4,6 +4,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { WebRequestService } from 'src/services/web-request.service';
 import { CommonService } from 'src/services/common.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DataModalComponent } from 'src/app/reusable/components/data-modal/data-modal.component';
 
 @Component({
   selector: 'ev-header',
@@ -50,7 +52,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     private httpService: HttpClient,
     private router: Router,
-    public service: WebRequestService, public commonService: CommonService
+    public service: WebRequestService, public commonService: CommonService,
+    public matDialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -108,5 +111,17 @@ export class HeaderComponent implements OnInit {
       // console.log('PublishNotification', res)
       this.PublishNotification = res
     })
+  }
+  feedbackDialog() {
+    console.log("feedback popup")
+    const dialogConfig = new MatDialogConfig();
+    const modalId = 'modal05';
+    dialogConfig.disableClose = false;
+    // dialogConfig.height = "470px";
+    dialogConfig.width = "500px";
+    dialogConfig.data = {
+      modalId: modalId,
+    };
+    const dialogRef = this.matDialog.open(DataModalComponent, dialogConfig);
   }
 }

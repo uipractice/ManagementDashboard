@@ -29,7 +29,10 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required],
     });
     this.auth.authenticate().then((res) => {
-      res['statusCode'] === 200 ? this.router.navigate['/dashboard'] : '';
+      if(res['statusCode']){
+        res['statusCode'] === 200 ? this.router.navigate['/dashboard'] : '';
+      }
+     
     });
   }
 

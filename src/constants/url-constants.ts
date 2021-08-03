@@ -8,7 +8,7 @@ export class UrlConstants {
       'http://ec2-35-154-46-177.ap-south-1.compute.amazonaws.com/swagger',
 
     // DEV_URL: 'http://localhost',
-    DEV_URL: 'http://13.232.208.108',
+    DEV_URL: 'http://13.235.23.218',
     ADD_USER: 'api/emp/emp',
     GET_USERS: 'api/emp/getAllEmp',
     DELETE_EMP: 'api/emp/deleteEmp',
@@ -18,9 +18,9 @@ export class UrlConstants {
     AUTHENTICATE_USER: '/api/auth/authenticate',
     GET_SUMMERY_COUNT: '/api/emp/getAllCounts',
     GET_ALLEMP_COUNT: '/api/emp/getAllEmployees',
-    GET_DEPT_PROJECT: '/api/emp/getDeptWiseProject/',
-    GET_PROJECT_EMPLOYEES: 'api/emp/getProjWiseEmployees/',
-    GET_ACCOUNT_EMPLOYEES: 'api/emp/getAccountWiseEmployees/',
+    GET_DEPT_PROJECT: '/api/emp/getDeptWiseProject',
+    GET_PROJECT_EMPLOYEES: '/api/emp/getProjWiseEmployees',
+    GET_ACCOUNT_EMPLOYEES: '/api/emp/getAccountWiseEmployees',
     // Hr Dashboadr url
     GET_HR_HEADER_DATA: '/api/hr/getHeaderData',
     GET_HR_ONBOARDED_SEPERATED_Data: '/api/hr/getOnboardedSeperatedgraphData',

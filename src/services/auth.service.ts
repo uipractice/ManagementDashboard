@@ -63,6 +63,10 @@ export class AuthService {
     // }
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Methods':'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+      'Access-Control-Allow-Credentials':'true',
+      'Access-Control-Allow-Headers':'X-Requested-With,content-type',
     });
     const options = { headers };
 

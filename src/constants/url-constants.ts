@@ -8,7 +8,7 @@ export class UrlConstants {
       'http://ec2-35-154-46-177.ap-south-1.compute.amazonaws.com/swagger',
 
     // DEV_URL: 'http://localhost',
-    DEV_URL: 'http://13.234.227.88',
+    DEV_URL: 'https://13.234.227.88',
     ADD_USER: 'api/emp/emp',
     GET_USERS: 'api/emp/getAllEmp',
     DELETE_EMP: 'api/emp/deleteEmp',

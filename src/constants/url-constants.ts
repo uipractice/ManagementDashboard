@@ -7,7 +7,7 @@ export class UrlConstants {
     stage_URL:
       'http://ec2-35-154-46-177.ap-south-1.compute.amazonaws.com/swagger',
 
-    // DEV_URL: 'http://localhost',
+    // DEV_URL: 'https://localhost',
     DEV_URL: 'https://13.234.227.88',
     ADD_USER: 'api/emp/emp',
     GET_USERS: 'api/emp/getAllEmp',

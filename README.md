@@ -14,6 +14,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+**Note**: if you are facing the **Conflicting values for 'process.env.NODE_ENV'** while building/serving the project in your environment, do the following in /custom-webpack.config.js :
+  - Inside module.exports->plugins->new webpack.DefinePlugin: modify the below mentioned line.
+    - for production environment: keep this line ' process.env.NODE_ENV': JSON.stringify('production') ' as same.
+    - for development environment/localhost: change the above line to ' process.env.NODE_ENV': JSON.stringify('development') '.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).

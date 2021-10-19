@@ -38,7 +38,10 @@ export class DataFilterComponent implements OnInit {
 
     if(this.title == 'News and Events') {
       this.isDesiable = false
-    }else {this.isDesiable = true}
+    }else {
+      //this.isDesiable = true
+      this.isDesiable = false //added to hide consolidated and account wise kebab menu in graph headers
+    }
     this.countries = [
       {"name": "Honduras", "code": "HN"}, 
       {"name": "Hong Kong", "code": "HK"}, 

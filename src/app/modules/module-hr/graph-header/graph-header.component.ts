@@ -13,7 +13,7 @@ export class GraphHeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('month', this.month)
+    // console.log('month', this.month)
     if(this.month == undefined){
       this.desiableMonth = true;
     }else {

@@ -46,5 +46,7 @@ export class UrlConstants {
     CREATE_NOTIFICATION: '/api/notification/createnotification',
     GET_ALL_DATA: '/api/news/getAllData',
 
+    //feedback email url
+    SEND_FEEDBACK_MAIL: '/api/email/sendmail',
   };
 }

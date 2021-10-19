@@ -36,22 +36,14 @@
           <li>NetNames</li>
           <li>CSC-Pega Support</li> -->
         </ul>
-        <select class="desktop-hidden">
-          <option seleced>Matter Management</option>
-          <option >Entity Management</option>
-          <option >Datawarehousing</option>
-          <option >Alliance</option>
-          <option >RIM</option>
-          <option >Financials</option>
-          <option >CSC-Pega Support</option>
-          <option >Fraud Analysis</option>
-        </select>
-        <p class="desktop-hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, at id
-          bibendum in urna mi quam.Gravida sed imperdiet aenean...</p>
+        <select class="desktop-hidden" (change)="onSelect($event.target.value)">
+          <!-- <option selected title="{{selectedproject}}">{{selectedproject | charlimitpipe: 13}}</option> -->
+          <option *ngFor="let projectList of projectList" title="projectList">{{projectList}}</option>
+        </select> <br>
       </div>
       <div class="account-right">
         <!-- <h4 class="mobile-hidden">Matter Management (24 People)</h4> -->
-        <h4 class="mobile-hidden">{{selectedproject}}({{rowData.length}}People)</h4>
+        <h4 class="mobile-hidden">{{selectedproject}} ({{rowData.length}} People)</h4>
         <!-- <p class="mobile-hidden">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, at id
           bibendum in urna mi quam. Gravida sed imperdiet aenean suspendisse
@@ -215,17 +207,17 @@
     </button>
   </header>
   <section id="modal-body">
-    <div>
+    <div [formGroup]="form">
       <h3>Hello Friends</h3>
       <p>Your review will help us go give you the better experience</p>
-      <textarea type="text">
+      <textarea type="text" formControlName="feedback_msg" required>
 
       </textarea>
     </div>
   </section>
   <footer id="modal-footer">
     
-    <button mat-raised-button class="save" id="modal-cancel-button" (click)="closeModal()">
+    <button mat-raised-button [disabled]="!form.valid" class="save" id="modal-cancel-button" (click)="savemodal()">
       Submit
     </button>
 </footer>

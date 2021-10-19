@@ -80,6 +80,11 @@ export class AuthService {
             this.setSession('login', res['token'], res['refreshToken']);
             resolve(res);
           } else {
+            //BEGIN : code added by sk to recieve wrong credntials msg
+            if(res['statusCode'] === 401 || res['auth'] == false){
+              resolve(res);
+            }
+            //END : code added by sk
           }
         })
         .catch((err) => {

@@ -57,7 +57,7 @@ export class GraphHrComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    console.log('this.chartData', this.chartData);
+    // console.log('this.chartData', this.chartData);
   }
 
   clickedItem(content) {
@@ -501,11 +501,14 @@ export class GraphHrComponent implements OnInit {
               selectedSlice = dataItem.slice;
 
               let fill = selectedSlice.fill;
+              //console.log(fill);
 
               let count = dataItem.dataContext.subdata.length;
               pieSeries2.colors.list = [];
-              for (var i = 0; i < count; i++) {
-                pieSeries2.colors.list.push(fill.brighten((i * 2) / count));
+              if(fill){
+                for (var i = 0; i < count; i++) {
+                  pieSeries2.colors.list.push(fill.brighten((i * 2) / count));
+                }
               }
 
               chart2.data = dataItem.dataContext.subdata;

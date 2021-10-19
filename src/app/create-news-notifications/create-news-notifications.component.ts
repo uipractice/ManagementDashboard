@@ -45,7 +45,7 @@ export class CreateNewsNotificationsComponent {
   allNewsAndnotification = () => {
     this.service.getNotificationData().then((res: any) => {
       this.totalData = res.flat();
-      console.log('total data',this.totalData)
+      // console.log('total data',this.totalData)
     })
   }
 
@@ -60,7 +60,7 @@ export class CreateNewsNotificationsComponent {
     };
     const dialogRef = this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(value => {
-      console.log(value)
+      // console.log(value)
       setTimeout(() => {
         this.allNewsAndnotification();
       }, 2000);
@@ -83,7 +83,7 @@ export class CreateNewsNotificationsComponent {
     };
     const dialogRef= this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(value => {
-      console.log(value)
+      // console.log(value)
       setTimeout(() => {
         this.allNewsAndnotification();
       }, 2000);
@@ -104,7 +104,7 @@ export class CreateNewsNotificationsComponent {
     };
     const dialogRef = this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(value => {
-      console.log(value)
+      // console.log(value)
       setTimeout(() => {
         this.allNewsAndnotification();
       }, 2000);
@@ -112,7 +112,7 @@ export class CreateNewsNotificationsComponent {
   }
   updateNotificationStatus(id,data) {
     
-    console.log(data);
+    // console.log(data);
     data.publish = !data.publish;
     const selectedId = id;
     if(data.messageType==="Notification"){

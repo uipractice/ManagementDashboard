@@ -22,6 +22,7 @@ import { map, tap, last } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 import { Data } from '../app/helper/datastore';
 import { promise } from 'protractor';
+import { exit } from 'process';
 
 @Injectable({
   providedIn: 'root',
@@ -151,7 +152,7 @@ export class WebRequestService {
     }).catch((err) => console.error(err));
   }
   async getProjWiseEmployees(projName) {
-    console.log(projName);
+    // console.log(projName);
     this.setToken();
     // console.log(this._header);
     return new Promise((resolve, reject) => {
@@ -166,7 +167,7 @@ export class WebRequestService {
     }).catch((err) => console.error(err));
   }
   async getAccountWiseEmpList(deptName) {
-    console.log(deptName);
+    // console.log(deptName);
     this.setToken();
     // console.log(this._header);
     return new Promise((resolve, reject) => {
@@ -459,6 +460,24 @@ export class WebRequestService {
           resolve(response);
         })
     })
+  }
+
+  async sendFeedbacktoEmail(body) {
+    //console.log(body);
+    let headers = {
+      headers : new HttpHeaders({
+        'Content-Type' :'application/json'
+      })
+    }
+    return new Promise((resolve, reject) => {
+      this.http
+        .post(`${this.ROOT_URL}${this._urls.SEND_FEEDBACK_MAIL}`, body, headers)
+        .toPromise()
+        .then((response) => {
+          // //console.log(response);
+          resolve(response);
+        })
+    }) 
   }
 }
 // payment

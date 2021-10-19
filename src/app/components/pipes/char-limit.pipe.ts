@@ -4,7 +4,7 @@ name: 'charlimitpipe'
 })
 export class CharLimitpipe implements PipeTransform{
 transform(value: string, limit: number){
-if (value.length >= limit){
+if (value?.length >= limit){
 
 return value.substr(0, limit) + '...';
 

@@ -109,19 +109,37 @@ export class HeaderComponent implements OnInit {
   getPublishNotification = ()=>{
     this.service.getPublishNotification().then((res: any)=>{
       // console.log('PublishNotification', res)
+      /* BEGIN code added by sk to modify date value within the res*/
+      res.forEach((element, index) => {
+        if(element.date && element.date.indexOf('T')) {
+          element.date = element.date.substring(0, element.date.indexOf('T'));
+        }
+      });
+      /* END */
+      // console.log('PublishNotification', res)
       this.PublishNotification = res
     })
   }
   feedbackDialog() {
-    console.log("feedback popup")
+    // console.log("feedback popup")
     const dialogConfig = new MatDialogConfig();
     const modalId = 'modal05';
-    dialogConfig.disableClose = false;
+    dialogConfig.disableClose = true;
     // dialogConfig.height = "470px";
     dialogConfig.width = "500px";
     dialogConfig.data = {
       modalId: modalId,
     };
     const dialogRef = this.matDialog.open(DataModalComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+      data => {
+        if(data){
+          //console.log("feedback output :", data.feedback_msg);
+          this.service.sendFeedbacktoEmail(data).then((res: any) => {
+            //if(res)console.log(res);
+          })
+        }
+      }
+    );
   }
 }

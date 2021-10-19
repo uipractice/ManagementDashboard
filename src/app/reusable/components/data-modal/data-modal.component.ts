@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ModalActionsService } from 'src/services/modal-actions.service';
 import { WebRequestService } from 'src/services/web-request.service';
@@ -17,29 +18,41 @@ export class DataModalComponent implements OnInit {
   rowData: any;
   selectedLabel: any;
   accountList: any;
-  projectList: any;
+  projectList: any = [];
   accountwiseProjects: any = [];
   projWiseEmployees: any = [];
   selectedproject: any;
   accountWiseEmpList: any=[];
-  constructor(public dialogRef: MatDialogRef<DataModalComponent>,
+
+  form: FormGroup;
+  feedback_msg:string;
+
+  constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<DataModalComponent>,
     @Inject(MAT_DIALOG_DATA) private modalData: any,
-    private modalService: ModalActionsService, public service: WebRequestService) { }
+    private modalService: ModalActionsService, public service: WebRequestService) {
+      this.feedback_msg = modalData.feedback_msg;
+     }
 
   ngOnInit(): void {
+
+    this.form = this.fb.group({
+      feedback_msg: [this.feedback_msg, []],
+    });
+
     this.modalId = this.modalData.modalId
     this.data = this.modalData.modalData
     this.allNewData = this.modalData.allNewsData
     this.rowData = this.modalData.employeeData
     this.selectedLabel = this.modalData.clickedLeabel
-    this.accountList = this.modalData.accountList
+    this.accountList = this.modalData.accountList ? this.modalData.accountList.filter(value => Object.keys(value).length !== 0) : this.modalData.accountList; //removes empty objects from array
+    // console.log(this.accountList);
     // this.projectList =  this.modalData.projectList
     this.projWiseEmployees = this.modalData.projWiseEmployees
     this.isExpand = this.modalData.modalExpand
     if (this.rowData) {
       this.rowData.forEach((row, i) => row['SLNo'] = i + 1)
     }
-    console.log("rowData with Slno: ", this.rowData);
+    // console.log("rowData with Slno: ", this.rowData);
     this.accountwiseProjects
     // this.classHeight= "small-height";
     if (this.isExpand) {
@@ -74,22 +87,22 @@ export class DataModalComponent implements OnInit {
   getAccountWiseEmpList(deptName){
     this.service.getAccountWiseEmpList(deptName).then((res:any)=>{
       this.accountWiseEmpList = res;
-      console.log(this.accountWiseEmpList);
+      // console.log(this.accountWiseEmpList);
     })
   }
 
   getDefaultData = (selectedItem) => {
     // console.log('selectedItem',selectedItem)
     if (this.projectList) {
-      console.log('this.projectList', this.projectList)
+      // console.log('this.projectList', this.projectList)
     }
     // this.projectList.filter((item) =>{
     //   if(item._id == selectedItem){
     //   this.accountwiseProjects = item.projects
     // }});
     this.selectedproject = this.projectList[0];
-    console.log("get Default project: ", this.selectedproject);
-    console.log("daf dept : " , this.selectedLabel);
+    // console.log("get Default project: ", this.selectedproject);
+    // console.log("daf dept : " , this.selectedLabel);
 
   }
   columnDefs = [
@@ -108,6 +121,7 @@ export class DataModalComponent implements OnInit {
   }
 
   onSelect(item): void {
+    //console.log(item);
     this.selectedproject = item;
     this.getProjectWiseEmployees(this.selectedproject);
     
@@ -117,6 +131,11 @@ export class DataModalComponent implements OnInit {
     // this.modalService.modalAction(this.modalData);
     this.closeModal();
   }
+
+  savemodal() {
+    this.dialogRef.close(this.form.value);
+  }
+
   closeModal() {
     this.dialogRef.close();
   }

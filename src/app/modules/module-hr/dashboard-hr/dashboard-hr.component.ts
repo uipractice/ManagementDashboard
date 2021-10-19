@@ -162,12 +162,12 @@ export class DashboardHrComponent implements OnInit {
   getHrHeaderData = ()=>{
     this.service.getHrHeaderData().then((res: any) => {
       this.summeryData = res;
-      console.log('Header response', this.summeryData);
+      // console.log('Header response', this.summeryData);
     });
   };
   getOnboardAndSeperateData = ()=>{
     this.service.getOnboardAndSeperateData().then((res: any) => {
-      console.log('OnboardAndSeperateData', res[0]);
+      // console.log('OnboardAndSeperateData', res[0]);
       if (res) {
         this.chartData2['idName'] = 'overAllChart2';
         this.chartData2['title'] = 'Onboarded and Seperated';
@@ -177,12 +177,12 @@ export class DashboardHrComponent implements OnInit {
         this.chartData2['data'] = this.handleDates(res[0], 'month');
         this.isDataLoadedPractice = true;
       }
-      console.log('response', this.chartData2);
+      // console.log('response', this.chartData2);
     });
   };
   getAccountWiseEmployeeAttrition = ()=>{
     this.service.getAccountWiseEmployeeData().then((res: any) => {
-      console.log('AccountWiseEmployeeData', res[0]);
+      // console.log('AccountWiseEmployeeData', res[0]);
       if (res) {
         this.chartData4['idName'] = 'overAllChart6';
         this.chartData4['title'] = 'Account wise Employee Attrition';
@@ -198,11 +198,11 @@ export class DashboardHrComponent implements OnInit {
         this.isDataLoadedPractice = true;
       }
     });
-    console.log('this.chartData4', this.chartData4);
+    // console.log('this.chartData4', this.chartData4);
   };
   getHeadcountDemographicsData = ()=>{
     this.service.getHeadcountData().then((res: any) => {
-      console.log('HeadcountDemographicsData', res);
+      // console.log('HeadcountDemographicsData', res);
       if (res) {
         this.chartData1['idName'] = 'overAllChart1';
         this.chartData1['title'] = 'Headcount Demographics';
@@ -217,7 +217,7 @@ export class DashboardHrComponent implements OnInit {
   };
   getTopThreeReasonData = ()=>{
     this.service.getTopThreeReasonData().then((res: any)=>{
-      console.log('getTopThreeReasonData',res)
+      // console.log('getTopThreeReasonData',res)
       if (res) {
           this.chartData3['idName'] = 'overAllChart5';
           this.chartData3['title'] = 'Voluntary Attrition : Top 3 Reason';
@@ -241,6 +241,12 @@ export class DashboardHrComponent implements OnInit {
           this.chartData6['type'] = 'extended';
           this.chartData6['label'] = true;
           this.chartData6['data'] = this.handleDates(res,'month');
+          //added blow sort code to sort the above monthly array data in month order i.e., from jan to dec
+          this.chartData6['data'].sort(function (a, b) {
+            var MONTH = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 };
+            return MONTH[a.month] - MONTH[b.month];
+          });
+          //console.log(this.chartData6['data']);
           this.isDataLoadedPractice = true;
         }
     })
@@ -266,14 +272,14 @@ export class DashboardHrComponent implements OnInit {
   }
   getEmpEngagementData = ()=>{
     this.service.getEmployeeEngagementData().then((res: any)=>{
-     console.log('getEmployeeEngagementData', res)
+     // console.log('getEmployeeEngagementData', res)
           this.getEmployeeEngagementData = res;
           this.isDataLoadedPractice = true;
     })
   }
   getPostEngagementData = ()=>{
     this.service.getPostEngagementData().then((res: any)=>{
-     console.log('PostEngagementData', res)
+     // console.log('PostEngagementData', res)
           this.PostEngagementData = res[0].data;
           this.PostEngagementDataConnected = res[1].data;
           this.isDataLoadedPractice = true;

@@ -6,7 +6,7 @@
 }
 .left-img-part{
     height:100vh;
-    background:#023047 url(src/assets/images/main/login_graphics.png) no-repeat;
+    background:#023047 url(/assets/images/main/login_graphics.png) no-repeat;
     width:40%;
     float: left;
     position: relative;
@@ -96,7 +96,7 @@
 @media(max-width:768px){
     .left-img-part{
         width: 100%;
-        background:#023047 url(src/assets/images/main/login_graphics_mobile.png) no-repeat;
+        background:#023047 url(/src/assets/images/main/login_graphics_mobile.png) no-repeat;
         background-size:70%;
         height: 60vh;
         // img{

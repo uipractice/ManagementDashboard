@@ -10,7 +10,6 @@
         <ng-template #elseBlock>
           <span class="hours-img"><img src="..\..\..\assets\images\main\arrow_down.svg"></span>
         </ng-template> -->
-        <!-- comment by sk-->
       </div>
       <div class="VerLine" *ngIf="headerCountLoaded">
         <span class="HoursDetails">Average Hours: 08 </span>
@@ -60,7 +59,7 @@
                   <a class="NotifyIcon">
                     <div class="text ellipsis NotifyText">
                       <span class="text-concat">{{_nt.messageDescription}}</span>
-                      <span class="NotifyDate">{{_nt.date}}</span>
+                      <span class="NotifyDate">{{_nt.date ? (_nt.date | date: 'MMM d, y') : 'N/A'}}</span> <!--added date pipe by sk-->
                     </div>
                   </a>
                 </li>
@@ -192,7 +191,7 @@
             <a href="javascript:void(0)" class="NotifyIcon">
              
               <div class="text ellipsis NotifyText">{{data.messageDescription | charlimitpipe: 40}}
-                <span class="NotifyDate">{{data.date}}</span>
+                <span class="NotifyDate">{{data.date ? (data.date | date: 'MMM d, y') : 'N/A'}}</span>
               </div>
             </a></li>
           <li><a class="More">MORE</a></li>

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { GraphAdminComponent } from './graph-admin.component';
 
@@ -6,7 +6,7 @@ describe('GraphAdminComponent', () => {
   let component: GraphAdminComponent;
   let fixture: ComponentFixture<GraphAdminComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ GraphAdminComponent ]
     })

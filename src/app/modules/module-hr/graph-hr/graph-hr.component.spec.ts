@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { GraphHrComponent } from './graph-hr.component';
 
@@ -6,7 +6,7 @@ describe('GraphHrComponent', () => {
   let component: GraphHrComponent;
   let fixture: ComponentFixture<GraphHrComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ GraphHrComponent ]
     })

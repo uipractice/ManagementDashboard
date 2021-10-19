@@ -28,12 +28,13 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
-    this.auth.authenticate().then((res) => {
+    /* this.auth.authenticate().then((res) => {
       if(res['statusCode']){
         res['statusCode'] === 200 ? this.router.navigate['/dashboard'] : '';
       }
-     
-    });
+    }).catch(function(error) {
+        //
+    }); */
   }
 
   // convenience getter for easy access to form fields
@@ -58,7 +59,13 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('userInfo', JSON.stringify(res['data']));
        
         this.router.navigate(['/dashboard']);
-      } else {}
+      } else {
+        if(res['statusCode'] === 401 || res['auth'] == false){
+          //resolve(res);
+          this.message = 'Username or Password is incorrect';
+          this.loginForm.reset();
+        }
+      }
 
     });
 

@@ -170,7 +170,7 @@
       -webkit-appearance: none;
       -moz-appearance: none;
       position: relative;
-      background:url(src/assets/images/main/select-arrow.svg) no-repeat 90% 15px !important;
+      background:url(/src/assets/images/main/select-arrow.svg) no-repeat 90% 15px !important;
       width: 100%;
       outline: none !important;
       padding:0 10px;
@@ -427,7 +427,7 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         position: relative;
-        background:url(src/assets/images/main/select-arrow.svg) no-repeat 96% 17px !important;
+        background:url(/src/assets/images/main/select-arrow.svg) no-repeat 96% 17px !important;
       }
       .create-news-modal{
         .close{

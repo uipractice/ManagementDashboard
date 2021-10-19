@@ -40,7 +40,7 @@ export class NewsNotificationModalComponent implements OnInit {
     this.selectedId = this.modalData.selectedId
     this.selectedType = this.modalData.selectedType
     this.selectedItem = this.modalData.selectedItem
-    console.log('selectedItem', this.selectedItem)
+    // console.log('selectedItem', this.selectedItem)
     if (this.selectedItem) {
       this.updateNotificationData();
     }
@@ -56,19 +56,19 @@ export class NewsNotificationModalComponent implements OnInit {
 
   onFormSubmit(type) {
     const formData = this.notificationDetailsForm.value
-    console.log(formData)
+    // console.log(formData)
     if (type == 'save') {
       formData['publish'] = false,
         formData['isActive'] = false
-      console.log("Form data", formData)
+      // console.log("Form data", formData)
       if (formData['messageType'] = "Notification") {
         this.service.createNotification(formData).then((res: any) => {
-          console.log('newNotification', res)
+          //console.log('newNotification', res)
           this.newNotification = res
         })
       } else if (formData['messageType'] = "News") {
         this.service.createNews(formData).then((res: any) => {
-          console.log('createNews', res)
+          // console.log('createNews', res)
           this.createNews = res
         })
       }
@@ -77,12 +77,12 @@ export class NewsNotificationModalComponent implements OnInit {
         formData['isActive'] = true
       if (formData['messageType'] = "Notification") {
         this.service.createNotification(formData).then((res: any) => {
-          console.log('newNotification', res)
+          // console.log('newNotification', res)
           this.newNotification = res
         })
       } else if (formData['messageType'] = "News") {
         this.service.createNews(formData).then((res: any) => {
-          console.log('createNews', res)
+          // console.log('createNews', res)
           this.createNews = res
         })
       }
@@ -97,12 +97,12 @@ export class NewsNotificationModalComponent implements OnInit {
       formData['isActive'] = false
     if (formData.messageType == 'News') {
       this.service.createNews(formData).then((res: any) => {
-        console.log('createNews', res)
+        // console.log('createNews', res)
         this.createNews = res
       })
     } else {
       this.service.createNotification(formData).then((res: any) => {
-        console.log('newNotification', res)
+        // console.log('newNotification', res)
         this.newNotification = res
       })
     }
@@ -110,16 +110,20 @@ export class NewsNotificationModalComponent implements OnInit {
   }
   onSaveAndPublish() {
     const formData = this.notificationDetailsForm.value
+    if(!formData['date']){
+      formData['date'] = new Date();
+    }
     formData['publish'] = true,
       formData['isActive'] = true
+    //console.log(formData);return;  
     if (formData.messageType == 'News') {
       this.service.createNews(formData).then((res: any) => {
-        console.log('createNews', res)
+        // console.log('createNews', res)
         this.createNews = res
       })
     } else {
       this.service.createNotification(formData).then((res: any) => {
-        console.log('newNotification', res)
+        // console.log('newNotification', res)
         this.newNotification = res
       })
     }
@@ -130,11 +134,11 @@ export class NewsNotificationModalComponent implements OnInit {
   deleteData() {
     if (this.selectedType == 'Notification') {
       this.service.deleteNotification(this.selectedId).then((res: any) => {
-        console.log('deleteNotification', res)
+        // console.log('deleteNotification', res)
       })
     } else {
       this.service.deleteNews(this.selectedId).then((res: any) => {
-        console.log('deletenews', res)
+        // console.log('deletenews', res)
       })
     }
     this.dialogRef.close(true);
@@ -155,26 +159,29 @@ export class NewsNotificationModalComponent implements OnInit {
     formData['isActive'] = false
     if (formData.messageType == 'News') {
       this.service.updateNews(this.selectedId, formData).then((res: any) =>{
-        console.log('updateNotification', res)
+        //console.log('updateNotification', res)
       })
     } else {
       this.service.updateNotification(this.selectedId, formData).then((res: any) => {
-        console.log('updateNotification', res)
+        // console.log('updateNotification', res)
       })
     }
     this.dialogRef.close(true);
   }
   onUpdatePublish() {
     const formData = this.notificationDetailsForm.value
+    if(!formData['date']){
+      formData['date'] = new Date();
+    }
     formData['publish'] = true,
     formData['isActive'] = true 
     if (formData.messageType == 'News') {
       this.service.updateNews(this.selectedId, formData).then((res: any) =>{
-        console.log('updateNotification', res)
+        // console.log('updateNotification', res)
       })
     } else{
         this.service.updateNotification(this.selectedId, formData).then((res: any) => {
-        console.log('updateNotification', res)
+        // console.log('updateNotification', res)
       })
     }
     this.dialogRef.close(true);

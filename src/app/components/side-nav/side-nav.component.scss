@@ -145,21 +145,21 @@
   }
   #dashboard {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/dashboard.svg) center no-repeat;
+    background: url(/src/assets/images/main/Leftnav/dashboard.svg) center no-repeat;
     background-size: 58%;
     border-left: 5px solid transparent;
     background-position-x: 13px;
   }
   #dashboard:active, #dashboard:visited, #dashboard:focus, #dashboard.active {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/dashboard_s.svg) center no-repeat;
+    background: url(/src/assets/images/main/Leftnav/dashboard_s.svg) center no-repeat;
     background-size: 58%;
     background-position-x: 13px;
     border-left: 5px solid #239EC5;
     background-color: #01273A;
   }
   #dashboard.active:hover{
-  background: url(src/assets/images/main/Leftnav/dashboard_s.svg) 50% no-repeat !important;
+  background: url(/src/assets/images/main/Leftnav/dashboard_s.svg) 50% no-repeat !important;
     background-size: 58% !important;
     background-position-x: 13px !important;
     height: 78px !important;
@@ -167,20 +167,20 @@
   }
   #it {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/IT.svg) center no-repeat;
+    background: url(/src/assets/images/main/Leftnav/IT.svg) center no-repeat;
     background-size: 58%;
     border-left: 5px solid transparent;
     background-position-x: 13px;
   }
   #it:active, #it:visited, #it:focus, #it.active{
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/IT_s.svg) center no-repeat;
+    background: url(/src/assets/images/main/Leftnav/IT_s.svg) center no-repeat;
     background-size: 58%;
     background-position-x: 13px;
     background-color: #01273A;
   }
   #it.active:hover{
-    background: url(src/assets/images/main/Leftnav/IT_s.svg) center no-repeat !important;
+    background: url(/src/assets/images/main/Leftnav/IT_s.svg) center no-repeat !important;
     background-size: 58% !important;
     background-position-x: 13px !important;
     height: 78px !important;
@@ -188,42 +188,42 @@
   }
   #hr {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/hr.svg) center no-repeat;
+    background: url(/src/assets/images/main/Leftnav/hr.svg) center no-repeat;
     background-size: 58%;
     border-left: 5px solid transparent;
     background-position-x: 13px;
   }
   #hr:active, #hr:visited, #hr:focus, #hr.active{
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/hr_s.svg) center no-repeat;
+    background: url(/src/assets/images/main/Leftnav/hr_s.svg) center no-repeat;
     background-size: 58%;
     background-position-x: 13px;
     background-color: #01273A;
   }
  #hr.active:hover{
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/hr_s.svg) center no-repeat !important;
+    background: url(/src/assets/images/main/Leftnav/hr_s.svg) center no-repeat !important;
     background-size: 58% !important;
     background-position-x: 13px !important;
     background-color: #01273A !important;
   }
   #admin {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/Admin.svg) center no-repeat;
+    background: url(/src/assets/images/main/Leftnav/Admin.svg) center no-repeat;
     background-size: 58%;
     border-left: 5px solid transparent;
     background-position-x: 13px;
   }
   #admin:active, #admin:visited, #admin:focus, #admin.active{
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/Admin_s.svg) center no-repeat;
+    background: url(/src/assets/images/main/Leftnav/Admin_s.svg) center no-repeat;
     background-size: 58%;
     background-position-x: 13px;
     background-color: #01273A;
   }
   #admin.active:hover{
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/Admin_s.svg) center no-repeat !important;
+    background: url(/src/assets/images/main/Leftnav/Admin_s.svg) center no-repeat !important;
     background-size: 58% !important;
     background-position-x: 13px !important;
     background-color: #01273A !important;
@@ -475,7 +475,9 @@
       justify-content: space-around;
     }
   }
-   @media only screen and (min-width:426px) and (max-width:1440px){
+//   @media only screen and (min-width:426px) and (max-width:1440px){
+  @media only screen and (min-width:426px){
+
      .ColAlign{
        display: none !important;
      }
@@ -488,28 +490,28 @@
        }
        #dashboard:hover {
         height: 78px;
-        background: url(src/assets/images/main/Leftnav/dashboard_h.svg) center no-repeat;
+        background: url(/src/assets/images/main/Leftnav/dashboard_h.svg) center no-repeat;
         background-size: 58%;
         border-left: 5px solid #239EC5;
         background-position-x: 13px;
       }
       #it:hover {
         height: 78px;
-        background: url(src/assets/images/main/Leftnav/IT_h.svg) center no-repeat;
+        background: url(/src/assets/images/main/Leftnav/IT_h.svg) center no-repeat;
         background-size: 58%;
         border-left: 5px solid #239EC5;
         background-position-x: 13px;
       }
       #hr:hover {
         height: 78px;
-        background: url(src/assets/images/main/Leftnav/hr_h.svg) center no-repeat;
+        background: url(/src/assets/images/main/Leftnav/hr_h.svg) center no-repeat;
         background-size: 58%;
         border-left: 5px solid #239EC5;
         background-position-x: 13px;
       }
    #admin:hover {
     height: 78px;
-    background: url(src/assets/images/main/Leftnav/Admin_h.svg) center no-repeat;
+    background: url(/src/assets/images/main/Leftnav/Admin_h.svg) center no-repeat;
     background-size: 58%;
     border-left: 5px solid #239EC5;
     background-position-x: 13px;

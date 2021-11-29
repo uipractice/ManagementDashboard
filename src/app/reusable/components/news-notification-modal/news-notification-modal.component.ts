@@ -36,6 +36,9 @@ export class NewsNotificationModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.modalId = this.modalData.modalId
+    if(this.modalId == 'modal03'){
+      this.notificationDetailsForm.controls['messageType'].setValue('Notification');
+    }
     this.data = this.modalData.modalData
     this.selectedId = this.modalData.selectedId
     this.selectedType = this.modalData.selectedType
@@ -53,7 +56,10 @@ export class NewsNotificationModalComponent implements OnInit {
   closeModal() {
     this.dialogRef.close(false);
   }
-
+  resetModal(){
+    this.notificationDetailsForm.controls['messageDescription'].setValue('');
+    this.notificationDetailsForm.controls['date'].setValue(new Date());
+  }
   onFormSubmit(type) {
     const formData = this.notificationDetailsForm.value
     // console.log(formData)
@@ -92,6 +98,9 @@ export class NewsNotificationModalComponent implements OnInit {
 
 
   onSave() {
+    if(this.notificationDetailsForm.invalid){
+      return false
+    }
     const formData = this.notificationDetailsForm.value
     formData['publish'] = false,
       formData['isActive'] = false
@@ -109,6 +118,9 @@ export class NewsNotificationModalComponent implements OnInit {
     this.dialogRef.close(true);
   }
   onSaveAndPublish() {
+    if(this.notificationDetailsForm.invalid){
+      return false
+    }
     const formData = this.notificationDetailsForm.value
     if(!formData['date']){
       formData['date'] = new Date();
@@ -154,6 +166,9 @@ export class NewsNotificationModalComponent implements OnInit {
   }
 
   onUpdateSave() {
+    if(this.notificationDetailsForm.invalid){
+      return false
+    }
     const formData = this.notificationDetailsForm.value
     formData['publish'] = false,
     formData['isActive'] = false
@@ -169,6 +184,9 @@ export class NewsNotificationModalComponent implements OnInit {
     this.dialogRef.close(true);
   }
   onUpdatePublish() {
+    if(this.notificationDetailsForm.invalid){
+      return false
+    }
     const formData = this.notificationDetailsForm.value
     if(!formData['date']){
       formData['date'] = new Date();

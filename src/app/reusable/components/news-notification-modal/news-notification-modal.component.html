@@ -1,42 +1,39 @@
- 
-  <div class="create-news-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal03'">
-    <header id="modal-header">
-      <h1 id="modal-title">Create Notification/News & events</h1>
-      <button
-        type="button"
-        class="close pull-right"
-        aria-label="Close"
-        (click)="closeModal()"
-      >
-        <span aria-hidden="true">×</span>
-      </button>
-    </header>
-    <section id="modal-body">
-     
-    <form [formGroup]="notificationDetailsForm"  *ngIf="isnotificationDetailsForm">
+<div class="create-news-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal03'">
+  <header id="modal-header">
+    <h1 id="modal-title">Create Notification/News & events</h1>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </header>
+  <section id="modal-body">
+
+    <form [formGroup]="notificationDetailsForm" *ngIf="isnotificationDetailsForm">
       <table class="createpopup-table">
         <tr>
           <td>
-              <mat-radio-group formControlName="messageType">
-                  <label>Select</label>
-                  <mat-radio-button value="Notification" [checked]='true'>Notification &nbsp;</mat-radio-button>
-                  <mat-radio-button value="News">News & Events</mat-radio-button>
-              </mat-radio-group>
-              <mat-error>
-                  <span *ngIf="!notificationDetailsForm.get('messageType').valid && notificationDetailsForm.get('messageType').touched">Message Type Required</span>
-              </mat-error>
+            <mat-radio-group formControlName="messageType">
+              <label>Select</label>
+              <mat-radio-button value="Notification" [checked]='true'>Notification &nbsp;</mat-radio-button>
+              <mat-radio-button value="News">News & Events</mat-radio-button>
+            </mat-radio-group>
+            <mat-error>
+              <span
+                *ngIf="!notificationDetailsForm.get('messageType').valid && notificationDetailsForm.get('messageType').touched">Message
+                Type Required</span>
+            </mat-error>
           </td>
           <td>
-            <mat-form-field class="demo-full-width" >
-              <label>Date & Time to publish</label>
-              <input matInput [matDatepicker]="picker" placeholder="" formControlName="date">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-form-field class="demo-full-width">
+              <label>Date & Time to publish </label>
+              <input matInput [matDatepicker]="picker" placeholder="" formControlName="date"
+                style="width: 90%!important;">
+              <mat-datepicker-toggle matSuffix [for]="picker" class="mydatepicker"></mat-datepicker-toggle>
               <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
             </mat-form-field>
-            
-        </td>
+
+          </td>
         </tr>
-          <!-- <tr>
+        <!-- <tr>
               <td>
                   <mat-form-field class="demo-full-width">
                     <input matInput [matDatepicker]="picker" placeholder="mm/dd/yyyy">
@@ -46,111 +43,105 @@
                   
               </td>
           </tr> -->
-          <tr>
-              <td colspan="2">
-                  <mat-form-field class="demo-full-width">
-                    <label>Content (Max 500 Charactor)</label>
-                    <textarea formControlName="messageDescription" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="10" matAutosizeMaxRows="100">Content</textarea>
-                      <mat-error>
-                              <span *ngIf="!notificationDetailsForm.get('messageDescription').valid && notificationDetailsForm.get('messageDescription').touched">Content Required</span>
-                          </mat-error>
-                  </mat-form-field>
-                  
-              </td>
-          </tr>
-        
-          
-          <tr>
-              <td colspan="2" class="content-center">
-                  <!-- <button mat-raised-button color="accent" [disabled]="!basicDetailsForm.valid">Next</button> -->
-                  <button mat-raised-button class="reset" (click)="closeModal()">
-                    Reset
-                </button>
-                  <button mat-raised-button class="save" (click)="onSave()">
-                    Save
-                  </button>
-                  <button mat-raised-button class="save" id="modal-cancel-button" 
-                  (click)="onSaveAndPublish()">
-                    Save & Publish
-                  </button>
-              </td>
-          </tr>
-          <tr>
-              <td></td>
-          </tr>
+        <tr>
+          <td colspan="2">
+            <mat-form-field class="demo-full-width">
+              <label>Content (Max 500 Charactor)</label>
+              <textarea formControlName="messageDescription" matInput placeholder="" matTextareaAutosize
+                matAutosizeMinRows="10" matAutosizeMaxRows="100">Content</textarea>
+              <mat-error>
+                <span
+                  *ngIf="!notificationDetailsForm.get('messageDescription').valid && notificationDetailsForm.get('messageDescription').touched">Content
+                  Required</span>
+              </mat-error>
+            </mat-form-field>
+
+          </td>
+        </tr>
+
+
+        <tr>
+          <td colspan="2" class="content-center">
+            <!-- <button mat-raised-button color="accent" [disabled]="!basicDetailsForm.valid">Next</button> -->
+            <button mat-raised-button class="reset" (click)="resetModal()">
+              Reset
+            </button>
+            <button [disabled]="!notificationDetailsForm.valid" mat-raised-button class="save" (click)="onSave()">
+              Save
+            </button>
+            <button [disabled]="!notificationDetailsForm.valid" mat-raised-button class="save" id="modal-cancel-button"
+              (click)="onSaveAndPublish()">
+              Save & Publish
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
       </table>
     </form>
 
-    </section>
-    
-  </div>
-  
-  <div class="delete-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal04'">
-    <header id="modal-header">
-      <!-- <h1 id="modal-title">Create Notification/News & events</h1> -->
-      <button
-        type="button"
-        class="close pull-right"
-        aria-label="Close"
-        (click)="closeModal()"
-      >
-        <span aria-hidden="true">×</span>
-      </button>
-    </header>
-    <section id="modal-body">
-      <div class="row">
-        <p>Do you really want to delete this item?</p>
-      </div>
-    </section>
-    <footer id="modal-footer">
-      <button mat-raised-button class="reset" (click)="closeModal()">
-        Cancel
-     </button>
-      <button mat-raised-button class="save" id="modal-cancel-button" (click)="deleteData()">
-        ok
-      </button>
+  </section>
+
+</div>
+
+<div class="delete-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal04'">
+  <header id="modal-header">
+    <!-- <h1 id="modal-title">Create Notification/News & events</h1> -->
+    <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </header>
+  <section id="modal-body">
+    <div class="row">
+      <p>Do you really want to delete this item?</p>
+    </div>
+  </section>
+  <footer id="modal-footer">
+    <button mat-raised-button class="reset" (click)="closeModal()">
+      Cancel
+    </button>
+    <button mat-raised-button class="save" id="modal-cancel-button" (click)="deleteData()">
+      ok
+    </button>
   </footer>
-  </div>
+</div>
 
-  
-  <div class="create-news-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal05'">
-    <header id="modal-header">
-      <h1 id="modal-title">Create Notification/News & events</h1>
-      <button
-        type="button"
-        class="close pull-right"
-        aria-label="Close"
-        (click)="closeModal()"
-      >
-        <span aria-hidden="true">×</span>
-      </button>
-    </header>
-    <section id="modal-body">
-     
-    <form [formGroup]="notificationDetailsForm"  *ngIf="isnotificationDetailsForm">
+
+<div class="create-news-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal05'">
+  <header id="modal-header">
+    <h1 id="modal-title">Create Notification/News & events</h1>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </header>
+  <section id="modal-body">
+
+    <form [formGroup]="notificationDetailsForm" *ngIf="isnotificationDetailsForm">
       <table class="createpopup-table">
         <tr>
           <td>
-              <mat-radio-group formControlName="messageType">
-                  <label>Select</label>
-                  <mat-radio-button value="Notification">Notification &nbsp;</mat-radio-button>
-                  <mat-radio-button value="News">News & Events</mat-radio-button>
-              </mat-radio-group>
-              <mat-error>
-                  <span *ngIf="!notificationDetailsForm.get('messageType').valid && notificationDetailsForm.get('messageType').touched">Message Type Required</span>
-              </mat-error>
+            <mat-radio-group formControlName="messageType">
+              <label>Select</label>
+              <mat-radio-button value="Notification">Notification &nbsp;</mat-radio-button>
+              <mat-radio-button value="News">News & Events</mat-radio-button>
+            </mat-radio-group>
+            <mat-error>
+              <span
+                *ngIf="!notificationDetailsForm.get('messageType').valid && notificationDetailsForm.get('messageType').touched">Message
+                Type Required</span>
+            </mat-error>
           </td>
           <td>
-            <mat-form-field class="demo-full-width" >
+            <mat-form-field class="demo-full-width">
               <label>Date & Time to publish</label>
-              <input matInput [matDatepicker]="picker" placeholder="" formControlName="date">
+              <input matInput [matDatepicker]="picker" placeholder="" formControlName="date" style="width: 90%;">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
             </mat-form-field>
-            
-        </td>
+          </td>
         </tr>
-          <!-- <tr>
+        <!-- <tr>
               <td>
                   <mat-form-field class="demo-full-width">
                     <input matInput [matDatepicker]="picker" placeholder="mm/dd/yyyy">
@@ -160,41 +151,44 @@
                   
               </td>
           </tr> -->
-          <tr>
-              <td colspan="2">
-                  <mat-form-field class="demo-full-width">
-                    <label>Content (Max 500 Charactor)</label>
-                    <textarea formControlName="messageDescription" matInput placeholder="" matTextareaAutosize matAutosizeMinRows="10" matAutosizeMaxRows="100">Content</textarea>
-                      <mat-error>
-                              <span *ngIf="!notificationDetailsForm.get('messageDescription').valid && notificationDetailsForm.get('messageDescription').touched">Content Required</span>
-                          </mat-error>
-                  </mat-form-field>
-                  
-              </td>
-          </tr>
-        
-          
-          <tr>
-              <td colspan="2" class="content-center">
-                  <!-- <button mat-raised-button color="accent" [disabled]="!basicDetailsForm.valid">Next</button> -->
-                  <button mat-raised-button class="reset" (click)="closeModal()">
-                    Reset
-                </button>
-                  <button mat-raised-button class="save" (click)="onUpdateSave()">
-                    Save
-                  </button>
-                  <button mat-raised-button class="save" id="modal-cancel-button" 
-                  (click)="onUpdatePublish()">
-                    Save & Publish
-                  </button>
-              </td>
-          </tr>
-          <tr>
-              <td></td>
-          </tr>
+        <tr>
+          <td colspan="2">
+            <mat-form-field class="demo-full-width">
+              <label>Content (Max 500 Charactor)</label>
+              <textarea formControlName="messageDescription" matInput placeholder="" matTextareaAutosize
+                matAutosizeMinRows="10" matAutosizeMaxRows="100">Content</textarea>
+              <mat-error>
+                <span
+                  *ngIf="!notificationDetailsForm.get('messageDescription').valid && notificationDetailsForm.get('messageDescription').touched">Content
+                  Required</span>
+              </mat-error>
+            </mat-form-field>
+
+          </td>
+        </tr>
+
+
+        <tr>
+          <td colspan="2" class="content-center">
+            <!-- <button mat-raised-button color="accent" [disabled]="!basicDetailsForm.valid">Next</button> -->
+            <button mat-raised-button class="reset" (click)="resetModal()">
+              Reset
+            </button>
+            <button [disabled]="!notificationDetailsForm.valid" mat-raised-button class="save" (click)="onUpdateSave()">
+              Save 
+            </button>
+            <button [disabled]="!notificationDetailsForm.valid" mat-raised-button class="save" id="modal-cancel-button"
+              (click)="onUpdatePublish()">
+              Save & Publish
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
       </table>
     </form>
 
-    </section>
-    
-  </div>
+  </section>
+
+</div>

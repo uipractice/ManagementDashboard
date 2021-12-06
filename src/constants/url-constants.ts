@@ -7,8 +7,8 @@ export class UrlConstants {
     stage_URL:
       'http://ec2-35-154-46-177.ap-south-1.compute.amazonaws.com/swagger',
 
-    // DEV_URL: 'http://localhost',
-    DEV_URL: ' https://management-dashboard-api.evokeapps.com',
+    DEV_URL: 'http://localhost',
+    // DEV_URL: ' https://management-dashboard-api.evokeapps.com',
     ADD_USER: 'api/emp/emp',
     GET_USERS: 'api/emp/getAllEmp',
     DELETE_EMP: 'api/emp/deleteEmp',
@@ -17,6 +17,7 @@ export class UrlConstants {
     USER_LOGIN: '/api/auth/login',
     AUTHENTICATE_USER: '/api/auth/authenticate',
     GET_SUMMERY_COUNT: '/api/emp/getAllCounts',
+    GET_SUMMERY_COUNT_NEW: '/api/emp/getAllCountsNew',
     GET_ALLEMP_COUNT: '/api/emp/getAllEmployees',
     GET_DEPT_PROJECT: '/api/emp/getDeptWiseProject',
     GET_PROJECT_EMPLOYEES: '/api/emp/getProjWiseEmployees',

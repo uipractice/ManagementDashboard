@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 import { CommonService } from 'src/services/common.service';
 import { WebRequestService } from 'src/services/web-request.service';
 
@@ -25,20 +26,14 @@ export class DashboardHrComponent implements OnInit {
   constructor(
     public service: WebRequestService,
     public commonService: CommonService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    // for (var i = 0; i < 10; i++) {
-    //   this.newsLetterData.push({
-    //     title:
-    //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    //   });
-    // }
-    this.service.getPublishNewsData().then((res:any) =>{
+    this.service.getPublishNewsData().then((res: any) => {
       this.newsLetterData = res
     })
     this.totalWorkingAndAverageData();
-    // this.getOnboardAndSeperateData();
+    this.getOnboardAndSeperateData();
     this.getAccountWiseEmployeeAttrition();
     this.getHeadcountDemographicsData();
     this.getTopThreeReasonData();
@@ -47,47 +42,6 @@ export class DashboardHrComponent implements OnInit {
     this.getEmpEngagementData();
     this.getPostEngagementData();
 
-    this.chartData2 = {
-      idName: 'overAllChart2',
-      title: 'Onboarded and Seperated',
-      series1: 'litres',
-      legendName1: 'Practices',
-      // type: 'extended',
-      label: true,
-      // colorCode: '#797FC8',
-      data: [
-        {
-          month: 'Jan',
-          Onboarded: 40,
-          Seperated: 55,
-        },
-        {
-          month: 'Feb',
-          Onboarded: 30,
-          Seperated: 78,
-        },
-        {
-          month: 'March',
-          Onboarded: 50,
-          Seperated: 40,
-        },
-      ],
-    };
-    // this.chartData3 = {
-    //   idName: 'overAllChart5',
-    //   title: ' Voluntary Attrition : Top 3 Reason',
-    //   month: 'January',
-    //   series1: 'litres',
-    //   legendName1: 'Practices',
-    //   type: 'extended',
-    //   label: true,
-    //   colorCode: '#797FC8',
-    //   data: [
-    //     { sector: 'Onsite Opportunity', size: 20 },
-    //     { sector: 'Technology Exposure', size: 15 },
-    //     { sector: 'Better Compensation', size: 30 },
-    //   ],
-    // };
     this.chartData5 = {
       idName: 'overAllChart7',
       title: 'Voluntary Attrition Analysis',
@@ -128,46 +82,45 @@ export class DashboardHrComponent implements OnInit {
       ],
     };
   }
-  handleDates = (list, prop)=>{
+  handleDates = (list, prop) => {
+    console.log(list, prop)
     return list.map((item) => {
       const obj = Object.assign({}, item);
-      obj[prop] = obj[prop].slice(0, -3);
+      console.log(obj, 135, obj[prop].slice(4, 7))
+      obj[prop] = obj[prop].slice(4, 7)
       return obj;
     });
   };
 
-  handleAccountWisData = (list, prop)=>{
+  handleAccountWisData = (list, prop) => {
     return list.map((item) => {
       const obj = Object.assign({}, item);
       const modifyObj = Number(obj[prop]) * 100;
-      // obj[prop] =  `${modifyObj}%`
       obj[prop] = modifyObj;
       return obj;
     });
   };
-  
-  displayThreeReason = (items)=>{
-    return items.filter(function(e) {
-      return ["Better Compensation","Technology exposure","Better role"].includes(e.secondaryreason)
+
+  displayThreeReason = (items) => {
+    return items.filter(function (e) {
+      return ["Better Compensation", "Technology exposure", "Better role"].includes(e.secondaryreason)
     });
   }
 
-  totalWorkingAndAverageData = ()=>{
+  totalWorkingAndAverageData = () => {
     this.service.getSummeryCount().then((res) => {
       this.commonService.transferData(res['data']['result']);
       this.getHrHeaderData();
       this.headerDataLoaded = true;
     });
   };
-  getHrHeaderData = ()=>{
+  getHrHeaderData = () => {
     this.service.getHrHeaderData().then((res: any) => {
       this.summeryData = res;
-      // console.log('Header response', this.summeryData);
-    });
+     });
   };
-  getOnboardAndSeperateData = ()=>{
+  getOnboardAndSeperateData = () => {
     this.service.getOnboardAndSeperateData().then((res: any) => {
-      // console.log('OnboardAndSeperateData', res[0]);
       if (res) {
         this.chartData2['idName'] = 'overAllChart2';
         this.chartData2['title'] = 'Onboarded and Seperated';
@@ -175,14 +128,17 @@ export class DashboardHrComponent implements OnInit {
         this.chartData2['legendName1'] = 'Practices';
         this.chartData2['label'] = true;
         this.chartData2['data'] = this.handleDates(res[0], 'month');
+        this.chartData2['data'].sort(function (a, b) {
+          var MONTH = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 };
+          return MONTH[a.month] - MONTH[b.month];
+        });
         this.isDataLoadedPractice = true;
       }
       // console.log('response', this.chartData2);
     });
   };
-  getAccountWiseEmployeeAttrition = ()=>{
+  getAccountWiseEmployeeAttrition = () => {
     this.service.getAccountWiseEmployeeData().then((res: any) => {
-      // console.log('AccountWiseEmployeeData', res[0]);
       if (res) {
         this.chartData4['idName'] = 'overAllChart6';
         this.chartData4['title'] = 'Account wise Employee Attrition';
@@ -198,11 +154,9 @@ export class DashboardHrComponent implements OnInit {
         this.isDataLoadedPractice = true;
       }
     });
-    // console.log('this.chartData4', this.chartData4);
-  };
-  getHeadcountDemographicsData = ()=>{
+   };
+  getHeadcountDemographicsData = () => {
     this.service.getHeadcountData().then((res: any) => {
-      // console.log('HeadcountDemographicsData', res);
       if (res) {
         this.chartData1['idName'] = 'overAllChart1';
         this.chartData1['title'] = 'Headcount Demographics';
@@ -211,79 +165,78 @@ export class DashboardHrComponent implements OnInit {
         this.chartData1['type'] = 'extended';
         this.chartData1['label'] = true;
         this.chartData1['data'] = this.handleDates(res[0], 'month');
+        this.chartData1['data'].sort(function (a, b) {
+          var MONTH = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 };
+          return MONTH[a.month] - MONTH[b.month];
+        });
         this.isDataLoadedPractice = true;
       }
     });
   };
-  getTopThreeReasonData = ()=>{
-    this.service.getTopThreeReasonData().then((res: any)=>{
-      // console.log('getTopThreeReasonData',res)
-      if (res) {
-          this.chartData3['idName'] = 'overAllChart5';
-          this.chartData3['title'] = 'Voluntary Attrition : Top 3 Reason';
-          this.chartData3['month'] = 'Year to Date ';
-          this.chartData3['series1'] = 'count';
-          this.chartData3['legendName1'] = 'Practices';
-          this.chartData3['type'] = 'extended';
-          this.chartData3['label'] = true;
-          this.chartData3['data'] = this.displayThreeReason(res)
-          this.isDataLoadedPractice = true;
-        }
-    })
-  }
-  getEmpAttrationData = ()=>{
-    this.service.getEmployeeAttritionData().then((res: any)=>{
-      if (res) {
-          this.chartData6['idName'] = 'overAllChart3';
-          this.chartData6['title'] = 'Employee Attrition';
-          this.chartData6['series1'] = 'litres';
-          this.chartData6['legendName1'] = 'Practices';
-          this.chartData6['type'] = 'extended';
-          this.chartData6['label'] = true;
-          this.chartData6['data'] = this.handleDates(res,'month');
-          //added blow sort code to sort the above monthly array data in month order i.e., from jan to dec
-          this.chartData6['data'].sort(function (a, b) {
-            var MONTH = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 };
-            return MONTH[a.month] - MONTH[b.month];
-          });
-          //console.log(this.chartData6['data']);
-          this.isDataLoadedPractice = true;
-        }
-    })
-  }
-  getVoluntaryAnalysisInfo = ()=>{
-    this.service.getVoluntaryAnalysisData().then((res: any)=>{
-  let newResponse = res.map(item => {
-       let subdata = item.subdata.slice(0, item.subdata.length -1);
-       return{...item, subdata};
-     });
+  getTopThreeReasonData = () => {
+    this.service.getTopThreeReasonData().then((res: any) => {
      if (res) {
-      this.chartData5['idName'] = 'overAllChart7';
-      this.chartData5['title'] = 'Voluntary Attrition Analysis';
-      this.chartData5['month'] = 'Year to Date ';
-      this.chartData5['series1'] = 'litres';
-      this.chartData5['legendName1'] = 'Practices';
-      this.chartData5['type'] = 'extended';
-      this.chartData5['label'] = true;
-      this.chartData5['data'] = newResponse;
+        this.chartData3['idName'] = 'overAllChart5';
+        this.chartData3['title'] = 'Voluntary Attrition : Top 3 Reason';
+        this.chartData3['month'] = 'Year to Date ';
+        this.chartData3['series1'] = 'count';
+        this.chartData3['legendName1'] = 'Practices';
+        this.chartData3['type'] = 'extended';
+        this.chartData3['label'] = true;
+        this.chartData3['data'] = this.displayThreeReason(res)
+        this.isDataLoadedPractice = true;
+      }
+    })
+  }
+  getEmpAttrationData = () => {
+    this.service.getEmployeeAttritionData().then((res: any) => {
+      if (res) {
+        this.chartData6['idName'] = 'overAllChart3';
+        this.chartData6['title'] = 'Employee Attrition';
+        this.chartData6['series1'] = 'litres';
+        this.chartData6['legendName1'] = 'Practices';
+        this.chartData6['type'] = 'extended';
+        this.chartData6['label'] = true;
+        this.chartData6['data'] = this.handleDates(res, 'month');
+        this.chartData6['data'].sort(function (a, b) {
+          var MONTH = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 };
+          return MONTH[a.month] - MONTH[b.month];
+        });
+        this.isDataLoadedPractice = true;
+      }
+    })
+  }
+  getVoluntaryAnalysisInfo = () => {
+    this.service.getVoluntaryAnalysisData().then((res: any) => {
+      let newResponse = res.map(item => {
+        let subdata = item.subdata.slice(0, item.subdata.length - 1);
+        return { ...item, subdata };
+      });
+      if (res) {
+        this.chartData5['idName'] = 'overAllChart7';
+        this.chartData5['title'] = 'Voluntary Attrition Analysis';
+        this.chartData5['month'] = 'Year to Date ';
+        this.chartData5['series1'] = 'litres';
+        this.chartData5['legendName1'] = 'Practices';
+        this.chartData5['type'] = 'extended';
+        this.chartData5['label'] = true;
+        this.chartData5['data'] = newResponse;
+        this.isDataLoadedPractice = true;
+      }
+    })
+  }
+  getEmpEngagementData = () => {
+    this.service.getEmployeeEngagementData().then((res: any) => {
+     this.getEmployeeEngagementData = res;
       this.isDataLoadedPractice = true;
-    }
     })
   }
-  getEmpEngagementData = ()=>{
-    this.service.getEmployeeEngagementData().then((res: any)=>{
-     // console.log('getEmployeeEngagementData', res)
-          this.getEmployeeEngagementData = res;
-          this.isDataLoadedPractice = true;
+  getPostEngagementData = () => {
+    this.service.getPostEngagementData().then((res: any) => {
+      this.PostEngagementData = res[0].data;
+      this.PostEngagementDataConnected = res[1].data;
+      this.isDataLoadedPractice = true;
     })
   }
-  getPostEngagementData = ()=>{
-    this.service.getPostEngagementData().then((res: any)=>{
-     // console.log('PostEngagementData', res)
-          this.PostEngagementData = res[0].data;
-          this.PostEngagementDataConnected = res[1].data;
-          this.isDataLoadedPractice = true;
-    })
-  }
-  
+
 }

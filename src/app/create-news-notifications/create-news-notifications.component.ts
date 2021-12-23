@@ -2,7 +2,6 @@ import { WebRequestService } from './../../services/web-request.service';
 import { CommonService } from './../../services/common.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { DataModalComponent } from '../reusable/components/data-modal/data-modal.component';
 import { NewsNotificationModalComponent } from '../reusable/components/news-notification-modal/news-notification-modal.component';
 import { DOCUMENT } from '@angular/common';
 
@@ -30,37 +29,25 @@ export class CreateNewsNotificationsComponent {
       this.commonService.transferData(res['data']['result']);
       this.headerDataLoaded = true;
     });
-    // this.newsNotificationData();
     this.allNewsAndnotification();
   }
-
-  // newsNotificationData = () => {
-  //   this.service.getNewsData().then((res: any) => {
-  //     this.totalData =[]
-  //     console.log('allNewsAndNotification', res)
-  //     this.totalData.push(...res);
-  //   })
-  // }
 
   allNewsAndnotification = () => {
     this.service.getNotificationData().then((res: any) => {
       this.totalData = res.flat();
-      // console.log('total data',this.totalData)
-    })
+      })
   }
 
   createNewsAndNotification() {
     const dialogConfig = new MatDialogConfig();
     const modalId = 'modal03';
     dialogConfig.disableClose = false;
-    // dialogConfig.height = "470px";
     dialogConfig.width = "620px";
     dialogConfig.data = {
       modalId: modalId,
     };
     const dialogRef = this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(value => {
-      // console.log(value)
       setTimeout(() => {
         this.allNewsAndnotification();
       }, 2000);
@@ -73,17 +60,14 @@ export class CreateNewsNotificationsComponent {
     const selectedId = id;
     const selectedItem = data
     dialogConfig.disableClose = false;
-    // dialogConfig.height = "470px";
-    dialogConfig.width = "620px";
+   dialogConfig.width = "620px";
     dialogConfig.data = {
       modalId: modalId,
       selectedItem: selectedItem,
       selectedId: selectedId,
-      // formData: formData,
     };
     const dialogRef= this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(value => {
-      // console.log(value)
       setTimeout(() => {
         this.allNewsAndnotification();
       }, 2000);
@@ -95,8 +79,7 @@ export class CreateNewsNotificationsComponent {
     const selectedId = id;
     const selectedType = type;
     dialogConfig.disableClose = false;
-    // dialogConfig.height = "470px";
-    dialogConfig.width = "400px";
+     dialogConfig.width = "400px";
     dialogConfig.data = {
       modalId: modalId,
       selectedId: selectedId,
@@ -104,16 +87,13 @@ export class CreateNewsNotificationsComponent {
     };
     const dialogRef = this.matDialog.open(NewsNotificationModalComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(value => {
-      // console.log(value)
-      setTimeout(() => {
+       setTimeout(() => {
         this.allNewsAndnotification();
       }, 2000);
     });
   }
   updateNotificationStatus(id,data) {
-    
-    // console.log(data);
-    data.publish = !data.publish;
+      data.publish = !data.publish;
     const selectedId = id;
     if(data.messageType==="Notification"){
       this.service.updateNotification(id,data);
@@ -121,8 +101,6 @@ export class CreateNewsNotificationsComponent {
     if(data.messageType==="News"){
       this.service.updateNews(id,data);
     }
-    
-   
   }
 
 }

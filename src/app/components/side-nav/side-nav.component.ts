@@ -20,14 +20,12 @@ export class SideNavComponent implements OnInit {
   constructor(private httpService: HttpClient, private router: Router) {}
 
   navigatoinChange(data) {
-    // this.navigatoinChangeEvent.emit(data);
     this.router.navigate([data]);
   }
   ngOnInit(): void {
     this.httpService.get('assets/side_nav.json').subscribe(
       (data) => {
-        this.arrIcons = data as Icon[]; // FILL THE ARRAY WITH DATA.
-        // console.log(this.arrIcons);
+        this.arrIcons = data as Icon[]; 
       },
       (err: HttpErrorResponse) => {
         console.log(err.message);

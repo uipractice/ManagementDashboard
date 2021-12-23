@@ -10,7 +10,6 @@ export class HeaderHrComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log('this.summeryData',this.summeryData);
   }
 
 }

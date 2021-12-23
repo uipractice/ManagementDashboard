@@ -22,42 +22,14 @@
           <li *ngFor="let projectList of projectList" 
           [class.active]="projectList === selectedproject"
           (click)="onSelect(projectList)">{{projectList}}</li>
-          <!-- <li class="active">Matter Management</li>
-          <li>Datawarehousing</li>
-          <li>Entity Management</li>
-          <li>Alliance</li>
-          <li>RIM</li>
-          <li>Datamasters</li>
-          <li>Financials</li>
-          <li>CSC-Pega Support</li>
-          <li>NetNames</li>
-          <li>CSC-Pega Support</li>
-          <li>Fraud Analysis</li>
-          <li>NetNames</li>
-          <li>CSC-Pega Support</li> -->
-        </ul>
+      </ul>
         <select class="desktop-hidden" (change)="onSelect($event.target.value)">
-          <!-- <option selected title="{{selectedproject}}">{{selectedproject | charlimitpipe: 13}}</option> -->
-          <option *ngFor="let projectList of projectList" title="projectList">{{projectList}}</option>
+         <option *ngFor="let projectList of projectList" title="projectList">{{projectList}}</option>
         </select> <br>
       </div>
       <div class="account-right">
-        <!-- <h4 class="mobile-hidden">Matter Management (24 People)</h4> -->
         <h4 class="mobile-hidden">{{selectedproject}} ({{rowData.length}} People)</h4>
-        <!-- <p class="mobile-hidden">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, at id
-          bibendum in urna mi quam. Gravida sed imperdiet aenean suspendisse
-          sit. Semper diam leo porttitor orci viverra sodales. Eget porta nunc
-          urna, porta tincidunt tortor. Diam vitae ac ut interdum. Mi parturient
-          mi et eget tortor eu. Odio auctor
-        </p> -->
-        <!-- <div class="tech-stack">
-          <p>
-            <label>Tech Stack:</label>  <span>.net</span> <span>sql server</span>
-            <span>Mongo DB</span> <span>Javascript</span>
-          </p>
-        </div> -->
-        <div class="account-detail-table">
+     <div class="account-detail-table">
           <ag-grid-angular
             style="width: 100%; height: 427px"
             class="ag-theme-alpine"
@@ -81,15 +53,7 @@
       </div>
     </div>
   </section>
-  <!-- <footer id="modal-footer">
-        <button mat-raised-button id="modal-action-button" (click)="actionFunction()">
-           Submit
-        </button>
-        <button mat-raised-button id="modal-cancel-button" (click)="closeModal()">
-           Close
-        </button>
-    </footer> -->
-</div>
+ </div>
 
 <div class="news-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal02'">
   <header id="modal-header">
@@ -169,7 +133,6 @@
 
 <div class="delete-modal" id="modal-content-wrapper" *ngIf="modalId == 'modal04'">
   <header id="modal-header">
-    <!-- <h1 id="modal-title">Create Notification/News & events</h1> -->
     <button
       type="button"
       class="close pull-right"

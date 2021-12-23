@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import {Observable} from 'rxjs';
-import {startWith, map} from 'rxjs/operators';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'ev-data-filter',
   templateUrl: './data-filter.component.html',
@@ -39,7 +37,6 @@ export class DataFilterComponent implements OnInit {
     if(this.title == 'News and Events') {
       this.isDesiable = false
     }else {
-      //this.isDesiable = true
       this.isDesiable = false //added to hide consolidated and account wise kebab menu in graph headers
     }
     this.countries = [

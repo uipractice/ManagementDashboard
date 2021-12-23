@@ -12,5 +12,3 @@ return value.substr(0, limit) + '...';
 return value;
 }
 }
-
-//example html-{{ |charlimitpipe:30}}

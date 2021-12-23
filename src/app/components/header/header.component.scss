@@ -6,7 +6,6 @@
   width: 100%;
   z-index: 2;
   height: 66px;
-
   flex-wrap: unset;
 }
 .ds-con {
@@ -247,13 +246,6 @@ span {
   letter-spacing: normal;
 }
 
-// .text.ellipsis::after {
-//   content: "...";
-//   position: absolute;
-//   right: 4px;
-//   top: 18px;
-//   font-weight: 600;
-// }
 .Notification {
   position: relative;
   border-left:none;
@@ -365,9 +357,7 @@ span {
     box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
     border-bottom: 0.8px solid #ccc;
   }
-  // ul li.UserIcon:hover {
-  //   background: #023047 !important;
-  // }
+
   li:hover {
     background-color: #f2f6fa;
   }
@@ -669,9 +659,7 @@ input:checked + .slider:before {
   .dropbtn {
     margin-top: -2px;
   }
-  // ::-webkit-input-placeholder {
-  //    color: transparent;
-  // }
+
   :-moz-placeholder {
     color: transparent;
   }

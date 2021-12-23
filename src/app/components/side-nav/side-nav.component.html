@@ -1,36 +1,3 @@
-<!-- <div class="tab">
-  <a type="button" class="ClickTop" *ngFor="let icons of arrIcons"><a class="NavImg"
-      routerLink="/{{icons.name}}"><img class="" src="{{icons.icon}}">
-      <span class="leftNavIcon">{{icons.name}}</span>
-    </a>
-  </a>
-</div> -->
-<!-- <a class="tab">
-  <span class="ClickTop" *ngFor="let icons of arrIcons">
-     <span class="NavImg" routerLink="/{{icons.name}}">
-      <img class="" src="{{icons.icon}}">
-     <span class="leftNavIcon">{{icons.name}}</span>
-  </span>
-  </span>
-</a> -->
-<!-- <a class="tab">
-  <ul id="navlist" class="ClickTop">
-    <li id="dashboard" class="NavImg" (click)="navigatoinChange('Dashboard')">
-      <span class="leftNavIcon" href="">Dashboard</span>
-    </li>
-  </ul>
-  <ul id="navlist" class="ClickTop">
-    <li id="admin" class="NavImg" (click)="navigatoinChange('HR')"><span class="leftNavIcon">HR</span>
-    </li>
-  </ul>
-  <ul id="navlist" class="ClickTop">
-    <li id="it" class="NavImg" (click)="navigatoinChange('Admin')"><span class="leftNavIcon">Admin</span></li>
-  </ul>
-  <ul id="navlist" class="ClickTop">
-    <li id="hr" class="NavImg" (click)="navigatoinChange('IT')"><span class="leftNavIcon">IT</span></li>
-  </ul>
-</a> -->
-
 <ul id="navlist" class="tab ClickTop">
   
 <a (click)="navigatoinChange('dashboard')">
@@ -38,21 +5,6 @@
 <a (click)="navigatoinChange('hr')"><ev-dashboard [hoverClas]="true" name="hr" ></ev-dashboard><span class="mobile-text-nav mobile-hr">HR</span></a>
 <a (click)="navigatoinChange('it')"><ev-dashboard [hoverClas]="true" name="it" ></ev-dashboard><span class="mobile-text-nav mobile-it">IT</span></a>
 <a (click)="navigatoinChange('admin')"><ev-dashboard [hoverClas]="true" name="admin" ></ev-dashboard><span class="mobile-text-nav mobile-admin">Admin</span></a>
-
-
-  <!--svgv bgs -->
-  <!--<li id="dashboard" class="active NavImg" (click)="navigatoinChange('Dashboard')">
-    <a class="leftNavIcon" href="">Dashboard</a>
-  </li>
-  <li id="hr" class="NavImg" (click)="navigatoinChange('HR')">
-    <a class="leftNavIcon" href="">HR</a>
-  </li>
-  <li id="it" class="NavImg" (click)="navigatoinChange('IT')">
-    <a class="leftNavIcon" href="">IT</a>
-  </li>
-  <li id="admin" class="NavImg" (click)="navigatoinChange('Admin')">
-    <a class="leftNavIcon" href="">Admin</a>
-  </li> -->
 </ul>
 <div class="ColAlign">
   <div class="VerLine">

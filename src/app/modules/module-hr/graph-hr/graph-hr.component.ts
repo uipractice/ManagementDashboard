@@ -22,7 +22,6 @@ import { DataModalComponent } from 'src/app/reusable/components/data-modal/data-
 export class GraphHrComponent implements OnInit {
   private chart: am4charts.XYChart;
   private pieChart: am4charts.PieChart;
-  // private pieOfPieChart: am4charts.Container;
   @Input() chartData: any;
   @Input() chartType: any;
   @Input() dataLoaded: any;
@@ -57,8 +56,7 @@ export class GraphHrComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    // console.log('this.chartData', this.chartData);
-  }
+    }
 
   clickedItem(content) {
     const dialogConfig = new MatDialogConfig();
@@ -78,8 +76,7 @@ export class GraphHrComponent implements OnInit {
   viewAllNews(){
     const dialogConfig = new MatDialogConfig();
     const modalId = "modal02";
-    // const modalData = content.title;
-    const modalExpand = true
+   const modalExpand = true
     const allNewsData = this.newsData;
     dialogConfig.disableClose = false;
     dialogConfig.height = "222px";
@@ -147,11 +144,6 @@ export class GraphHrComponent implements OnInit {
             bullet.showTooltipOn = 'always';
             // bullet.circle.strokeWidth = 2;
             bullet.circle.radius = 4;
-            // bullet.circle.fill = am4core.color('#fff');
-
-            // let bullethover = bullet.states.create('hover');
-            // bullethover.properties.scale = 1.3;
-
             // Make a panning cursor
             this.chart.cursor = new am4charts.XYCursor();
             this.chart.cursor.xAxis = dateAxis;
@@ -242,44 +234,29 @@ export class GraphHrComponent implements OnInit {
             series1.dataFields.valueY = 'Seperated';
             series1.dataFields.categoryX = 'month';
             series1.name = 'All';
-            // series1.tooltipText ='{valueY}';
+           
             this.bullet = series1.bullets.push(new am4charts.CircleBullet());
             this.bullet.tooltipText = '{valueY}';
-            // this.bullet.showTooltipOn = "always";
-            // series1.legendSettings.valueText = '{valueY}';
             series1.visible = false;
 
             let series2 = newchart3.series.push(new am4charts.LineSeries());
             series2.dataFields.valueY = 'voluntary';
             series2.dataFields.categoryX = 'month';
             series2.name = 'Voluntary';
-            // series2.bullets.push(new am4charts.CircleBullet());
-            // series2.tooltipText ='{valueY}';
             this.bullet = series2.bullets.push(new am4charts.CircleBullet());
             this.bullet.tooltipText = '{valueY}';
-            // this.bullet.showTooltipOn = "always";
-            // series2.legendSettings.valueText = '{valueY}';
-
             let series3 = newchart3.series.push(new am4charts.LineSeries());
             series3.dataFields.valueY = 'involuntary';
             series3.dataFields.categoryX = 'month';
             series3.name = 'Involuntary';
-            // series3.bullets.push(new am4charts.CircleBullet());
-            // series3.tooltipText ='{valueY}';
             this.bullet = series3.bullets.push(new am4charts.CircleBullet());
             this.bullet.tooltipText = '{valueY}';
-            // this.bullet.showTooltipOn = "always";
-            // series3.legendSettings.valueText = '{valueY}';
             let series4 = newchart3.series.push(new am4charts.LineSeries());
             series4.dataFields.valueY = 'absconding';
             series4.dataFields.categoryX = 'month';
             series4.name = 'Abscond';
-            // series4.bullets.push(new am4charts.CircleBullet());
-            // series4.tooltipText ='{valueY}';
             this.bullet = series4.bullets.push(new am4charts.CircleBullet());
             this.bullet.tooltipText = '{valueY}';
-            // this.bullet.showTooltipOn = "always";
-            // Add chart cursor
             newchart3.cursor = new am4charts.XYCursor();
             newchart3.cursor.behavior = 'zoomY';
 
@@ -301,17 +278,12 @@ export class GraphHrComponent implements OnInit {
             break;
           case 'barChart2':
             am4core.useTheme(am4themes_animated);
-            // this.chart = am4core.create(
-            //   this.chartData.idName,
-            //   am4charts.XYChart
-            // );
             let newChart2 = am4core.create(
               this.chartData.idName,
               am4charts.XYChart
             );
             newChart2.data = this.chartData.data;
             newChart2.padding(30, 20, 20, 30);
-            // newChart2.paddingTop = 20;
             newChart2.responsive.enabled = true;
             let categoryAxis = newChart2.xAxes.push(
               new am4charts.CategoryAxis()
@@ -326,33 +298,21 @@ export class GraphHrComponent implements OnInit {
 
             this.valueAxis = newChart2.yAxes.push(new am4charts.ValueAxis());
             this.valueAxis.min = 0;
-            // this.valueAxis.max = 100;
-            // this.valueAxis.extraMax = 0.1;
-            this.valueAxis.renderer.grid.template.disabled = true;
-            //valueAxis.rangeChangeEasing = am4core.ease.linear;
-            //valueAxis.rangeChangeDuration = 1500;
-
+             this.valueAxis.renderer.grid.template.disabled = true;
+           
             this.series = newChart2.series.push(new am4charts.ColumnSeries());
             this.series.dataFields.categoryX = 'account';
             this.series.dataFields.valueY = 'attrition';
             this.series.tooltipText = '{valueY.value}';
             this.series.columns.template.strokeOpacity = 0;
-            // this.series1.columns.template.width = am4core.percent(50);
-            // this.series.columns.template.column.cornerRadiusTopRight = 10;
-            // this.series.columns.template.column.cornerRadiusTopLeft = 10;
-            //series.interpolationDuration = 1500;
-            //series.interpolationEasing = am4core.ease.linear;
-            let labelBullet = this.series.bullets.push(
+             let labelBullet = this.series.bullets.push(
               new am4charts.LabelBullet()
             );
             labelBullet.label.verticalCenter = 'bottom';
             labelBullet.label.dy = -5;
             labelBullet.label.text =
               "{values.valueY.workingValue.formatNumber('#.')}%";
-
-            // newChart2.zoomOutButton.disabled = true;
-            // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
-            this.series.columns.template.adapter.add(
+                 this.series.columns.template.adapter.add(
               'fill',
               function (fill, target) {
                 return newChart2.colors.getIndex(target.dataItem.index);
@@ -452,8 +412,7 @@ export class GraphHrComponent implements OnInit {
             "{category}: {value.percent.formatNumber('#.#')}% ({value})";
             pieSeries.slices.template.tooltipText =
               "{value.percent.formatNumber('#.#')}% ({value.value})";
-            //pieSeries.labels.template.text = "{category}\n{value.percent.formatNumber('#.#')}%";
-
+        
             pieSeries.slices.template.events.on('hit', function (event) {
               selectSlice(event.target.dataItem);
             });
@@ -473,10 +432,7 @@ export class GraphHrComponent implements OnInit {
             "{category}: {value.percent.formatNumber('#.#')}% ({value})";
             pieSeries2.slices.template.tooltipText =
               " {value.percent.formatNumber('#.#')}% ({value.value})";
-            //pieSeries2.labels.template.radius = am4core.percent(50);
-            //pieSeries2.labels.template.inside = true;
-            //pieSeries2.labels.template.fill = am4core.color("#ffffff");
-            pieSeries2.labels.template.disabled = false;
+           pieSeries2.labels.template.disabled = false;
             pieSeries2.ticks.template.disabled = false;
             pieSeries2.alignLabels = false;
             pieSeries2.events.on('positionchanged', updateLines);
@@ -501,8 +457,7 @@ export class GraphHrComponent implements OnInit {
               selectedSlice = dataItem.slice;
 
               let fill = selectedSlice.fill;
-              //console.log(fill);
-
+        
               let count = dataItem.dataContext.subdata.length;
               pieSeries2.colors.list = [];
               if(fill){

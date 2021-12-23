@@ -9,7 +9,6 @@
         background: rgba(32, 158, 197, 0.08);
         th{
             border-bottom: 0;
-            // border-top:1px solid #BEBEBE;
             font-weight: bold;
             font-size: 12px;
             line-height: 14px;
@@ -196,8 +195,6 @@
   .DropdownContent{
     position: absolute;
       background-color: #fff;
-      // min-width: 190px;
-      // width:253px !important;
       border-radius: 0 0 4px 4px;
       box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
       z-index: 1;

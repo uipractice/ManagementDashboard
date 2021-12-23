@@ -1,62 +1,9 @@
 <div class="Graph">
   <div class="GraphHead">
     <h5>{{title}}</h5>
-    <!-- <select class="SelectType" name="details" id="details">
-      <option value="">Daily</option>
-      <option value="">Weekly</option>
-      <option value="">Monthly</option>
-      <option value="">Yearly</option>
-    </select> -->
-    <!-- <div class="kebabMenu-icon"></div>
-    <div class="DropdownContent">
-      <div id="dropdown-tab">	
-        
-        <div class="tab-wrap">
-          <input type="radio" id="tab1" name="tabGroup1" class="tab" value="consolidate" checked>
-          <label for="tab1">Consolidated</label>
-          
-          <input type="radio" id="tab2" name="tabGroup1" class="tab" value="account">
-          <label for="tab2">Account wise</label>
-          
-          
-          <div class="tab__content" id="Consolidated">
-            <label class="select-label">Select Year</label>
-            <select>
-              <option value="selected">2020</option>
-              <option>2019</option>
-              <option>2021</option>
-            </select>
-            <input type="checkbox" name="year" class="radio-btn">
-            <label for="year" class="year-label">Yearly</label>
-          
-            <input type="checkbox" id="tab2" name="quaterly" class="radio-btn">
-            <label for="quaterly" class="year-label">Quaterly</label>
-          </div>
-          <div class="tab__content">
-            <label class="select-label">Select Account</label>
-            <select class="select-account">
-              <option>2020</option>
-              <option>2019</option>
-              <option>2021</option>
-            </select>
-            <label class="select-label">Select Year</label>
-            <select>
-              <option value="selected">2020</option>
-              <option>2019</option>
-              <option>2021</option>
-            </select>
-            <input type="checkbox" name="year" class="radio-btn">
-            <label for="year" class="year-label">Yearly</label>
-          
-            <input type="checkbox" id="tab2" name="quaterly" class="radio-btn">
-            <label for="quaterly" class="year-label">Quaterly</label>
-          </div>
-         
-      </div>
-      </div>
-    </div> -->
+
     <button mat-icon-button class="kebabMenu-icon" [matMenuTriggerFor]="menu" *ngIf="isDesiable">
-      <!-- <mat-icon>more_vert</mat-icon> -->
+
     </button>
     <mat-menu #menu="matMenu" xPosition="before">
       <div (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()" class="DropdownContent">

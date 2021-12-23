@@ -26,26 +26,17 @@ export class HeaderComponent implements OnInit {
   PublishNotification: any;
   newsLetterData: any = [];
   toggleDropdown() {
-    // $event.stopPropagation();
     this.isShow = !this.isShow;
-    // this.isOpen = true;
-    // this.isSearch = true;
   }
   toggleDowncontent() {
     this.isOpen = !this.isOpen;
-    // this.isShow = true;
-    // this.isSearch = true;
   }
   toggledownSearch(e) {
     e.stopPropagation();
     this.isSearch = !this.isSearch;
-    // this.isShow = true;
-    // this.isOpen = true;
   }
  
   onClick() {
-    // this.isShow = true;
-    // this.isOpen = true;
     this.isSearch = true;
   }
   isDisplayNotification: Boolean;
@@ -72,13 +63,10 @@ export class HeaderComponent implements OnInit {
     }
     this.httpService.get('assets/header_count.json').subscribe(
       (res) => {
-        // this.arrHours = data; // FILL THE ARRAY WITH DATA.
         const data: any = res;
-        // this.hoursCount = res[0].hoursCount;
         data.forEach((e) => {
           if (e.hoursCount) {
             this.hoursCount = e.hoursCount;
-            // console.log(e.hoursCount);
           }
           if (e.notification) {
             this.notificationCount = e.notification;
@@ -108,25 +96,19 @@ export class HeaderComponent implements OnInit {
 
   getPublishNotification = ()=>{
     this.service.getPublishNotification().then((res: any)=>{
-      // console.log('PublishNotification', res)
-      /* BEGIN code added by sk to modify date value within the res*/
       res.forEach((element, index) => {
         if(element.date && element.date.indexOf('T')) {
           element.date = element.date.substring(0, element.date.indexOf('T'));
         }
       });
-      /* END */
-      // console.log('PublishNotification', res)
       this.PublishNotification = res
     })
   }
   feedbackDialog() {
-    // console.log("feedback popup")
-    const dialogConfig = new MatDialogConfig();
+     const dialogConfig = new MatDialogConfig();
     const modalId = 'modal05';
     dialogConfig.disableClose = true;
-    // dialogConfig.height = "470px";
-    dialogConfig.width = "500px";
+     dialogConfig.width = "500px";
     dialogConfig.data = {
       modalId: modalId,
     };
@@ -134,9 +116,7 @@ export class HeaderComponent implements OnInit {
     dialogRef.afterClosed().subscribe(
       data => {
         if(data){
-          //console.log("feedback output :", data.feedback_msg);
-          this.service.sendFeedbacktoEmail(data).then((res: any) => {
-            //if(res)console.log(res);
+         this.service.sendFeedbacktoEmail(data).then((res: any) => {
           })
         }
       }

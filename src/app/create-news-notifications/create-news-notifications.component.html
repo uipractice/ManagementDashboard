@@ -9,7 +9,6 @@
   <tr>
     <th scope="col">SL NO</th>
     <th scope="col">DATE</th>
-    <!-- <th scope="col">TIME</th> -->
     <th scope="col">MESSAGE</th>
     <th scope="col">MESSAGE  TYPE</th>
     <th scope="col" colspan="3" class="text-center">ACTION</th>
@@ -19,11 +18,9 @@
   <tr *ngFor="let data of totalData; let i=index;">
     <td scope="row">{{i+1}}</td>
     <td>{{data.date | dateFormatPipe}}</td>
-    <!-- <td>03:20:00 PM</td> -->
     <td width="50%">{{data.messageDescription}}</td>
     <td  [ngClass]="(data.messageType=='News')?'category-news':'category-notify'">{{data.messageType}}</td>
     <td><a (click)="updateSelectedData(data._id, data)"><img src="../../assets/images/main/edit-icon.svg"></a></td>
-    <!-- <td><a><img src="../../assets/images/main/edit-icon.svg"></a></td> -->
     <td><a (click)="deleteNotificationPopup(data._id, data.messageType)"><img src="../../assets/images/main/delete-icon.svg"></a></td>
     <td *ngIf="data.publish==true"><label class="switch">
         <input type="checkbox" checked (change)="updateNotificationStatus(data._id,data)">
@@ -34,59 +31,7 @@
         <span class="slider round"></span>
       </label> </td>
   </tr>
- <!-- <tr *ngFor="let notify of totalData[1]; let i=index;"> 
-    <td scope="row">{{i+1}}</td>
-    <td>{{notify.date}}</td>
-    <td>03:20:00 PM</td>
-    <td width="50%">{{notify.messageDescription}}</td>
-    <td class="category-notify">{{notify.messageType}}</td>
-    <td><a (click)="createNewsPopup()"><img src="../../assets/images/main/edit-icon.svg"></a></td>
-    <td><a (click)="deleteNewsPopup()"><img src="../../assets/images/main/delete-icon.svg"></a></td>
-    <td><label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-      </label></td>
-  </tr> -->
- <!--   <tr>
-    <td scope="row">3</td>
-    <td class="date-orange">2020-02-05</td>
-    <td class="date-orange">03:20:00 PM</td>
-    <td width="50%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</td>
-    <td class="category-news">News</td>
-    <td><img src="../../assets/images/main/edit-icon.svg"></td>
-    <td><img src="../../assets/images/main/delete-icon.svg"></td>
-    <td><label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label></td>
-  </tr>
-  <tr>
-    <td scope="row">4</td>
-    <td>2020-02-05</td>
-    <td>03:20:00 PM</td>
-    <td width="50%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</td>
-    <td class="category-notify">Notification</td>
-    <td><img src="../../assets/images/main/edit-icon.svg"></td>
-    <td><img src="../../assets/images/main/delete-icon.svg"></td>
-    <td><label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-      </label></td>
-  </tr>
-  <tr>
-    <td scope="row">5</td>
-    <td>2020-02-05</td>
-    <td>03:20:00 PM</td>
-    <td width="50%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</td>
-    <td class="category-notify">Notification</td>
-    <td><img src="../../assets/images/main/edit-icon.svg"></td>
-    <td><img src="../../assets/images/main/delete-icon.svg"></td>
-    <td><label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-      </label></td>
-  </tr> -->
-  </tbody>
+   </tbody>
 </table>
 <div class="mobile-data">
   <div class="news-card">

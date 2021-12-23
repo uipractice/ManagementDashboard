@@ -129,7 +129,6 @@ export class DataGraphComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    // console.log("chartData : ",this.chartData);
   }
   clickedItem(content) {
     const dialogConfig = new MatDialogConfig();
@@ -149,7 +148,6 @@ export class DataGraphComponent implements OnInit {
   viewAllNews() {
     const dialogConfig = new MatDialogConfig();
     const modalId = 'modal02';
-    // const modalData = content.title;
     const modalExpand = true;
     const allNewsData = this.newsData;
     dialogConfig.disableClose = false;
@@ -205,99 +203,15 @@ export class DataGraphComponent implements OnInit {
             this.categoryAxis.renderer.grid.template.disabled = true;
             this.valueAxis.renderer.grid.template.disabled = true;
             this.chart = this.chart;
-
             break;
-          case 'multiDataChart':
-            // am4core.useTheme(am4themes_animated);
-
-            // this.chart = am4core.create(
-            //   this.chartData.idName,
-            //   am4charts.XYChart
-            // );
-            // this.chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
-
-            // this.chart.data = this.chartData.data;
-
-            // this.chart.colors.step = 2;
-            // this.chart.padding(30, 30, 10, 30);
-            // this.chart.legend = new am4charts.Legend();
-
-            // this.categoryAxis = this.chart.xAxes.push(
-            //   new am4charts.CategoryAxis()
-            // );
-            // this.categoryAxis.dataFields.category = 'category';
-            // this.categoryAxis.renderer.grid.template.location = 0;
-
-            // this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
-            // this.valueAxis.min = 0;
-            // // this.valueAxis.max = 100;
-            // this.valueAxis.strictMinMax = true;
-            // this.valueAxis.calculateTotals = true;
-            // this.valueAxis.renderer.minWidth = 50;
-
-            // this.series = this.chart.series.push(new am4charts.ColumnSeries());
-            // this.series.columns.template.width = am4core.percent(80);
-            // this.series.columns.template.tooltipText =
-            //   "{name}: {valueY.totalPercent.formatNumber('#.00')}";
-            // this.series.name = 'Series 1';
-            // this.series.dataFields.categoryX = 'category';
-            // this.series.dataFields.valueY = 'value1';
-            // // #ce0c0c
-            // this.series.dataFields.valueYShow = 'totalPercent';
-            // this.series.dataItems.template.locations.categoryX = 0.5;
-            // this.series.stacked = true;
-            // this.series.tooltip.pointerOrientation = 'vertical';
-
-            // this.bullet1 = this.series.bullets.push(
-            //   new am4charts.LabelBullet()
-            // );
-            // this.bullet1.label.text =
-            //   "{valueY.totalPercent.formatNumber('#.00')}";
-            // this.bullet1.label.fill = am4core.color('#ffffff');
-            // this.bullet1.locationY = 0.5;
-
-            // this.series2 = this.chart.series.push(new am4charts.ColumnSeries());
-            // this.series2.columns.template.width = am4core.percent(80);
-            // this.series2.columns.template.tooltipText =
-            //   "{name}: {valueY.totalPercent.formatNumber('#.00')}";
-            // this.series2.name = 'Series 2';
-            // this.series2.dataFields.categoryX = 'category';
-            // this.series2.dataFields.valueY = 'value2';
-            // this.series2.dataFields.valueYShow = 'totalPercent';
-            // this.series2.dataItems.template.locations.categoryX = 0.5;
-            // this.series2.stacked = true;
-            // this.series2.tooltip.pointerOrientation = 'vertical';
-
-            // this.bullet2 = this.series2.bullets.push(
-            //   new am4charts.LabelBullet()
-            // );
-            // this.bullet2.label.text =
-            //   "{valueY.totalPercent.formatNumber('#.00')}";
-            // this.bullet2.locationY = 0.5;
-            // this.bullet2.label.fill = am4core.color('#ffffff');
-            // this.categoryAxis.renderer.grid.template.disabled = true;
-            // this.valueAxis.renderer.grid.template.disabled = true;
-            // this.series2.strokeWidth = 3;
+        
+            case 'multiDataChart':
             break;
 
           case 'multiColorBarChartMultiLevel':
             let matDialog = this.matDialog;
             let employeeData = this.AccountWiseEmpData;
             let projectList = this.accountWiseProject;
-            // console.log(this.chartData);
-            this.chartData.data[3] = {};
-
-            // alert(this.chartData.data.findIndex((el) => el._id === 'CSC'));
-            // this.chartData.data.splice(
-            //   this.chartData.data.findIndex((el) => el._id === 'CSC'),
-            //   1
-            // );
-            // console.log(
-            //   this.chartData.data.sort((a, b) => {
-            //     console.log(a, b);
-            //     return a._id > b._id;
-            //   })
-            // );
             this.chartData.data.sort();
 
             am4core.useTheme(am4themes_animated);
@@ -316,7 +230,6 @@ export class DataGraphComponent implements OnInit {
               new am4charts.CategoryAxis()
             );
             this.categoryAxis.dataFields.category = '_id';
-            // this.categoryAxis.title.text = 'Local country offices';
             this.categoryAxis.renderer.grid.template.location = 0;
             this.categoryAxis.renderer.minGridDistance = 10;
             this.categoryAxis.renderer.labels.template.rotation = 270;
@@ -330,7 +243,6 @@ export class DataGraphComponent implements OnInit {
             this.categoryAxis.renderer.labels.template.cursorOverStyle =
               am4core.MouseCursorStyle.pointer;
             if (this.chartData.title == 'Accounts Wise Resource Utilization') {
-              // console.log('this.chart.data', this.chartData.data);
               let accountList = this.chartData.data;
               this.categoryAxis.renderer.labels.template.events.on(
                 'hit',
@@ -343,49 +255,18 @@ export class DataGraphComponent implements OnInit {
                       modalId: 'modal01',
                       employeeData: employeeData,
                       accountList: accountList,
-                      // projectList: projectList,
                     },
                   });
                 }
               );
             }
-            // function openLabelModal(clickedLabel) {
-            //   const dialogConfig = new MatDialogConfig();
-            //   const modalId = "modal01";
-            //   // const empData = employeeData
-            //   dialogConfig.disableClose = true;
-            //   // dialogConfig.id = "modal-component";
-            //   dialogConfig.height = "100%";
-            //   dialogConfig.width = "100% ";
-            //   dialogConfig.data = {
-            //     modalId: modalId,
-            //     employeeData:employeeData,
-            //     clickedLabel:clickedLabel
-            //   }
-            //   matDialog.open(DataModalComponent, dialogConfig);
-            // }
-
+       
             this.categoryAxis.renderer.cellStartLocation = 0.2;
             this.categoryAxis.renderer.cellEndLocation = 0.8;
             this.valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
             this.valueAxis.renderer.labels.template.fontSize = '9px';
 
-            // function clickedXaxisValue(ev) {
-            //   console.log('this.chart', this.chart)
-            //   this.chart.series.each(function(series) {
-            //     if (series instanceof am4charts.ColumnSeries) {
-            //       series.columns.each(function(column) {
-            //     console.log(column);
-            //     console.log(ev.target.dataItem.category);
-            //       //  if (column.dataItem.categoryX == ev.target.dataItem.category) {
-            //       //     column.isActive = true;
-            //       // console.log(column.dataItem.categoryX)
-            //       //   }
-            //       })
-            //     }
-            //   })
-            // }
-
+         
             this.valueAxis.title.text = '';
 
             this.valueAxis.renderer.minGridDistance = 10;
@@ -394,8 +275,6 @@ export class DataGraphComponent implements OnInit {
             this.series2 = this.chart.series.push(new am4charts.ColumnSeries());
             this.series2.dataFields.valueY = this.chartData.series1;
             this.series2.dataFields.categoryX = '_id';
-
-            // this.pieSeries.template.maxWidth = 20;
             this.series2.fontSize = '11.5px';
             this.series2.fontWeight = '600';
             if (this.chartData.series2) {
@@ -412,26 +291,19 @@ export class DataGraphComponent implements OnInit {
             this.series2.columns.template.fontSize = '11.5px';
             this.series2.tooltip.pointerOrientation = 'vertical';
             this.series2.fill = am4core.color(this.chartData.colorCode);
-            // this.series1.columns.template.width = am4core.percent(70);
-            // this.series2.columns.template.column.cornerRadiusTopLeft = 10;
-            // this.series2.columns.template.column.cornerRadiusTopRight = 10;
-            this.series2.columns.template.column.fillOpacity = 0.8;
+          this.series2.columns.template.column.fillOpacity = 0.8;
             if (this.chartData.series2) {
-              // this.chart.legend.markers.template.disabled = true;
-              this.series3 = this.chart.series.push(
+             this.series3 = this.chart.series.push(
                 new am4charts.ColumnSeries()
               );
               this.series3.dataFields.valueY = this.chartData.series2;
               this.series3.dataFields.categoryX = '_id';
               this.series3.name = this.chartData.legendName2;
               this.series3.stroke = am4core.color('#EE5873');
-              // this.series3.fontSize = '10px';
               this.series3.fontSize = '11.5px';
-              // this.series3.fontWeight = '600';
-              this.series3.fill = am4core.color('#EE5873');
+             this.series3.fill = am4core.color('#EE5873');
               this.series3.tooltipText = '[bold][font-size: 10px]{valueY}[/]';
-              // this.series3.tooltipText.fontSize = '9px';
-              this.series3.stacked = true;
+             this.series3.stacked = true;
               this.series3.tooltip.pointerOrientation = 'vertical';
             }
 
@@ -443,7 +315,6 @@ export class DataGraphComponent implements OnInit {
             this.valueAxis.renderer.grid.template.disabled = true;
             if (this.chartData.isLegend) {
               this.chart.legend = new am4charts.Legend();
-              // this.chart.legend.valueLabels.template.text = "({value.value})";
               this.series3.strokeWidth = 2;
               this.chart.legend.position = 'bottom';
               this.chart.legend.fontSize = '13px';
@@ -451,11 +322,8 @@ export class DataGraphComponent implements OnInit {
               this.series2.name = `Billable (${this.chartData.labelData1.count})`;
               this.series3.name = `Non Billable  (${this.chartData.labelData2.count})`;
 
-              // this.chart.scrollbarX = new am4core.Scrollbar();
-              // this.chart.dragGrip.autoHideDelay = 5000;
-              this.chart.tapToActivate = true;
-              // this.chart.responsive.useDefault = false
-              this.chart.responsive.enabled = true;
+             this.chart.tapToActivate = true;
+            this.chart.responsive.enabled = true;
             }
 
             break;
@@ -472,8 +340,7 @@ export class DataGraphComponent implements OnInit {
             this.pieSeries = this.pieChart.series.push(
               new am4charts.PieSeries()
             );
-            // this.pieChart.numberFormatter.numberFormat = '#.';
-            this.pieSeries.dataFields.value = 'count';
+           this.pieSeries.dataFields.value = 'count';
             this.pieSeries.dataFields.category = '_id';
             this.pieSeries.labels.template.text =
               "{category}: {value.percent.formatNumber('#.#')}% ({value})";

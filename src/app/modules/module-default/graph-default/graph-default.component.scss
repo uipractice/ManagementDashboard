@@ -43,8 +43,6 @@ select > option:hover{
   margin-left: auto;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
   border: 0;
-  // background-position: right 10% top 45%;
-  // background-size: 12px;
   -webkit-appearance: none;
   background: url(/src/assets/images/main/down-arrow-user.svg) no-repeat right #fff;
   background-position: right;
@@ -120,10 +118,8 @@ background: #afaeae;
     .Graph{
       width: 100% !important;
       margin-bottom: 15px;
-      // height: 370px;
     }
     .GraphLast{
-      // width: 22% !important;
       margin-right: 0 !important;
   }
 }

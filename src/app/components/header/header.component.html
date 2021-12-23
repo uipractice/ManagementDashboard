@@ -4,26 +4,15 @@
       <img class="navbar-brand logo" src="../../../../assets/images/main/logo.svg" alt="">
       <div class="VerLine" *ngIf="headerCountLoaded">
         <span class="HoursDetails">Total Working Hours: {{headerCount['workingHour']}} </span>
-        <!-- <span class="HoursPerc">({{hours.value}}% ) </span> -->
-        <!-- <span class="HoursImg" *ngIf="hours.arrowFlag===true; else elseBlock"><img
-            src="..\..\..\assets\images\main\arrow_up.svg"></span>
-        <ng-template #elseBlock>
-          <span class="hours-img"><img src="..\..\..\assets\images\main\arrow_down.svg"></span>
-        </ng-template> -->
       </div>
       <div class="VerLine" *ngIf="headerCountLoaded">
         <span class="HoursDetails">Average Hours: 08 </span>
-        <!-- <span class="HoursPerc">({{hours.value}}% ) </span> -->
-        <!-- <span class="HoursImg" ><img src="..\..\..\assets\images\main\arrow_up.svg"></span>-->
       </div>
     </div>
     <div class="VerLine2" *ngIf="headerCountLoaded" style="display: none;">
-      <!-- <ev-dashboard-search [isShow]="isShow" [isOpen]="isOpen" (myOutput) ="GetChildData($event)"></ev-dashboard-search> -->
-
-      <div class="">
+     <div class="">
         <input type="search" class="search SearchMob" on-click="toggledownSearch($event)" placeholder="Search">
-        <!-- <img class="SearchImg" src="..\..\..\assets\images\main\search.svg"> -->
-        <div class="">
+       <div class="">
           <div class="SearchDropdown" *ngIf="!isSearch">
             <div class="SearchDropdownTopbtn">
               <ul>
@@ -66,24 +55,7 @@
               </ul>
             </div>
           </mat-menu>
-
-          <!-- <mat-menu #menu="matMenu"  xPosition="before">
-            <div class="NotificationContent" (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()"
-            *ngIf="!isOpen && notificationCount.length > 0">
-              <h6 class="NotifyHeader">Notifications</h6>
-              <ul>
-                <li *ngFor="let _nt of notificationCount">
-                  <a class="NotifyIcon">
-                    <div class="text ellipsis NotifyText">
-                      <span class="text-concat">{{_nt.desc}}</span>
-                      <span class="NotifyDate">10-09-2020</span>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </mat-menu> -->
-    </div>
+  </div>
     <div class="dropdown VerLine2 pdr-0" *ngIf="headerCountLoaded">
       <a class="dropbtn" (click)="toggleDropdown()" [matMenuTriggerFor]="profileMenu"><img class="HeaderIcons"
           src="..\..\..\assets\images\main\user.svg"></a>
@@ -100,12 +72,7 @@
                 <a class=""> News & Notification</a>
                </li>
                 <li class="FeedbackBg"><a class="" (click)="feedbackDialog()"> Provide Feedback</a></li>
-                <!-- <li class="Darkbg dark-theme"><span class="ml-40"> Dark
-                    Theme</span><label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                  </label></li> -->
-                <li class="LogoutBg"><a class="" (click)="logout()"> Logout</a></li>
+           <li class="LogoutBg"><a class="" (click)="logout()"> Logout</a></li>
               </ul>
             </div>
           </mat-menu>   
@@ -132,12 +99,6 @@
         <li class="ProfileBg"><a href="javascript:void(0)"> My Profile</a></li>
         <li class="NewsNote"><a class=""> News & Notification</a></li>
         <li class="FeedbackBg"><a class="" (click)="feedbackDialog()">Provide Feedback</a></li>
-       
-        <!-- <li class="Darkbg dark-theme"><a href="javascript:void(0)"> Dark
-            Theme</a><label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-          </label></li> -->
         <li class="LogoutBg logout-link"><a class="Logout" (click)="logout()">
               Logout</a></li>
       </ul>

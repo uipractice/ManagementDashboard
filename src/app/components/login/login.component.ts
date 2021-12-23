@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/services/auth.service';
 import { Data } from '../../helper/datastore';
 import { CookieService } from 'ngx-cookie-service';
-// import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'ev-login',
@@ -13,9 +12,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  //loading = true;
   submitted = false;
-  // flagsCheck = false;
   message = '';
   returnUrl: string;
 
@@ -28,13 +25,6 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
-    /* this.auth.authenticate().then((res) => {
-      if(res['statusCode']){
-        res['statusCode'] === 200 ? this.router.navigate['/dashboard'] : '';
-      }
-    }).catch(function(error) {
-        //
-    }); */
   }
 
   // convenience getter for easy access to form fields
@@ -61,38 +51,12 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/dashboard']);
       } else {
         if(res['statusCode'] === 401 || res['auth'] == false){
-          //resolve(res);
           this.message = 'Username or Password is incorrect';
           this.loginForm.reset();
         }
       }
 
     });
-
-    // if (
-    //   this.loginForm.controls['username'].value === 'EAdmin' &&
-    //   this.loginForm.controls['password'].value === 'E@MDashboard'
-    // ) {
-    //   this.message = 'login success';
-    //   sessionStorage.setItem('user', this.loginForm.controls['username'].value);
-    //   this.router.navigate(['/default']);
-    // } else {
-    //   this.message = 'Username or password is incorrect';
-    //   this.loading = false;
-    // }
   }
 
-  //  checkLogin(){
-  //   this.loading = true;
-  //   if (this.loginForm.controls['username'].value ==="EAdmin"
-  //   && this.loginForm.controls['password'].value ==="E@MDashboard"){
-  //   this.message = 'login success';
-  //   sessionStorage.setItem("user", this.loginForm.controls['username'].value);
-  //     this.router.navigate(['/default']);
-  //   }else{
-  //     this.message = 'Username or password is incorrect';
-  //     this.loading = false;
-  //   }
-
-  // }
 }

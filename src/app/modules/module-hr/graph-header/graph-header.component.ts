@@ -13,7 +13,6 @@ export class GraphHeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log('month', this.month)
     if(this.month == undefined){
       this.desiableMonth = true;
     }else {
@@ -23,7 +22,6 @@ export class GraphHeaderComponent implements OnInit {
     if(this.title == 'News and Events') {
       this.isDesiable = false
     }else {
-      // this.isDesiable = true
     }
   }
 

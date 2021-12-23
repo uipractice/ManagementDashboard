@@ -10,7 +10,6 @@
     width: 100%;
     border: 0;
     box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.2);
-    // margin-right: 13px;
     background-color: #fff;
   }
   .GraphLast {
@@ -52,8 +51,6 @@
     margin-left: auto;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
     border: 0;
-    // background-position: right 10% top 45%;
-    // background-size: 12px;
     -webkit-appearance: none;
     background: url(/src/assets/images/main/down-arrow-user.svg) no-repeat right
       #fff;
@@ -73,7 +70,6 @@
     margin-left: 2%;
     line-height: 0;
     position: absolute;
-    // display: none;
     .positive {
       color: #92b7f2;
       font-weight: 600;
@@ -99,22 +95,17 @@
     color: #57565c;
     height: 460px;
     box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.12);
-    // overflow: overlay;
-    // overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #afaeae #e3e1e1;
-    // margin: 10px 10px 10px 0px;
     ul {
       padding: 0px;
       margin: 0px;
-      // margin-top: -10px !important;
       padding: 0px 0 30px;
       overflow-y: auto;
       scrollbar-width: thin;
       scrollbar-color: #afaeae #e3e1e1;
       li {
         list-style: none;
-        // height: 57px;
         border-bottom: 1px solid #c4c4c4;
         padding:8px 10px 10px 15px;
         overflow: hidden;
@@ -126,15 +117,7 @@
           font-weight: 400;
         }
       }
-      // li:before{
-      //   content: "...";
-      //   position: absolute;
-      //   bottom: 5.5px;
-      //   right: 5px;
-      //   font-size: 18px;
-      //   color: #7b7b7b;
-      // }
-      li:last-child {
+     li:last-child {
         border: 0px;
         padding-bottom: 0px;
       }
@@ -198,10 +181,8 @@
     .Graph {
       width: 100% !important;
       margin-bottom: 15px;
-      // height: 370px;
     }
     .GraphLast {
-      // width: 22% !important;
       margin-right: 0 !important;
     }
   }

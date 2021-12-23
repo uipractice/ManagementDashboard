@@ -21,27 +21,17 @@
           <ev-data-graph [isNoGraphShown]="true" [newsData]="newsLetterData" titleCommon="News and Events">
           </ev-data-graph>
         </div>
-        <!-- <div class="col-md-4 p-0 m-2" *ngIf="!isDataLoadedPractice">
-          <ev-css-loader></ev-css-loader>
-        </div> -->
-        <!-- <div class="col-md-4 p-0 m-2" *ngIf="!isDataLoadedPractice">
-          <ev-css-loader></ev-css-loader>
-        </div>
-        <div class="col-md-3 p-0 m-2" *ngIf="!isDataLoadedPractice">
-          <ev-css-loader></ev-css-loader>
-        </div> -->
+     
 
         <div class="col-md-12 p-0" *ngIf="isDataLoaded && summeryDataLoaded">
           <ev-data-graph [chartData]="chartData" chartType="multiColorBarChartMultiLevel" [dataLoaded]="isDataLoaded"
             [isNoGraphShown]="false">
           </ev-data-graph>
         </div>
-        <!-- *ngIf="!isDataLoaded" -->
+       
       </div>
     </div>
-    <!-- <ev-create-news-notifications></ev-create-news-notifications> -->
-    <!-- <button mat-raised-button id="logout-button" (click)="openLogoutModal()">OpenModal</button> -->
-  </div>
+   </div>
   <ev-footer></ev-footer>
 </div>
 <div class="loader" *ngIf="!summeryDataLoaded">

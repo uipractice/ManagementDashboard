@@ -15,11 +15,9 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
   openDialog() {
-    // console.log("feedback popup")
     const dialogConfig = new MatDialogConfig();
     const modalId = 'modal05';
     dialogConfig.disableClose = true;
-    // dialogConfig.height = "470px";
     dialogConfig.width = "500px";
     dialogConfig.data = {
       modalId: modalId,
@@ -27,10 +25,8 @@ export class FooterComponent implements OnInit {
     const dialogRef = this.matDialog.open(DataModalComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(
       data => {
-        if(data){
-          //console.log("feedback output :", data.feedback_msg);
+        if (data) {
           this.service.sendFeedbacktoEmail(data).then((res: any) => {
-            //if(res)console.log(res);
           })
         }
       }

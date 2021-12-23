@@ -209,29 +209,6 @@ export class DashboardContainerComponent implements OnInit {
       this.newsLetterData = res
     })
 
-    // this.service.getAllEmpCount().then((res:any) =>{
-    //   console.log('get all emp data',res)
-    // })
-    // for (var i = 0; i < 10; i++) {
-    //   this.newsLetterData.push({
-    //     title:
-    //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    //   });
-    // }
   }
-  // openLogoutModal() {
-  //   const dialogConfig = new MatDialogConfig();
-  //   const modalId = "modal01";
-  //   const employeeData = this.AccountWiseEmpData;
-  //   // The user can't close the dialog by clicking outside its body
-  //   dialogConfig.disableClose = true;
-  //   // dialogConfig.id = "modal-component";
-  //   dialogConfig.height = "100%";
-  //   dialogConfig.width = "100% ";
-  //   dialogConfig.data = {
-  //     modalId: modalId,
-  //     employeeData:employeeData 
-  //   }
-  //   const modalDialog = this.matDialog.open(DataModalComponent, dialogConfig);
-  // }
+ 
 }
